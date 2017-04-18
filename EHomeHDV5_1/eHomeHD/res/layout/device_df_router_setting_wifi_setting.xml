@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/announcement_item_seletor"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/switch_2.4g"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="2.4G wifi"
+                        android:textColor="@color/black" />
+
+                    <ToggleButton
+                        android:id="@+id/router_setting_2_4g_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/switch_2.4g"
+                        android:layout_alignBottom="@+id/switch_2.4g"
+                        android:layout_alignParentRight="true"
+                        android:background="@android:color/transparent"
+                        android:button="@drawable/button_toggle_switch"
+                        android:checked="false"
+                        android:text=""
+                        android:textOff=""
+                        android:textOn="" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/router_setting_2_4g_ll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/vpi__bright_foreground_disabled_holo_light" />
+
+                    <RelativeLayout
+                        android:id="@+id/router_setting_2_4g_wifi_name_setting"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/announcement_item_seletor"
+                        android:orientation="horizontal"
+                        android:padding="10dp" >
+
+                        <TextView
+                            android:id="@+id/text_2.4g_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/gateway_router_setting_wifi_name"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/router_setting_2_4g_wifi_name_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBaseline="@+id/text_2.4g_name"
+                            android:layout_alignBottom="@+id/text_2.4g_name"
+                            android:layout_alignParentRight="true"
+                            android:maxLength="30"
+                            android:textColor="@color/v5_green_dark" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/vpi__bright_foreground_disabled_holo_light" />
+
+                    <RelativeLayout
+                        android:id="@+id/router_setting_2_4g_wifi_pwd_setting"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/announcement_item_seletor"
+                        android:orientation="horizontal"
+                        android:padding="10dp" >
+
+                        <TextView
+                            android:id="@+id/text_2.4g_pwd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/gateway_router_setting_wifi_modify_pwd"
+                            android:textColor="@color/black" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/text_2.4g_pwd"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignTop="@+id/text_2.4g_pwd"
+                            android:src="@drawable/arrow_cutover_gateway" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/vpi__bright_foreground_disabled_holo_light" />
+
+                    <RelativeLayout
+                        android:id="@+id/router_setting_2_4g_wifi_encryption_setting"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/announcement_item_seletor"
+                        android:orientation="horizontal"
+                        android:padding="10dp" >
+
+                        <TextView
+                            android:id="@+id/text_2.4g_encryption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/gateway_router_setting_wifi_entrypt"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/router_setting_2_4g_wifi_entrypt_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBaseline="@+id/text_2.4g_encryption"
+                            android:layout_alignBottom="@+id/text_2.4g_encryption"
+                            android:layout_alignParentRight="true"
+                            android:maxLength="30"
+                            android:textColor="@color/v5_green_dark" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/vpi__bright_foreground_disabled_holo_light" />
+
+                    <RelativeLayout
+                        android:id="@+id/router_setting_2_4g_wifi_channel_setting"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/announcement_item_seletor"
+                        android:orientation="horizontal"
+                        android:padding="10dp" >
+
+                        <TextView
+                            android:id="@+id/text_2.4g_channel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/gateway_router_setting_wifi_channel"
+                            android:textColor="@color/black" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/text_2.4g_channel"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignTop="@+id/text_2.4g_channel"
+                            android:src="@drawable/arrow_cutover_gateway" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/announcement_item_seletor"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/switch_5g"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="5G wifi"
+                        android:textColor="@color/black" />
+
+                    <ToggleButton
+                        android:id="@+id/router_setting_5g_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/switch_5g"
+                        android:layout_alignBottom="@+id/switch_5g"
+                        android:layout_alignParentRight="true"
+                        android:background="@android:color/transparent"
+                        android:button="@drawable/button_toggle_switch"
+                        android:checked="false"
+                        android:text=""
+                        android:textOff=""
+                        android:textOn="" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/router_setting_5g_ll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/vpi__bright_foreground_disabled_holo_light" />
+
+                    <RelativeLayout
+                        android:id="@+id/router_setting_5g_wifi_name_setting"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/announcement_item_seletor"
+                        android:orientation="horizontal"
+                        android:padding="10dp" >
+
+                        <TextView
+                            android:id="@+id/text_5g_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/gateway_router_setting_wifi_name"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/router_setting_5g_wifi_name_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBaseline="@+id/text_5g_name"
+                            android:layout_alignBottom="@+id/text_5g_name"
+                            android:layout_alignParentRight="true"
+                            android:maxLength="30"
+                            android:textColor="@color/v5_green_dark" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/vpi__bright_foreground_disabled_holo_light" />
+
+                    <RelativeLayout
+                        android:id="@+id/router_setting_5g_wifi_pwd_setting"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/announcement_item_seletor"
+                        android:orientation="horizontal"
+                        android:padding="10dp" >
+
+                        <TextView
+                            android:id="@+id/text_5g_pwd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/gateway_router_setting_wifi_modify_pwd"
+                            android:textColor="@color/black" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/text_5g_pwd"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignTop="@+id/text_5g_pwd"
+                            android:src="@drawable/arrow_cutover_gateway" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/vpi__bright_foreground_disabled_holo_light" />
+
+                    <RelativeLayout
+                        android:id="@+id/router_setting_5g_wifi_encryption_setting"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/announcement_item_seletor"
+                        android:orientation="horizontal"
+                        android:padding="10dp" >
+
+                        <TextView
+                            android:id="@+id/text_5g_encryption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/gateway_router_setting_wifi_entrypt"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/router_setting_5g_wifi_entrypt_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBaseline="@+id/text_5g_encryption"
+                            android:layout_alignBottom="@+id/text_5g_encryption"
+                            android:layout_alignParentRight="true"
+                            android:maxLength="30"
+                            android:textColor="@color/v5_green_dark" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/vpi__bright_foreground_disabled_holo_light" />
+
+                    <RelativeLayout
+                        android:id="@+id/router_setting_5g_wifi_channel_setting"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/announcement_item_seletor"
+                        android:orientation="horizontal"
+                        android:padding="10dp" >
+
+                        <TextView
+                            android:id="@+id/text_5g_channel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/gateway_router_setting_wifi_channel"
+                            android:textColor="@color/black" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/text_5g_channel"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignTop="@+id/text_5g_channel"
+                            android:src="@drawable/arrow_cutover_gateway" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/announcement_item_seletor"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/switch_qos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="@string/gateway_router_setting_qos_switch"
+                        android:textColor="@color/black" />
+
+                    <ToggleButton
+                        android:id="@+id/router_setting_qos_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/switch_qos"
+                        android:layout_alignBottom="@+id/switch_qos"
+                        android:layout_alignParentRight="true"
+                        android:background="@android:color/transparent"
+                        android:button="@drawable/button_toggle_switch"
+                        android:checked="false"
+                        android:text=""
+                        android:textOff=""
+                        android:textOn="" />
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="@string/gateway_router_setting_qos_switch_toast" />
+
+                <LinearLayout
+                    android:id="@+id/router_setting_auto_limit_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical" >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/announcement_item_seletor"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/switch_limit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:text="@string/gateway_router_setting_limit_switch"
+                            android:textColor="@color/black" />
+
+                        <ToggleButton
+                            android:id="@+id/router_setting_auto_limit_switch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBaseline="@+id/switch_limit"
+                            android:layout_alignBottom="@+id/switch_limit"
+                            android:layout_alignParentRight="true"
+                            android:background="@android:color/transparent"
+                            android:button="@drawable/button_toggle_switch"
+                            android:checked="false"
+                            android:text=""
+                            android:textOff=""
+                            android:textOn="" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/gateway_router_setting_limit_switch_toast" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp" >
+
+                <RelativeLayout
+                    android:id="@+id/router_setting_connected_setting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/announcement_item_seletor"
+                    android:orientation="horizontal"
+                    android:padding="10dp" >
+
+                    <TextView
+                        android:id="@+id/connected_setting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/gateway_router_setting_connected_notwork"
+                        android:textColor="@color/black" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/connected_setting"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignTop="@+id/connected_setting"
+                        android:src="@drawable/arrow_cutover_gateway" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

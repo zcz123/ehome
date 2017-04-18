@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E0E2E7"
+    android:orientation="vertical" >
+
+    <include layout="@layout/device_area_show_head" />
+
+    <cc.wulian.smarthomev5.view.swipemenu.SwipeMenuListView
+        android:id="@+id/device_common_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:divider="@null" >
+    </cc.wulian.smarthomev5.view.swipemenu.SwipeMenuListView>
+
+</LinearLayout>

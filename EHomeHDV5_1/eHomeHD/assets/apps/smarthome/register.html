@@ -1,0 +1,490 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<title>register</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<style type="text/css">
+			.icon_checked {
+				position: absolute;
+				top: 10px;
+				right: 28px;
+				z-index: 2;
+				width: 38px;
+				height: 38px;
+				font-size: 30px;
+				color: green;
+				text-align: center;
+			}
+			
+			.show-pwd-icon {
+				text-align: center;
+				vertical-align: middle;
+				background-image: url(img/inco_monitor.png);
+				background-size: 20px 13px;
+				background-repeat: no-repeat;
+				background-position: center;
+				position: absolute;
+				top: 0px;
+				right: 4px;
+				z-index: 2;
+				width: 20px;
+				height: inherit;
+			}
+			.inputType{
+				float: left;
+				width: 53%;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/custom.css" />
+
+		<script type="text/javascript" src="js/plus.js"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/hashmap.js"></script>
+		<script type="text/javascript" src="js/md5-min.js"></script>
+		<script type="text/javascript" src="js/digest-auth.js"></script>
+		<script src="js/custom.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/crypto-js.js"></script>
+		<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			var phoneRegiste;
+			mui.init({keyEventBind: {
+				backbutton: false, //Boolean(默认true)关闭back按键监听
+				menubutton: false //Boolean(默认true)关闭menu按键监听
+			}});
+			plus.plusReady(function() {
+				document.getElementById("userName").placeholder = plus.ehomev5.getLang("html_user_name_phone_placeholder");
+				document.getElementById("password").placeholder = plus.ehomev5.getLang("html_user_pw_format_placeholder");
+				var flag = plus.ehomev5.getLang();
+				if(flag != "zh-tw" && flag != "zh-cn" && flag != "zh-Hans-CN" && flag != "zh-Hant-CN" && flag != "zh-HK" && flag != "zh-TW" && flag != "zh-") {
+					document.getElementById("disclaimer").href = "En_disclaimer.html";
+				}
+				document.getElementById("showPwd").addEventListener("touchstart", function() {
+					document.getElementById("password").type = "text";
+				});
+				document.getElementById("showPwd").addEventListener("touchend", function() {
+					document.getElementById("password").type = "password";
+				});
+			});
+
+			function checkAndDo() {
+				if(verifyUserName()) {
+					//alert("verifyUserName");
+					return;
+				}
+				if(verifyPassword()) {
+					//alert("verifyPassword");
+					return;
+				}
+				if(verifyProtocal()) {
+					//alert("verifyProtocal");
+					return;
+				}
+				//alert("phoneRegiste"+phoneRegiste);
+				if(phoneRegiste) {
+					// alert("phoneRegiste");
+					var phoneNum = document.getElementById("userName").value.trim();
+					var verifyCode = document.getElementById("verifyCode").value.trim();
+					var obj = {};
+					obj.phone = phoneNum;
+					obj.authCode = verifyCode;
+					var digestAuth = DigestAuthentication.init({
+						onSuccess: function(response, status) {
+							var ret = JSON.parse(response);
+							var hint = statusHelper.mapping(status); //错误码显示
+							if(hint) {
+								alert(hint);
+							} else if(status == "0") {
+								plus.ehomev5.setData($CONSTANTS.USERNAME, obj.phone);
+								plus.ehomev5.setData($CONSTANTS.ACCOUNT, obj.phone);
+								window.location = 'login.html?from=register';
+							} else {
+								alert(plus.ehomev5.getLang("html_user_operation_failed"));
+							}
+						},
+						onFailure: function(httpStatus) {
+							alert(plus.ehomev5.getLang("html_user_operation_failed"));
+						},
+						sync: true
+					});
+					digestAuth.setHeader('cmd', 'registByPhone');
+					digestAuth.setHeader('token', plus.ehomev5.getData($CONSTANTS.TOKEN));
+					obj.password = CryptoJS.MD5(document.getElementById("password").value).toString();
+					digestAuth.setData(JSON.stringify(obj));
+					digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_DIGEST_URLBASE) + '/user/access');
+				} else {
+					var digestAuth = DigestAuthentication.init({
+						onSuccess: function(response, status) {
+							try {
+								var ret = JSON.parse(response);
+								var hint = statusHelper.mapping(status);
+								if(hint) {
+									alert(hint);
+								} else if(status == "0") {
+									document.getElementById("userName").style.border = 'none';
+									document.getElementById("checkNameOK").classList.remove("mui-hidden");
+									document.getElementById("hintPanelOne").classList.add("mui-hidden");
+									if(plus.ehomev5.getData($CONSTANTS.TOKEN) != '' && plus.ehomev5.getData($CONSTANTS.USERNAME) == document.getElementById("userName")) {
+										bindUserName();
+									} else {
+										createUser();
+									}
+								} else {
+									alert(plus.ehomev5.getLang("html_user_regist_user_fail"));
+								}
+							} catch(e) {
+								console.log(e);
+							}
+						},
+						onFailure: function(httpStatus) {
+							alert(plus.ehomev5.getLang("html_user_regist_user_fail"));
+						},
+						sync: true
+					});
+					digestAuth.setHeader('cmd', 'isNameExist');
+					var obj = {};
+					obj.userName = document.getElementById("userName").value;
+					digestAuth.setData(JSON.stringify(obj));
+					digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + '/AMS/user/access');
+				}
+			}
+
+			function checkUserName() {
+				if(verifyUserName()) {
+					return;
+				}
+				if(phoneRegiste) {
+					return;
+				}
+				var digestAuth = DigestAuthentication.init({
+					onSuccess: function(response, status) {
+						var hint = statusHelper.mapping(status);
+						if(hint) {
+							nameError(hint);
+						} else if(status == "0") {
+							var ret = JSON.parse(response);
+							if(ret.isExist) {
+								nameError(plus.ehomev5.getLang("html_user_regist_user_exist"));
+							} else {
+								document.getElementById("userName").style.border = 'none';
+								document.getElementById("checkNameOK").classList.remove("mui-hidden");
+								document.getElementById("hintPanelOne").classList.add("mui-hidden");
+							}
+						}
+					},
+					onFailure: function(httpStatus) {},
+					sync: false
+				});
+				digestAuth.setHeader('cmd', 'isNameExist');
+				var obj = {};
+				obj.userName = document.getElementById("userName").value;
+				digestAuth.setData(JSON.stringify(obj));
+				digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + '/AMS/user/access');
+			}
+
+			function createUser() {
+				var obj = {};
+				obj.password = CryptoJS.MD5(document.getElementById("password").value).toString();
+				obj.OS = plus.device.getOsName();
+				obj.OSVer = "V5.1.5";
+				obj.IMEI = plus.device.getImei();
+				var digestAuth = DigestAuthentication.init({
+					onSuccess: function(response, status) {
+						var hint = statusHelper.mapping(status);
+						if(hint) {
+							alert(hint);
+						} else if(status == "0") {
+							var ret = JSON.parse(response);
+							plus.ehomev5.setData($CONSTANTS.USERID, ret.userId + "");
+							plus.ehomev5.setData($CONSTANTS.USERNAME, document.getElementById("userName").value);
+							alert(plus.ehomev5.getLang("regist_success"));
+							loginAndBindUser();
+						} else {
+							alert(plus.ehomev5.getLang("html_user_regist_user_fail"));
+						}
+					},
+					onFailure: function(httpStatus) {
+						alert(plus.ehomev5.getLang("html_user_regist_user_fail"));
+					},
+					sync: true
+				});
+				digestAuth.setHeader('cmd', 'userRegist');
+				digestAuth.setData(JSON.stringify(obj));
+				digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_DIGEST_URLBASE) + '/user/access');
+			}
+
+			function loginAndBindUser() {
+				var digestAuth = DigestAuthentication.init({
+					onSuccess: function(response, status) {
+						var hint = statusHelper.mapping(status);
+						if(hint) {
+							alert(hint);
+						} else if(status == "0") {
+							var ret = JSON.parse(response);
+							plus.ehomev5.setData("token", ret.token);
+							bindUserName();
+						} else {
+							alert(plus.ehomev5.getLang("html_user_hint_login_fail"));
+						}
+					},
+					onFailure: function(httpStatus) {
+						alert(plus.ehomev5.getLang("html_user_hint_login_fail"));
+					},
+					sync: true
+				});
+				digestAuth.setHeader('cmd', 'userLogin');
+				var obj = getLoginBody();
+				obj.password = CryptoJS.MD5(document.getElementById("password").value).toString();
+				obj.account = plus.ehomev5.getData($CONSTANTS.USERID);
+				digestAuth.setData(JSON.stringify(obj));
+				digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + '/AMS/user/access');
+			}
+
+			function bindUserName() {
+				var obj = {};
+				obj.userName = document.getElementById("userName").value;
+				var digestAuth = DigestAuthentication.init({
+					onSuccess: function(response, status) {
+						var hint = statusHelper.mapping(status);
+						if(hint) {
+							alert(hint);
+						} else if(status == "0") {
+							plus.ehomev5.setData($CONSTANTS.USERNAME, obj.userName);
+							plus.ehomev5.setData($CONSTANTS.ACCOUNT, obj.userName);
+							window.location = 'login.html?from=register';
+						} else {
+							alert(plus.ehomev5.getLang("html_user_regist_user_name_bind_fail"));
+						}
+					},
+					onFailure: function(httpStatus) {
+						alert(plus.ehomev5.getLang("html_user_regist_user_name_bind_fail"));
+					},
+					sync: true
+				});
+				digestAuth.setHeader('cmd', 'userNameAuth');
+				digestAuth.setHeader('token', plus.ehomev5.getData('token'));
+				digestAuth.setData(JSON.stringify(obj));
+				digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + '/AMS/user/access');
+			}
+
+			function verifyUserName() {
+				document.getElementById("userName").style.border = 'none';
+				document.getElementById("hintPanelOne").classList.add("mui-hidden");
+				document.getElementById("checkNameOK").classList.remove("mui-hidden");
+				var userName = document.getElementById("userName").value.trim();
+				if(verify.isphone(userName)) {
+					document.getElementById("phoneRegister").style.display = "block";
+					phoneRegiste = true;
+					return false;
+
+				} else {
+					document.getElementById("phoneRegister").style.display = "none";
+					phoneRegiste = false;
+				}
+				//				if (verify.ismail(userName)) {
+				//					return false;
+				//				}
+				if(verify.isgateway(userName)) {
+					nameError(plus.ehomev5.getLang("html_user_regist_user_exist"));
+					return true;
+				}
+				if(verify.iswuliannum(userName)) {
+					return false;
+				}
+				nameError(plus.ehomev5.getLang("html_user_account_Illegal"));
+				return true;
+			}
+
+			function verifyPassword() {
+				var pwd = document.getElementById("password").value.trim();
+				var passwdHints = "";
+				var passwordRex = /^[\S]{6,20}$/;
+				if(pwd.length < 6) {
+					passwordError(plus.ehomev5.getLang("html_user_regist_password_too_short_hint"));
+					return true;
+				} else if(pwd.length > 20) {
+					passwordError(plus.ehomev5.getLang("html_user_regist_password_too_long_hint"));
+					return true;
+				} else if(passwordRex.test(pwd) == false) {
+					passwordError(plus.ehomev5.getLang("html_user_regist_password_has_space_hint"));
+					return true;
+				}
+				document.getElementById("password").style.border = 'none';
+				document.getElementById("hintPanelOne").classList.add("mui-hidden");
+				document.getElementById("checkPwdOK").classList.remove("mui-hidden");
+				return false;
+			}
+
+			function verifyProtocal() {
+				if(!document.getElementById("protocalCheckbox").checked) {
+					protocalError(plus.ehomev5.getLang("html_user_regist_read_clause_hint"));
+					return true;
+				}
+				document.getElementById("hintPanelTwo").classList.add("mui-hidden");
+				document.getElementById("protocalDiv").style.border = 'none';
+				return false;
+			}
+
+			function nameError(errHint) {
+				var nameErrorEle = document.getElementById("hintPanelOne");
+				nameErrorEle.textContent = errHint;
+				nameErrorEle.classList.remove("mui-hidden");
+				document.getElementById("userName").style.border = 'thin red dashed';
+				document.getElementById("checkNameOK").classList.add("mui-hidden");
+			}
+
+			function passwordError(errHint) {
+				var nameErrorEle = document.getElementById("hintPanelOne");
+				nameErrorEle.textContent = errHint;
+				nameErrorEle.classList.remove("mui-hidden");
+				document.getElementById("password").style.border = 'thin red dashed';
+			}
+
+			function protocalError(errHint) {
+				var nameErrorEle = document.getElementById("hintPanelTwo");
+				nameErrorEle.textContent = errHint;
+				nameErrorEle.classList.remove("mui-hidden");
+				document.getElementById("protocalDiv").style.border = 'thin red dashed';
+			}
+			//			function registeByPhone(){
+			//				window.location="regiestByphone.html";
+			//			}
+			function sendVerifyCode() {
+				var phone = document.getElementById("userName").value.trim();
+				if(verifyPhoneNum()) {
+					return;
+				}
+				var digestAuth = DigestAuthentication.init({
+					onSuccess: function(response, status) {
+						var ret = JSON.parse(response);
+						if(ret.isExist) {
+							alert(plus.ehomev5.getLang("html_phone_is_binder_error")); //"此手机号已被绑定！"
+							return;
+						}
+						var hint = statusHelper.mapping(status); //错误码显示
+						if(hint) {
+							alert(hint);
+						} else if(status == "0") {
+							setTimer();
+						} else {
+							alert(plus.ehomev5.getLang("html_user_reset_password_send_fail"));
+						}
+					},
+					onFailure: function(httpStatus) {
+						alert(plus.ehomev5.getLang("html_user_reset_password_send_fail"));
+					}
+				});
+				digestAuth.setHeader('cmd', 'isPhoneExist');
+				digestAuth.setHeader('token', plus.ehomev5.getData($CONSTANTS.TOKEN));
+				var obj = {};
+				obj.phone = phone;
+				obj.action = "0";
+				digestAuth.setData(JSON.stringify(obj));
+				digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_DIGEST_URLBASE) + '/user/access');
+			}
+
+			function setTimer() {
+				var sendCodeBtn = document.getElementById("sendCodeBtn");
+				sendCodeBtn.disabled = true;
+				var count = 1;
+				var t1 = window.setInterval(function(time) {
+					if(count == 60) {
+						window.clearInterval(t1);
+						sendCodeBtn.textContent = plus.ehomev5.getLang("html_user_reset_password_get_verification_code");
+						sendCodeBtn.disabled = false;
+						return;
+					}
+					sendCodeBtn.textContent = 60 - count + plus.ehomev5.getLang("html_user_reset_password_resend");
+					count++;
+				}, 1000);
+			}
+
+			function verifyPhoneNum() {
+				var phoneNumTxt = document.getElementById("userName").value.trim();
+				var isPhone = /^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/;
+				if(phoneNumTxt.length == 0) {
+					showHint(plus.ehomev5.getLang("html_login_username_is_empty"));
+					document.getElementById("userName").style.border = 'thin red dashed';
+					return true;
+				} else if(isPhone.test(phoneNumTxt) == false) {
+					showHint(plus.ehomev5.getLang("html_user_bind_phone_format_incorrect_hint"));
+					document.getElementById("userName").style.border = 'thin red dashed';
+					return true;
+				} else {
+					hideHint();
+					document.getElementById("userName").style.border = 'none';
+					return false;
+				}
+			}
+
+			function verifyCodeNum() {
+				var verifyCode = document.getElementById("verifyCode").value.trim();
+				if(verifyCode.length > 0) {
+					hideHint();
+					document.getElementById("verifyCode").style.border = 'none';
+					return false;
+				} else {
+					showHint(plus.ehomev5.getLang("html_user_input_verification_code_hint"));
+					document.getElementById("verifyCode").style.border = 'thin red dashed';
+					return true;
+				}
+			}
+
+			function hideHint() {
+				var nameErrorEle = document.getElementById("hintPanel");
+				nameErrorEle.classList.add("mui-hidden");
+			}
+		</script>
+	</head>
+
+	<body>
+		<header class="
+			-bar mui-bar-nav custom-nav">
+			<a class="custom-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title"><span class="autoSwitchLanguager" id="html_user_regiest"></span></h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-content-padded" style="margin: 32px 5px;">
+				<form class="mui-input-group">
+					<div class="mui-input-row" id="userName_row">
+						<label class="autoSwitchLanguager" id="html_login_user_name"></label>
+						<input type="text" id="userName" style="float: left;width: 53%;" class="mui-input-clear inputType" onblur="checkUserName();" placeholder="">
+						<span id="checkNameOK" class="mui-icon mui-icon-checkmarkempty mui-hidden icon_checked"></span>
+						</input>
+					</div>
+					<div class="mui-input-row">
+						<label class="autoSwitchLanguager" id="html_user_password_hint"></label>
+						<input type="password" style="float: left;width: 53%;" id="password" class="inputType" onblur="verifyPassword()" placeholder="" />
+						<span id="checkPwdOK" class="mui-icon mui-icon-checkmarkempty mui-hidden  icon_checked"></span>
+						<span id="showPwd" class="show-pwd-icon"></span>
+					</div>
+					<div id="phoneRegister" style="display: block;">
+						<div class="mui-input-row" style="display: inline-block;width: 70%;">
+							<label class="autoSwitchLanguager" id="html_user_reset_password_verification_code" style="width:41%"></label>
+							<input type="text" id='verifyCode' class="mui-input-clear" style="width:59%" />
+						</div>
+						<div style="display:inline;width: 30%;">
+							<button id="sendCodeBtn" type="button" style="width: 27%; line-height:1; padding: 12px 0 12px 0;margin: 0px;" onclick="sendVerifyCode()">
+									<span class="autoSwitchLanguager" id="html_user_reset_password_get_verification_code"></span>
+								</button>
+						</div>
+					</div>
+				</form>
+				<p id="hintPanelOne" class='mui-hidden mui-pull-right warning'></p>
+			</div>
+
+			<div id="protocalDiv" style="margin-top: 30%; width: 92%;margin-left: 4%;" class="mui-left ">
+				<input style="display: inline;" name="checkbox" value="Item 1" type="checkbox" id="protocalCheckbox" onclick="verifyProtocal()">
+				<label style="display: inline; text-align: center;" class="autoSwitchLanguager" id="html_user_regist_confirm_clause"></label>
+				<a id="disclaimer" style="display: inline;" href="disclaimer.html"><span class="autoSwitchLanguager" id="html_terms_conditions_use_hint"></span></a>
+			</div>
+			<button type="button" class="register_btn" onclick="checkAndDo();"><span class="autoSwitchLanguager" id="html_user_regiest"></span></button>
+			<p id="hintPanelTwo" class='mui-hidden mui-pull-right warning'></p>
+			<p id="hintPanel" class='mui-hidden mui-pull-right warning'></p>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/device_ir_stb_item_ellipse_selected" android:state_pressed="true" ></item>
+    <item android:drawable="@drawable/device_ir_stb_item_ellipse_normal" android:state_selected="true"></item>
+    <item android:drawable="@drawable/device_ir_stb_item_ellipse_normal" ></item>
+
+</selector>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/tv_control_definition_bar"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/margin_normal"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:background="@color/action_bar_bg"
+                android:gravity="center"
+                android:paddingBottom="@dimen/margin_little"
+                android:paddingTop="@dimen/margin_little"
+                android:text="@string/desktop_camera_video_adaptive"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textsize_middle" />
+        </LinearLayout>
+
+        <View
+            style="@style/img_divider_vertical_v2"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center" >
+
+            <Button
+                android:id="@+id/cb_silence"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/desk_cb_silence_off"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <View
+            style="@style/img_divider_vertical_v2"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/tv_video_play_timeorname"
+                android:layout_width="@dimen/definition_width_litle"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:singleLine="false"
+                android:text="@string/setting_detail_device_06"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_small" />
+        </LinearLayout>
+
+        <View
+            style="@style/img_divider_vertical_v2"
+            android:visibility="gone" />
+
+        <LinearLayout
+             android:id="@+id/tv_videotape_history"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:gravity="center" >
+
+            <TextView
+				android:id="@+id/tv_videotape_histroy_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:singleLine="true"
+                android:text="@string/replay_video"
+                android:textColor="@drawable/selector_tv_desk_video"
+                android:textSize="@dimen/textsize_small" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/cb_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:button="@drawable/selector_function_history"
+            android:text="@string/replay_video"
+            android:textColor="@color/selector_play_video_btn_text_color"
+            android:textSize="@dimen/textsize_small"
+            android:visibility="gone" />
+
+        <View
+            style="@style/img_divider_vertical_v2"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/ll_contain_fullscreen_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:gravity="right"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginRight="@dimen/margin_normal"
+            android:padding="@dimen/margin_little" >
+
+            <TextView
+                android:id="@+id/tv_control_fullscreen_bar"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:background="@drawable/desk_video_btn_fullscreen" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

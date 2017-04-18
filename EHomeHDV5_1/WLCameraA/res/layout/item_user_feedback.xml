@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_feedback_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="22dp"
+        android:background="@drawable/feedback_time"
+        android:text="2015-07-09 17-30"
+        android:textColor="@color/white" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="12dp" >
+
+        <LinearLayout
+            android:id="@+id/ll_server_feedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible" >
+
+            <ImageView
+                android:id="@+id/iv_server_head"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginStart="17dp"
+                android:background="@drawable/icon_server_head" />
+
+            <TextView
+                android:id="@+id/tv_server_feedback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/icon_server_bg"
+                android:gravity="center_vertical"
+                android:maxWidth="200dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_user_feedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tv_user_feedback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/icon_user_bg"
+                android:gravity="center_vertical"
+                android:maxWidth="200dp" />
+
+            <com.wulian.icam.view.widget.CircleImageView
+                android:id="@+id/iv_user_head"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginEnd="17dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="17dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/default_head"
+                app:border_color="#EEEFEFEF"
+                app:border_width="2dp" />
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

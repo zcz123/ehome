@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical" >
+
+    <include layout="@layout/titlebar_video_history" />
+
+    <com.wulian.icam.view.widget.PullListView
+        android:id="@+id/lv_history_video"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/transparent"
+        android:cacheColorHint="@color/transparent"
+        android:clickable="true"
+        android:divider="@color/transparent"
+        android:listSelector="@color/transparent"
+        android:paddingEnd="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingStart="10dp"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbars="vertical" >
+    </com.wulian.icam.view.widget.PullListView>
+
+</LinearLayout>

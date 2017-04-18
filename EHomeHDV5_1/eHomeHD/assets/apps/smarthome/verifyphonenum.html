@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/custom.css" />
+		<style>
+			body {
+				background-color: #efeff4;
+			}
+		</style>
+
+		<script type="text/javascript" src="js/plus.js"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/hashmap.js"></script>
+		<script type="text/javascript" src="./js/md5-min.js"></script>
+		<script type="text/javascript" src="./js/digest-auth.js"></script>
+		<script src="js/custom.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="wrap">
+			<div id="main" class="clearfix">
+				<header class="mui-bar mui-bar-nav custom-nav">
+					<a class="custom-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+					<h1 class="mui-title"><span class="autoSwitchLanguager" id="html_user_modify_infomation"></span></h1>
+				</header>
+				<div class="mui-content">
+					<p style="margin-top: 32px;margin-left: 10px;margin-right: 10px;"><span class="autoSwitchLanguager" id="html_user_bind_phone_hint"></span></p>
+					<form class="mui-input-group">
+						<div class="mui-input-row">
+							<label class="autoSwitchLanguager" id="html_user_phone"></label>
+							<input type="text" id='phonenum' class="mui-input-clear" placeholder="" onblur="verifyPhoneNum()" />
+						</div>
+						<div>
+							<div class="mui-input-row" style="display: inline-block;width: 70%;">
+								<label class="autoSwitchLanguager" id="html_user_reset_password_verification_code"style="width: 41%;"></label>
+								<input type="text" id='verifyCode' class="mui-input-clear" style="width: 41%;"/>
+							</div>
+							<div style="display:inline;width: 30%;">
+								<button id="sendCodeBtn" type="button" style="width: 27%; line-height:1; padding: 12px 0 12px 0;margin: 0px;" onclick="sendVerifyCode()">
+									<span class="autoSwitchLanguager" id="html_user_reset_password_get_verification_code"></span>
+								</button>
+							</div>
+						</div>
+						<div class="mui-button-row">
+							<button type="button" onclick="modifyPhoneNum();return false;">
+								<span class="autoSwitchLanguager" id="common_ok"></span>
+							</button>
+						</div>
+					</form>
+					<p id="hintPanel" class='mui-hidden mui-pull-right warning'></p>
+				</div>
+			</div>
+		</div>
+	</body>
+	<!--<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>-->
+	<script>
+		plus.plusReady(function() {
+			document.getElementById("phonenum").placeholder = plus.ehomev5.getLang("html_input_phone");
+		});
+
+		function sendVerifyCode() {
+			var phone = document.getElementById("phonenum").value.trim();
+			if (verifyPhoneNum()) {
+				return;
+			}
+			var digestAuth = DigestAuthentication.init({
+				onSuccess: function(response, status) {
+					var ret = JSON.parse(response);
+					var hint=statusHelper.mapping(status); //错误码显示
+					if(hint){
+						alert(hint);
+					}
+					else if(ret.isExist){						
+						alert(plus.ehomev5.getLang("html_phone_had_been_used_error"));//"手机号码已被他人使用"
+					}
+					else if(status=="0") {
+						setTimer();
+					}else{
+						alert(plus.ehomev5.getLang("html_user_reset_password_send_fail"));
+					}
+				},
+				onFailure: function(httpStatus) {
+					alert(plus.ehomev5.getLang("html_user_reset_password_send_fail"));
+				}
+			});
+			digestAuth.setHeader('cmd', 'isPhoneExist');
+			digestAuth.setHeader('token', plus.ehomev5.getData($CONSTANTS.TOKEN));
+			var obj = {};
+			obj.phone = phone;
+			obj.action = "1";
+			digestAuth.setData(JSON.stringify(obj));
+			digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_DIGEST_URLBASE) + '/user/access');
+		}
+
+		function modifyPhoneNum() {
+			if (verifyPhoneNum()) {
+				return;
+			}
+			if (verifyCodeNum()) {
+				return;
+			}
+			var phoneNum = document.getElementById("phonenum").value.trim();
+			var verifyCode = document.getElementById("verifyCode").value.trim();
+			var digestAuth = DigestAuthentication.init({
+				onSuccess: function(response, status) {
+					var ret = JSON.parse(response);
+					var hint=statusHelper.mapping(status); //错误码显示
+					if(hint){
+						alert(hint);
+					} else if(status=="0"){
+						alert(plus.ehomev5.getLang("html_user_gateway_bind_success"));
+				//		window.history.back(-1);
+					}else{
+						alert(plus.ehomev5.getLang("html_user_operation_failed"));
+					}
+				},
+				onFailure: function(httpStatus) {
+					alert(plus.ehomev5.getLang("html_user_operation_failed"));
+				}
+			});
+			digestAuth.setHeader('cmd', 'userPhoneChange');
+			digestAuth.setHeader('token', plus.ehomev5.getData($CONSTANTS.TOKEN));
+			var obj = {};
+			obj.phone = phoneNum;
+			obj.authCode = verifyCode;
+			digestAuth.setData(JSON.stringify(obj));
+			digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + '/AMS/user/access');
+		}
+
+		function setTimer() {
+			var sendCodeBtn = document.getElementById("sendCodeBtn");
+			sendCodeBtn.disabled = true;
+			var count = 1;
+			var t1 = window.setInterval(function(time) {
+				if (count == 60) {
+					window.clearInterval(t1);
+					sendCodeBtn.textContent = plus.ehomev5.getLang("html_user_reset_password_get_verification_code");
+					sendCodeBtn.disabled = false;
+					return;
+				}
+				sendCodeBtn.textContent = 60 - count + plus.ehomev5.getLang("html_user_reset_password_resend");
+				count++;
+			}, 1000);
+		}
+
+		function verifyPhoneNum() {
+			var phoneNumTxt = document.getElementById("phonenum").value.trim();
+			var isPhone = /^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/;
+			if (phoneNumTxt.length == 0) {
+				showHint(plus.ehomev5.getLang("html_login_username_is_empty"));
+				document.getElementById("phonenum").style.border = 'thin red dashed';
+				return true;
+			} else if (isPhone.test(phoneNumTxt) == false) {
+				showHint(plus.ehomev5.getLang("html_user_bind_phone_format_incorrect_hint"));
+				document.getElementById("phonenum").style.border = 'thin red dashed';
+				return true;
+			} else {
+				hideHint();
+				document.getElementById("phonenum").style.border = 'none';
+				return false;
+			}
+		}
+
+		function verifyCodeNum() {
+			var verifyCode = document.getElementById("verifyCode").value.trim();
+			if (verifyCode.length > 0) {
+				hideHint();
+				document.getElementById("verifyCode").style.border = 'none';
+				return false;
+			} else {
+				showHint(plus.ehomev5.getLang("html_user_input_verification_code_hint"));
+				document.getElementById("verifyCode").style.border = 'thin red dashed';
+				return true;
+			}
+		}
+
+		function showHint(hintTxt) {
+			var nameErrorEle = document.getElementById("hintPanel");
+			nameErrorEle.textContent = hintTxt;
+			nameErrorEle.classList.remove("mui-hidden");
+		}
+
+		function hideHint() {
+			var nameErrorEle = document.getElementById("hintPanel");
+			nameErrorEle.classList.add("mui-hidden");
+		}
+	</script>
+
+</html>

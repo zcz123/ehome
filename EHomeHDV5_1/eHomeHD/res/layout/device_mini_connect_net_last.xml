@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="3"
+            android:orientation="horizontal" >
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_weight="6"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout"
+        android:layout_below="@+id/textView12"
+        android:layout_alignLeft="@+id/linearLayout2"
+        android:layout_alignStart="@+id/linearLayout2"
+        android:layout_marginTop="42dp">
+
+    </LinearLayout>
+
+    <include layout="@layout/titlebar_mini_device_general_"
+        android:id="@+id/include3" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout2"
+        android:layout_marginTop="41dp"
+        android:layout_below="@+id/imageView5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gateway_router_setting_wifi_name"
+            android:textSize="17sp"
+            android:gravity="right"
+            android:id="@+id/textView13"/>
+
+        <TextView
+            android:id="@+id/device_mini_gateway_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:maxLength="16"
+            android:textSize="17dp"
+            android:text="wifiname"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:background="@drawable/device_mini_know_wifi_relay"
+        android:id="@+id/imageView5"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/textView12"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/mini_please_connect_wifi"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:background="@null"
+        android:text="@string/device_mini_geteway_no_wifi_prompt"
+        android:textColor="@color/holo_green_light"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/device_mini_connect_net_bt"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/action_bar_bg"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/miniGW_goto_connect"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_above="@+id/mini_please_connect_wifi"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/miniGW_please_connectmini"
+        android:textSize="17sp"
+        android:id="@+id/textView12"
+        android:textColor="#3E3E3E"
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/include3"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

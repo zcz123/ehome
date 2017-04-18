@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/icam_scene_bright_10" android:state_pressed="true"></item>
+    <item android:drawable="@drawable/icam_scene_bright_10" android:state_selected="true"></item>
+    <item android:drawable="@drawable/icam_scene_black_10"></item>
+
+</selector>

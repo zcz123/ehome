@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:orientation="vertical"
+    android:paddingBottom="5dp"
+    android:paddingTop="5dp" >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp" >
+
+        <Button
+            android:id="@+id/scene_link_task_delete_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:background="@color/red"
+            android:text="@string/device_config_edit_dev_area_create_item_delete"
+            android:textColor="@color/white" />
+
+        <LinearLayout
+            android:id="@+id/scene_link_task_info_ll"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/white"
+            android:longClickable="true"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" >
+
+            <ImageView
+                android:id="@+id/scene_link_task_device_icon_iv"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/device_co2_normal" />
+
+            <TextView
+                android:id="@+id/scene_link_task_device_name_tv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
+                android:gravity="left|center_vertical"
+                android:text="@string/scene_dev_name"
+                android:textColor="@color/black" />
+
+            <ToggleButton
+                android:id="@+id/scene_link_task_device_data_tb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:background="@android:color/transparent"
+                android:button="@drawable/button_toggle_switch"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:text=""
+                android:textOff=""
+                android:textOn=""
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/scene_link_task_device_data_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginRight="15dp"
+                android:padding="10dp"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:src="@drawable/device_list_show"
+                 />
+        </LinearLayout>
+    </FrameLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e6e9eb" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center_vertical"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:paddingLeft="10dp"
+            android:text="@string/scene_delay"
+            android:textColor="@color/black" />
+
+        <LinearLayout
+            android:id="@+id/scene_link_task_delay_ll"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="right|center_vertical"
+            android:paddingRight="10dp" >
+
+            <TextView
+                android:id="@+id/scene_link_task_delay_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="0s"
+                android:textColor="@color/black" >
+            </TextView>
+
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:src="@drawable/scene_edit_link_task_delay" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

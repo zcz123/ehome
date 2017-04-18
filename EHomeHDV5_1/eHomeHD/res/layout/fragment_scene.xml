@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#e6e9eb"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp">
+
+            <cc.wulian.smarthomev5.view.WLEditText
+                android:id="@+id/house_task_choose_device_search"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:textCursorDrawable="@null"
+                android:textColor="@color/grey_pulllisthead_bg"
+                android:background="@drawable/main_dialog_bg"
+                android:clickable="true"
+                android:drawableLeft="@drawable/device_icon_search"
+                android:focusable="true"
+                android:hint="@string/common_search"
+                android:singleLine="true" />
+
+            <ImageView
+                android:id="@+id/scene_search_sort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:scaleType="centerInside"
+                android:background="@drawable/scene_search_background"
+                android:src="@drawable/scene_search_sort_time"></ImageView>
+
+            <TextView
+                android:id="@+id/scene_search_classify"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingRight="2dp"
+                android:paddingLeft="2dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/scene_search_background"
+                android:text="@string/scene_list_all"></TextView>
+        </LinearLayout>
+
+        <GridView
+            android:id="@+id/gridViewShowInfo"
+            style="@style/CMWidget.GridView.Normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnWidth="96dp"
+            android:gravity="center"
+            android:horizontalSpacing="1dip"
+            android:listSelector="@color/trant"
+            android:numColumns="@integer/gridview_column_frames"
+            android:focusable="false"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:stretchMode="columnWidth"
+            tools:listitem="@layout/item_scene"></GridView>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@android:id/empty"
+        style="@style/CMWidget.TextView.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/scene_no_scene_add_hint"
+        android:textSize="15sp"
+        android:focusable="false"
+        android:visibility="invisible" />
+
+</FrameLayout>

@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+       <FrameLayout
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_gravity="center"
+         android:layout_weight="1" >
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:gravity="center"
+             android:orientation="horizontal" >
+             <com.yuantuo.customview.ui.wheel.WheelView
+                 android:id="@+id/sphy_set_wheel0"
+                 android:layout_width="0dip"
+                 android:layout_height="match_parent"
+                 android:layout_marginTop="2.0dip"
+                 android:layout_weight="1" />
+         </LinearLayout>
+
+         <RelativeLayout
+             android:gravity="center_vertical"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent" >
+             <View
+                 android:id="@+id/view1"
+                 android:layout_width="match_parent"
+                 android:layout_height="1.0px"
+                 android:layout_marginBottom="25dip"
+                 android:background="#ff6ea31d" />
+
+             <View
+                 android:id="@+id/view2"
+                 android:layout_width="match_parent"
+                 android:layout_height="1.0px"
+                 android:layout_below="@id/view1"
+                 android:layout_marginTop="25dp"
+                 android:background="#ff6ea31d" />
+         </RelativeLayout>
+
+         <RelativeLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:gravity="center_vertical" >
+
+             <TextView
+                 android:textSize="10sp"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentRight="true"
+                 android:layout_marginBottom="20dp"
+                 android:layout_marginRight="2dp"
+                 android:text="@string/device_adjust_year_common"
+                 android:textColor="#ff000000" />
+         </RelativeLayout>
+    </FrameLayout>
+
+    <ImageView
+        android:layout_width="3dp"
+        android:layout_height="145dp"
+        android:src="@drawable/scene_timing_line" />
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal" >
+            <com.yuantuo.customview.ui.wheel.WheelView
+                android:id="@+id/sphy_set_wheel1"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2.0dip"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <View
+                android:id="@+id/view3"
+                android:layout_width="match_parent"
+                android:layout_height="1.0px"
+                android:layout_marginBottom="25dip"
+                android:background="#ff6ea31d" />
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:layout_below="@id/view3"
+                android:layout_marginTop="25dp"
+                android:background="#ff6ea31d" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:textSize="10sp"
+                android:id="@+id/months_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="2dp"
+                android:text="@string/home_alarm_message_month"
+                android:textColor="#ff000000" />
+        </RelativeLayout>
+    </FrameLayout>
+       
+    <ImageView
+        android:layout_width="3dp"
+        android:layout_height="145dp"
+        android:src="@drawable/scene_timing_line" />
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal" >
+            <com.yuantuo.customview.ui.wheel.WheelView
+                android:id="@+id/sphy_set_wheel2"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2.0dip"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <View
+                android:id="@+id/view5"
+                android:layout_width="match_parent"
+                android:layout_height="1.0px"
+                android:layout_marginBottom="25dip"
+                android:background="#ff6ea31d" />
+
+            <View
+                android:id="@+id/view6"
+                android:layout_width="match_parent"
+                android:layout_height="1.0px"
+                android:layout_below="@id/view5"
+                android:layout_marginTop="25dp"
+                android:background="#ff6ea31d" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:textSize="10sp"
+                android:id="@+id/days_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="2dp"
+                android:text="@string/scene_sun"
+                android:textColor="#ff000000" />
+        </RelativeLayout>
+    </FrameLayout>
+    
+       
+    <ImageView
+        android:layout_width="3dp"
+        android:layout_height="145dp"
+        android:src="@drawable/scene_timing_line" />
+
+    <FrameLayout
+        android:id="@+id/hours_layout"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal" >
+            <com.yuantuo.customview.ui.wheel.WheelView
+                android:id="@+id/sphy_set_wheel3"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2.0dip"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <View
+                android:id="@+id/view7"
+                android:layout_width="match_parent"
+                android:layout_height="1.0px"
+                android:layout_marginBottom="25dip"
+                android:background="#ff6ea31d" />
+
+            <View
+                android:id="@+id/view8"
+                android:layout_width="match_parent"
+                android:layout_height="1.0px"
+                android:layout_below="@id/view7"
+                android:layout_marginTop="25dp"
+                android:background="#ff6ea31d" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:textSize="10sp"
+                android:id="@+id/hours_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="2dp"
+                android:text="@string/scene_hour"
+                android:textColor="#ff000000" />
+        </RelativeLayout>
+    </FrameLayout>
+
+    
+    
+    <ImageView
+        android:layout_width="3dp"
+        android:layout_height="145dp"
+        android:src="@drawable/scene_timing_line" />
+
+    <FrameLayout
+        android:id="@+id/mins_layout"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <com.yuantuo.customview.ui.wheel.WheelView
+                android:id="@+id/sphy_set_wheel4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <View
+                android:id="@+id/view9"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginBottom="25dp"
+                android:background="#ff6ea31d" />
+
+            <View
+                android:id="@+id/view10"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_below="@id/view9"
+                android:layout_marginTop="25dp"
+                android:background="#ff6ea31d" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:textSize="10sp"
+                android:id="@+id/mins_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="2dp"
+                android:text="@string/scene_munite"
+                android:textColor="#ff000000" />
+        </RelativeLayout>
+    </FrameLayout>
+    
+     <ImageView
+        android:layout_width="3dp"
+        android:layout_height="145dp"
+        android:src="@drawable/scene_timing_line" />
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal" >
+            <com.yuantuo.customview.ui.wheel.WheelView
+                android:id="@+id/sphy_set_wheel5"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2.0dip"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <View
+                android:id="@+id/view11"
+                android:layout_width="match_parent"
+                android:layout_height="1.0px"
+                android:layout_marginBottom="25dip"
+                android:background="#ff6ea31d" />
+
+            <View
+                android:id="@+id/view12"
+                android:layout_width="match_parent"
+                android:layout_height="1.0px"
+                android:layout_below="@id/view11"
+                android:layout_marginTop="25dp"
+                android:background="#ff6ea31d" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:textSize="10sp"
+                android:id="@+id/seconds_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="2dp"
+                android:text="@string/device_adjust_second_common"
+                android:textColor="#ff000000" />
+        </RelativeLayout>
+    </FrameLayout>
+
+</LinearLayout>    

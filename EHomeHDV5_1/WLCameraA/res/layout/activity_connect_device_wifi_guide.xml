@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical" >
+
+    <include layout="@layout/titlebar_general" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent" >
+
+        <ImageView
+            android:id="@+id/iv_wifi_guide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/margin_normal"
+            android:scaleType="matrix"
+            android:src="@drawable/connect_wifi_guide" />
+
+        <LinearLayout
+            android:id="@+id/ll_device_binded"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_wifi_guide"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/margin_heigh_big"
+            android:layout_marginRight="@dimen/margin_heigh_big"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_wifi_tip"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/config_restore_wifi_manual_tip"
+                android:textSize="@dimen/v2_normal_size" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/tv_wifi_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="@string/config_connect_wifi_name"
+                    android:textSize="@dimen/v2_normal_size" />
+
+                <Button
+                    android:id="@+id/btn_copy_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/selector_btn_copy"
+                    android:onClick="onClick"
+                    android:text="@string/common_btn_copy" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/tv_wifi_psw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="@string/config_connect_wifi_psw"
+                    android:textSize="@dimen/v2_normal_size" />
+
+                <Button
+                    android:id="@+id/btn_copy_psw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="@dimen/margin_tiny"
+            		android:layout_marginTop="@dimen/margin_tiny"
+                    android:background="@drawable/selector_btn_copy"
+                    android:onClick="onClick"
+                    android:text="@string/common_btn_copy" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/config_connect_wifi_finish"
+                android:textSize="@dimen/v2_normal_size" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_help"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/btn_next_step"
+            android:gravity="center_horizontal"
+            android:onClick="onClick"
+            android:text="@string/config_unfind_device_wifi"
+            android:textColor="@color/v2_text_gray_1_color"
+            android:textSize="@dimen/v2_small_size" />
+
+        <Button
+            android:id="@+id/btn_next_step"
+            style="@style/v2_btn_normal_style"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:onClick="onClick"
+            android:text="@string/common_next_step" />
+    </RelativeLayout>
+
+</LinearLayout>

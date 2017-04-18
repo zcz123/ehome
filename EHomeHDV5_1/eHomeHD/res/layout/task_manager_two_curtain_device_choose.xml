@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="20dp">
+        <LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="0dp"
+	    android:layout_weight="1"
+	    android:gravity="center"
+	    android:paddingLeft="10dp"
+	    android:orientation="horizontal" >
+
+          <TextView
+              android:id="@+id/curtain_text"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_weight="2"
+              android:textColor="@color/black"/>
+
+          <ImageView
+              android:id="@+id/curtain_imageview"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_weight="0.5"
+              android:src="@drawable/task_manager_two_light_select_status" />
+        </LinearLayout>
+    
+	<LinearLayout
+        android:id="@+id/device_curtain_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="10dp"
+        android:orientation="horizontal"
+         >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:paddingRight="10dp"
+            android:text="off"
+            android:textColor="@color/black" />
+
+        <SeekBar
+            android:id="@+id/device_curtain_adjust_seekbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:max="100"
+            android:progress="0"
+            android:padding="10dp"
+            android:progressDrawable="@drawable/device_led_progress_background"
+            android:thumb="@drawable/curtain_adjust_btn" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:paddingLeft="10dp"
+            android:text="on"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center" >
+		<LinearLayout 
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal"
+		    android:layout_gravity="center"
+		    >
+		    <Button
+	            android:id="@+id/device_curtain_adjust_open"
+	            android:layout_width="60dp"
+	            android:layout_height="60dp"
+	            android:layout_marginRight="10dp"
+	            android:text="ON"
+	            android:background="@drawable/device_curtain_task_btn_bg_selector"
+	            />
+	
+	        <Button
+	            android:id="@+id/device_curtain_adjust_stop"
+	            android:layout_width="60dp"
+	            android:layout_height="60dp"
+	            android:layout_marginRight="10dp"
+	            android:background="@drawable/device_curtain_task_btn_bg_selector"
+	            android:text="||"
+	            />
+	
+	        <Button
+	            android:id="@+id/device_curtain_adjust_close"
+	            android:layout_width="60dp"
+	            android:layout_height="60dp"
+	            android:background="@drawable/device_curtain_task_btn_bg_selector"
+	            android:text="OFF"
+	             />
+		</LinearLayout>
+        
+    </LinearLayout>
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="20dp">
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/curtain_text_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:textColor="@color/black"/>
+
+            <ImageView
+                android:id="@+id/curtain_imageview_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:src="@drawable/task_manager_two_light_select_status" />
+        </LinearLayout>
+    <LinearLayout
+        android:id="@+id/device_curtain_Layout1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="10dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+         >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:paddingRight="10dp"
+            android:text="off"
+            android:textColor="@color/black" />
+
+        <SeekBar
+            android:id="@+id/device_curtain_adjust_seekbar1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:max="100"
+            android:progress="0"
+            android:padding="10dp"
+            android:progressDrawable="@drawable/device_led_progress_background"
+            android:thumb="@drawable/curtain_adjust_btn" />
+
+        <TextView
+           android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:paddingLeft="10dp"
+            android:text="on"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center" >
+		<LinearLayout 
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal"
+		    android:layout_gravity="center">
+		    <Button
+	            android:id="@+id/device_curtain_adjust_open1"
+	            android:layout_width="60dp"
+	            android:layout_height="60dp"
+	            android:layout_marginRight="10dp"
+	            android:text="ON"
+	            android:background="@drawable/device_curtain_task_btn_bg_selector"
+	            />
+	
+	        <Button
+	            android:id="@+id/device_curtain_adjust_stop1"
+	            android:layout_width="60dp"
+	            android:layout_height="60dp"
+	            android:layout_marginRight="10dp"
+	            android:background="@drawable/device_curtain_task_btn_bg_selector"
+	            android:text="||"
+	            />
+	
+	        <Button
+	            android:id="@+id/device_curtain_adjust_close1"
+	            android:layout_width="60dp"
+	            android:layout_height="60dp"
+	            android:background="@drawable/device_curtain_task_btn_bg_selector"
+	            android:text="OFF"
+	             />
+		</LinearLayout>
+        
+    </LinearLayout>
+        
+    </LinearLayout>
+            
+    
+</LinearLayout>

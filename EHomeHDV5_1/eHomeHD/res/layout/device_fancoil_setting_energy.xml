@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/v5_gray_light"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:id="@+id/fancoil_setting_energy_cool_item"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/account_manager_switch_account_item_selector"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:clickable="true" >
+
+        <TextView
+            android:id="@+id/fancoil_setting_energy_cool_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="@string/thermostat_fans_cold_default_value"
+            android:textColor="#515151"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/fancoil_setting_energy_cool_temp_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:textColor="#515151"
+            android:textSize="18sp"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fancoil_setting_energy_heat_item"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/account_manager_switch_account_item_selector"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" 
+        android:clickable="true">
+
+        <TextView
+            android:id="@+id/fancoil_setting_energy_heat_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="@string/thermostat_fans_hot_default_value"
+            android:textColor="#515151"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/fancoil_setting_energy_heat_temp_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:textColor="#515151"
+            android:textSize="18sp"
+            android:visibility="visible" />
+    </LinearLayout>
+
+</LinearLayout>

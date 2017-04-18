@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal" >
+
+    <ToggleButton
+        android:id="@+id/toggle_all"
+        style="@style/CMWidget.CheckBox.Empty.Toggle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:textOff="@string/house_condition_time_all_weekday"
+        android:textOn="@string/house_condition_time_all_weekday" />
+
+    <ToggleButton
+        android:id="@+id/toggle_sun"
+        style="@style/CMWidget.CheckBox.Empty.Toggle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="3dp"
+        android:textOff="@string/scene_sun"
+        android:textOn="@string/scene_sun" />
+
+    <ToggleButton
+        android:id="@+id/toggle_mon"
+        style="@style/CMWidget.CheckBox.Empty.Toggle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="3dp"
+        android:textOff="@string/scene_mon"
+        android:textOn="@string/scene_mon" />
+
+    <ToggleButton
+        android:id="@+id/toggle_tur"
+        style="@style/CMWidget.CheckBox.Empty.Toggle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="3dp"
+        android:textOff="@string/scene_tue"
+        android:textOn="@string/scene_tue" />
+
+    <ToggleButton
+        android:id="@+id/toggle_thre"
+        style="@style/CMWidget.CheckBox.Empty.Toggle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="3dp"
+        android:textOff="@string/scene_wed"
+        android:textOn="@string/scene_wed" />
+
+    <ToggleButton
+        android:id="@+id/toggle_thu"
+        style="@style/CMWidget.CheckBox.Empty.Toggle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="3dp"
+        android:textOff="@string/scene_thu"
+        android:textOn="@string/scene_thu" />
+
+    <ToggleButton
+        android:id="@+id/toggle_fir"
+        style="@style/CMWidget.CheckBox.Empty.Toggle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="3dp"
+        android:textOff="@string/scene_fri"
+        android:textOn="@string/scene_fri" />
+
+    <ToggleButton
+        android:id="@+id/toggle_sat"
+        style="@style/CMWidget.CheckBox.Empty.Toggle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="3dp"
+        android:textOff="@string/scene_sat"
+        android:textOn="@string/scene_sat" />
+
+</LinearLayout>

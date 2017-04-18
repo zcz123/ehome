@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/device_list_group_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/device_grounp_switch_ll"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="@color/device_item_title_bg_whilte"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/device_common_switch_iv"
+            android:layout_width="0dp"
+            android:layout_height="23dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@color/device_item_title_bg_whilte"
+            android:scaleType="centerInside"
+            android:src="@drawable/device_common_switch_bg" />
+
+        <ImageButton
+            android:id="@+id/device_function_switch_iv"
+            android:layout_width="0dp"
+            android:layout_height="23dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@color/device_item_title_bg_whilte"
+            android:scaleType="centerInside"
+            android:src="@drawable/device_function_switch_bg" />
+
+        <ImageButton
+            android:id="@+id/device_area_switch_iv"
+            android:layout_width="0dp"
+            android:layout_height="23dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@color/device_item_title_bg_whilte"
+            android:scaleType="centerInside"
+            android:src="@drawable/device_area_switch_bg" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:background="#e4e4e4"
+        android:orientation="horizontal"
+        android:paddingRight="10dp" >
+
+        <TextView
+            android:id="@+id/device_ground_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@android:color/transparent"
+            android:paddingLeft="10dp"
+            android:text="@string/device_function_group"
+            android:textColor="#878787"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:id="@+id/device_function_search_ll"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/device_function_search_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@android:color/transparent"
+                android:text="全部设备"
+                android:textColor="#878787"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/device_function_delete_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|right"
+                android:paddingBottom="2dp"
+                android:paddingTop="2dp"
+                android:src="@drawable/icon_delete" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

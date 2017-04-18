@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="cc.wulian.smarthomev5.fragment.testApi.testApi406Fragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText android:id="@+id/editinitial"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:textColor="@color/black"
+            android:text="1"
+            android:hint="初始值"/>
+        <EditText android:id="@+id/editinterval"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:text="1"
+            android:textColor="@color/black"
+            android:hint="增量"/>
+        <EditText android:id="@+id/editinputKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.4"
+            android:textColor="@color/black"
+            android:hint="请输入key值"/>
+    </LinearLayout>
+    <Button android:id="@+id/btnCreateSIN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="创建自增变量"/>
+
+    <Button android:id="@+id/btnGetSIN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="获取自增变量"/>
+    <Button android:id="@+id/btnClearData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="清空数据"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <TextView android:id="@+id/tvResult"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/black"
+            />
+    </ScrollView>
+    <Button android:id="@+id/btnClearText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="清空文本"/>
+</LinearLayout>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <include layout="@layout/titlebar_general" />
+
+    <RelativeLayout
+        android:id="@+id/rl_pir_switch"
+        style="@style/setting_top_shape"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            android:text="PIR开关"
+            android:textColor="@color/camera_setting_lefttext_color" />
+
+        <ToggleButton
+            android:id="@+id/tb_pir_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/selector_checkbox_toggle"
+            android:textOff=""
+            android:textOn="" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_pir_sensitivity"
+        style="@style/setting_top_shape"
+        android:visibility="gone"
+        android:layout_marginTop="1dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            android:text="PIR灵敏度"
+            android:textColor="@color/camera_setting_lefttext_color" />
+
+        <TextView
+            android:id="@+id/tv_sensitivity_show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/iv_pir" />
+
+        <ImageView
+            android:id="@+id/iv_pir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/monitor_wl_list_arraw" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_stay_time"
+        style="@style/setting_top_shape"
+        android:visibility="gone"
+        android:layout_marginTop="1dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            android:text="逗留时间检测"
+            android:textColor="@color/camera_setting_lefttext_color" />
+
+        <TextView
+            android:id="@+id/tv_stay_show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/iv_stay" />
+
+        <ImageView
+            android:id="@+id/iv_stay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/monitor_wl_list_arraw" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_linkage_type"
+        style="@style/setting_top_shape"
+        android:visibility="gone"
+        android:layout_marginTop="1dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            android:text="联动类型"
+            android:textColor="@color/camera_setting_lefttext_color" />
+
+        <TextView
+            android:id="@+id/tv_linkage_show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/iv_linkage" />
+
+        <ImageView
+            android:id="@+id/iv_linkage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/monitor_wl_list_arraw" />
+
+    </RelativeLayout>
+
+    <Button
+
+        android:id="@+id/btn_start_protect"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btn_height"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/action_bar_bg"
+        android:text="保存"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+
+</LinearLayout>

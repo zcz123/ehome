@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/add_devices_background">
+     <com.tutk.IOTC.MediaCodecMonitor
+     android:id="@+id/media_human_video"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent" 
+     />
+    <LinearLayout
+        android:id="@+id/ll_video_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        >
+        <include layout="@layout/titlebar_cat_eye_configuration"/>
+    </LinearLayout>
+
+     <LinearLayout 
+        android:id="@+id/ll_video_control"
+	    android:background="@color/gray"
+	    android:layout_width="match_parent"
+	    android:layout_height="50dp"
+	    android:gravity="center_vertical"
+		 android:visibility="gone"
+	    android:layout_alignParentBottom="true"
+	    >
+	    <ImageView 
+	        android:id="@+id/iv_startPauseButton"
+	        android:layout_width="20dp"
+	        android:layout_height="20dp"
+	        android:layout_marginLeft="10dp"
+	        android:src="@drawable/pause_videotape"
+	       />
+	    <SeekBar
+	        android:id="@+id/sb_seekBar"
+	        style="@style/Widget.SeekBar.Normal"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1" />
+	    <ImageView 
+	        android:id="@+id/iv_delete_human_video"
+	        android:layout_width="20dp"
+	        android:layout_height="20dp"
+	        android:layout_marginRight="10dp"
+	        android:visibility="gone"
+	        android:background="@drawable/eagle_delete_gallery"
+	       />
+	</LinearLayout>
+    <ImageView 
+        android:id="@+id/iv_start_video_play"
+		android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/video_control_play_normal"
+        />
+</RelativeLayout>

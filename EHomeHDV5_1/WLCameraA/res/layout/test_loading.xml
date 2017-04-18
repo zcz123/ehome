@@ -1,0 +1,235 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/version"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dip"
+            android:gravity="center"
+            android:text="查看版本" />
+
+        <Button
+            android:id="@+id/bt_authcodeEncode"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dip"
+            android:gravity="center"
+            android:text="授权码" />
+
+        <Button
+            android:id="@+id/bt_authcodeDecode"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dip"
+            android:gravity="center"
+            android:text="解码" />
+
+        <TextView
+            android:id="@+id/tv_authcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:text="NULL" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:text="请输入手机号注册" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dip"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:hint="用户名"
+                android:text="puml"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/smscode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.0"
+                android:gravity="right"
+                android:visibility="gone"
+                android:text="发送验证码" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/reg_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="注册密码"
+            android:inputType="textPassword"
+            android:text="pml"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/register"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dip"
+            android:gravity="center"
+            android:text="注册"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/bt_user_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="登录" />
+
+        <Button
+            android:id="@+id/bt_device_flag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="获取设备标示" />
+
+        <Button
+            android:id="@+id/bt_editpassword"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="编辑密码"
+            android:textColor="#000000" />
+        <!-- 授权 -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="\n" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#888888"
+            android:gravity="center_horizontal"
+            android:text="授权"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/bt_BindingAuthList"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="获取设备授权用户列表"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/bt_BindingAuthRequests"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="获取设备授权请求列表"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/bt_BindingAuthRequest"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="请求设备授权"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/bt_BindingAuthAdd"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="添加设备授权"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/bt_BindingAuthResponse_Accect"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="响应设备授权请求(Accect)"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/bt_BindingAuthResponse_Decline"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="响应设备授权请求(decline)"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="\n" />
+
+        <Button
+            android:id="@+id/route_request"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dip"
+            android:gravity="center"
+            android:text="发送路由请求"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dip"
+            android:text="请输入路由器密码" />
+
+        <EditText
+            android:id="@+id/binding_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="绑定密码"
+            android:inputType="textPassword"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/binging"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dip"
+            android:gravity="center"
+            android:text="绑定" />
+
+        <EditText
+            android:id="@+id/url_et"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/test_sips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="测试OPensips"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+</ScrollView>

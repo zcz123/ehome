@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/margin_normal"
+    android:layout_marginLeft="@dimen/margin_normal"
+    android:layout_marginRight="@dimen/margin_normal"
+    android:layout_marginStart="@dimen/margin_normal"
+    android:background="@drawable/bg_dialog_white"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/margin_big"
+    android:paddingLeft="@dimen/margin_normal"
+    android:paddingRight="@dimen/margin_normal"
+    android:paddingTop="@dimen/margin_little" >
+
+    <Button
+        android:id="@+id/bt_dialog_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:background="@drawable/selector_dialog_close" />
+
+    <TextView
+        android:id="@+id/tv_dialog_title"
+        style="@style/v2_normal_text_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text=""
+        android:textColor="@color/grey_1"
+        android:textSize="@dimen/textsize_middle" />
+
+    <ImageView
+        style="@style/img_divider_full"
+        android:layout_marginTop="@dimen/margin_big" />
+
+    <com.wulian.icam.view.widget.PBWebView
+        android:id="@+id/wv_info"
+        android:layout_marginTop="@dimen/margin_big"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

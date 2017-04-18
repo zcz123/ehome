@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical" >
+
+    <include layout="@layout/titlebar_general" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_big"
+            android:layout_marginLeft="@dimen/margin_normal"
+            android:layout_marginRight="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_heigh_big"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_prompt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="@string/config_linking_to_camera"
+                android:textSize="@dimen/textsize_large" />
+
+            <TextView
+                android:id="@+id/tv_wait_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:gravity="center_vertical"
+                android:text="@string/setting_wifi_prompt"
+                android:textColor="@color/v2_text_gray_1_color"
+                android:textSize="@dimen/textsize_middle" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_config_wifi_img"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/v2_body_margin_top" >
+
+            <ImageView
+                android:id="@+id/iv_oval_left_device"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_oval_device_3" />
+
+            <ImageView
+                android:id="@+id/iv_oval_rigth_device"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_oval_step_1" />
+
+            <ImageView
+                android:id="@+id/iv_config_wifi_step_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@anim/wifi_config_anim" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_config_wifi_step"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/shape_round_all_white"
+            android:focusable="false"
+            android:visibility="gone" >
+
+            <include layout="@layout/layout_softap_setting_flow" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

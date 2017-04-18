@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <Button
+        android:id="@+id/pwd_1"
+        style="@style/CMWidget.Button.Keyboard.Password" />
+
+    <Button
+        android:id="@+id/pwd_2"
+        style="@style/CMWidget.Button.Keyboard.Password" />
+
+    <Button
+        android:id="@+id/pwd_3"
+        style="@style/CMWidget.Button.Keyboard.Password" />
+
+    <Button
+        android:id="@+id/pwd_4"
+        style="@style/CMWidget.Button.Keyboard.Password" />
+
+</LinearLayout>

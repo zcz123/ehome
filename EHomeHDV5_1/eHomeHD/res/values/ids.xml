@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- iamgeText text -->
+    <item name="imageText_text" type="id"/>
+    <!-- iamgeText image -->
+    <item name="imageText_img" type="id"/>
+
+    <!-- deviceControl -->
+    <item name="device_icon" type="id"/>
+    <item name="device_seek_bar" type="id"/>
+    <item name="device_name" type="id"/>
+
+    <!-- task view -->
+    <!-- timer -->
+    <item name="task_timer_on_status" type="id"/>
+    <item name="task_timer_off_status" type="id"/>
+    <item name="task_timer_on_time" type="id"/>
+    <item name="task_timer_off_time" type="id"/>
+    <!-- auto -->
+    <item name="task_auto_on_status" type="id"/>
+    <item name="task_auto_off_status" type="id"/>
+    <item name="task_auto_on_link" type="id"/>
+    <item name="task_auto_off_link" type="id"/>
+
+    <!-- task drop choose view -->
+    <item name="task_drop_value_show" type="id"/>
+    <item name="task_drop_value_indicator" type="id"/>
+
+    <!-- task auto details -->
+    <item name="task_details_action" type="id"/>
+    <item name="task_details_action_available" type="id"/>
+    <item name="task_details_action_data" type="id"/>
+    <item name="task_details_action_delay" type="id"/>
+    <item name="task_details_action_forward" type="id"/>
+    <item name="task_details_timer_time" type="id"/>
+    <item name="task_details_timer_weekday" type="id"/>
+    <item name="task_details_linkage" type="id"/>
+    <item name="task_details_linkage_condition" type="id"/>
+    <item name="task_details_linkage_condition_data_alarm" type="id"/>
+    <item name="task_details_linkage_condition_data_sensor" type="id"/>
+    <item name="task_details_save_auto" type="id"/>
+    <item name="task_details_save_timer" type="id"/>
+    <item name="task_details_save_timer_layout" type="id"/>
+
+    <!-- menu id -->
+    <item name="common_menu_love_favority" type="id"/>
+    <item name="common_menu_monitor" type="id"/>
+    <item name="common_menu_add" type="id"/>
+    <item name="common_menu_edit" type="id"/>
+    <item name="common_menu_del" type="id"/>
+    <item name="common_menu_save" type="id"/>
+
+    <!-- modul id -->
+    <item name="modul_content_level" type="id"/>
+    <item name="modul_content_level_details" type="id"/>
+    <item name="menubar_group" type="id"/>
+    <item name="modul_home" type="id"/>
+    <item name="modul_scene" type="id"/>
+    <item name="modul_device" type="id"/>
+    <item name="modul_monitor" type="id"/>
+    <item name="modul_more" type="id"/>
+    <item name="modul_msg" type="id"/>
+    <item name="modul_sns" type="id"/>
+    <item name="modul_setting" type="id"/>
+
+    <!-- common id -->
+    <item name="icon" type="id"></item>
+    <item name="name" type="id"></item>
+    <item name="state" type="id"></item>
+    <item name="device_state" type="id"/>
+
+    <!-- V5左侧导航 -->
+    <!-- menu id -->
+    <item name="nav_home" type="id"/>
+    <item name="nav_scene" type="id"/>
+    <item name="nav_device" type="id"/>
+    <item name="nav_config" type="id"/>
+    <item name="nav_more" type="id"/>
+    <item name="nav_setting" type="id"/>
+	<item name="nav_flower_setting" type="id"/>
+</resources>

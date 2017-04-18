@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/door_lock_big_img"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:layout_weight="2"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="155dp"
+            android:layout_height="155dp" >
+
+            <ImageView
+                android:id="@+id/device_door_lock_big"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="50dp" >
+
+            <LinearLayout
+                android:id="@+id/door_lock_password_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:visibility="visible" >
+
+                <EditText
+                    android:id="@+id/door_lock_password_edittext"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:background="@drawable/device_common_edittext_img"
+                    android:digits="1234567890"
+                    android:hint="@string/device_door_psw"
+                    android:password="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="#8B8B8B"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/ensure_door_password"
+                    android:layout_width="50dp"
+                    android:layout_height="29dp"
+                    android:background="@drawable/device_door_lock_ensure"
+                    android:gravity="center"
+                    android:text="@string/device_door_sure"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/door_locked_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:visibility="visible" >
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="29dp"
+                    android:background="@drawable/device_door_lock_ensure"
+                    android:gravity="center"
+                    android:text="@string/device_door_lock_do_lock"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+		<FrameLayout 
+		    android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="105dp">
+		    <ImageView
+            android:id="@+id/device_door_lock_small"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:visibility="invisible"
+             />
+        	<TextView 
+        	android:id="@+id/device_door_lock_small_text"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:textSize="8sp"
+            android:textColor="@color/black"
+            />
+		</FrameLayout>
+        
+    </LinearLayout>
+
+</LinearLayout>

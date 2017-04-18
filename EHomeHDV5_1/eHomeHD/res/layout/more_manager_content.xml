@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E0E2E7" 
+    android:paddingTop="20dp"
+     >
+    <cc.wulian.smarthomev5.view.DropDownListView
+        android:id="@+id/more_items_lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="#ADADAD"
+         >
+    </cc.wulian.smarthomev5.view.DropDownListView>
+
+</LinearLayout>

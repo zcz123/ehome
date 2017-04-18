@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:background="@drawable/device_flower_radio_layout_control_bg"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/flower_fm_select_ImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/flower_fm_select_default__ImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/device_flower_radio_picture" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.8"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:id="@+id/flower_fm_adjust_voice_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/v5_gray_light"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:gravity="center" >
+
+                            <ImageButton
+                                android:id="@+id/flower_fm_adjust_voice_min_btn"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:background="@drawable/ic_ir_stb_key_mute_normal" />
+                        </LinearLayout>
+
+                        <SeekBar
+                            android:id="@+id/flower_fm_adjust_voice_seekbar"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:max="100"
+                            android:maxHeight="5dip"
+                            android:minHeight="5dip"
+                            android:progressDrawable="@drawable/seekbar_style"
+                            android:thumbOffset="0dp" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="1"
+                            android:gravity="center" >
+
+                            <ImageButton
+                                android:id="@+id/flower_fm_adjust_voice_max_btn"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:background="@drawable/monitor_speaker_on_pressed" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/flower_fm_control_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <ImageButton
+                        android:id="@+id/flower_fm_adjust_voice"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_marginRight="12dp"
+                        android:background="@drawable/monitor_speaker_on_pressed"
+                        android:scaleType="fitCenter" />
+
+                    <ImageButton
+                        android:id="@+id/flower_fm_list_loop_stop_mode"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="12dp"
+                        android:background="@drawable/device_radio_list_loop_play"
+                        android:scaleType="fitCenter"
+                        android:visibility="gone" />
+
+                    <ImageButton
+                        android:id="@+id/flower_fm_list_loop_play_mode"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="12dp"
+                        android:background="@drawable/device_radio_list_loop_stop"
+                        android:scaleType="fitCenter" />
+
+                    <ImageButton
+                        android:id="@+id/flower_fm_pre_radio"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="12dp"
+                        android:background="@drawable/device_flower_select_radio_previous_light"
+                        android:scaleType="fitCenter" />
+
+                    <ImageButton
+                        android:id="@+id/flower_fm_play"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/device_flower_select_radio_stop_light"
+                        android:scaleType="fitCenter"
+                        android:visibility="gone" />
+
+                    <ImageButton
+                        android:id="@+id/flower_fm_stop"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/device_flower_select_radio_start_light"
+                        android:scaleType="fitCenter" />
+
+                    <ImageButton
+                        android:id="@+id/flower_fm_next_radio"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:background="@drawable/device_flower_select_radio_next_light"
+                        android:scaleType="fitCenter" />
+
+                    <ImageButton
+                        android:id="@+id/flower_fm_add_radio"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="12dp"
+                        android:background="@drawable/device_flower_select_radio_add_light"
+                        android:scaleType="fitCenter" />
+
+                    <ImageButton
+                        android:visibility="visible"
+                        android:id="@+id/flower_fm_add_disk_radio"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/device_flower_select_radio_define_light"
+                        android:scaleType="fitCenter" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/flower_fm_picture_layout1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.2"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/flower_fm_select_textview"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="hahhah"
+                    android:textColor="@color/v5_green_light" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/flower_fm_picture_layout2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.65"
+                android:gravity="bottom"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="bottom"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/flower_fm_play_time_textview"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:gravity="center"
+                            android:textColor="@color/v5_green_light" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2.5"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/flower_fm_all_time_textview"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:gravity="center"
+                            android:textColor="@color/v5_green_light" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.3"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <SeekBar
+                    android:id="@+id/device_flower_radio_seekBar_custom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="1000"
+                    android:maxHeight="5dip"
+                    android:minHeight="5dip"
+                    android:progressDrawable="@drawable/common_seeke_progress_green_light_style"
+                    android:thumb="@drawable/seekbar_thumb_selector"
+                    android:thumbOffset="0dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.65"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:visibility="invisible" >
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/flower_fm_radio_middle_remind"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.3"
+        android:gravity="center" >
+
+        <TextView
+            android:id="@+id/flower_fm_radio_list_number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:paddingLeft="10dp"
+            android:textColor="@color/progress_gray" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="@string/flower_radio_source"
+            android:textColor="@color/progress_gray" />
+
+        <LinearLayout
+            android:id="@+id/flower_fm_radio_list_delete_all"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp" >
+
+            <ImageView
+                android:id="@+id/flower_fm_radio_list_delete_imageview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/flower_fm_radio_list_delete_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/flower_radio_delete_all" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:background="@drawable/device_flower_radio_layout_control_bg"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <cc.wulian.smarthomev5.view.swipemenu.SwipeMenuListView
+            android:id="@+id/flower_fm_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+        </cc.wulian.smarthomev5.view.swipemenu.SwipeMenuListView>
+
+        <LinearLayout
+            android:id="@+id/device_flower_radio_list_default_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal" >
+
+                <ImageView
+                    android:id="@+id/device_flower_radio_list_default_imageview"
+                    android:layout_width="150dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/device_radio_list_default_imageview" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/device_flower_radio_layout_control_bg"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="@string/flower_radio_empty_default_text" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

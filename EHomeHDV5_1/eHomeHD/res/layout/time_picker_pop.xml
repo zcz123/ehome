@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/time_picker_pop_bg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingBottom="32.0dip"
+        android:paddingTop="32.0dip"
+        android:text="@string/gateway_dream_flower_time_show_select_time"
+        android:textColor="@color/black"
+        android:textSize="18.0sp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/hours_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/scene_timing_line" />
+
+        <FrameLayout
+            android:id="@+id/hours_layout"
+            android:layout_width="0.0dip"
+            android:layout_height="350.0dip"
+            android:layout_gravity="center"
+            android:layout_weight="1.0" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50.0dip"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="-1.0dip"
+                    android:src="@drawable/scene_timing_hour" />
+
+                <com.yuantuo.customview.ui.wheel.WheelView
+                    android:id="@id/wheel1"
+                    android:layout_width="0.0dip"
+                    android:layout_height="350.0dip"
+                    android:layout_marginTop="2.0dip"
+                    android:layout_weight="1.0" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <View
+                    android:id="@+id/view1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0px"
+                    android:layout_marginTop="150.0dip"
+                    android:background="#ff6ea31d" />
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0px"
+                    android:layout_below="@id/view1"
+                    android:layout_marginTop="50.0dip"
+                    android:background="#ff6ea31d" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="350.0dip"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:id="@+id/hours_tip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="20.0dip"
+                    android:layout_marginRight="28.0dip"
+                    android:text="@string/scene_hour"
+                    android:textColor="#ff000000" />
+            </RelativeLayout>
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/mins_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/scene_timing_line" />
+
+        <FrameLayout
+            android:id="@+id/mins_layout"
+            android:layout_width="0.0dip"
+            android:layout_height="350.0dip"
+            android:layout_gravity="center"
+            android:layout_weight="1.0" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <com.yuantuo.customview.ui.wheel.WheelView
+                    android:id="@+id/wheel2"
+                    android:layout_width="0.0dip"
+                    android:layout_height="350.0dip"
+                    android:layout_marginTop="2.0dip"
+                    android:layout_weight="1.0" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0px"
+                    android:layout_marginTop="150.0dip"
+                    android:background="#ff6ea31d" />
+
+                <View
+                    android:id="@+id/view4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0px"
+                    android:layout_below="@id/view3"
+                    android:layout_marginTop="50.0dip"
+                    android:background="#ff6ea31d" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="350.0dip"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:id="@+id/mins_tip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="20.0dip"
+                    android:layout_marginRight="28.0dip"
+                    android:text="@string/scene_munite"
+                    android:textColor="#ff000000" />
+            </RelativeLayout>
+        </FrameLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/scene_timing_line" />
+    </LinearLayout>
+
+     <LinearLayout
+         android:id="@+id/tab_bar"
+         android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+        
+	    <TextView
+	        android:layout_width="fill_parent"
+	        android:layout_height="1.0px"
+	        android:background="@color/gray" />
+	
+	    <LinearLayout
+	        android:layout_width="fill_parent"
+	        android:layout_height="48.0dip"
+	        android:gravity="center_vertical"
+	        android:orientation="horizontal" >
+	
+	        <TextView
+	            android:id="@+id/cancle"
+	            android:layout_width="wrap_content"
+	            android:layout_height="fill_parent"
+	            android:layout_weight="1.0"
+	            android:gravity="center"
+	            android:text="@string/cancel"
+	            android:textColor="@color/gray"
+	            android:textSize="18.0sp" />
+	
+	        <TextView
+	            android:layout_width="1.0px"
+	            android:layout_height="fill_parent"
+	            android:background="@color/gray" />
+	
+	        <TextView
+	            android:id="@+id/submit"
+	            android:layout_width="wrap_content"
+	            android:layout_height="fill_parent"
+	            android:layout_weight="1.0"
+	            android:gravity="center"
+	            android:text="@string/common_ok"
+	            android:textColor="@color/green"
+	            android:textSize="18.0sp" />
+	    </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

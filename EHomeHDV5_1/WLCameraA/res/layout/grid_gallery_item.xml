@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv_gv_item_galleryshow"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"/>
+
+    <ImageView
+        android:id="@+id/iv_selected_bg"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/eagle_gallery_selected"
+        android:visibility="gone"
+        android:scaleType="fitXY"/>
+    
+    <ImageView 
+        android:id="@+id/iv_gallery_checked"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:src="@drawable/eagle_gallery_checked"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/iv_gv_item_galleryshow"
+        android:layout_alignEnd="@+id/iv_gv_item_galleryshow"/>
+    
+</RelativeLayout>

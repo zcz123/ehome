@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="scan_text">אנא ספר לי השער שלך לחלק האחורי של הקוד דו ממדים בתיבה</string>
+    <string name="cancle_text">לבטל</string>
+
+</resources>

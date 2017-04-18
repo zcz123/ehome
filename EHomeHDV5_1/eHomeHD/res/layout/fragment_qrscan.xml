@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <SurfaceView
+        android:id="@+id/view_preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center" />
+
+    <LinearLayout
+        android:id="@+id/ll_scan_device_titlelbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+        <include layout="@layout/titlebar_add_device_scancode" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/icon_transparent" >
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/icon_transparent" >
+            </LinearLayout>
+
+            <cc.wulian.smarthomev5.view.ViewfinderView
+                android:id="@+id/view_viewfinder"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="3"
+                android:background="@android:color/transparent" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/icon_transparent" >
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/icon_transparent" >
+
+            <TextView
+                android:id="@+id/tv_scan_or_devices_code"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/scan_qr_code_hint"
+                android:textColor="@color/white_normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_scan_device_link"
+            android:layout_width="match_parent"
+            android:layout_height="70.7dp"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/v5_green_light_area"
+                android:text="@string/monitor_scan_link_entry"
+                android:gravity="center_horizontal"/>
+
+            <Button
+                android:id="@+id/btn_scan_link_entry"
+                android:layout_width="0dp"
+                android:layout_height="70.7dp"
+                android:layout_weight="0.4"
+                android:background="@color/v5_green_light_area"
+                android:textColor="@color/white"
+                android:text="@string/monitor_add_other_camera_entry_button" />
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

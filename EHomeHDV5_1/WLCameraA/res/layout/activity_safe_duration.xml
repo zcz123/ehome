@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical" >
+
+    <include layout="@layout/titlebar_general" />
+
+    <LinearLayout
+        android:id="@+id/ll_allday"
+        style="@style/setting_middle_shape"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_normal"
+        android:background="@drawable/bg_timeset_normal"
+        android:paddingBottom="@dimen/margin_normal"
+        android:paddingTop="@dimen/margin_normal" >
+
+        <ImageView
+            style="@style/setting_icon"
+            android:src="@drawable/icon_timeset_all_day" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/setting_icon"
+                android:text="@string/protect_allday"
+                android:textSize="@dimen/textsize_large" />
+
+            <TextView
+                style="@style/setting_icon"
+                android:text="@string/protect_allday_tip"
+                android:textColor="@color/action_bar_bg"
+                android:textSize="@dimen/textsize_middle" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_allday_yes"
+            style="@style/setting_arrow"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/tv_sure"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_day"
+        style="@style/setting_middle_shape"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_normal"
+        android:background="@drawable/bg_timeset_normal"
+        android:paddingBottom="@dimen/margin_normal"
+        android:paddingTop="@dimen/margin_normal" >
+
+        <ImageView
+            style="@style/setting_icon"
+            android:src="@drawable/icon_timeset_day" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/setting_icon"
+                android:text="@string/protect_day"
+                android:textSize="@dimen/textsize_large" />
+
+            <TextView
+                style="@style/setting_icon"
+                android:text="@string/protect_day_tip"
+                android:textColor="@color/action_bar_bg"
+                android:textSize="@dimen/textsize_middle" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_day_yes"
+            style="@style/setting_arrow"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/tv_sure"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_night"
+        style="@style/setting_middle_shape"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_normal"
+        android:background="@drawable/bg_timeset_normal"
+        android:paddingBottom="@dimen/margin_normal"
+        android:paddingTop="@dimen/margin_normal"
+        android:visibility="gone" >
+
+        <ImageView
+            style="@style/setting_icon"
+            android:src="@drawable/icon_timeset_night" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/setting_icon"
+                android:text="@string/protect_night"
+                android:textSize="@dimen/textsize_large" />
+
+            <TextView
+                style="@style/setting_icon"
+                android:text="@string/protect_night_tip"
+                android:textColor="@color/control_color"
+                android:textSize="@dimen/textsize_middle" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_night_yes"
+            style="@style/setting_arrow"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/tv_sure"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_user_defined"
+        style="@style/setting_middle_shape"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_normal"
+        android:background="@drawable/bg_timeset_normal"
+        android:paddingBottom="@dimen/margin_normal"
+        android:paddingTop="@dimen/margin_normal" >
+
+        <ImageView
+            style="@style/setting_icon"
+            android:src="@drawable/icon_timeset_user_defined" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/setting_icon"
+                android:text="@string/protect_user_defined"
+                android:textSize="@dimen/textsize_large" />
+
+            <TextView
+                android:id="@+id/tv_user_defined"
+                style="@style/setting_icon"
+                android:text="08:00 -- 17:00"
+                android:textColor="@color/action_bar_bg"
+                android:textSize="@dimen/textsize_middle" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_user_defined_yes"
+            style="@style/setting_arrow"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/tv_sure"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_big"
+        android:layout_marginRight="@dimen/margin_big" >
+
+        <CheckBox
+            android:id="@+id/cb_workday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:button="@drawable/selector_checkbox_toggle_hook"
+            android:text="@string/protect_only_weekday"
+            android:textColor="@color/gray" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_sure"
+        style="@style/v2_btn_normal_style"
+        android:layout_marginTop="@dimen/margin_big"
+        android:text="@string/common_sure"
+        android:visibility="visible" />
+
+</LinearLayout>

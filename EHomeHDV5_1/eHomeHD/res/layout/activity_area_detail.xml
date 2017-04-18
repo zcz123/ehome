@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/device_group_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e6e9eb"
+        android:text="@string/device_others" />
+
+    <ListView
+        android:id="@+id/device_area_content_lv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+    </ListView>
+
+</LinearLayout>

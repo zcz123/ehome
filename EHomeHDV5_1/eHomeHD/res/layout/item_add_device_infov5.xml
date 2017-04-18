@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:gravity="center_vertical"
+    android:paddingBottom="5dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="5dp" >
+
+    
+    <CheckBox
+        android:id="@+id/checkBox_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:focusable="false" />
+
+    <ImageView
+        android:id="@+id/imageView_icon"
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:src="@drawable/device_co2_alarm"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="15dp"
+        />
+
+    <TextView
+        android:id="@+id/textView_name"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:text="设备名称"
+        android:textColor="@android:color/black" />
+</LinearLayout>

@@ -1,0 +1,40 @@
+<resources>
+
+    <string name="operation_title">提示</string>
+    <string name="operation_sure">确定</string>
+    <string name="menu_item_bottom">底部</string>
+    <string name="hint_neterror">网络异常,请确认网络连接！</string>
+    <string name="hint_net_timeout">连接超时……</string>
+    <string name="hint_account_mange">账号管理</string>
+    <string name="switch_on">开启</string>
+    <string name="switch_off">关闭</string>
+    <string name="week_sun">日</string>
+    <string name="week_mon">一</string>
+    <string name="week_tue">二</string>
+    <string name="week_wed">三</string>
+    <string name="week_thu">四</string>
+    <string name="week_fri">五</string>
+    <string name="week_sat">六</string>
+    <string name="calendar_today">今天</string>
+    <string name="dialog_titel">标题</string>
+    <string name="dialog_back">返回</string>
+    <!-- water value -->
+    <string name="WL_28_time_chose">时间选择</string>
+    <string name="WL_28_hour">时</string>
+    <string name="WL_28_minute">分</string>
+    <string name="WL_28_second">秒</string>
+
+    <!-- 下拉 -->
+    <string name="down_pull_refresh">下拉刷新</string>
+    <string name="last_update">上次更新</string>
+    <string name="release_refresh">松开刷新</string>
+    <string name="refresh_now">正在刷新&#8230;</string>
+    <string name="recent_update">最近更新:</string>
+
+    <!--时间 -->
+    <string name="month_ago">月前</string>
+    <string name="day_ago">天前</string>
+    <string name="hour_ago">小时前</string>
+    <string name="min_ago">分钟前</string>
+    <string name="just">刚刚</string>
+</resources>

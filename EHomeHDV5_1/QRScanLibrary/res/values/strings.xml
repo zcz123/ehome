@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="scan_text">Please tell your gateway into the back of the two-dimensional code in the box</string>
+    <string name="cancle_text">Cancel</string>
+
+</resources>

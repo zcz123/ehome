@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <attr name="internalLayout" format="reference" />
+
+    <declare-styleable name="CustomSeekBar">
+        <attr name="android:progress"></attr>
+        <attr name="android:max"></attr>
+        <attr name="android:text"></attr>
+        <attr name="android:src"></attr>
+    </declare-styleable>
+    <declare-styleable name="Switch_Style">
+        <attr name="switchStyle" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="Switch">
+        <attr name="thumb" format="reference" />
+        <attr name="track" format="reference" />
+        <attr name="textOn" format="string" />
+        <attr name="textOff" format="string" />
+        <attr name="thumbTextPadding" format="dimension" />
+        <attr name="switchTextAppearance" format="reference" />
+        <attr name="switchMinWidth" format="dimension" />
+        <attr name="switchPadding" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="SeekCircle">
+        <attr name="max" format="integer" value="100" />
+        <attr name="progress" format="integer" value="0" />
+    </declare-styleable>
+    <declare-styleable name="TextAppearance">
+
+        <!-- Text color. -->
+        <attr name="textColor" format="reference|color" />
+        <attr name="textSize" format="dimension" />
+        <attr name="textStyle">
+            <flag name="normal" value="0" />
+            <flag name="bold" value="1" />
+            <flag name="italic" value="2" />
+        </attr>
+        <attr name="typeface">
+            <enum name="normal" value="0" />
+            <enum name="sans" value="1" />
+            <enum name="serif" value="2" />
+            <enum name="monospace" value="3" />
+        </attr>
+        <attr name="textColorHighlight" format="reference|color" />
+        <attr name="textColorHint" format="reference|color" />
+        <attr name="textColorLink" format="reference|color" />
+        <attr name="textAllCaps" format="boolean" />
+    </declare-styleable>
+
+    <!-- CustomCornerView -->
+    <declare-styleable name="CornerViewStyle">
+        <attr name="cornerViewStyle" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="CustomCornerView">
+        <attr name="cornerType">
+            <enum name="single" value="0" />
+            <enum name="top" value="1" />
+            <enum name="center" value="2" />
+            <enum name="bottom" value="3" />
+        </attr>
+        <attr name="switchShow" format="boolean" />
+        <attr name="itemIcon" format="reference" />
+        <attr name="cornerTitle" format="string" />
+        <attr name="cornerTitleColor" format="reference|color" />
+        <attr name="cornerSummary" format="string" />
+        <attr name="cornerSummaryColor" format="reference|color" />
+        <attr name="nextGuideIcon" format="reference" />
+        <attr name="android:checked" />
+    </declare-styleable>
+
+    <!-- TabView -->
+    <declare-styleable name="TabViewStyle">
+        <attr name="tabViewStyle" format="reference" />
+    </declare-styleable>
+    <!-- TabView -->
+    <declare-styleable name="TabView">
+        <attr name="indicator" format="reference" />
+        <attr name="tabDivider" format="reference" />
+        <attr name="tabCount" format="integer" />
+        <attr name="tabLayout" format="reference" />
+    </declare-styleable>
+
+    <!-- number picker attr -->
+    <attr name="numberPickerStyle" format="reference" />
+
+    <declare-styleable name="NumberPicker">
+
+        <!-- @hide Color for the solid color background if such for optimized rendering. -->
+        <attr name="solidColor" format="color|reference" />
+        <!-- @hide The divider for making the selection area. -->
+        <attr name="selectionDivider" format="reference" />
+        <!-- @hide The height of the selection divider. -->
+        <attr name="selectionDividerHeight" format="dimension" />
+        <!-- @hide The distance between the two selection dividers. -->
+        <attr name="selectionDividersDistance" format="dimension" />
+        <!-- @hide The min height of the NumberPicker. -->
+        <attr name="internalMinHeight" format="dimension" />
+        <!-- @hide The max height of the NumberPicker. -->
+        <attr name="internalMaxHeight" format="dimension" />
+        <!-- @hide The min width of the NumberPicker. -->
+        <attr name="internalMinWidth" format="dimension" />
+        <!-- @hide The max width of the NumberPicker. -->
+        <attr name="internalMaxWidth" format="dimension" />
+        <!-- @hide The layout of the number picker. -->
+        <attr name="internalLayout"/>
+        <!-- @hide The drawable for pressed virtual (increment/decrement) buttons. -->
+        <attr name="virtualButtonPressedDrawable" format="reference" />
+        <attr name="wheelItemCount" format="integer" />
+    </declare-styleable>
+
+    <!-- time Picker attr -->
+    <attr name="timePickerStyle" format="reference" />
+
+    <declare-styleable name="TimePicker">
+        <!-- @hide The layout of the time picker. -->
+        <attr name="internalLayout" />
+    </declare-styleable>
+    
+    <!-- dialog theme attr -->
+    <attr name="dialogStyle" format="reference" />
+    <declare-styleable name="DialogTheme">
+        <attr name="internalLayout" />
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="css/mui.min.css" />
+		<link rel="stylesheet" href="css/custom.css" />
+		<link rel="stylesheet" href="css/index.css" />
+
+		<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/plus.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/custom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lang/lang.js" type="text/javascript"></script>
+		<script>
+			var level;
+			var countryCode;
+			var eProvince;
+			var selectedCityName;
+			plus.plusReady(function() {
+				var proviceJson = plus.ehomev5.getData("OpenWebView_SettingLocation_Province");
+				console.log(proviceJson);
+				var proviceJsonObject = JSON.parse(proviceJson);
+				level = proviceJsonObject.level;
+				countryCode = proviceJsonObject.countryCode;
+				eProvince = proviceJsonObject.eProvince;
+				selectedCityName = proviceJsonObject.cityName;
+				console.log(level + countryCode + eProvince);
+				var languageCode = plus.ehomev5.getCurrentLanguag();
+				languageUtil.onJsLoaded = function() {
+					initLan();
+					if(level == "province") {
+						//城市列表
+						queryCityFromProvince(eProvince);
+						document.getElementById("html_title_setting_location").innerText = "城市";
+					} else if(level == "country") {
+						//省份列表
+						queryProvinceFromCountry(countryCode);
+						document.getElementById("html_title_setting_location").innerText = "省份";
+					}
+				}
+				languageUtil.init(languageCode, "lang/");
+			});
+			function initLan() {
+
+			}
+			//创建城市列表
+			function createCityLi(city, cityID) {
+				var chlidLi = document.createElement("li");
+				chlidLi.addEventListener("click", function() {
+					plus.ehomev5.passVauleToWebView("Control_Center_Setting_Location", "setCity", city);
+					plus.ehomev5.setGWLocation(cityID, function() {}, function() {});
+					plus.webView.closeWebview("SettingLocationSelectCity");
+				});
+				chlidLi.className = "mui-table-view-cell mui-checkbox mui-right";
+				var liContent = document.createElement("input");
+				liContent.name = "checkbox";
+				liContent.type = "checkbox";
+				chlidLi.innerText = city;
+				if(selectedCityName == city)
+				{
+					liContent.checked = true;
+				}
+				chlidLi.appendChild(liContent);
+				document.getElementById("ulForCity").appendChild(chlidLi);
+			}
+			//创建省份列表
+			function createProvinceLi(province) {
+				var chlidLi = document.createElement("li");
+				chlidLi.addEventListener("click", function() {
+					plus.ehomev5.passVauleToWebView("Control_Center_Setting_Location", "setProvince", province);
+					plus.webView.closeWebview("SettingLocationSelectCity");
+				});
+				chlidLi.className = "mui-table-view-cell mui-checkbox mui-right";
+				var liContent = document.createElement("input");
+				liContent.name = "checkbox";
+				liContent.type = "checkbox";
+				chlidLi.innerText = province;
+				chlidLi.appendChild(liContent);
+				if(province == eProvince)
+				{
+					liContent.checked = true;
+				}
+				document.getElementById("ulForCity").appendChild(chlidLi);
+			}
+			//查询省份列表
+			function queryProvinceFromCountry(country) {
+				var dialogKey = "html_dialog_key";
+				var body = {};
+				body.level = "country";
+				body.countryCode = countryCode;
+				body.appLang = "zh-cn";
+
+				//app函数的参数
+				var param = {};
+				param.uri = "user/access";
+				param.body = body;
+				param.dynamic = true;
+				var headArray = [{
+					"head": "cmd",
+					"value": "getAreaInfo"
+				}];
+				param.head = JSON.stringify(headArray);
+
+				//step 2 调用app中的函数 获取数据
+				plus.ehomev5.showWaiting(dialogKey);
+				plus.ehomev5.interfaceBetweenAMSHttpAndCloud(JSON.stringify(param), function(result) {
+					plus.ehomev5.closeWaiting(dialogKey);
+					var resultObj = JSON.parse(result);
+					var records = {};
+					records = resultObj.records;
+					document.getElementById("ulForCity").innerHTML = "";
+					for(var i = 0; i < records.length; i++) {
+						var record = records[i];
+						var province = record.province;
+						createProvinceLi(province);
+					}
+				}, function() {
+					plus.ehomev5.closeWaiting(dialogKey);
+				});
+			}
+			//查询城市列表
+			function queryCityFromProvince(provice) {
+				var dialogKey = "html_dialog_key";
+				var body = {};
+				body.level = "province";
+				body.countryCode = countryCode;
+				body.eProvince = provice;
+				body.appLang = "zh-cn";
+				//app函数的参数
+				var param = {};
+				param.uri = "user/access";
+				param.body = body;
+				param.dynamic = true;
+				var headArray = [{
+					"head": "cmd",
+					"value": "getAreaInfo"
+				}];
+				param.head = JSON.stringify(headArray);
+
+				//step 2 调用app中的函数 获取数据
+				plus.ehomev5.showWaiting(dialogKey);
+				plus.ehomev5.interfaceBetweenAMSHttpAndCloud(JSON.stringify(param), function(result) {
+					plus.ehomev5.closeWaiting(dialogKey);
+					var resultObj = JSON.parse(result);
+					var records = {};
+					records = resultObj.records;
+					document.getElementById("ulForCity").innerHTML = "";
+					for(var i = 0; i < records.length; i++) {
+						var record = records[i];
+						var cityID = record.cityId;
+						var city = record.cityName;
+						createCityLi(city, cityID);
+					}
+				}, function() {
+					plus.ehomev5.closeWaiting(dialogKey);
+				});
+			}
+
+			function backClick() {
+				plus.webView.closeWebview("SettingLocationSelectCity");
+			}
+		</script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav custom-nav">
+			<button style="color: white;" class="mui-btn mui-btn-blue mui-btn-link mui-btn-nav " onclick="backClick()">
+				<span class="mui-icon mui-icon-left-nav"></span>
+			</button>
+			<h1 class="mui-title" style="color: white;"><span  id="html_title_setting_location">城市</span></h1>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view" id="ulForCity">
+			</ul>
+		</div>
+	</body>
+
+</html>

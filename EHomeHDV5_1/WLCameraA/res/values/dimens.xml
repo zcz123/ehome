@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="margin_heigh_big">30dp</dimen>
+    <dimen name="margin_big">15dp</dimen>
+    <dimen name="margin_normal">10dp</dimen>
+    <dimen name="margin_little">5dp</dimen>
+    <dimen name="margin_tiny">1dp</dimen>
+    <dimen name="margin_xlarge">20dp</dimen>
+    <dimen name="red_circle_width">8dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">10dp</dimen>
+    <dimen name="title_bar_height">48dp</dimen>
+    <dimen name="title_bar_textsize">18dp</dimen>
+    <dimen name="textsize_menu">12sp</dimen>
+    <dimen name="textsize_small">14sp</dimen>
+    <dimen name="textsize_middle">16sp</dimen>
+    <dimen name="textsize_large">15sp</dimen>
+    <dimen name="textsize_super_large">20sp</dimen>
+    <dimen name="btn_height_min">36dp</dimen>
+    <dimen name="btn_height">48dp</dimen>
+    <dimen name="default_margin_top">10dp</dimen>
+    <dimen name="edittext_height">43dp</dimen>
+    <dimen name="btn_padding_left">20dp</dimen>
+    <dimen name="btn_padding_top">12dp</dimen>
+    <dimen name="btn_padding_right">20dp</dimen>
+    <dimen name="btn_padding_bottom">12dp</dimen>
+    <dimen name="btn_radius">3dp</dimen>
+    <dimen name="btn_radius_min">1dp</dimen>
+    <dimen name="dp_300">267dp</dimen>
+    <dimen name="item_album_height">168dp</dimen>
+    <dimen name="swip_btn_width">100dp</dimen>
+    <dimen name="msg_line_height">4dp</dimen>
+    <dimen name="device_item_height">210dp</dimen>
+    <dimen name="device_item_width">280dp</dimen>
+    <dimen name="pic_height">250dp</dimen>
+    <dimen name="device_item_title_height">40dp</dimen>
+    <dimen name="device_item_size_dia">24dp</dimen>
+    <dimen name="device_item_size_dia_margin">8dp</dimen>
+    <dimen name="about_us_height">200dp</dimen>
+    <dimen name="dialog_width">280dp</dimen>
+    <dimen name="dialog_content_height">68dp</dimen>
+    <dimen name="flash_margin_top">68dp</dimen>
+    <dimen name="menu_height">48dp</dimen>
+    <dimen name="definition_width">80dp</dimen>
+    <dimen name="definition_width_litle">70dp</dimen>
+    <dimen name="definition_height">30dp</dimen>
+    <dimen name="video_control_height">48dp</dimen>
+    <dimen name="pagerview_margin">50dp</dimen>
+    <dimen name="image_thumbnail_size">100dp</dimen>
+    <dimen name="image_thumbnail_spacing">1dp</dimen>
+    <dimen name="device_list_padding">10dp</dimen>
+    <dimen name="wifi_flow_height">36dp</dimen>
+
+    <!-- 二维码配置 -->
+    <dimen name="barcode_magin_large">45dp</dimen>
+    <dimen name="barcode_magin_small">20dp</dimen>
+
+    <!-- 标准 -->
+    <dimen name="common_normal_left_right_margin">10dip</dimen>
+    <dimen name="common_normal_top_end_margin">70dip</dimen>
+
+    <!-- 新版 -->
+    <dimen name="v2_biggest_size">30sp</dimen>
+    <dimen name="v2_big_size">20sp</dimen>
+    <dimen name="v2_normal_size">17sp</dimen>
+    <dimen name="v2_small_size">14sp</dimen>
+    <dimen name="v2_smallest_size">10sp</dimen>
+
+    <!-- 间距 -->
+    <dimen name="v2_body_margin_top">40dp</dimen>
+    <dimen name="v2_config_wifi_prog_left_right_margin">40dp</dimen>
+    <dimen name="v2_config_wifi_prog_height">160dp</dimen>
+    <dimen name="v2_config_wifi_left_draw_width">20dp</dimen>
+    <dimen name="v2_config_wifi_right_draw_width">28dp</dimen>
+    <dimen name="v2_config_wifi_step_height">20dp</dimen>
+    <dimen name="v2_request_view_height">100dp</dimen>
+
+</resources>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical" >
+
+    <include layout="@layout/titlebar_general" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="2.0"
+        android:background="@drawable/icon_share_oauth_bg" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icon_safe_protection_logo" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/margin_big"
+            android:gravity="center_horizontal"
+            android:singleLine="true"
+            android:text="@string/protect_advent"
+            android:textColor="@color/white"
+            android:textSize="@dimen/v2_small_size" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="3.0"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_normal"
+            android:gravity="start"
+            android:lineSpacingMultiplier="1.2"
+            android:text="@string/protect_tip"
+            android:textSize="@dimen/v2_small_size" />
+
+        <LinearLayout
+            android:id="@+id/ll_protect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_normal"
+            android:layout_marginRight="@dimen/margin_normal"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <LinearLayout
+                android:id="@+id/ll_protect_on"
+                style="@style/setting_top_shape"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/margin_big"
+                android:paddingTop="@dimen/margin_big" >
+
+                <ImageView
+                    style="@style/setting_icon"
+                    android:src="@drawable/move_protection" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/setting_icon"
+                        android:text="@string/protect_protected"
+                        android:textSize="@dimen/textsize_large" />
+
+                    <TextView
+                        android:id="@+id/tv_safe_protected_tip"
+                        style="@style/setting_icon"
+                        android:textColor="@color/control_color"
+                        android:textSize="@dimen/textsize_small" />
+                </LinearLayout>
+
+                <ImageView
+                    style="@style/setting_arrow"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_divider" >
+
+                <ImageView
+                    style="@style/img_divider"
+                    android:layout_marginLeft="0dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/setting_bottom_shape"
+                android:layout_height="wrap_content"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp" >
+
+                <LinearLayout
+                    android:id="@+id/ll_stop_protect"
+                    style="@style/setting_bottom_shape"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/margin_big"
+                    android:paddingTop="@dimen/margin_big" >
+
+                    <TextView
+                        android:id="@+id/btn_stop_protect"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@null"
+                        android:drawableLeft="@drawable/icon_stop_protect"
+                        android:drawableStart="@drawable/icon_stop_protect"
+                        android:text="@string/protect_stop"
+                        android:textColor="@color/btn_text_color"
+                        android:textSize="@dimen/textsize_large" />
+                </LinearLayout>
+
+                <ImageView
+                    style="@style/img_divider_vertical"
+                    android:layout_height="fill_parent"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginTop="0dp" />
+
+                <LinearLayout
+                    android:id="@+id/ll_resetting"
+                    style="@style/setting_bottom_shape"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/margin_big"
+                    android:paddingTop="@dimen/margin_big" >
+
+                    <TextView
+                        android:id="@+id/btn_resetting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@null"
+                        android:drawableLeft="@drawable/icon_setting"
+                        android:drawableStart="@drawable/icon_setting"
+                        android:focusable="false"
+                        android:text="@string/protect_resetting"
+                        android:textColor="@color/btn_text_color"
+                        android:textSize="@dimen/textsize_large" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_start_protect"
+            style="@style/v2_btn_normal_style"
+            android:text="@string/protect_start"
+            android:visibility="visible" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,321 @@
+﻿<!DOCTYPE html>
+<html style="background-color: #EFEFF4;">
+
+	<head>
+		<meta charset="utf-8">
+		<title>disclaimer</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/plus.js"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/hashmap.js"></script>
+		<script type="text/javascript" src="./js/md5-min.js"></script>
+		<script type="text/javascript" src="./js/digest-auth.js"></script>
+		<script src="js/custom.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/custom.css" />
+		<style>
+			html,
+			body {
+				background-color: white;
+			}
+			
+			#hidebg {
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				background-color: #000;
+				width: 100%;
+				height: 100%;
+				filter: alpha(opacity=60);
+				opacity: 0.6;
+				display: none;
+				z-Index: 100;
+			}
+			
+			#hidebox {
+				position: absolute;
+				text-align: center;
+				width: 260px;
+				height: 230px;
+				left: 4%;
+				right: 4%;
+				margin: -50px auto;
+				background-color: #fff;
+				display: none;
+				z-Index: 101;
+				border-radius: 10px 10px 10px 10px;
+			}
+			
+			#hidebox_1 {
+				position: absolute;
+				text-align: center;
+				width: 260px;
+				height: 230px;
+				left: 4%;
+				right: 4%;
+				margin: -50px auto;
+				background-color: #fff;
+				display: none;
+				z-Index: 101;
+				border-radius: 10px 10px 10px 10px;
+			}
+			
+			.dialog_infra-red {
+				font-size: 15px;
+				color: green;
+				margin-top: 10px;
+			}
+		</style>
+	</head>
+
+	<body style="background-color: #EFEFF4;">
+		<header class="mui-bar mui-bar-nav custom-nav" style="position: fixed;">
+			<a class="custom-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title"><span class="autoSwitchLanguager" id="html_setGateway_title"></span></h1>
+		</header>
+		<div class="mui-content" style="width: 100%;margin: 0 auto;">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell" onclick="setGatewayName()">
+					<a>
+						<span id="account_system_gateway_nickname" class="autoSwitchLanguager">网关昵称</span><span style="float: right;font-size: 15px;color: darkgrey;"  id="html_setGateway_clickToset" class="autoSwitchLanguager">点击设置</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a>
+						<span id="html_setGateway_Pushalarm" class="autoSwitchLanguager">推送报警</span>
+					</a>
+					<div class="mui-switch mui-switch-mini mui-active" id="switchPush">
+						<div class="mui-switch-handle"></div>
+					</div>
+				</li>
+			</ul>
+			<button style="position: absolute;background-color: red;width: 90%;height: 50px;color: white;left: 5%;bottom: 50px;font-size: 16px;" onclick="unbind()" id="set_account_manager_permission_unbinding_status" class="autoSwitchLanguager">解绑</button>
+		</div>
+		<div id="hidebg" onclick="hideDialog()" style="display: none;"></div>
+		<div id="hidebox">
+			<p class="dialog_infra-red autoSwitchLanguager" id="PROMPT">提示</p>
+			<div id="Bind_2" style="display: block;">
+				<div style="border-top:1px solid;border-color:gray;width:100%;height:1px;"> </div>
+				<p style="padding-left: 20px;padding-right: 20px; color: black;margin-top: 20%;" class="autoSwitchLanguager" id="account_system_unbundling_gateway">确定要解绑吗？</p>
+				<div style="position: absolute;border-top:1px solid;border-color:gray;width:100%;height:1px;top:179px ;"> </div>
+				<div style="position: absolute;border-left:1px solid;border-color:gray;width:1px;height:22%;top:179px ;left:50%"> </div>
+				<input type="button" class="autoSwitchLanguager" id="cancel" value="取消" style="border-radius: 0px 0px 0px 10px;border-bottom:0;border-left:0;border-top:0;border-right:0;color:gray;position: absolute;;top:180px;left:0px;width:49%;height: 22%;" onclick="hideDialog()" />
+				<input type="button" class="autoSwitchLanguager" id="common_ok" value="确认" style="border-radius: 0px 0px 10px 0px;border-bottom:0;border-right:0;border-left:0;border-top:0;position: absolute;top:180px;right:0px;width:49%;color: green;height: 22%;" onclick="unBindGW()" />
+			</div>
+		</div>
+		<div id="hidebox_1">
+			<p class="dialog_infra-red autoSwitchLanguager" id="PROMPT">提示</p>
+			<div id="Bind_3" style="display: block;">
+				<div style="border-top:1px solid;border-color:gray;width:100%;height:1px;"> </div>
+				<p style="padding-left: 20px;padding-right: 20px; color: black;margin-top: 20%;" class="autoSwitchLanguager" id="account_system_close_alarm_push_hint">关闭后错过报警信息？</p>
+				<div style="position: absolute;border-top:1px solid;border-color:gray;width:100%;height:1px;top:179px ;"> </div>
+				<div style="position: absolute;border-left:1px solid;border-color:gray;width:1px;height:22%;top:179px ;left:50%"> </div>
+				<input type="button" class="autoSwitchLanguager" id="cancel" value="取消" style="border-radius: 0px 0px 0px 10px;border-bottom:0;border-left:0;border-top:0;border-right:0;color:gray;position: absolute;;top:180px;left:0px;width:49%;height: 22%;" onclick="hideDialog(1)" />
+				<input type="button" class="autoSwitchLanguager" id="common_ok" value="确认" style="border-radius: 0px 0px 10px 0px;border-bottom:0;border-right:0;border-left:0;border-top:0;position: absolute;top:180px;right:0px;width:49%;color: green;height: 22%;" onclick="closePush()" />
+			</div>
+		</div>
+		<script>
+			var deviceID;
+			var pushInfo;
+			var key = "showWaitingDialog";
+			plus.plusReady(function() {
+				getDataFromApp()
+				achievePushValue()
+				document.getElementById("switchPush").addEventListener("toggle", function(event) {
+					var isActive = document.getElementById("switchPush").classList.contains("mui-active")
+						//mui先改变ui再响应事件
+					if(!isActive) {
+						switchPush("0");
+					} else {
+						switchPush("1");
+					}
+				})
+			});
+
+			function closePush() {
+				hideDialog();
+				switchPush("0");
+			}
+
+			function unbind() {
+				document.getElementById("hidebg").style.display = "block";
+				document.getElementById("hidebox").style.display = "block";
+			}
+
+			function unBindGW() {
+				hideDialog();
+				doUnbindDevice(deviceID, function() {
+					plus.ehomev5.closeWaiting(key);
+					history.back(-1);
+				});
+			}
+
+			function doUnbindDevice(deviceId, onSuccessCallback) {
+				plus.ehomev5.showWaiting(key);
+				var digestAuth = DigestAuthentication.init({
+					onSuccess: function(response, status) {
+						var hint = statusHelper.mapping(status);
+						if(hint) {
+							alert(hint);
+						} else if(status == "0") {
+							if(onSuccessCallback != null && typeof(onSuccessCallback) == "function") {
+								onSuccessCallback();
+							}
+						} else {
+							alert(plus.ehomev5.getLang("html_user_gateway_unbind_fail"));
+						}
+					},
+					onFailure: function(httpStatus) {
+						alert(plus.ehomev5.getLang("html_user_gateway_unbind_fail"));
+					}
+				});
+				digestAuth.setHeader('cmd', 'unbindDevice');
+				digestAuth.setHeader('token', plus.ehomev5.getData('token'));
+				var obj = {};
+				obj.deviceId = deviceId;
+				digestAuth.setData(JSON.stringify(obj));
+				digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + '/AMS/user/device');
+			}
+
+			function setGatewayName() {
+				var data = {};
+				data.title = plus.ehomev5.getLang("account_system_gateway_nickname"); //"网关昵称"; 
+				data.cancel = plus.ehomev5.getLang("cancel"); //"取消";
+				data.ok = plus.ehomev5.getLang("common_ok"); //"确定";
+				data.hint = "";
+				data.name = "";
+				plus.ehomev5.myDialog(data, function(result) {
+					var newName = result;
+					getDeviceInfo(deviceID, function(res) {
+						res = JSON.parse(res);
+						deviceUpdate(result, res, function(result, status) {
+							plus.ehomev5.closeWaiting(key);
+							var hint = statusHelper.mapping(status);
+							if(hint) {
+								alert(hint);
+							} else if(status == "0") {
+								document.getElementById("html_setGateway_clickToset").textContent = newName;
+								alert(plus.ehomev5.getLang("set_account_manager_modify_gw_name"));
+							} else {
+								alert(plus.ehomev5.getLang("SETFAIL"));
+							}
+						}, function(hint) {
+							//							alert(plus.ehomev5.getLang("SETFAIL"));
+						})
+					}, function(res) {
+						alert(plus.ehomev5.getLang("SETFAIL"));
+					})
+				}, function() {
+//					alert(plus.ehomev5.getLang("SETFAIL"));
+				});
+			}
+
+			function switchPush(flag) {
+				plus.ehomev5.showWaiting(key);
+				pushUpdate(pushInfo, flag, function(response, status) {
+						plus.ehomev5.closeWaiting(key);
+						var hint = statusHelper.mapping(status); //错误码显示
+						if(hint) {
+							juFlag();
+							alert(hint);
+						} else if(status != "0") {
+							juFlag();
+							alert(plus.ehomev5.getLang("html_XMLY_loading_error"));
+						}
+					},
+					function(hint) {
+						juFlag();
+						alert(plus.ehomev5.getLang("html_XMLY_loading_error"));
+					});
+			}
+
+			function juFlag() {
+				var isActive = document.getElementById("switchPush").classList.contains("mui-active");
+				if(isActive) {
+					document.getElementById("switchPush").classList.remove("mui-active");
+				} else {
+					document.getElementById("switchPush").classList.add("mui-active");
+				}
+			}
+
+			function getDeviceInfo(deviceId, onsuccess, onfailed) {
+				plus.ehomev5.showWaiting(key);
+				var digestAuth = DigestAuthentication.init({
+					onSuccess: onsuccess,
+					onFailure: onfailed,
+					sync: false
+				});
+				digestAuth.setHeader('cmd', 'getDeviceInfo');
+				digestAuth.setHeader('token', plus.ehomev5.getData('token'));
+				var data = {
+					deviceId: deviceId
+				};
+				digestAuth.setData(JSON.stringify(data));
+				digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + '/AMS/user/device');
+			}
+
+			function deviceUpdate(name, data, onsuccess, onfailed) {
+				var digestAuth = DigestAuthentication.init({
+					onSuccess: onsuccess,
+					onFailure: onfailed,
+					sync: false
+				});
+				digestAuth.setHeader('cmd', 'deviceUpdate');
+				digestAuth.setHeader('token', plus.ehomev5.getData('token'));
+				data.deviceAlias = name;
+				digestAuth.setData(JSON.stringify(data));
+				digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + '/AMS/user/device');
+			}
+
+			function getDataFromApp() {
+				deviceID = decodeURI(getUrlParam("deviceID"));
+				if(getUrlParam("deviceAlias")) {
+					deviceAlias = decodeURI(getUrlParam("deviceAlias"));
+				    document.getElementById("html_setGateway_clickToset").textContent = deviceAlias;
+				}
+			}
+
+			function achievePushValue() {
+				getDeviceInfo(deviceID, function(res) {
+					plus.ehomev5.closeWaiting(key);
+					pushInfo = JSON.parse(res);
+					if(!pushInfo.isPush) {
+						return;
+					}
+					if(pushInfo.isPush == '0') {
+						document.getElementById("switchPush").classList.remove("mui-active");
+					}
+				}, function(res) {
+
+				})
+			}
+
+			function pushUpdate(data, isPush, onsuccess, onfailed) {
+				var digestAuth = DigestAuthentication.init({
+					onSuccess: onsuccess,
+					onFailure: onfailed,
+					sync: false
+				});
+				digestAuth.setHeader('cmd', 'deviceUpdate');
+				digestAuth.setHeader('token', plus.ehomev5.getData('token'));
+				data.isPush = isPush;
+				digestAuth.setData(JSON.stringify(data));
+				digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + '/AMS/user/device');
+			}
+
+			function hideDialog() {
+				//				if(KEY && KEY == 1){
+				//					document.getElementById("switchPush").classList.add("mui-active");
+				//				}
+				document.getElementById("hidebg").style.display = "none";
+				document.getElementById("hidebox").style.display = "none";
+				document.getElementById("hidebox_1").style.display = "none";
+			}
+		</script>
+	</body>
+
+</html>

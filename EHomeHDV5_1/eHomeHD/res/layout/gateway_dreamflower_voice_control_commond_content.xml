@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical" >
+<TextView 
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:text="
+ 设置说明:\n
+1.同一句话重复录入并提示成功4次。\n
+2.每一次录入成功时梦想之花屏幕依次会出现数字1、2、3、OK。\n
+3.当出现OK时代表梦想之花完成指令录音工作。\n
+4.点击场景按钮选择执行的场景。\n
+       说了那么多，快点点击下面按钮开始吧，记得完成后点击保存哦。\n"
+    />
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10dp"
+    android:paddingTop="10dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    >
+    <ImageView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gateway_voice_control_commond_bing_scene"
+        android:src="@drawable/nav_scene_normal"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gateway_voice_control_commond_bing_scene_name"
+        android:text="scene"
+        ></TextView>
+</LinearLayout>
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:gravity="center"
+    >
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="学习"
+        android:visibility="visible"
+        android:id="@+id/gateway_voice_control_commond_study"
+        >
+    </Button>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="取消"
+        android:visibility="gone"
+        android:id="@+id/gateway_voice_control_commond_study_stop"
+        >
+    </Button>
+</LinearLayout>
+</LinearLayout>

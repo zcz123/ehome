@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <item type="id" name="dev_state_imageview_0" />
+    
+    <item type="id" name="dev_state_imageview_1" />
+    
+    <item type="id" name="dev_state_imageview_2" />
+    
+    <item type="id" name="dev_three_state_imageview_0" />
+    
+    <item type="id" name="dev_three_state_imageview_1" />
+    
+    <item type="id" name="dev_three_state_imageview_2" />
+    
+    <item type="id" name="dev_state_seekbar_0" />
+    
+    <item type="id" name="dev_state_seekbar_1" />
+    
+    <item type="id" name="dev_adjust_color" />
+    
+    <item type="id" name="scene_link_adjust_color" />
+    
+    <item type="id" name="dev_light_text" />
+    
+    <item type="id" name="dev_state_textview_0" />
+    
+    <item type="id" name="dev_state_textview_1" />
+    
+    <item type="id" name="dev_state_textview_2" />
+    
+    <item type="id" name="dev_textview_0" />
+    
+    <item type="id" name="dev_textview_1" />
+    
+    <item type="id" name="dev_textview_2" />
+    
+    <item type="id" name="dev_textview_3" />
+    
+    <item type="id" name="dev_textview_4" />
+    
+    <item type="id" name="dev_textview_5" />
+
+    <item type="id" name="dev_state_button_0" />
+    
+    <item type="id" name="dev_state_button_1" />
+    
+    <item type="id" name="dev_state_button_2" />
+    
+    <item type="id" name="dev_state_blind_0" />
+    
+    <item type="id" name="dev_state_colorlayout0" />
+    
+    <item type="id" name="dev_state_colorview"/>
+    
+    <item type="id" name="dev_state_colorlayout1"/>
+    
+    <item type="id" name="dev_state_colorlayout2"/>
+    
+    <item type="id" name="dev_state_relativelayout1"/>
+    
+    <item type="id" name="device_led_colorful_imag"/>
+    
+    <item type="id" name="device_led_toggle_1"/>
+    
+    <item type="id" name="device_led_toggle_2"/>
+    
+    <item type="id" name="device_led_toggle_3"/>
+    
+    <item type="id" name="device_led_toggle_4"/>
+</resources>

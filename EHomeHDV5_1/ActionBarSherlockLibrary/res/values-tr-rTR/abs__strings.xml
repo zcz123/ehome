@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?><resources>
+    <string name="abs__action_bar_home_description">"Navigasyon Ev"</string>
+    <string name="abs__action_bar_up_description">"Yukarı Gezinti"</string>
+    <string name="abs__action_menu_overflow_description">"Diğer Seçenekler"</string>
+    <string name="abs__action_mode_done">"Gerçekleştirmek"</string>
+    <string name="abs__activity_chooser_view_dialog_title_default">"Select etkinliği"</string>
+    <string name="abs__activity_chooser_view_see_all">"Hepsini Gör"</string>
+    <string name="abs__activitychooserview_choose_application">"Select Uygulaması"</string>
+    <string name="abs__searchview_description_clear">"Clear Sorgusu"</string>
+    <string name="abs__searchview_description_query">"Arama sorgusu"</string>
+    <string name="abs__searchview_description_search">"Aramak"</string>
+    <string name="abs__searchview_description_submit">"Query Gönder"</string>
+    <string name="abs__searchview_description_voice">"Sesli Arama"</string>
+    <string name="abs__share_action_provider_share_with">"Paylaşım Nesneler"</string>
+    <string name="abs__shareactionprovider_share_with">"Paylaşılan nesne"</string>
+    <string name="abs__shareactionprovider_share_with_application">"karşı“%s”hisse"</string>
+</resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background" >
+
+    <include
+        android:id="@+id/include_title"
+        layout="@layout/titlebar_main_lan" />
+
+    <TextView
+        android:id="@+id/tv_nodevice_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:drawableLeft="@drawable/nodevice"
+        android:drawableStart="@drawable/nodevice"
+        android:gravity="center_vertical"
+        android:text="@string/setting_config_same_wifi"
+        
+        android:visibility="visible"
+       />
+
+    <com.wulian.icam.view.widget.PullListView
+        android:id="@+id/lan_devices"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/include_title"
+        android:background="@drawable/transparent"
+        android:cacheColorHint="@color/transparent"
+        android:clickable="true"
+        android:divider="@color/transparent"
+        android:dividerHeight="10dp"
+        android:listSelector="@color/transparent"
+        android:paddingEnd="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingStart="10dp"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbars="vertical" >
+    </com.wulian.icam.view.widget.PullListView>
+
+</RelativeLayout>

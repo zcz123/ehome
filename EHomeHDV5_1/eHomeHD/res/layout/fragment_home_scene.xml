@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:layout_gravity="center"  >
+    <LinearLayout
+        android:id="@+id/home_scene_message"
+        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+     <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:text="@string/senen_home_quick_scene"
+            android:singleLine="true"
+        	android:ellipsize="end"
+        	android:textColor="#878787"
+            android:textSize="16sp" />
+     
+    <GridView
+        android:id="@+id/gridViewShowInfo"
+        style="@style/CMWidget.GridView.Normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:columnWidth="60dp"
+        android:listSelector="@color/trant"
+        android:verticalSpacing="1dip"
+        android:horizontalSpacing="1dip"
+        android:numColumns="@integer/gridview_column_frames"
+        android:stretchMode="columnWidth"
+        tools:listitem="@layout/item_scene_home" >
+    </GridView>
+    
+    </LinearLayout>
+</FrameLayout>

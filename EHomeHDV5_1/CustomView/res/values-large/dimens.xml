@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tabView_default">56dp</dimen>
+    
+    <dimen name="action_popmenu_min_height">56dip</dimen>
+    <dimen name="action_popmenu_min_width">56dip</dimen>
+    
+    <dimen name="action_popmenu_icon_width">48dip</dimen>
+    <dimen name="action_popmenu_icon_height">48dip</dimen>
+</resources>

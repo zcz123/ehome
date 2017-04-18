@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:background="@color/transparent_black"
+    android:gravity="center_vertical" >
+
+    <ImageView
+        android:id="@+id/iv_control_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/selector_video_btn_pause_new"
+        android:scaleType="centerInside" />
+
+    <View
+        android:id="@+id/divide0"
+        style="@style/img_divider_vertical"
+        android:layout_toEndOf="@id/iv_control_play"
+       
+        android:layout_toRightOf="@id/iv_control_play"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iv_control_snap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@id/divide0"
+        android:layout_toRightOf="@id/divide0"
+        android:layout_centerVertical="true"
+        android:background="@drawable/selector_video_btn_snap"
+        android:scaleType="centerInside"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iv_control_fullscreen"
+      	android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/selector_video_btn_fullscreen_new"
+        android:scaleType="centerInside" />
+
+    <View
+        android:id="@+id/divide1"
+        style="@style/img_divider_vertical"
+        android:layout_toLeftOf="@id/iv_control_fullscreen"
+        android:layout_toStartOf="@id/iv_control_fullscreen" />
+
+    <ImageView
+        android:id="@+id/iv_control_csc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/divide1"
+        android:layout_toStartOf="@id/divide1"
+        android:background="@drawable/selector_video_btn_csc"
+        android:scaleType="centerInside" />
+
+    <View
+        android:id="@+id/divide2"
+       
+        style="@style/img_divider_vertical"
+        android:layout_toLeftOf="@id/iv_control_csc"
+        android:layout_toStartOf="@id/iv_control_csc" />
+
+    <TextView
+        android:id="@+id/tv_control_definition"
+        android:layout_width="@dimen/definition_width"
+        android:layout_height="@dimen/definition_height"
+        android:layout_toLeftOf="@id/divide2"
+        android:layout_toStartOf="@id/divide2"
+        android:drawableEnd="@drawable/definition_up"
+        android:drawableRight="@drawable/definition_up"
+        android:textSize="@dimen/textsize_middle"
+        android:gravity="center"
+        android:text="@string/play_definition2"
+        android:textColor="@color/control_color" />
+
+</RelativeLayout>

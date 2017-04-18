@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:myview="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_play_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <!-- android:background="@drawable/shape_bg_play" -->
+
+
+    <!-- HorizontalScrollView 会拦截左右滑动手势 -->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8">
+
+        <com.wulian.icam.view.widget.MyHorizontalScrollView
+            android:id="@+id/horizontal_sv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <!-- 视屏直播承载View -->
+
+            <RelativeLayout
+                android:id="@+id/rl_video"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:longClickable="true"></RelativeLayout>
+        </com.wulian.icam.view.widget.MyHorizontalScrollView>
+        <!-- 视频正在连接进行布局 -->
+
+        <LinearLayout
+            android:id="@+id/ll_linking_video"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="27dp"
+                android:layout_height="40dp"
+                android:indeterminateDrawable="@anim/video_loading_v2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/play_linking_video"
+                android:textColor="@color/white" />
+        </LinearLayout>
+        <!-- 视频断开刷新布局 -->
+
+        <LinearLayout
+            android:id="@+id/ll_linking_video_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/progress_refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_btn_videofail_refresh" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/play_refresh_video_desc"
+                android:textColor="@color/white" />
+        </LinearLayout>
+        <!-- 视频角度仪 -->
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.tutk.IOTC.MediaCodecMonitor
+                android:id="@+id/monitor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true" />
+            <LinearLayout
+                android:id="@+id/lin_videotape_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="25dp"
+                android:gravity="center"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/iv_videotape_time"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/light_videotape_1" />
+
+                <TextView
+                    android:id="@+id/tv_videotape_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00:00:00"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+            <com.wulian.iot.widght.MarqueeTextView
+                android:id="@+id/tv_environment"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+               android:layout_alignParentBottom="true"
+                android:background="#00000000"
+                android:ellipsize="marquee"
+                android:gravity="center_vertical"
+                android:textSize="12sp"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/titlebar_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/selector_main_titlebar_video"></ImageView>
+
+        <TextView
+            android:id="@+id/tv_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/icon_speed_bg"
+            android:drawableLeft="@drawable/icon_flow"
+            android:drawableStart="@drawable/icon_flow"
+            android:gravity="center_vertical"
+            android:text="35kb/s"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textsize_small"
+            android:visibility="gone" />
+        <!-- 横屏控制布局 -->
+
+        <RelativeLayout
+            android:id="@+id/rl_control_landscape"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/desk_landscape_silence"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/btn_silence_normal" />
+
+            <ImageView
+                android:id="@+id/desk_landscape_talk"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/desk_landscape_silence"
+                android:layout_margin="10dp"
+                android:src="@drawable/btn_talk_normal" />
+
+            <ImageView
+                android:id="@+id/desk_landscape_snapshot"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/desk_landscape_talk"
+                android:layout_margin="10dp"
+                android:src="@drawable/selector_desk_landscape_snapshot" />
+
+            <ImageView
+                android:id="@+id/desk_landscape_videotape"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/desk_landscape_snapshot"
+                android:layout_margin="10dp"
+                android:src="@drawable/btn_video_normal" />
+
+        </RelativeLayout>
+    </FrameLayout>
+    <!-- 竖屏下中间操作栏布局 -->
+    <include
+        android:id="@+id/include_control_bar"
+        layout="@layout/device_desktop_camera_play_bar" />
+
+    <!-- 最新控件布局 -->
+
+    <FrameLayout
+        android:id="@+id/content_frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:baselineAligned="false">
+
+        <!-- 视频回放点击的Fram效果层 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"></LinearLayout>
+        <!-- 正常界面的Fram层 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:baselineAligned="false"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4">
+
+                <!-- 显示预置位的控件 -->
+
+                <GridView
+                    android:id="@+id/presetGV"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#222222"
+                    android:horizontalSpacing="10dp"
+                    android:numColumns="4"></GridView>
+
+                <LinearLayout
+                    android:id="@+id/ll_control_panel_new"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white_normal"
+                    android:baselineAligned="false"
+
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_snapshot_new"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <Button
+                            android:id="@+id/btn_snapshot"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:background="@drawable/desk_selector_function_snapshot"
+                            android:gravity="bottom|center_horizontal"
+                            android:paddingBottom="20dp" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_video_control_panel_new"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/btn_speak_no_yuntai_new"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:background="@drawable/desk_btn_tackback_noraml"
+                            android:gravity="bottom|center_horizontal"
+                            android:paddingBottom="50dp" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_record_new"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <!-- <Button -->
+                        <!-- android:id="@+id/btn_record_new" -->
+                        <!-- android:layout_width="90dp" -->
+                        <!-- android:layout_height="90dp" -->
+                        <!-- android:background="@drawable/selector_function_record" -->
+                        <!-- android:gravity="bottom|center_horizontal" -->
+                        <!-- android:paddingBottom="20dp" -->
+                        <!-- android:text="@string/common_record" -->
+                        <!-- android:textColor="@color/selector_play_video_btn_text_color" /> -->
+
+                        <Button
+                            android:id="@+id/btn_scene_new"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:background="@drawable/desk_selector_function_videotape"
+                            android:gravity="bottom|center_horizontal"
+                            android:paddingBottom="20dp" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/lin_foot_play"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:baselineAligned="false"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp">
+
+                    <Button
+                        android:id="@+id/selector_function_show_scene"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/desk_selector_function_scene"
+                        android:gravity="bottom|center_horizontal"
+                        android:paddingBottom="20dp" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.wulian.iot.widght.AdjustmentDirectionButton
+                        android:id="@+id/button_adjust_direction"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        myview:btn_background="@drawable/slide_button"
+                        myview:mbt_width="50dp"
+                        myview:mheight="50dp"
+                        myview:mwidth="150dp"
+                        myview:pool_background="@drawable/switch_background" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp">
+
+                    <!-- <Button -->
+                    <!-- android:id="@+id/btn_record_new" -->
+                    <!-- android:layout_width="90dp" -->
+                    <!-- android:layout_height="90dp" -->
+                    <!-- android:background="@drawable/selector_function_record" -->
+                    <!-- android:gravity="bottom|center_horizontal" -->
+                    <!-- android:paddingBottom="20dp" -->
+                    <!-- android:text="@string/common_record" -->
+                    <!-- android:textColor="@color/selector_play_video_btn_text_color" /> -->
+
+                    <Button
+                        android:id="@+id/btn_preset_position"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/desk_selector_function_position"
+                        android:gravity="bottom|center_horizontal"
+                        android:paddingBottom="20dp" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

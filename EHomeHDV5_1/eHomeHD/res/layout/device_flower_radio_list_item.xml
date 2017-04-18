@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:descendantFocusability="blocksDescendants" >
+    
+	<LinearLayout 
+        android:layout_width="match_parent"
+    	android:layout_height="60dp"
+    	android:orientation="horizontal"
+    	android:background="@drawable/account_manager_item_background"
+    	android:gravity="center"
+    	android:id="@+id/task_manager_list_item_layout"
+    	android:paddingLeft="10dp"
+    	android:paddingRight="15dp">
+	<FrameLayout 
+	    android:id="@+id/device_radio_item_icon_framelayout"
+	    android:layout_width="65dp"
+	    android:layout_height="50dp"
+	    android:layout_gravity="center">
+
+	    <cc.wulian.smarthomev5.view.CircleImageView
+	        android:id="@+id/device_flower_radio_item_imageview"
+	        android:layout_width="60dp"
+	        android:layout_height="50dp"
+	        android:gravity="center"
+	        android:src="@drawable/device_flower_radio_defaule_ico" />
+
+		<cc.wulian.smarthomev5.view.CircleImageView
+		    android:id="@+id/device_flower_radio_item_imageview_play"
+		    android:layout_width="15dp"
+		    android:layout_height="15dp"
+		    android:layout_gravity="center"
+		    android:src="@drawable/device_flower_select_radio_stop_light"
+		    android:visibility="gone" />
+		<cc.wulian.smarthomev5.view.CircleImageView
+		    android:id="@+id/device_flower_radio_item_imageview_pause"
+		    android:layout_width="15dp"
+		    android:layout_height="15dp"
+		    android:layout_gravity="center"
+		    android:src="@drawable/device_flower_select_radio_start_light" />
+
+	</FrameLayout>
+	<LinearLayout 
+	    android:layout_width="0dp"
+	    android:layout_weight="2"
+	    android:layout_height="match_parent"
+	    android:orientation="vertical"
+	    android:gravity="center"
+	    android:layout_marginLeft="3dp"
+	    android:layout_marginRight="3dp">
+	    <TextView 
+	    	android:id="@+id/device_flower_radio_item_name"
+	        android:layout_width="match_parent"
+	        android:layout_weight="3"
+	        android:layout_height="0dp"
+	        android:textSize="17sp"
+	        android:gravity="center_vertical"
+	        android:paddingLeft="2dp"
+	        android:textColor="@color/black"
+	        android:duplicateParentState="true"/>
+	    
+	  <LinearLayout 
+	      android:id="@+id/device_radio_item_time_layout"
+	      android:layout_width="match_parent"
+	    	android:layout_height="0dp"
+	    	android:layout_weight="1.2"
+	    	android:layout_marginBottom="3dp"
+	    	android:layout_gravity="center_vertical"
+	    	android:orientation="horizontal">
+	    <ImageView 
+	        android:id="@+id/device_radio_item_time_icon"
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent"
+	        android:gravity="center"
+	        android:layout_marginBottom="-2dp"
+	        android:src="@drawable/device_radio_item_time_grey"/>
+	     <TextView
+	     	android:id="@+id/device_flower_radio_item_other"
+	     	android:layout_width="wrap_content"
+	     	android:layout_height="match_parent"
+	    	android:gravity="center"
+	       	android:layout_marginLeft="3dp"
+	     	android:text="02:03"
+	       	android:textColor="@color/grey" /> 
+	  </LinearLayout>      
+
+	</LinearLayout>
+	<LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center">
+  		<ImageView
+            android:id="@+id/device_flower_radio_item_info_imageview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

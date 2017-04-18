@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="ab_message_normal">#60000000</color>
+    <color name="ab_message_pressed">#30000000</color>
+    <color name="list_item_event_msg_divider">#40909496</color>
+    <color name="list_item_msg_divider">#282C2F</color>
+    <color name="list_item_msg_divider_deviceConfigure">#2A2D30</color>
+    <color name="list_background_deviceConfigure">#3A3A3A</color>
+    <color name="list_item_msg_textColor">#999FA5</color>
+    <color name="text_color_opacity_white">#FFA4AAB1</color>
+    <color name="list_item_home_msg_textColor">#43484c</color>
+    <color name="gallery_favority_textColor">#70757a</color>
+    <color name="shake_color">#5F6060</color>
+    <color name="item_gps_background">#353938</color>
+    
+    <color name="app_guide_title_text_color">#F98221</color>
+    <color name="app_guidle_background">#242424</color>
+    
+    <color name="about_us_version_info">#EC8735</color>
+    <color name="about_us_term_of_service">#7CB62C</color>
+    <color name="about_us_privacy_policy">#05CDFF</color>
+    <color name="switch_account_back_color">#303030</color>
+    <color name="device_item_title_bg_whilte">#FFFFFF</color>
+    <color name="announcement_item_bg">#E8E8E8</color>
+    
+        <!-- swipeLayoutRefresh colors -->
+    <color name="color1">#6DA41D</color>
+    <color name="color2">#B1E069</color>
+    <color name="color3">#FFFFFF</color>
+    <color name="red">#FF0000</color>
+    <color name="gray">#ff83878a</color>
+ 	<color name="menubar_background">#80000000</color>
+	
+	<color name="list_view_background">#800C0C0C</color>
+
+	<color name="favrority_view_background">#50121417</color>
+
+	<color name="button_menu_background_normal">#10FFFFFF</color>
+	<color name="button_menu_background_pressed">#10BCBBBB</color>
+      
+    <color name="setting_update_diaolg_background">#cc000000</color>
+    <color name="house_keeper_rule_text_color">#5c5c5c</color>
+    <color name="white_normal">#EEFFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="background">#EFEFEF</color>
+    <color name="SeaGreen">#2E8B57</color>
+    <color name="whitegray">#F0F0F0</color>
+    <color name="epgbottom_textcolor">#7FBE25</color>
+</resources>

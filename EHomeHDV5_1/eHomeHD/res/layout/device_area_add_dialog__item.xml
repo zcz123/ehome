@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingBottom="5dp"
+    android:paddingTop="5dp" >
+
+    <ImageButton
+        android:id="@+id/fragemnt_device_area_item_show_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:src="@drawable/fragemnt_device_area_item_delete_btn" />
+
+    <TextView
+        android:id="@+id/fragemnt_device_area_name_textview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_weight="1"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:textColor="@color/v5_gray_dark"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/fragemnt_device_area_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/red"
+        android:text="@string/device_config_edit_dev_area_create_item_delete_text"
+        android:visibility="invisible" />
+
+</LinearLayout>

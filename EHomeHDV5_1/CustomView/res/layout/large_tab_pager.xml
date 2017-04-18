@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <HorizontalScrollView
+        android:id="@id/tab_pager_container"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/tabView_default"
+        android:scrollbars="none" >
+
+        <com.yuantuo.customview.tabs.TabView
+            android:id="@id/tab_pager_tabs"
+            style="@style/CMWidget.TabView"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent" >
+        </com.yuantuo.customview.tabs.TabView>
+    </HorizontalScrollView>
+
+    <android.support.v4.view.ViewPager
+        android:id="@id/tab_pager_content"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1" />
+
+</LinearLayout>

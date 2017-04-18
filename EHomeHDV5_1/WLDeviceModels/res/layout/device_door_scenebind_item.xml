@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+       	android:paddingTop="12dp"
+    	android:paddingLeft="25dp"
+    	android:paddingRight="20dp"
+    	android:paddingBottom="12dp"
+        android:gravity="center_vertical"
+        
+        >
+        <TextView 
+	    android:layout_width="0dp"
+	    android:layout_weight="1"
+	    android:layout_height="wrap_content"
+	    android:id="@+id/touch_bind_ep_name"
+	    android:textSize="16dp"
+	    android:textColor="#494949"/>
+
+        <TextView
+            android:id="@+id/touch_bind_scene_device_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_marginRight="15dp"
+            android:textColor="#82A90E"
+            android:textSize="16dp"
+           />
+
+    </LinearLayout>
+	
+	<TextView 
+	    android:layout_width="match_parent"
+	    android:layout_height="1dp"
+	    android:background="@drawable/device_door_setting_line"
+	    />
+
+</LinearLayout>

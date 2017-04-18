@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical" >
+
+    <include layout="@layout/titlebar_add_device" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <LinearLayout
+            android:id="@+id/ll_et_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:padding="15dp" >
+
+            <EditText
+                android:id="@+id/et_feedback"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="4"
+                android:gravity="center_vertical"
+                android:inputType="textMultiLine"
+                android:background="@color/white" />
+
+            <Button
+                android:id="@+id/btn_feedback_sure"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1.5"
+                android:background="@drawable/selector_shape_round_rect_login"
+                android:text="@string/common_send"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textsize_middle" />
+        </LinearLayout>
+        <View
+            android:id="@+id/view_divider" 
+            style="@style/img_divider_full"
+            android:layout_above="@id/ll_et_input"/>
+         <ListView
+            android:id="@+id/lv_feedback_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="#00000000"
+            android:divider="#00000000"
+            android:dividerHeight="0dp"
+            android:layout_above="@id/view_divider">
+        </ListView>
+    </RelativeLayout>
+
+</LinearLayout>

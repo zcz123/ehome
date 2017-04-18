@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/task_sensor_device_choose_layout" >
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        android:layout_weight="6"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:background="@drawable/task_sensor_device_choose_item_bg"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.2"
+                android:gravity="center"
+                android:text="@string/device_tempure"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:paddingRight="5dp"
+                android:text="@string/house_rule_condition_device_symbol_more"
+                android:textColor="@color/black" />
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:id="@+id/human_inductor_select_less_temhum"
+                        android:layout_width="60dp"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:background="@drawable/task_manager_choose_temhum" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:text="@string/house_rule_condition_device_symbol_centigrade"
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <ImageView
+                    android:id="@+id/tem_hum_select_image1"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/task_manager_no_select" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:background="@drawable/task_sensor_device_choose_item_bg"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.2"
+                android:gravity="center"
+                android:text="@string/device_tempure"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:paddingRight="5dp"
+                android:text="@string/house_rule_condition_device_symbol_less"
+                android:textColor="@color/black" />
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:id="@+id/human_inductor_select_more_temhum"
+                        android:layout_width="60dp"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:background="@drawable/task_manager_choose_temhum" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:text="@string/house_rule_condition_device_symbol_centigrade"
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <ImageView
+                    android:id="@+id/tem_hum_select_image2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/task_manager_no_select" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:background="@drawable/task_sensor_device_choose_item_bg"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.2"
+                android:gravity="center"
+                android:text="@string/device_humidity"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:paddingRight="5dp"
+                android:text="@string/house_rule_condition_device_symbol_more"
+                android:textColor="@color/black" />
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:id="@+id/human_inductor_select_less_humidity"
+                        android:layout_width="60dp"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:background="@drawable/task_manager_choose_temhum" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:text="@string/house_rule_condition_device_symbol_percent"
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <ImageView
+                    android:id="@+id/tem_hum_select_image3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/task_manager_no_select" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:background="@drawable/task_sensor_device_choose_item_bg"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.2"
+                android:gravity="center"
+                android:text="@string/device_humidity"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:paddingRight="5dp"
+                android:text="@string/house_rule_condition_device_symbol_less"
+                android:textColor="@color/black" />
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+                    <TextView
+                         android:id="@+id/human_inductor_select_more_humidity"
+                        android:layout_width="60dp"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:background="@drawable/task_manager_choose_temhum" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:text="@string/house_rule_condition_device_symbol_percent"
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <ImageView
+                    android:id="@+id/tem_hum_select_image4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/task_manager_no_select" />
+            </LinearLayout>
+        </LinearLayout>
+		<LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:background="@drawable/task_sensor_device_choose_item_bg"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView 
+	            android:layout_width="0dp"
+	            android:layout_weight="1.2"
+	            android:layout_height="wrap_content"
+	            android:gravity="center"
+	            android:text="@string/house_rule_condition_device_lower_than"
+	            android:textColor="@color/black"
+	            />
+            <TextView 
+	            android:layout_width="0dp"
+	            android:layout_weight="0.8"
+	            android:layout_height="wrap_content"
+	            android:textColor="@color/black"/>
+			<FrameLayout 
+                android:id="@+id/task_manager_level_values_edit_less_layout"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                >
+                <EditText
+	                android:id="@+id/task_manager_level_values_edit_less"
+	                android:layout_width="match_parent"
+		            android:layout_height="match_parent"
+	                android:gravity="center"
+	                android:numeric="integer"
+	                android:background="@drawable/task_manager_choose_temhum"
+	                android:textColor="@color/black"
+	                android:textSize="15sp"
+	                android:cursorVisible="true"
+		    		android:textCursorDrawable="@null"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center" >
+
+                    <TextView
+                        android:id="@+id/task_manager_level_values_edit_less_unit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/task_manager_choose_level_less"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:background="@drawable/task_manager_choose_temhum" 
+                >
+                <TextView
+                    android:id="@+id/task_manager_level_text_less"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/house_rule_condition_device_pm_dark"
+                    android:textColor="#000000"
+                     />
+            </LinearLayout>
+        <LinearLayout 
+	        	android:layout_width="0dp"
+	            android:layout_weight="1"
+	            android:layout_height="wrap_content"
+	            android:gravity="center">
+	    	<ImageView
+	    	    android:id="@+id/task_manager_select_less" 
+	    	    android:layout_width="20dp"
+	            android:layout_height="20dp"
+	            android:background="@drawable/task_manager_select_status"/>
+	    	</LinearLayout>
+        </LinearLayout>
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:background="@drawable/task_sensor_device_choose_item_bg"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView 
+	            android:layout_width="0dp"
+	            android:layout_weight="1.2"
+	            android:layout_height="wrap_content"
+	            android:text="@string/house_rule_condition_device_higher_than"
+	            android:textColor="@color/black"
+	            android:gravity="center"
+	            />
+            <TextView 
+	            android:layout_width="0dp"
+	            android:layout_weight="0.8"
+	            android:layout_height="wrap_content"
+	            android:textColor="@color/black"/>
+            <FrameLayout 
+                android:id="@+id/task_manager_level_values_edit_more_layout"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                >
+                <EditText
+	                android:id="@+id/task_manager_level_values_edit_more"
+	                android:layout_width="match_parent"
+		            android:layout_height="match_parent"
+	                android:gravity="center"
+	                android:background="@drawable/task_manager_choose_temhum"
+	                android:numeric="integer"
+	                android:textColor="@color/black"
+	                android:textSize="15sp"
+	                android:cursorVisible="true"
+		    		android:textCursorDrawable="@null"
+                />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center" >
+
+                    <TextView
+                        android:id="@+id/task_manager_level_values_edit_more_unit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:gravity="right"
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </FrameLayout>
+            
+            <LinearLayout
+                android:id="@+id/task_manager_choose_level_more" 
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:background="@drawable/task_manager_choose_temhum"
+                 >
+
+                <TextView
+                    android:id="@+id/task_manager_level_text_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                     android:text="@string/house_rule_condition_device_pm_dark"
+                    android:textColor="#000000" />
+                 </LinearLayout>
+        <LinearLayout 
+	        	android:layout_width="0dp"
+	            android:layout_weight="1"
+	            android:layout_height="wrap_content"
+	            android:gravity="center">
+	    	<ImageView 
+	    	    android:id="@+id/task_manager_select_more" 
+	    	    android:layout_width="20dp"
+	            android:layout_height="20dp"
+	            android:background="@drawable/task_manager_select_status"/>
+	    	</LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:orientation="horizontal"
+                 >
+
+                <LinearLayout
+                    android:id="@+id/human_inductor_alarm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:visibility="gone" >
+
+                    <ImageView
+                        android:id="@+id/human_inductor_alarm_imageview"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/task_manager_no_select" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="@string/home_device_alarm_type_02_voice"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/human_inductor_normal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center" 
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/human_inductor_normal_imageview"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/task_manager_no_select" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="@string/device_state_normal"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/human_inductor_select_alarm_layout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="55dp"
+                    android:layout_weight="0.5"
+                    android:gravity="center"
+                    android:text="@string/house_rule_add_new_condition_device_send_notice"
+                    android:textColor="@color/black" />
+
+                <ImageView
+                    android:id="@+id/human_inductor_select_alarm_img"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:src="@drawable/task_manager_two_light_select_status" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center" >
+
+        <Button
+            android:id="@+id/house_keeper_task_scene_ensure"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/house_keeper_button_ensure"
+            android:text="@string/device_ok"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,248 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:preview="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/mainframe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <CheckBox
+                android:id="@+id/cb_isTLS"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="是否TLS传输"
+                android:textColor="#000000" />
+
+            <CheckBox
+                android:id="@+id/cb_isSound"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="是否有声音"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible" >
+
+            <Button
+                android:id="@+id/bt_view_lan"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="查看局域网接口" />
+
+            <Button
+                android:id="@+id/bt_view_remoteaccess"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="查看远程访问接口" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/cb_isICE"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="是否ICE穿越"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="提示：如果是TLS加密传输，请在程序里添加好证书"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="请在注册前填写好是否TLS传输"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/bt_initsip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="initsip" />
+        <!--
+        <Button
+            android:id="@+id/bt_unregisteraccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="destorysip" />
+            
+                            <EditText
+            android:id="@+id/et_servername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="请输入服务器的名称譬如(wuliangroup.cn)"
+            android:inputType="text"
+            android:text="wuliangroup.cn" />
+ -->
+        <EditText
+            android:id="@+id/et_servername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="请输入服务器的名称譬如(wuliangroup.cn)"
+            android:inputType="text"
+            android:text="wuliangroup.cn" />
+
+        <EditText
+            android:id="@+id/et_registernum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="用户信息的suid"
+            android:text="1036" >
+
+            <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/bt_registeraccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="注册账号" />
+
+        <Button
+            android:id="@+id/bt_registerlocalaccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="局域网注册账号" />
+
+        <Button
+            android:id="@+id/bt_unregisteraccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="注销账号"
+            android:visibility="visible" />
+
+        <EditText
+            android:id="@+id/et_remotefrom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="设备20位编码 cmicxxx"
+            android:inputType="text"
+            android:text="cmic01efaea2134f63a1" />
+
+        <EditText
+            android:id="@+id/et_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入发送消息"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/et_localaccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="对方局域网账号"
+            android:inputType="text"
+            android:text="192.168.16.105:8061" />
+
+        <Button
+            android:id="@+id/bt_checkupdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="检查更新" />
+
+        <Button
+            android:id="@+id/bt_update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="更新" />
+
+        <Button
+            android:id="@+id/bt_sendmessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="发送消息" />
+
+        <Button
+            android:id="@+id/bt_sendinfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="发送Info" />
+
+        <Button
+            android:id="@+id/bt_showvideo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="展示视频(可见)"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/bt_sendvideo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="发送视频" />
+
+        <Button
+            android:id="@+id/bt_localvideo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="局域网拨打视频" />
+
+        <Button
+            android:id="@+id/bt_csc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CSC" />
+
+        <Button
+            android:id="@+id/bt_closevideo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="关闭视频" />
+
+        <CheckBox
+            android:id="@+id/cb_speakeron"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="speaker开关"
+            android:textColor="#000000"
+            android:visibility="gone" />
+
+        <CheckBox
+            android:id="@+id/cb_microon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="micro开关"
+            android:textColor="#000000"
+            android:visibility="gone" />
+
+        <CheckBox
+            android:id="@+id/cb_mediaspeakeron"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="speaker媒体开关"
+            android:textColor="#000000" />
+
+        <CheckBox
+            android:id="@+id/cb_mediamicroon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="micro媒体开关"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+</ScrollView>

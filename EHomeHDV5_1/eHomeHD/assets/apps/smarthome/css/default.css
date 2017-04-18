@@ -1,0 +1,51 @@
+div.ac {
+	text-align: center
+}
+
+div.footer {
+	position: relative;
+	margin-top: -50px;
+	height: 50px;
+	float: right;
+	clear: both;
+	right: 4%
+}
+
+p.warning {
+	color: red
+}
+
+a:link {
+	color: gray;
+	text-decoration: none
+}
+
+a:visited {
+	color: gray;
+	text-decoration: none
+}
+
+a:hover {
+	color: gray;
+	text-decoration: underline
+}
+
+a:active {
+	color: gray;
+	text-decoration: underline
+}
+
+html,
+body,
+#wrap {
+	height: 100%
+}
+
+body>#wrap {
+	height: auto;
+	min-height: 100%
+}
+
+#main {
+	padding-bottom: 50px
+}

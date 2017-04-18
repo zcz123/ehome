@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/account_manager_switch_account_item_selector_layout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/account_manager_switch_account_item_selector"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="5dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="center_vertical|left"
+            android:text="@string/control_center_synchronize_phone_time"
+            android:textColor="#222222"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/setting_autoset_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:background="@drawable/high_grade_setting_time_sync_selector"
+            android:gravity="center"
+            android:text="@string/control_center_synchronize"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="8dp"
+        android:text="@string/control_center_synchronize_prompt"
+        android:textSize="14sp" />
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:paddingLeft="8dp"-->
+        <!--android:paddingRight="8dp"-->
+        <!--android:paddingTop="8dp"-->
+        <!--android:text="2.此功能只同步时间，不能同步时区"-->
+        <!--android:textSize="14sp" />-->
+
+</LinearLayout>

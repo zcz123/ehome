@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical" >
+
+    <include layout="@layout/titlebar_general" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <!-- 用于隐藏闪烁点 -->
+
+        <EditText
+            android:id="@+id/et_focus"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:focusable="true"
+            android:inputType="none" >
+        </EditText>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout style="@style/setting_top_shape" >
+
+                    <ImageView
+                        style="@style/setting_icon"
+                        android:src="@drawable/icon_setting_device" />
+
+                    <TextView
+                        style="@style/setting_item_single_textview"
+                        android:text="@string/setting_device_name" />
+
+                    <EditText
+                        android:id="@+id/et_device_name"
+                        style="@style/btn_blue_normal"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:drawableEnd="@drawable/icon_edit_pressed"
+                        android:drawableRight="@drawable/icon_edit_pressed"
+                        android:gravity="start|center_vertical"
+                        android:maxLength="20"
+                        android:paddingEnd="0dp"
+                        android:paddingLeft="4dp"
+                        android:paddingRight="0dp"
+                        android:paddingStart="4dp"
+                        android:singleLine="true"
+                        android:text="@string/common_icam" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/ll_divider" >
+
+                    <ImageView
+                        style="@style/img_divider"
+                        android:layout_marginLeft="@dimen/btn_height" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/setting_middle_shape" >
+
+                    <TextView
+                        style="@style/setting_item_single_textview"
+                        android:layout_marginLeft="@dimen/btn_height"
+                        android:layout_marginStart="@dimen/btn_height"
+                        android:paddingLeft="0dp"
+                        android:paddingRight="0dp"
+                        android:text="@string/device_id" />
+
+                    <TextView
+                        android:id="@+id/tv_device_id"
+                        style="@style/btn_blue_normal"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:gravity="start|center_vertical"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/ll_divider" >
+
+                    <ImageView
+                        style="@style/img_divider"
+                        android:layout_marginLeft="@dimen/btn_height" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_video_invert"
+                    style="@style/setting_top_shape" >
+
+                    <ImageView
+                        style="@style/setting_icon"
+                        android:src="@drawable/icon_video_invert" />
+
+                    <TextView
+                        style="@style/setting_item_single_textview"
+                        android:text="@string/setting_video_invert" />
+
+                    <CheckBox
+                        android:id="@+id/cb_video_invert"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="1dp"
+                        android:layout_marginRight="1dp"
+                        android:enabled="false"
+                        android:clickable="false"
+                        android:button="@drawable/selector_checkbox_toggle" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_device_function"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible" >
+
+                    <TextView
+                        style="@style/setting_title"
+                        android:text="@string/common_function"
+                        android:visibility="gone" />
+
+                    <!-- 暂时隐藏设备下线提醒 -->
+
+                    <LinearLayout
+                        style="@style/setting_top_shape"
+                        android:visibility="gone" >
+
+                        <TextView
+                            style="@style/setting_item_single_textview"
+                            android:text="@string/lan_device_offline_warn" />
+
+                        <CheckBox
+                            android:id="@+id/ck_device_offline_warn"
+                            android:layout_width="54dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="1dp"
+                            android:layout_marginRight="1dp"
+                            android:button="@drawable/selector_checkbox_toggle" />
+                    </LinearLayout>
+
+                    <ImageView
+                        style="@style/img_divider"
+                        android:visibility="gone" />
+                    <!-- 暂时setting_top_shape -->
+
+                    <LinearLayout
+                        android:id="@+id/ll_move_detection"
+                        style="@style/setting_middle_shape"
+                        android:visibility="gone" >
+
+                        <TextView
+                            style="@style/setting_item_single_textview"
+                            android:text="@string/lan_mobile_detection" />
+
+                        <ImageView style="@style/setting_arrow" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/setting_title"
+                        android:text="@string/lan_request_setting" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_wifi_setting"
+                        style="@style/setting_top_shape" >
+
+                        <ImageView
+                            style="@style/setting_icon"
+                            android:src="@drawable/icon_setting_wifi" />
+
+                        <TextView
+                            style="@style/setting_item_single_textview"
+                            android:text="@string/setting_wifi_setting" />
+
+                        <ImageView style="@style/setting_arrow" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_divider" >
+
+                        <ImageView style="@style/img_divider" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_config_video_pwd"
+                        style="@style/setting_middle_shape" >
+
+                        <ImageView
+                            style="@style/setting_icon"
+                            android:src="@drawable/icon_lan_pwd" />
+
+                        <TextView
+                            style="@style/setting_item_single_textview"
+                            android:text="@string/lan_video_pwd_change" />
+
+                        <ImageView style="@style/setting_arrow" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_divider" >
+
+                        <ImageView style="@style/img_divider" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:id="@+id/ll_timezone_setting"
+                        style="@style/setting_middle_shape" >
+
+                        <ImageView
+                            style="@style/setting_icon"
+                            android:src="@drawable/icon_setting_timezone" />
+
+                        <TextView
+                            style="@style/setting_item_single_textview"
+                            android:text="@string/setting_timezone_setting" />
+
+                        <ImageView
+                            style="@style/setting_arrow"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_divider"  android:visibility="gone">
+
+                        <ImageView style="@style/img_divider" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:id="@+id/ll_restore_factory"
+                        style="@style/setting_middle_shape" >
+
+                        <ImageView
+                            style="@style/setting_icon"
+                            android:src="@drawable/icon_setting_restore" />
+
+                        <TextView
+                            style="@style/setting_item_single_textview"
+                            android:text="@string/lan_restore_factory" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_divider"  android:visibility="gone">
+
+                        <ImageView style="@style/img_divider" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                         android:visibility="gone"
+                        android:id="@+id/ll_restart_device"
+                        style="@style/setting_middle_shape" >
+
+                        <ImageView
+                            style="@style/setting_icon"
+                            android:src="@drawable/icon_setting_restart" />
+
+                        <TextView
+                            style="@style/setting_item_single_textview"
+                            android:text="@string/lan_restart_device" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent_deep"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tv_control_definition2"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="@dimen/margin_little"
+        android:paddingTop="@dimen/margin_little"
+        android:text="@string/play_definition2"
+        android:textColor="@color/action_bar_bg"
+        android:textSize="@dimen/textsize_middle" />
+
+    <View
+        style="@style/img_divider_full"
+        android:background="@color/transparent_low" />
+
+    <TextView
+        android:id="@+id/tv_control_definition1"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="@dimen/margin_little"
+        android:paddingTop="@dimen/margin_little"
+        android:text="@string/play_definition1"
+        android:textColor="@color/action_bar_bg"
+        android:textSize="@dimen/textsize_middle" />
+
+    <View
+        style="@style/img_divider_full"
+        android:background="@color/transparent_low" />
+
+    <TextView
+        android:id="@+id/tv_control_definition3"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="@dimen/margin_little"
+        android:paddingTop="@dimen/margin_little"
+        android:text="@string/play_definition5"
+        android:textColor="@color/action_bar_bg"
+        android:textSize="@dimen/textsize_middle" />
+
+
+    <View
+        style="@style/img_divider_full"
+        android:background="@color/transparent_low" />
+
+    <TextView
+        android:id="@+id/tv_control_definition4"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="@dimen/margin_little"
+        android:paddingTop="@dimen/margin_little"
+        android:text="@string/desktop_camera_video_adaptive"
+        android:textColor="@color/action_bar_bg"
+        android:textSize="@dimen/textsize_middle"
+        android:visibility="visible" />
+</LinearLayout>

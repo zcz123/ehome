@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="ControlButton" />
+
+    <style name="ControlButton.ON">
+        <item name="android:src">@drawable/device_ctrl_on_layer</item>
+    </style>
+
+    <style name="ControlButton.OFF">
+        <item name="android:src">@drawable/device_ctrl_off_layer</item>
+    </style>
+
+    <style name="ControlButton.STOP">
+        <item name="android:src">@drawable/device_ctrl_stop_layer</item>
+    </style>
+
+</resources>

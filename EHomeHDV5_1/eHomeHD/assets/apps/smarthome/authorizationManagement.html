@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="css/mui.min.css" />
+		<link rel="stylesheet" href="css/custom.css" />
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			
+			.custom-list {
+				background-color: #fff;
+				list-style: none;
+				padding: 0px 0px 0px 8px;
+				margin: 0px;
+			}
+			
+			.custom-list-cell {
+				height: 80px;
+				width: 100%;
+				border-bottom: 1px solid gray;
+				overflow: hidden;
+				vertical-align: middle;
+			}
+			
+			.custom-list-cell:active {
+				background-color: #c8c7cc;
+			}
+			
+			.custom-list-object {
+				float: left;
+				padding-top: 8px;
+				padding-bottom: 8px;
+				padding-right: 8px;
+				max-width: 80px;
+				height: 80px;
+			}
+			
+			.custom-list-body {
+				padding-top: 8px;
+				padding-bottom: 8px;
+				vertical-align: middle;
+			}
+			
+			.custom-title {
+				margin: 0px;
+				padding: 0px;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				font-size: 14px;
+				color: #000000;
+			}
+			
+			.custom-description {
+				margin: 0px;
+				padding: 0px;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				font-size: 12px;
+			}
+			
+			.custom-play-info {
+				margin: 0px;
+				padding: 0px;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				font-size: 10px;
+			}
+			
+		</style>
+		<script type="text/javascript" src="js/plus.js" ></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/hashmap.js" type="text/javascript"></script>
+		<!--<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="js/custom.js" type="text/javascript" charset="utf-8"></script>
+
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav custom-nav">
+			<button style="color: white;" class="custom-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left">
+				<span class="mui-icon mui-icon-left-nav"></span><span class="autoSwitchLanguager" id="about_back">返回</span>
+			</button>
+			<h1 class="mui-title" style="color: white;"><span id="html_XMLY_special">权限管理</span></h1>
+		</header>
+		<div class="mui-content">
+			<div id="radio_list_div">
+				<ul class="custom-list" id="radio_list"></ul>
+			</div>
+		</div>
+	</body>
+
+	<script type="text/javascript">
+		var category_id;
+		var tag_name;
+		var currentPager = 1;
+		var radioUl = document.getElementById("radio_list");
+		
+		plus.plusReady(function () {
+			getParamFromUrl();
+			radioUl.innerHTML = "";
+			loadDataFromService(currentPager);
+		});
+
+		//去本地传过来的数据
+		function getParamFromUrl() {
+			
+		}
+		//从服务端获取数据
+		function loadDataFromService(pager) {
+			
+		}
+		//创建列表
+		function createList(data) {
+			if (data == null || typeof(data) == "undefined" || data.length == 0) return;
+			for (var i = 0; i < data.length; i++) {
+				//TODO 创建列表项节点
+				var item = createListItem(data[i]);
+				radioUl.appendChild(item);
+			}
+		}
+		
+		//创建列表项和事件
+		function createListItem(itemData) {
+			var item = document.createElement("li");
+			item.className = "custom-list-cell";
+			//img
+			var childImg = document.createElement("img");
+			childImg.className = "custom-list-object";
+			childImg.src = "img/icon120x120.png";;
+			//div
+			var childDiv = document.createElement("div");
+			childDiv.className = "custom-list-body";
+			var childDiv_p1 = document.createElement("p");
+			childDiv_p1.className = "custom-title";
+			//TODO 填充
+			childDiv_p1.textContent = "";
+			var childDiv_p2 = document.createElement("p");
+			childDiv_p2.className = "custom-description";
+			//TODO 填充
+			childDiv_p2.textContent = "";
+			var childDiv_p3 = document.createElement("p");
+			childDiv_p3.className = "custom-play-info";
+			//TODO 填充
+			childDiv_p3.textContent = "";
+			childDiv.appendChild(childDiv_p1);
+			childDiv.appendChild(childDiv_p2);
+			childDiv.appendChild(childDiv_p3);
+			item.appendChild(childImg);
+			item.appendChild(childDiv);
+			//设置点击事件;
+			item.addEventListener("click", function() {
+				//TODO 设置点击事件
+			}, true);
+			return item;
+		}
+		//			<ul class="mui-table-view">
+		//				<li class="mui-table-view-cell mui-media">
+		//					<img class="mui-media-object mui-pull-left" src="img/checked.png">
+		//					<div class="mui-media-body custom-div">
+		//						<div class='mui-ellipsis'>能和心爱的人一起</div>
+		//						<div class='mui-ellipsis'>能和心爱的人一起</div>
+		//						<div class='mui-ellipsis'>播放：5555 声音：220</div>
+		//					</div>
+		//				</li>	
+		//			</ul>
+	</script>
+
+</html>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:id="@+id/content_ll"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#c5c5c5"
+        android:layout_marginLeft="@dimen/margin_normal"
+        android:layout_marginRight="@dimen/margin_normal"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:id="@+id/wifi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="@string/gateway_router_setting_wifi_name"
+            android:textColor="#292929"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/tv_wifi_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/wifi"
+            android:textColor="#292929"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:id="@+id/iv_change_wifi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="10dp"
+            android:src="@drawable/choose_wifi" />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_wifi"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:visibility="gone"
+        android:background="#FFFFFF">
+
+        <ListView
+            android:id="@+id/lv_wifi_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></ListView>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_tips"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="10dp"
+        android:text="@string/gateway_explore_connect_wifi_hint"
+        android:textColor="@color/TextColor"
+        android:textSize="14sp" />
+
+    <RelativeLayout
+        android:id="@+id/rl_wifi_pwd_input"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="@dimen/margin_normal"
+        android:layout_marginRight="@dimen/margin_normal"
+        android:layout_marginTop="@dimen/margin_little"
+        android:background="@drawable/shape_round_all_white">
+
+        <ImageView
+            android:id="@+id/iv_wifi_pwd_left_draw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icon_pwd_normal" />
+
+        <CheckBox
+            android:id="@+id/cb_wifi_pwd_show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:button="@drawable/selector_checkbox_wifi_pwd" />
+
+        <EditText
+            android:id="@+id/et_wifi_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_little"
+            android:textColor="#acadb0"
+            android:layout_marginRight="@dimen/margin_little"
+            android:layout_toLeftOf="@id/cb_wifi_pwd_show"
+            android:layout_toRightOf="@id/iv_wifi_pwd_left_draw"
+            android:background="@null"
+            android:hint="@string/setting_input_wifi_pwd"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:textCursorDrawable="@null" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_no_wifi_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp">
+
+        <CheckBox
+            android:id="@+id/no_wifi_pwd_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/no_START_noWifiPassword"
+            android:textSize="12sp"
+            android:textColor="#878787" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn_next_step"
+            style="@style/v2_btn_normal_style"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/btn_height"
+            android:layout_marginTop="@dimen/margin_big"
+            android:text="@string/common_next_step" />
+    </RelativeLayout>
+</LinearLayout>

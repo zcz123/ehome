@@ -1,0 +1,5 @@
+include ':IOTCamera', ':easeui-sdk3.0'
+include ':WLDeviceModels'
+include ':HTML5Plus'
+include ':eHomeHD'
+include ':WLCameraA'

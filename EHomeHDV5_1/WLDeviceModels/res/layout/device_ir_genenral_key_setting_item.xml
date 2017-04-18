@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingBottom="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    android:descendantFocusability="afterDescendants">
+
+    <TextView
+        android:id="@+id/device_ir_setting_code_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
+        android:text="531"
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/device_ir_key_name_et"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:textCursorDrawable="@drawable/shape_text_grey_cursor"
+        android:layout_weight="1"
+        android:text="@string/device_ir_key_name"
+        android:textColor="@color/black" />
+
+    <ImageButton
+        android:id="@+id/device_ir_key_edit_ib"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:background="@null"
+        android:src="@drawable/device_ir_key_edit_selector" />
+    <ImageButton
+        android:id="@+id/device_ir_key_delete_ib"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:src="@drawable/device_ir_key_delete_selector" />
+
+</LinearLayout>

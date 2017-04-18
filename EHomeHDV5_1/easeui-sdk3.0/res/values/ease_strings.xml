@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="text_ack_msg">Read</string>
+    <string name="text_delivered_msg">Delivered</string>
+    <string name="button_pushtotalk">Hold to talk</string>
+    <string name="button_send">Send</string>
+    <string name="attach_picture">Image</string>
+    <string name="attach_take_pic">Capture</string>
+    <string name="attach_video">Video</string>
+    <string name="move_up_to_cancel">Finger up to cancel sending</string>
+    <string name="release_to_cancel">Finger release to cancel sending</string>
+    <string name="send_fail">Send failed</string>
+    <string name="resend">Resend</string>
+    <string name="confirm_resend">Confirm to resend？</string>
+    <string name="connect_failuer_toast">Please check the network or try again later</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="prompt">Prompt</string>
+    <string name="location_recv">[%1$s location]</string>
+    <string name="location_message">The location information</string>
+    <string name="recording_video">Record video</string>
+    <string name="location_prefix">[my location]</string>
+    <string name="picture">[Picture]</string>
+    <string name="video">[Video]</string>
+    <string name="file">[file]</string>
+    <string name="dynamic_expression">[Dynamic expression]</string>
+     <string name="voice_prefix">[Voice]</string>
+    <string name="voice_call">[Voice call]</string>
+    <string name="video_call">[Video call]</string>
+    <string name="search_header">Search</string>
+    <string name="recoding_fail">The recording failure, please try again！</string>
+    <string name="session">Conversation</string>
+    <string name="address_book">Address book</string>
+    <string name="search">Search</string>
+    <string name="login">Login</string>
+    <string name="downwaiting">Downloading the file, please wait a moment</string>
+    <string name="not_download">Did not download:</string>
+    <string name="is_down_please_wait">Downloading video, please wait a moment</string>
+
+    <string name="Network_error">Network error</string>
+    <string name="Making_sure_your_location">Making sure your location..</string>
+    <string name="please_check">key validation error!Please on AndroidManifest.xml file check the key set</string>
+    <string name="sd_card_does_not_exist">"SD card does not exist, can't take pictures"</string>
+    <string name="cant_find_pictures">"Can't find pictures"</string>
+    <string name="File_does_not_exist">File does not exist</string>
+    <string name="The_file_is_not_greater_than_10_m">The file is not greater than 10 m</string>
+    <string name="Whether_to_empty_all_chats">Clear all messages?</string>
+    <string name="Send_voice_need_sdcard_support">Send voice need sdcard support</string>
+    <string name="Recording_without_permission">Recording without permission</string>
+    <string name="The_recording_time_is_too_short">The recording time is too short</string>
+    <string name="send_failure_please">Send failure, please test whether the server connection</string>
+    <string name="Move_into_blacklist_success">Move into blacklist success</string>
+    <string name="Move_into_blacklist_failure">Move into blacklist failure</string>
+    <string name="you_are_group">You have been kicked off from the group</string>
+    <string name="the_current_group">The current group has been dismissed</string>
+    <string name="Is_moved_into_blacklist">Moving to blacklist..</string>
+    <string name="temporary_does_not">Currently the video size greater than 10M is not supported!</string>
+    <string name="Video_footage">Video record</string>
+    <string name="The_video_to_start">The video to start</string>
+    <string name="Whether_to_send">Are you sure to send?</string>
+    <string name="Open_the_equipment_failure">Open the equipment failure!</string>
+    <string name="Download_the_pictures">Download the pictures: 0%</string>
+    <string name="Download_the_pictures_new">Download the pictures:</string>
+    <string name="Failed_to_download_file">Failed to download file:</string>
+    <string name="Have_downloaded">Already downloaded</string>
+    <string name="Did_not_download">Not yet downloaded</string>
+    <string name="Is_download_voice_click_later">Downloading the voice message, click later</string>
+    <string name="search_new">Search</string>
+    <string name="were_mentioned">You were montioned</string>
+    <string name="all_members">All members</string>
+
+    <string name="gorup_not_found">Can not find this group</string>
+    <string name= "no_more_messages">no more messages</string>
+    <string name="error_send_invalid_content">The message content is not allowed to be sent!</string>
+    <string name="error_send_not_in_the_group">You already were not in the group</string>
+</resources>

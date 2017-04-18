@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_normal"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/margin_normal"
+        android:paddingLeft="@dimen/margin_heigh_big"
+        android:paddingRight="@dimen/margin_heigh_big"
+        android:paddingTop="@dimen/margin_normal" >
+
+        <ImageView
+            android:id="@+id/iv_user_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_defaut_head_gray" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_user_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="245498932@qq.com"
+            android:textColor="@color/btn_text_color" />
+    </LinearLayout>
+
+    <View
+        style="@style/img_divider"
+        android:layout_marginLeft="@dimen/margin_heigh_big"
+        android:layout_marginRight="@dimen/margin_heigh_big" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/margin_normal"
+        android:paddingLeft="@dimen/margin_heigh_big"
+        android:paddingRight="@dimen/margin_heigh_big"
+        android:paddingTop="@dimen/margin_normal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/share_last_time_to_open"
+            android:textColor="@color/btn_text_color"
+            android:textSize="@dimen/textsize_small" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_time_last"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="06-03 17:45:22"
+            android:textColor="@color/btn_text_color" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/margin_normal"
+        android:paddingLeft="@dimen/margin_heigh_big"
+        android:paddingRight="@dimen/margin_heigh_big"
+        android:paddingTop="@dimen/margin_normal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/share_total_times_to_view"
+            android:textColor="@color/btn_text_color"
+            android:textSize="@dimen/textsize_small" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_times_open_device"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="1次"
+            android:textColor="@color/btn_text_color" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_delete_oauth"
+        android:layout_marginLeft="@dimen/margin_xlarge"
+        android:layout_marginRight="@dimen/margin_xlarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_xlarge"
+        android:layout_marginTop="@dimen/margin_normal"
+        android:background="@drawable/selector_shape_round_rect_share_delete"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/share_delete"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textsize_large" />
+
+</LinearLayout>

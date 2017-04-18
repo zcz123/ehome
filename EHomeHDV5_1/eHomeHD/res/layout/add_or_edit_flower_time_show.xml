@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8.0dip"
+       android:paddingLeft="5dp"
+        android:paddingRight="16.0dip"
+        android:paddingTop="32.0sp"
+        android:text="@string/gateway_dream_flower_time_show_selected_hint"
+        android:textSize="16.0sp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/account_manager_item_background"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/time_start_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:paddingBottom="8.0dip"
+            android:paddingTop="8.0dip" >
+
+            <TextView
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:paddingLeft="5dp"
+                android:text="@string/gateway_dream_flower_time_show_start_time_hint"
+                android:textColor="@color/black"
+                android:textSize="16.0sp" />
+
+            <TextView
+                android:id="@+id/time_start_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8.0dip"
+                android:textColor="@color/v5_green_dark"
+                android:textSize="14.0sp" />
+
+            <ImageView
+                android:id="@+id/time_summenu1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="5dip"
+                android:src="@drawable/submenu_normal" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="1.0dip"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/v5_gray_font" />
+
+        <LinearLayout
+            android:id="@+id/time_end_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:paddingBottom="8.0dip"
+            android:paddingTop="8.0dip" >
+
+            <TextView
+                android:id="@+id/time_end_hint_View"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+               android:paddingLeft="5dp"
+                android:text="@string/gateway_dream_flower_time_show_end_time_hint"
+                android:textColor="@color/black"
+                android:textSize="16.0sp" />
+
+            <TextView
+                android:id="@+id/time_end_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8.0dip"
+                android:textColor="@color/v5_green_dark"
+                android:textSize="14.0sp" />
+
+            <ImageView
+                android:id="@+id/time_summenu2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="5dip"
+                android:src="@drawable/submenu_normal" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8.0dip"
+       android:paddingLeft="5dp"
+        android:paddingTop="16.0sp"
+        android:text="@string/gateway_dream_flower_time_show_week"
+        android:textColor="@color/black"
+        android:textSize="16.0sp" />
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/account_manager_item_background"
+        android:paddingLeft="5dp" 
+        android:paddingRight="5dp">
+
+        <cc.wulian.smarthomev5.fragment.setting.flower.items.HorizontalWeekDayView
+            android:id="@+id/show_time_weekday"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+</LinearLayout>

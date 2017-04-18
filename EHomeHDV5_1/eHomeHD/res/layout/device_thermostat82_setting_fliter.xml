@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_normal"
+   android:padding="15dp"
+    android:orientation="vertical" >
+   <TextView 
+       android:id="@+id/thermost_setting_fliter_tv1"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:padding="10dp"
+       android:textColor="@color/v5_gray_font"
+       android:textSize="15sp"/>
+   <TextView 
+       android:layout_width="match_parent"
+       android:layout_height="1dp"
+       android:background="#e4e5e8"/>
+   <TextView 
+       android:id="@+id/thermost_setting_fliter_tv2"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:padding="10dp"
+       android:textColor="@color/v5_gray_font"
+       android:textSize="15sp"/>
+    <TextView 
+       android:layout_width="match_parent"
+       android:layout_height="1dp"
+       android:background="#e4e5e8"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center" >
+    
+    <ImageButton 
+        android:id="@+id/thermost_setting_fliter_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:background="@drawable/thermost_setting_arrow_right"/>
+    
+    </LinearLayout>
+
+</LinearLayout>

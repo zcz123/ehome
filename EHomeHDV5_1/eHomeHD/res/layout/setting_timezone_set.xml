@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+	<LinearLayout
+	    android:id="@+id/account_manager_switch_account_item_selector_layout"
+	    android:layout_width="match_parent"
+	    android:layout_height="60dp"
+	    android:background="@drawable/account_manager_switch_account_item_selector"
+	    android:gravity="center_vertical"
+	    android:orientation="horizontal"
+	    android:layout_marginTop="8dp"
+	    android:paddingBottom="5dp"
+	    android:paddingLeft="8dp"
+	    android:paddingRight="8dp" >	            	
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center_vertical|left"
+            android:singleLine="true"
+            android:text="@string/gateway_timezone_setting_autoset"
+            android:textColor="#222222"
+            android:textSize="20sp" />	            	
+        <ToggleButton
+            android:id="@+id/setting_autoset_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:button="@drawable/button_toggle_switch"
+            android:gravity="right|center_vertical"
+            android:checked="false"
+            android:text=""
+            android:textOff=""
+            android:textOn="" />	
+    </LinearLayout>
+	<TextView 
+	    android:id="@+id/gateway_timezone_setting_autoset_text"
+	    android:textSize="14sp"
+	    android:paddingLeft="8dp"
+	    android:paddingTop="8dp"
+	    android:text="@string/gateway_timezone_setting_autoset_hint"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"/>
+	<LinearLayout
+	    android:id="@+id/go_zone_list"
+	    android:layout_width="match_parent"
+	    android:layout_height="60dp"
+	    android:background="@drawable/account_manager_switch_account_item_selector"
+	    android:gravity="center_vertical"
+	    android:orientation="horizontal"
+	    android:layout_marginTop="10dp"
+	    android:paddingTop="5dp"
+	    android:paddingBottom="5dp"
+	    android:paddingLeft="8dp"
+	    android:paddingRight="8dp" >	            	
+        <TextView
+            android:id="@+id/timezone_setting_textview"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center_vertical|left"
+            android:singleLine="true"
+            android:text="@string/control_center_gateway_time_zone"
+            android:textColor="#222222"
+            android:textSize="20sp" />	
+         <TextView
+            android:id="@+id/setting_curr_zone_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:gravity="center"
+            android:text="CST +8:00"
+            android:textColor="@color/v5_green_light"
+            android:textSize="16sp" />            	
+       	<ImageView
+       	    android:layout_marginLeft="8dp"
+       	    android:layout_height="wrap_content"
+       	    android:layout_width="wrap_content"
+       	    android:src="@drawable/voice_remind_right"/>
+    </LinearLayout>
+    <TextView 
+        android:id="@+id/house_upgrade_timezone_remind"
+	    android:textSize="14sp"
+	    android:paddingLeft="8dp"
+	    android:paddingTop="8dp"
+	    android:paddingBottom="16dp"
+	    android:text="@string/house_rule_upgrade_timezone_setting_remind"
+	    android:visibility="gone"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"/>
+</LinearLayout>

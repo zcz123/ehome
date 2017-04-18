@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_normal"
+    android:paddingLeft="15dp"
+    android:orientation="vertical" >
+    
+    <TextView 
+        android:id="@+id/thermost_setting_line_tv1"
+       android:layout_width="match_parent"
+       android:layout_height="1dp"
+       android:layout_marginLeft="0dp"
+       android:background="#e4e5e8"/>
+   <TextView 
+       android:id="@+id/thermost_setting_equipment_tv1"
+       android:layout_width="match_parent"
+       android:layout_height="45dp"
+       android:gravity="center_vertical|left"
+       android:clickable="true"
+       android:textColor="#737373"
+       android:textSize="15sp"
+       android:padding="5dp"/>
+   
+   <TextView 
+        android:id="@+id/thermost_setting_line_tv2"
+       android:layout_width="match_parent"
+       android:layout_height="1dp"
+       android:background="#e4e5e8"/>
+   
+   <TextView 
+       android:id="@+id/thermost_setting_equipment_tv2"
+       android:layout_width="match_parent"
+      android:layout_height="45dp"
+       android:gravity="center_vertical|left"
+       android:clickable="true"
+       android:textColor="#737373"
+       android:textSize="15sp"
+       android:padding="5dp"/>
+   
+   <TextView 
+        android:id="@+id/thermost_setting_line_tv3"
+       android:layout_width="match_parent"
+       android:layout_height="1dp"
+       android:visibility="gone"
+       android:background="#e4e5e8"/>
+   
+   <TextView 
+       android:id="@+id/thermost_setting_equipment_tv3"
+       android:layout_width="match_parent"
+       android:layout_height="45dp"
+       android:gravity="center_vertical|left"
+       android:clickable="true"
+       android:visibility="gone"
+       android:textColor="#737373"
+       android:textSize="15sp"
+       android:padding="5dp"/>
+   <TextView 
+        android:id="@+id/thermost_setting_line_tv4"
+       android:layout_width="match_parent"
+       android:layout_height="1dp"
+       android:visibility="gone"
+       android:background="#e4e5e8"/>
+   
+   <TextView 
+       android:id="@+id/thermost_setting_equipment_tv4"
+       android:layout_width="match_parent"
+       android:layout_height="45dp"
+       android:gravity="center_vertical|left"
+       android:clickable="true"
+       android:visibility="gone"
+       android:textColor="#737373"
+       android:textSize="15sp"
+       android:padding="5dp"/>
+   
+   <TextView 
+        android:id="@+id/thermost_setting_line_tv5"
+       android:layout_width="match_parent"
+       android:layout_height="1dp"
+       android:visibility="gone"
+       android:background="#e4e5e8"/>
+   
+   <TextView 
+       android:id="@+id/thermost_setting_equipment_tv5"
+       android:layout_width="match_parent"
+       android:layout_height="45dp"
+       android:gravity="center_vertical|left"
+       android:clickable="true"
+       android:visibility="gone"
+       android:textColor="#737373"
+       android:textSize="15sp"
+       android:padding="5dp"/>
+   <TextView 
+       android:id="@+id/thermost_setting_line_tv6"
+       android:layout_width="match_parent"
+       android:layout_height="1dp"
+       android:visibility="gone"
+       android:background="#e4e5e8"/>
+   
+   <TextView 
+       android:id="@+id/thermost_setting_equipment_tv6"
+       android:layout_width="match_parent"
+       android:layout_height="45dp"
+       android:gravity="center_vertical|left"
+       android:clickable="true"
+       android:visibility="gone"
+       android:textColor="#737373"
+       android:textSize="15sp"
+       android:padding="5dp"/>
+
+</LinearLayout>

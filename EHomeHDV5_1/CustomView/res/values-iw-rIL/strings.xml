@@ -1,0 +1,40 @@
+<resources>
+
+    <string name="operation_title">הכנס</string>
+    <string name="operation_sure">חישוב</string>
+    <string name="menu_item_bottom">תחתון</string>
+    <string name="hint_neterror">בעית רשת בדוק חיבוריות</string>
+    <string name="hint_net_timeout">בעיות תזמון רשת, אנא בדוק רשת……</string>
+    <string name="hint_account_mange">ניהול נתבים</string>
+    <string name="switch_on">פתח</string>
+    <string name="switch_off">סגור</string>
+    <string name="week_sun">א</string>
+    <string name="week_mon">ב</string>
+    <string name="week_tue">ג</string>
+    <string name="week_wed">ד</string>
+    <string name="week_thu">ה</string>
+    <string name="week_fri">ו</string>
+    <string name="week_sat">ש</string>
+    <string name="calendar_today">היום</string>
+    <string name="dialog_titel">כותרת</string>
+    <string name="dialog_back">חזור</string>
+    <!-- water value -->
+    <string name="WL_28_time_chose">בחר זמן</string>
+    <string name="WL_28_hour">שעה</string>
+    <string name="WL_28_minute">דקה</string>
+    <string name="WL_28_second">שניה</string>
+
+    <!-- 下拉 -->
+    <string name="down_pull_refresh">משוך לריענון</string>
+    <string name="last_update">עודכן לאחרונה</string>
+    <string name="release_refresh">שחרר ריענון</string>
+    <string name="refresh_now">מרענן&#8230;</string>
+    <string name="recent_update">Lעודכן לאחרונה:</string>
+
+    <!--时间 -->
+    <string name="month_ago">לפני חודשים</string>
+    <string name="day_ago">לפני ימים</string>
+    <string name="hour_ago">לפני שעות</string>
+    <string name="min_ago">לפני דקות</string>
+    <string name="just">כרגע</string>
+</resources>

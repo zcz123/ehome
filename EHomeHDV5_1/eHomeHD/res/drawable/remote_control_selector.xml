@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+	<item android:drawable="@drawable/remote_control_button_2" android:state_pressed="true"></item>
+	<item android:drawable="@drawable/remote_control_button_1" android:state_enabled="true"></item>
+	<item android:drawable="@drawable/wl_v4_progress_thumb_normal" android:state_enabled="false"></item>
+</selector>

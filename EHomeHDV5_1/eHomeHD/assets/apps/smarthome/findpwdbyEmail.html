@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>findpassword</title>
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/custom.css" />
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+		</style>
+		<script type="text/javascript" src="js/plus.js"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/hashmap.js"></script>
+		<script type="text/javascript" src="./js/md5-min.js"></script>
+		<script type="text/javascript" src="./js/digest-auth.js"></script>
+		<script src="js/custom.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav custom-nav">
+			<a class="custom-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title"><span class="autoSwitchLanguager" id="html_user_reset_password"></span></h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-content-padded" style="margin-top: 64px;margin-left: 10px;margin-right: 10px;">
+				<p id="hint_top"></p>
+				<div style="text-align: center;">
+					<button type="button" style="margin-top: 128px;" onclick="findPassword();">
+						<span class="autoSwitchLanguager" id="html_user_reset_password_send_mail"></span>
+					</button>
+				</div>
+
+			</div>
+		</div>
+
+	</body>
+	<!--<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>-->
+	<script>
+		var email = "";
+		plus.plusReady(function() {
+			setHintTop();
+		});
+
+		function setHintTop() {
+			email=decodeURI(getUrlParam("email"));
+			var hintTop = document.getElementById("hint_top");
+			hintTop.textContent = plus.ehomev5.getLang("html_user_reset_password_by_mail_hint_1") + email + plus.ehomev5.getLang("html_user_reset_password_by_mail_hint_2");
+		}
+
+		function findPassword() {
+			var digestAuth = DigestAuthentication.init({
+				onSuccess: function(response, status) {
+					var ret=JSON.parse(response);
+					var hint=statusHelper.mapping(status);
+					if(hint){
+						alert(hint);
+					}else if(status=="0"){
+						alert(plus.ehomev5.getLang("html_user_reset_password_send_mail_confirm"));
+						window.location = "login.html";
+					}
+				},
+				onFailure: function(httpStatus) {
+					alert(plus.ehomev5.getLang("html_user_reset_password_send_fail"));
+				}
+			});
+			digestAuth.setHeader('cmd', 'resetPasswd');
+			var obj = {};
+			obj.email = email;
+			obj.appLang = plus.ehomev5.getCurrentLanguag();
+			digestAuth.setData(JSON.stringify(obj));
+			digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_DIGEST_URLBASE) + '/user/access');
+		}
+	</script>
+
+</html>

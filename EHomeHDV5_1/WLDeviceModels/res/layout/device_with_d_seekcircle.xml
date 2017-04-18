@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="20dp">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            
+	     <com.yuantuo.customview.seekcircle.SeekCircle
+	        android:id="@+id/dev_state_seekbar_0_light"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center"
+	        android:layout_margin="25dp"/>
+	
+	    	<TextView
+	        android:id="@+id/dev_state_textview_0"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/default_progress"
+	        android:layout_gravity="center"
+	        android:textColor="#6EA31D"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+    	</FrameLayout>
+    </LinearLayout>
+    
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="20dp"
+        android:id="@+id/dev_iscolor_seekbar">
+    	<FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+	        <com.yuantuo.customview.seekcircle.SeekCircle
+	        android:id="@+id/dev_state_seekbar_1_light"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center"
+	        android:layout_margin="25dp" />
+	
+	    	<TextView
+	        android:id="@+id/dev_state_textview_1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	         android:layout_gravity="center"
+	         android:textColor="#6EA31D"
+	        android:text="@string/default_progress"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	    </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

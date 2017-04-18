@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical" >
+
+    <include layout="@layout/titlebar_general" />
+
+    <EditText
+        android:id="@+id/et_wifi_name"
+        style="@style/setting_top_shape"
+        android:layout_marginTop="@dimen/default_margin_top"
+        android:drawableLeft="@drawable/selector_wifi_name"
+        android:drawablePadding="10dp"
+        android:drawableStart="@drawable/selector_wifi_name"
+        android:hint="@string/setting_input_wifi_name_for_device"
+        android:singleLine="true"
+        android:textSize="@dimen/textsize_middle" />
+
+    <LinearLayout style="@style/ll_divider" >
+
+        <ImageView style="@style/img_divider" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/et_wifi_pwd"
+        style="@style/setting_bottom_shape"
+        android:drawableLeft="@drawable/selector_wifi_pwd"
+        android:drawablePadding="10dp"
+        android:drawableStart="@drawable/selector_wifi_pwd"
+        android:hint="@string/setting_input_wifi_pwd"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:singleLine="true"
+        android:textSize="@dimen/textsize_middle" />
+
+    <Button
+        android:id="@+id/btn_start_linkwifi"
+        style="@style/btn_blue_normal"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_shape_round_rect_all"
+        android:text="@string/common_start_setting" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/setting_optional_network"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/textsize_middle" >
+    </TextView>
+
+    <com.wulian.icam.view.widget.PullListView
+        android:id="@+id/wifi_signal_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:cacheColorHint="@null"
+        android:dividerHeight="1dip"
+        android:scrollbars="none" >
+    </com.wulian.icam.view.widget.PullListView>
+
+</LinearLayout>

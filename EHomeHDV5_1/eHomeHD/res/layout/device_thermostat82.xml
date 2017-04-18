@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/thermostat_main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="8"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center" >
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_margin="20dp" >
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:padding="8dp"
+                                android:src="@drawable/thermost_icon_temperature_104" />
+
+                            <ImageView
+                                android:id="@+id/thermost_circular_image"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:padding="20dp"
+                                android:src="@drawable/thermost_icon_circular_01" />
+
+                            <ImageView
+                                android:id="@+id/thermost_circular_image2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:padding="45dp"
+                                android:src="@drawable/thermost_icon_circular_02" />
+                        </FrameLayout>
+
+                        <cc.wulian.app.model.device.impls.controlable.newthermostat.ThermostatArcProgressBar
+                            android:id="@+id/thermost_ArcProgressBar"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                        
+                         <cc.wulian.app.model.device.impls.controlable.newthermostat.RangeProgressBar
+                            android:id="@+id/thermost_ArcProgressBar_auto"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" 
+                            android:visibility="gone"/>
+
+                        <RelativeLayout
+                            android:id="@+id/thermost_mode_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_margin="65dp"
+                            android:visibility="visible" >
+
+                            <LinearLayout
+                                android:id="@+id/thermost_mode_temp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:orientation="horizontal" >
+
+                                <TextView
+                                    android:id="@+id/thermost_temperature_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#3e3e3e"
+                                    android:textSize="65sp" />
+
+                                <TextView
+                                    android:id="@+id/thermost_temperature_tv2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#3e3e3e"
+                                    android:textSize="33sp" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/thermost_mode_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_above="@id/thermost_mode_temp"
+                                android:layout_centerHorizontal="true"
+                                android:gravity="center_horizontal|bottom"
+                                android:textColor="#3e3e3e"
+                                android:textSize="18sp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/thermost_shundown_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="235dp"
+                            android:layout_gravity="center"
+                            android:visibility="gone" >
+
+                            <Button
+                                android:id="@+id/thermost_shutdown_tbtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/thermost_shutdown_btn_selector2" />
+                        </RelativeLayout>
+					<!-- 
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="20dp" >
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left|bottom"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/thermost_icon_slash_02" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right|bottom"
+                                android:layout_marginRight="15dp"
+                                android:src="@drawable/thermost_icon_slash_01" />
+                        </FrameLayout>
+                      -->
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/thermost_emergency_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Emergency Heat"
+                    android:textSize="20sp"
+                    android:textColor="#E4710A"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:background="@drawable/thermost_icon_notice"/>
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3" >
+
+                <ToggleButton
+                    android:id="@+id/thermost_pull_btn"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/thermost_dropdown_btn_selector"
+                    android:checked="false"
+                    android:text=""
+                    android:textOff=""
+                    android:textOn="" />
+
+                <LinearLayout
+                    android:id="@+id/thermost_dropdown_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="horizontal"
+                    android:visibility="visible" >
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="right|bottom" >
+
+                        <ImageButton
+                            android:id="@+id/thermost_mode_btn"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/thermost_mode_auto_btn_selector" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center" >
+
+                        <ImageButton
+                            android:id="@+id/thermost_fan_btn"
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/thermost_fan_on_btn_selector" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal|top" >
+
+                        <ImageButton
+                            android:id="@+id/thermost_shutdown_btn"
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/thermost_icon_shutdown_01" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center" >
+
+                        <ImageButton
+                            android:id="@+id/thermost_program_btn"
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/thermost_program_btn_selector" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="left|bottom" >
+
+                        <ImageButton
+                            android:id="@+id/thermost_setting_btn"
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/thermost_setting_btn_selector" />
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/thermostat_toset_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp" >
+
+            <TextView
+                android:id="@+id/thermostat_toset_tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Please set the thermostat\nbefore operation"
+                android:textColor="#C9C9C9"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp" 
+            android:paddingTop="15dp"
+       		android:paddingBottom="15dp">
+
+            <Button
+                android:id="@+id/thermostat_toset_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/thermost_setting_toset"
+                android:text="TO  SET"
+                android:textColor="#5C5C5C"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:gravity="center_horizontal|top"
+            android:paddingLeft="28dp"
+            android:paddingRight="28dp"
+            android:paddingTop="15dp" >
+
+            <TextView
+                android:id="@+id/thermostat_toset_tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Incorrect setting will damage the HAVC system\nPlease set it with the assistance\n of professionals"
+                android:textColor="#C9C9C9"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

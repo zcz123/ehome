@@ -1,0 +1,1630 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cc.wulian.smarthomev5"
+    android:installLocation="auto"
+    android:versionCode="563"
+    android:versionName="5.3.6">
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="21" />
+
+    <!-- Push service 运行需要的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <!-- 富媒体需要声明的权限 -->
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+    <uses-permission android:name="android.permission.USE_SIP" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!-- for vibrate -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- for shortcut -->
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <!-- for NFC switch -->
+    <uses-permission android:name="android.permission.NFC" />
+    <!-- for barcode -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <!-- for speak -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- for location -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- 在SDCard中创建与删除文件权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 电源管理 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- 读取Log权限 -->
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <!-- for isScreenOn -->
+    <!-- <uses-permission android:name="android.permission.DEVICE_POWER" /> -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <!-- 获取设备唯一标识 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <!--<uses-feature-->
+        <!--android:name="android.hardware.camera"-->
+        <!--android:required="false" />-->
+    <!--<uses-feature-->
+        <!--android:name="android.hardware.camera.autofocus"-->
+        <!--android:required="false" />-->
+    <!--<uses-feature-->
+        <!--android:name="android.hardware.microphone"-->
+        <!--android:required="false" />-->
+    <!--<uses-feature-->
+        <!--android:name="android.hardware.telephony"-->
+        <!--android:required="false" />-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+    <!-- for google play filter -->
+    <supports-screens
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="false"
+        android:xlargeScreens="true" />
+
+    <application
+        android:name=".activity.MainApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/app_icon_on"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@style/WLTheme">
+        <meta-data
+            android:name="default_request"
+            android:value="httpsPath" />
+        <!-- 正式版本 -->
+        <meta-data
+            android:name="httpsPath"
+            android:value="pu.sh.gg" />
+
+        <!-- 国际服务器 -->
+        <meta-data
+            android:name="httpPath"
+            android:value="api.simplegg.com" />
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="b733ed11f8cea1989121c83dcc0eb5aed7b24195" />
+
+        <service android:name=".service.MainService" />
+        <service android:name=".service.LocationService" />
+        <!-- 监听百度推送信息 add syf -->
+        <service android:name=".service.NotifiService" />
+
+        <receiver android:name=".service.StartServiceBroadCastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SCREEN_ON" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SCREEN_OFF" />
+            </intent-filter>
+        </receiver>
+
+        <!-- V5欢迎界面 -->
+        <activity
+            android:name=".fragment.welcome.WelcomeActivityV5"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- V5引导界面 -->
+        <activity
+            android:name=".fragment.welcome.GuideActivityV5"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+
+        <!-- V5登录界面 -->
+        <activity
+            android:name=".activity.SigninActivityV5"
+            android:alwaysRetainTaskState="true"
+            android:launchMode="singleTop"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+        <!-- 扫描二维码 -->
+        <activity
+            android:name=".activity.QRScanActivity"
+            android:alwaysRetainTaskState="true"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+
+        <!-- 主页 -->
+        <activity
+            android:name=".activity.MainHomeActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:fitsSystemWindows="true"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.OtherMessageClickedActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.WebBrowserActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.AlarmMessageActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.SocialMessageActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <!-- 监控模块 -->
+        <activity
+            android:name=".activity.EditMonitorInfoActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <!-- 添加监控 -->
+        <activity
+            android:name=".activity.monitor.MonitorAddActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".activity.MonitoringConnectionActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <!-- 鹰眼界面 -->
+        <activity
+            android:name="cc.wulian.app.model.device.impls.controlable.doorlock.hawkeye.HawkeyeReadyConnectionActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name="cc.wulian.app.model.device.impls.controlable.doorlock.hawkeye.HawkeyeFindHotActivity"
+            android:alwaysRetainTaskState="true"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name="cc.wulian.app.model.device.impls.controlable.doorlock.hawkeye.GalleryHawkeyeActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Black.NoTitleBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="cc.wulian.app.model.device.impls.controlable.doorlock.hawkeye.HawkeyeWifiConnFailActivity"
+            android:alwaysRetainTaskState="true"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name="cc.wulian.app.model.device.impls.controlable.doorlock.hawkeye.HawkeyeWifiConnSuccessActivity"
+            android:alwaysRetainTaskState="true"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name="cc.wulian.app.model.device.impls.controlable.doorlock.hawkeye.HawkeyeSettingWifiActivity"
+            android:alwaysRetainTaskState="true"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name="cc.wulian.app.model.device.impls.controlable.doorlock.hawkeye.PlayHawkeyeActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name="com.wulian.iot.view.ui.DeskSdStorageActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <!-- 猫眼配置准备界面 -->
+        <activity
+            android:name="com.wulian.iot.view.ui.EagleHumanAlarmSetActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".activity.iotc.share.EagleShareActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name=".activity.iotc.config.IOTCDevConfigActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name=".activity.iotc.config.IOTCDevCKWifiActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".activity.iotc.res.IOTCDevConfigFailActivity"
+            android:alwaysRetainTaskState="true"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".activity.iotc.res.IOTCDevConfigWinActivity"
+            android:alwaysRetainTaskState="true"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name=".activity.iotc.config.IOTCDevCKConnStatusActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name=".activity.iotc.config.IOTCDevSettingWifiActivity"
+            android:alwaysRetainTaskState="true"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <!-- eagle config activity -->
+
+        <activity
+            android:name="com.wulian.iot.view.device.play.PlayDoorLock_89"
+            android:alwaysRetainTaskState="true"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <!-- 猫眼设置界面 -->
+        <activity
+            android:name="com.wulian.iot.view.device.setting.SetEagleCameraActivity"
+            android:alwaysRetainTaskState="true"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name="com.wulian.iot.view.ui.EagleDeviceInfoActivity"
+            android:alwaysRetainTaskState="true"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <!-- add syf 鹰眼 搜索 -->
+        <!-- <activity -->
+        <!-- android:name=".activity.EagleWifiConnSuccessActivity" -->
+        <!-- android:alwaysRetainTaskState="true" -->
+        <!-- android:theme="@android:style/Theme.Black.NoTitleBar" /> -->
+        <!-- <activity -->
+        <!-- android:name=".activity.EagleFindHotActivity" -->
+        <!-- android:alwaysRetainTaskState="true" -->
+        <!-- android:configChanges="orientation|keyboardHidden|screenSize" -->
+        <!-- android:theme="@android:style/Theme.Black.NoTitleBar" /> -->
+        <!-- <activity -->
+        <!-- android:name=".activity.EagleSendWifiActivity" -->
+        <!-- android:alwaysRetainTaskState="true" -->
+        <!-- android:configChanges="orientation|keyboardHidden|screenSize" -->
+        <!-- android:theme="@android:style/Theme.Black.NoTitleBar" /> -->
+        <!-- <activity -->
+        <!-- android:name=".activity.EagleSettingWifiActivity" -->
+        <!-- android:alwaysRetainTaskState="true" -->
+        <!-- android:theme="@android:style/Theme.Black.NoTitleBar" /> -->
+        <activity
+            android:name="com.wulian.iot.view.device.play.PlayEagleVideoAvtivity"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name=".activity.MonitorActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.monitor.MonitorQRScanActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".fragment.device.joingw.DeviceGuideJoinGWSuccessActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".fragment.device.joingw.DeviceGuideJoinGWFailActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".fragment.device.joingw.DeviceGuideJoinGWLowActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".fragment.device.joingw.DeviceConfigJoinGWActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".fragment.device.joingw.DeviceConfigJoinGWV2Activity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".fragment.setting.router.RouterSettingActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.RouteRemindActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".fragment.setting.router.RouterWifiSettingActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".fragment.setting.router.RouterWifiSetting2_4GChannelActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".fragment.setting.router.RouterWifiSetting5GChannelActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".fragment.setting.router.RouterConnectedDeviceDetailActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.ManagerAccountActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+
+        <!-- OPUS? -->
+        <receiver
+            android:name="com.wulian.siplibrary.plugins.video.PluginReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cc.wulian.smarthomev5.plugins.action.REGISTER_VIDEO" />
+            </intent-filter>
+
+            <meta-data
+                android:name="lib_name"
+                android:value="libpj_video_android.so" />
+            <!-- For now it does not matter in the future we should have one per device, codec, and converter (if needed) -->
+            <meta-data
+                android:name="init_factory"
+                android:value="pjmedia_webrtc_vid_render_factory" />
+        </receiver>
+        <receiver
+            android:name="com.wulian.siplibrary.plugins.video.PluginReceiverFfmpeg"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cc.wulian.smarthomev5.codecs.action.REGISTER_VIDEO_CODEC" />
+            </intent-filter>
+
+            <meta-data
+                android:name="lib_name"
+                android:value="libpj_video_android.so" />
+            <meta-data
+                android:name="init_factory"
+                android:value="pjmedia_codec_ffmpeg_vid_init" />
+            <meta-data
+                android:name="deinit_factory"
+                android:value="pjmedia_codec_ffmpeg_vid_deinit" />
+        </receiver>
+        <receiver
+            android:name="com.wulian.siplibrary.plugins.video.PluginReceiverVpx"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cc.wulian.smarthomev5.codecs.action.REGISTER_VIDEO_CODEC" />
+            </intent-filter>
+
+            <meta-data
+                android:name="lib_name"
+                android:value="libpj_vpx.so" />
+            <meta-data
+                android:name="init_factory"
+                android:value="pjmedia_codec_vpx_init" />
+            <meta-data
+                android:name="deinit_factory"
+                android:value="pjmedia_codec_vpx_deinit" />
+        </receiver>
+        <!-- 场景模块 -->
+        <activity
+            android:name=".activity.SceneActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.SceneEditActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.AddOrEditTimingSceneTimeActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.SceneEditLinkTaskActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.TimingScenesActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <!-- 设备模块 -->
+        <activity
+            android:name=".activity.DeviceActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.AreaDevicesActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.AreaGroupEditActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.DeviceDetailsActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="cc.wulian.smarthomev5.shortcut" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- 配置模块 -->
+        <activity
+            android:name=".activity.SwitchAccountActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.PermissionManagerActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <!-- 管家模块 -->
+        <activity
+            android:name=".activity.house.HouseKeeperAddRulesActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.house.HousekeeperSelectTimeZoneActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.house.HouseKeeperConditionActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name="com.wulian.icam.view.device.setting.DeviceSettingActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+        <activity
+            android:name=".activity.house.HouseKeeperConditionSelectDeviceActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.house.HouseKeeperActionTaskActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.house.HouseKeeperActionSelectDeviceActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.house.HouseKeeperTriggerSceneActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.house.HouseKeeperConditionSceneActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.house.HouseKeeperActionSceneActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.house.HouseKeeperConditionTimeActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.house.HouseKeeperTriggerTimeActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.house.HouseKeeperTimeZoneActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.house.HouseKeeperCustomMessageActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.house.HouseKeeperCustomMessageSelectDeviceActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <!-- <activity -->
+        <!-- android:name="cc.wulian.smarthomev5.activity.house.timescene.HouseAddOrEditTimingSceneTimeActivity" -->
+        <!-- android:alwaysRetainTaskState="true" -->
+        <!-- android:configChanges="orientation|keyboardHidden|screenSize"></activity> -->
+        <!-- <activity -->
+        <!-- android:name="cc.wulian.smarthomev5.activity.house.timescene.HouseTimeSceneActivity" -->
+        <!-- android:alwaysRetainTaskState="true" -->
+        <!-- android:configChanges="orientation|keyboardHidden|screenSize"></activity> -->
+        <!-- <activity -->
+        <!-- android:name="cc.wulian.smarthomev5.activity.house.scene.HouseSceneLinkTaskSceneActivity" -->
+        <!-- android:alwaysRetainTaskState="true" -->
+        <!-- android:configChanges="orientation|keyboardHidden|screenSize"></activity> -->
+        <!-- <activity -->
+        <!-- android:name="cc.wulian.smarthomev5.activity.house.scene.HouseSceneTaskDeviceDetailActivity" -->
+        <!-- android:alwaysRetainTaskState="true" -->
+        <!-- android:configChanges="orientation|keyboardHidden|screenSize"></activity> -->
+        <activity
+            android:name=".activity.house.SceneTimingActionTaskActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <!-- 控制中心 -->
+        <activity
+            android:name=".activity.AccountInformationSettingManagerActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <!-- 设置模块 -->
+        <activity
+            android:name=".activity.SettingManagerActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.VoiceReminderActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.BellAudioPickActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.SpeakSpeedPickActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <!-- 更多模块 -->
+        <activity
+            android:name=".activity.MoreManagerActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.NFCActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize">
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.TECH_DISCOVERED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.TAG_DISCOVERED" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.nfc.action.TECH_DISCOVERED"
+                android:resource="@xml/filter_nfc" />
+        </activity>
+        <activity
+            android:name=".activity.NFCAddDeviceActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.GPSActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.ShakeActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.ShakeAddDeviceActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.WifiActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.WifiSelectActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.WifiAddDeviceActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.ScanQRCodeActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <!-- 关于模块 -->
+        <activity
+            android:name=".activity.AboutusActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.FuctionIntroduction"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.TwoDimensionalCode"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activity.Feedback"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <!-- <activity -->
+        <!-- android:name="cc.wulian.smarthomev5.activity.FeedbackListShow" -->
+        <!-- android:alwaysRetainTaskState="true" -->
+        <!-- android:configChanges="orientation|keyboardHidden|screenSize"></activity> -->
+        <activity
+            android:name=".activity.AnnouncementActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <!-- 设备设置 -->
+        <activity
+            android:name=".activity.devicesetting.DeviceSettingActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <!-- html5 plus 代理 -->
+        <activity
+            android:name=".service.html5plus.core.Html5PlusWebViewActvity"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <!-- 塑形 网关设置 -->
+        <activity
+            android:name=".activity.sxgateway.SXGatewayHeartSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.sxgateway.SxGatewayRelayFailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".activity.sxgateway.SxGatewayRelaySucceedActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".activity.sxgateway.ConfigDeviceSxGatewayConnectNetActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".activity.sxgateway.ConfigDeviceSxGatewayConnectNetAgainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".activity.sxgateway.ConfigDeviceSxGatewayFailAndConnectActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
+
+        <!-- mini 网关设置 -->
+        <!-- <activity -->
+        <!-- android:name="cc.wulian.smarthomev5.activity.minigateway.MiniGatewayWifiSettingActivity" -->
+        <!-- android:screenOrientation="portrait"></activity> -->
+        <!-- <activity -->
+        <!-- android:name="cc.wulian.smarthomev5.activity.minigateway.MiniGatewayWifiSsidSettingActivity" -->
+        <!-- android:screenOrientation="portrait"></activity> -->
+        <activity
+            android:name=".activity.minigateway.ConfigDeviceMiniGatewayConnectNetLastActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".activity.minigateway.MiniTimeVoiceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.minigateway.MiniGatewayRelayWifiConnectActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.minigateway.MiniSetTimePeroidActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.minigateway.MiniGatewayTimeAlarmActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.minigateway.ConfigDeviceMiniGateWayKnowWifiRelayActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".activity.minigateway.ConfigDeviceMiniGatewayPageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".activity.minigateway.MiniGatewayHeartSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.minigateway.MiniGatewayRelaySettingActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".fragment.setting.minigateway.MiniRouterSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.minigateway.MiniGatewayChannelConflictHelpIdeaActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.album.AlbumActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+
+        <!-- <activity -->
+        <!-- android:name="com.wulian.icam.view.album.AlbumListActivity" -->
+        <!-- android:screenOrientation="portrait" -->
+        <!-- android:theme="@android:style/Theme.Black.NoTitleBar"></activity> -->
+
+        <activity
+            android:name="com.wulian.icam.view.album.AlbumGridActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.album.AlbumPicActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.barcode.decode.CaptureActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.device.config.AddDeviceFirstPageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.device.config.V2EmptyActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoDisplay" />
+        <activity
+            android:name="com.wulian.icam.view.device.config.CheckBindingStateActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.device.config.CheckConfigResultForDeskCamActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <!-- <activity -->
+        <!-- android:name="com.wulian.icam.view.device.config.ConfigDeviceFirstPageActivity" -->
+        <!-- android:screenOrientation="portrait" -->
+        <!-- android:theme="@android:style/Theme.Black.NoTitleBar"></activity> -->
+        <activity
+            android:name="com.wulian.icam.view.device.config.BarCodeSettingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.device.config.DeviceAlreadyBindedResultActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.device.config.DeviceConfigFailResultActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.device.config.DeviceConfigSuccessActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.device.config.DeviceLaunchGuideActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.device.config.DeviceIdQueryActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+
+        <!-- <activity -->
+        <!-- android:name="com.wulian.icam.view.device.config.DeviceSendAuthRequestActivity" -->
+        <!-- android:screenOrientation="portrait" -->
+        <!-- android:theme="@android:style/Theme.Black.NoTitleBar"></activity> -->
+
+        <activity
+            android:name="com.wulian.icam.view.device.config.DeviceResetGuideActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.device.config.DeviceGetReadyGuideActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.device.config.WifiDirectSettingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.device.config.WifiInputActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.device.config.ConnectDeviceWifiGuideActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.device.config.RestoreOriginWifiGuideActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.device.config.HandInputDeviceIdActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.device.config.SoftApSettingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.device.setting.WifiSettingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.device.setting.DeviceDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.device.play.PlayVideoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <!-- 随便看回看页 -->
+        <activity
+            android:name="com.wulian.icam.view.device.play.ReplayVideoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+
+        <!-- <activity -->
+        <!-- android:name="com.wulian.icam.view.lan.LanDeviceSettingActivity" -->
+        <!-- android:screenOrientation="portrait" -->
+        <!-- android:theme="@android:style/Theme.Black.NoTitleBar" -->
+        <!-- android:windowSoftInputMode="stateHidden|stateUnchanged"></activity> -->
+        <!-- <activity -->
+        <!-- android:name="com.wulian.icam.view.lan.LanDeviceActivity" -->
+        <!-- android:screenOrientation="portrait" -->
+        <!-- android:theme="@android:style/Theme.Black.NoTitleBar"></activity> -->
+        <!-- <activity -->
+        <!-- android:name="com.wulian.icam.view.lan.LanChangeVideoPwdActivity" -->
+        <!-- android:screenOrientation="portrait" -->
+        <!-- android:theme="@android:style/Theme.Black.NoTitleBar"></activity> -->
+
+        <activity
+            android:name="com.wulian.icam.view.setting.FunctionSettingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.setting.GesturePwdActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+
+        <!-- <activity -->
+        <!-- android:name="com.wulian.icam.view.setting.GesturePwdCancelActivity" -->
+        <!-- android:screenOrientation="portrait" -->
+        <!-- android:theme="@android:style/Theme.Black.NoTitleBar"></activity> -->
+        <!-- <activity -->
+        <!-- android:name="com.wulian.icam.view.setting.GesturePwdCheckActivity" -->
+        <!-- android:launchMode="singleTop" -->
+        <!-- android:screenOrientation="portrait" -->
+        <!-- android:theme="@android:style/Theme.Black.NoTitleBar"></activity> -->
+        <!-- <activity -->
+        <!-- android:name="com.wulian.icamcom.wulian.icam.view.setting.TestSettingActivity" -->
+        <!-- android:screenOrientation="portrait" -->
+        <!-- android:theme="@android:style/Theme.Black.NoTitleBar"></activity> -->
+        <!-- <activity -->
+        <!-- android:name="com.wulian.icam.view.setting.ChangePwdActivity" -->
+        <!-- android:screenOrientation="portrait" -->
+        <!-- android:theme="@android:style/Theme.Black.NoTitleBar"></activity> -->
+        <activity
+            android:name="com.wulian.icam.view.protect.SafeProtectActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.protect.SafeDurationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.protect.SafeProtectSettingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.protect.DetectionAreaActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+        <activity
+            android:name="com.wulian.icam.view.help.DisclaimerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.help.HelpActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.help.FaqActivity"
+            android:hardwareAccelerated="false"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.help.CommonPBActivity"
+            android:hardwareAccelerated="false"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.help.AddDeviceHelpActivity"
+            android:hardwareAccelerated="false"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.help.FunctionIntroActivity"
+            android:hardwareAccelerated="false"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.replay.HistoryVideoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.replay.SaveTimeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.replay.HistoryVideoSettingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <!-- <activity -->
+        <!-- android:name="com.wulian.icam.view.share.DeviceShareByBarcodeActivity" -->
+        <!-- android:screenOrientation="portrait" -->
+        <!-- android:theme="@android:style/Theme.Black.NoTitleBar"></activity> -->
+        <!-- <activity -->
+        <!-- android:name="com.wulian.icam.view.share.DeviceShareActivity" -->
+        <!-- android:screenOrientation="portrait" -->
+        <!-- android:theme="@android:style/Theme.Black.NoTitleBar"></activity> -->
+        <!-- <activity -->
+        <!-- android:name="com.wulian.icam.view.message.ApplyDetailActivity" -->
+        <!-- android:screenOrientation="portrait" -->
+        <!-- android:theme="@android:style/Theme.Black.NoTitleBar"></activity> -->
+        <!-- <activity -->
+        <!-- android:name="com.wulian.icam.view.device.AccessDeviceActivity" -->
+        <!-- android:screenOrientation="portrait" -->
+        <!-- android:theme="@android:style/Theme.Black.NoTitleBar"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.VIEW" /> -->
+
+
+        <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+
+
+        <!-- <data -->
+        <!-- android:host="com.wulian.icam" -->
+        <!-- android:path="/access_device" -->
+        <!-- android:scheme="goto" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
+        <!-- <activity -->
+        <!-- android:name="com.wulian.icam.view.device.ResetDeviceActivity" -->
+        <!-- android:screenOrientation="portrait"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.VIEW" /> -->
+
+
+        <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+
+
+        <!-- <data -->
+        <!-- android:host="com.wulian.icam" -->
+        <!-- android:path="/reset_device" -->
+        <!-- android:scheme="goto" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
+
+
+        <!-- 06 摄像机aty 开始 -->
+        <activity
+            android:name="com.wulian.iot.view.device.play.PlayDesktopActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Black.NoTitleBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.wulian.iot.view.device.setting.SetCameraActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+        <activity
+            android:name="com.wulian.iot.view.ui.ElectivetActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+        <activity
+            android:name="com.wulian.iot.view.device.setting.SetProtectActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+        <activity
+            android:name="com.wulian.iot.view.device.setting.ProtectAreaActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Black.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+        <activity
+            android:name="com.wulian.iot.view.device.play.PlayHistoryVideoActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+        <!-- 06 摄像机aty 结束 -->
+
+
+        <!-- 梦想之花设置 -->
+        <!-- <activity -->
+        <!-- android:name="cc.wulian.smarthomev5.activity.flower.FlowerTapLightActivity" -->
+        <!-- android:alwaysRetainTaskState="true" -->
+        <!-- android:configChanges="keyboardHidden|orientation|screenSize" /> -->
+        <activity
+            android:name=".activity.flower.FlowerTimingBroadcastActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".activity.flower.FlowerBroadcastVolumeActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".activity.flower.AddOrEditFlowerTimeActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".activity.flower.AddOrEditFlowerTimeShowActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".activity.flower.FlowerTimeShowActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".activity.flower.FlowerSettingManagerActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".activity.flower.FlowerVoiceControlActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".activity.flower.FlowerVoiceControlCommondActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+
+        <!-- <activity -->
+        <!-- android:name="cc.wulian.smarthomev5.service.html5plus.plugins.PhotoSelectorActivity" -->
+        <!-- android:configChanges="keyboardHidden|orientation|screenSize" -->
+        <!-- android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" /> -->
+
+        <activity
+            android:name=".activity.TimezoneSettingActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".activity.SelectTimeZoneActiviey"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".account.BindGateWayActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activity.LocationSettingActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".activity.InstalServiceToolActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+
+        <!-- <activity -->
+        <!-- android:name="cc.wulian.smarthomev5.activity.uei.TVRemooteControlActivity" -->
+        <!-- android:alwaysRetainTaskState="true" -->
+        <!-- android:configChanges="keyboardHidden|orientation|screenSize" /> -->
+        <!-- <activity -->
+        <!-- android:name="cc.wulian.smarthomev5.activity.uei.ACRemooteControlActivity" -->
+        <!-- android:alwaysRetainTaskState="true" -->
+        <!-- android:configChanges="keyboardHidden|orientation|screenSize" /> -->
+
+        <activity
+            android:name=".activity.uei.SetACRemooteControlActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!--
+        <activity
+            android:name="cc.wulian.smarthomev5.activity.uei.DVDRemooteControlActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name="cc.wulian.smarthomev5.activity.uei.ProjectorRemooteControlActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        -->
+        <activity
+            android:name=".activity.uei.CustomRemooteControlActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".activity.uei.MatchControlActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".activity.DaiKinAirConditionListActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".activity.DaiKinAirConditionSetActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".fragment.device.joingw.DeviceGuideAddNoSetDeviceListActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".fragment.device.joingw.DeviceGuideAddNoSetDeviceActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".activity.monitor.DesktopCameraSetActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".activity.monitor.SetResolvingPowerActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".activity.monitor.ProtectionSettingActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name="com.wulian.iot.view.device.play.PlayEagleActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Black.NoTitleBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.wulian.iot.view.ui.GalleryActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Black.NoTitleBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activity.DeleteDeviceHelpActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".activity.ChoosePasswordTypeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.NoClockChoosePwActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.TempPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MiniGatewayVoiceChooseActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".activity.OncePasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.NoClockOncePwActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.NoClockCommonPwActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.devicesetting.DeviceSettingItemClickActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".activity.devicesetting.DeviceSettingshowActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".activity.house.HouseKeeperActionDelayActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".activity.HaiXin.JoinNetworkActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <!-- <activity -->
+        <!-- android:name="cc.wulian.smarthomev5.activity.uei.PowerAmplifierRemooteControlActivity" -->
+        <!-- android:alwaysRetainTaskState="true" -->
+        <!-- android:configChanges="keyboardHidden|orientation|screenSize" /> -->
+
+        <activity
+            android:name=".activity.uei.RemooteControlActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".activity.AccountInformationSettingTimeItemClickActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".activity.uei.SettingActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".activity.testapi.TestApi_406Activity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- thermostat82 Setting Program -->
+        <activity
+            android:name="cc.wulian.app.model.device.impls.controlable.newthermostat.setting.ThermostatSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cc.wulian.app.model.device.impls.controlable.newthermostat.setting.equipment.EquipmentSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cc.wulian.app.model.device.impls.controlable.newthermostat.setting.differential.DifferentialSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cc.wulian.app.model.device.impls.controlable.newthermostat.setting.filterreminder.FilterReminderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cc.wulian.app.model.device.impls.controlable.newthermostat.setting.location.LocationSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cc.wulian.app.model.device.impls.controlable.newthermostat.setting.location.LocationCountryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cc.wulian.app.model.device.impls.controlable.newthermostat.setting.location.LocationProvinceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cc.wulian.app.model.device.impls.controlable.newthermostat.setting.location.LocationCityActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cc.wulian.app.model.device.impls.controlable.newthermostat.program.ThermostatProgramActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+
+        <!-- 地暖floorWarm -->
+        <activity
+            android:name="cc.wulian.app.model.device.impls.controlable.floorwarm.setting.FloorWarmSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cc.wulian.app.model.device.impls.controlable.floorwarm.countdown.FloorWarmCountDownActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cc.wulian.app.model.device.impls.controlable.floorwarm.setting.SystemTypeSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cc.wulian.app.model.device.impls.controlable.floorwarm.setting.OverTempProtectActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cc.wulian.app.model.device.impls.controlable.floorwarm.setting.ForstProtectActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cc.wulian.app.model.device.impls.controlable.floorwarm.program.FloorWarmProgramActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+
+        <!-- 风机盘管FanCoil -->
+        <activity
+            android:name="cc.wulian.app.model.device.impls.controlable.fancoil.countdown.FanCoilCountDownActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cc.wulian.app.model.device.impls.controlable.fancoil.setting.FanCoilSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cc.wulian.app.model.device.impls.controlable.fancoil.setting.ProgramSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cc.wulian.app.model.device.impls.controlable.fancoil.setting.EnergySavingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cc.wulian.app.model.device.impls.controlable.fancoil.program.FanCoilProgramActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name="cc.wulian.app.model.device.impls.controlable.fancoil.setting.FilterReminderActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 金属开关 -->
+        <activity
+            android:name="cc.wulian.app.model.device.impls.controlable.metalswitch.ModeSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cc.wulian.app.model.device.impls.controlable.metalswitch.SettingActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".fragment.welcome.AdvActivityV5"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity android:name=".activity.BackMusicActivationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar"/>
+        <!--云二代摄像机入口-->
+        <activity
+            android:name=".activity.Cloud2DeviceSettingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <!-- 第三方登录 小白 -->
+        <activity
+            android:name=".activity.LittleWhiteActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.LittleWihteWifiConfigActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.CreateQRCodeActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 随便看门锁绑定 -->
+        <activity
+            android:name=".activity.BindDoorlockActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="devdiv.intent.action.BindDoorlockActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!--桌面摄像机活动检测设置-->
+        <activity
+            android:name="com.wulian.iot.view.ui.DeskMoveDetectionActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+        <activity
+            android:name="com.wulian.iot.view.ui.DeskSenseSettingActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+        <activity
+            android:name="com.wulian.iot.view.device.setting.DeskSensitivityActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+        <activity
+            android:name="com.wulian.iot.view.device.setting.DeskProtectPeriodActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+        <activity
+            android:name=".activity.uei.UeiMatchActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.Html5PlusWebViewV2Activity"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+
+        <!--新猫眼设置页-->
+        <activity
+            android:name="com.wulian.icam.view.device.setting.NewEagleSettingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.device.setting.NewEagleLanguageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.device.setting.NewEagleDecetionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.device.setting.NewEagleSensitiveActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.device.setting.NewEagleLinkageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.wulian.icam.view.device.setting.NewEagleStayTimeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+
+        <!--云二代云三代硬盘设置界面-->
+        <activity
+            android:name=".activity.monitor.OtherCameraSettingActivity"
+            android:screenOrientation="portrait"
+             />
+
+        <!-- 显示下载大图页面 -->
+        <activity
+            android:name="com.hyphenate.easeui.ui.EaseShowBigImageActivity"
+            android:theme="@style/horizontal_slide"></activity>
+        <!-- 显示video页面 -->
+        <activity
+            android:name="com.hyphenate.easeui.ui.EaseShowVideoActivity"
+            android:theme="@style/horizontal_slide"></activity>
+        <activity
+            android:name="com.hyphenate.easeui.ui.ImageGridActivity"
+            android:theme="@style/horizontal_slide"
+            android:windowSoftInputMode="stateAlwaysHidden"></activity>
+        <activity
+            android:name="com.hyphenate.easeui.ui.RecorderVideoActivity"
+            android:theme="@style/horizontal_slide"
+            android:windowSoftInputMode="stateAlwaysHidden"></activity>
+        <activity
+            android:name="cc.wulian.smarthomev5.activity.QuickEditActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"></activity>
+        <activity
+            android:name="cc.wulian.smarthomev5.activity.QuickEditSuccessActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"></activity>
+        <activity
+            android:name="cc.wulian.smarthomev5.eyecat.EyecatWIFISettingOneActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="adjustPan"
+            >
+        </activity>
+        <activity
+            android:name="cc.wulian.smarthomev5.eyecat.EyecatWIFISettingTwoActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.NoTitleBar"
+            ></activity>
+        <activity
+            android:name="cc.wulian.smarthomev5.eyecat.EyecatScanQRcodeActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.NoTitleBar"
+            ></activity>
+        <activity
+            android:name="cc.wulian.smarthomev5.eyecat.EyecatQRcodeActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.NoTitleBar"
+            ></activity>
+        <activity
+            android:name="cc.wulian.smarthomev5.eyecat.EyecatWaitingActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.NoTitleBar"
+            ></activity>
+        <activity
+            android:name="cc.wulian.smarthomev5.eyecat.EyecatBindActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.NoTitleBar"
+            ></activity>
+        <activity
+            android:name="cc.wulian.smarthomev5.eyecat.EyecatMonitoringActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.NoTitleBar"
+            ></activity>
+        <activity
+            android:name="cc.wulian.smarthomev5.eyecat.EyecatVideoCallActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.NoTitleBar"
+            ></activity>
+
+        <!-- 百度推送 service  add syf -->
+        <!-- push应用定义消息receiver声明 -->
+        <receiver android:name=".receiver.baidu.BaiduPushMessageReceiver">
+            <intent-filter>
+
+                <!-- 接收push消息 -->
+                <action android:name="com.baidu.android.pushservice.action.MESSAGE" />
+                <!-- 接收bind,unbind,fetch,delete等反馈消息 -->
+                <action android:name="com.baidu.android.pushservice.action.RECEIVE" />
+                <action android:name="com.baidu.android.pushservice.action.notification.CLICK" />
+            </intent-filter>
+        </receiver>
+
+        <!-- push必须的receviver和service声明 -->
+        <receiver
+            android:name="com.baidu.android.pushservice.PushServiceReceiver"
+            android:process=":bdservice_v1">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="com.baidu.android.pushservice.action.notification.SHOW" />
+                <action android:name="com.baidu.android.pushservice.action.media.CLICK" />
+                <!-- 以下四项为可选的action声明，可大大提高service存活率和消息到达速度 -->
+                <action android:name="android.intent.action.MEDIA_MOUNTED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.baidu.android.pushservice.RegistrationReceiver"
+            android:process=":bdservice_v1">
+            <intent-filter>
+                <action android:name="com.baidu.android.pushservice.action.METHOD" />
+                <action android:name="com.baidu.android.pushservice.action.BIND_SYNC" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="cc.wulian.smarthomev5.service.GoogleFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service
+            android:name="cc.wulian.smarthomev5.service.GoogleFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <service
+            android:name="com.baidu.android.pushservice.PushService"
+            android:exported="true"
+            android:process=":bdservice_v1">
+            <intent-filter>
+                <action android:name="com.baidu.android.pushservice.action.PUSH_SERVICE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.baidu.android.pushservice.CommandService"
+            android:exported="true" />
+        <!-- 百度推送 service -->
+        <provider
+            android:name="com.baidu.android.pushservice.PushInfoProvider"
+            android:authorities="com.baidu.push.example.bdpush"
+            android:exported="true"
+            android:protectionLevel="signature"
+            android:writePermission="baidu.push.permission.WRITE_PUSHINFOPROVIDER.cc.wulian.androidpush" />
+
+        <meta-data
+            android:name="api_key"
+            android:value="ZXUrTTuxjWDyblGwjs3k5Gx8" />
+
+        <!-- 活动盒子sdk begin -->
+        <activity
+            android:name="com.hdhz.hezisdk.b.H5"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+
+        <!-- 盒子sdk所需要的参数key 替换自己应用的key值即可 -->
+        <meta-data
+            android:name="HEZIKEY"
+            android:value="59c62ab1d7fe68fea5a29e33f555ba21" />
+
+        <service
+            android:name="com.wulian.iot.server.service.CameraService"
+            android:exported="true" />
+
+        <!--  环信集成  -->
+        <meta-data
+            android:name="EASEMOB_APPKEY"
+            android:value="1114161031115338#wulianpad" />
+        <!-- 声明SDK所需的service SDK核心功能-->
+        <service
+            android:name="com.hyphenate.chat.EMChatService"
+            android:exported="true" />
+        <!-- 声明SDK所需的receiver -->
+        <receiver android:name="com.hyphenate.chat.EMMonitorReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <data android:scheme="package" />
+            </intent-filter>
+            <!-- 可选filter -->
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

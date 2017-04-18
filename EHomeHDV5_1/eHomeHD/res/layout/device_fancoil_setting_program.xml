@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/v5_gray_light"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/fancoil_program_set_heat_tv"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/account_manager_switch_account_item_selector"
+        android:gravity="center"
+        android:text="@string/AP_get_hot"
+        android:textColor="#515151"
+        android:textSize="18sp"
+        android:clickable="true"/>
+
+    <TextView
+        android:id="@+id/fancoil_program_set_cool_tv"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:background="@drawable/account_manager_switch_account_item_selector"
+        android:text="@string/air_conditioner_cooling_mode"
+        android:textColor="#515151"
+        android:textSize="18sp"
+        android:clickable="true"/>
+
+</LinearLayout>

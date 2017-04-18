@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_vertical"
+    android:id="@+id/home_other_message_ll">
+    <LinearLayout 
+        android:layout_width="fill_parent"
+    	android:layout_height="50dp"
+   		android:gravity="center_vertical">
+   		
+        <LinearLayout 
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:orientation="horizontal">
+     	<TextView
+	        android:textSize="16sp"
+	        android:textColor="#919191"
+	        android:paddingLeft="5dp"
+	        android:paddingRight="5dp"
+	        android:id="@+id/message_time"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" />
+    	<ImageView
+	        android:id="@+id/iv_icon"
+	        android:layout_width="20dp"
+	        android:layout_marginLeft="10dp"
+	        android:layout_height="20dp"
+	        android:layout_gravity="center_vertical"
+	        android:scaleType="fitCenter"
+	        android:background="@drawable/home_message_vertical_circle_green"
+	         />
+    </LinearLayout>
+    <LinearLayout 
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+	    <TextView
+	        android:textSize="16sp"
+	        android:textColor="#505050"
+	        android:id="@+id/detail_message"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+        	 />
+      </LinearLayout>
+    <LinearLayout 
+        	android:id="@+id/alarm_delete_ll"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="right"
+            android:orientation="horizontal">
+	      <ImageView
+	        android:id="@+id/delate_image"
+	        android:layout_width="20dp"
+	        android:layout_height="20dp" 
+	        android:layout_marginRight="15dp"
+	        android:visibility="invisible"
+	        android:focusable="false"
+	        android:focusableInTouchMode="false"
+	        android:src="@drawable/home_select_delete"
+	        />
+      </LinearLayout>
+      
+</LinearLayout>
+</LinearLayout>

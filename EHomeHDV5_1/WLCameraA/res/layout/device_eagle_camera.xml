@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.tutk.IOTC.MediaSoftCodecMonitor
+        android:id="@+id/monitor_eagle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <LinearLayout
+        android:id="@+id/ll_low_voltage_alarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:gravity="center_vertical">
+        <TextView
+            android:id="@+id/tv_low_voltage_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/smartLock_Power"
+            android:textColor="@color/red"
+            android:layout_marginRight="5dp"/>
+        <ImageView
+            android:id="@+id/iv_eagle_low_voltage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_eagle_low_voltage"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/camera_setting_update_diaolg_background" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/iot_mapdepot"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:onClick="iotMapDepot"
+                android:src="@drawable/eagle_icon_album" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/iot_eagle_snapshot"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:onClick="iotSnapShoot"
+                android:src="@drawable/eagle_icon_snapshot" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center" >
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/iot_eagle_record"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:onClick="iotEagleRecord"
+                android:tag="recording"
+                android:background="@drawable/eagle_icon_videotape"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/iot_eagle_set"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:onClick="iotEagleSetting"
+                android:src="@drawable/eagle_icon_setting" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iot_eagle_speak"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="35dp"
+        android:onClick="iotEagleSpeak"
+        android:tag="open"
+        android:src="@drawable/desk_btn_tackback_noraml" />
+
+</RelativeLayout>

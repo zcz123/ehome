@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>findpassword</title>
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/custom.css" />
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			
+			span.margin-right-20 {
+				margin-right: 25px;
+			}
+			
+			.hint-top {
+				padding-top: 16px;
+				padding-bottom: 16px;
+				margin-left: 16px;
+				margin-right: 16px;
+				font-size: 16px;
+				color: black;
+			}
+		</style>
+
+		<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/plus.js"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/hashmap.js"></script>
+		<script type="text/javascript" src="./js/md5-min.js"></script>
+		<script type="text/javascript" src="./js/digest-auth.js"></script>
+		<script src="js/custom.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav custom-nav">
+			<a class="custom-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title"><span class="autoSwitchLanguager" id="html_user_reset_password"></span></h1>
+		</header>
+		<div class="mui-content">
+			<p id="hint_top" class="hint-top"></p>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a onclick="findPasswordByPhone()" class="mui-navigate-right">
+						<span class="autoSwitchLanguager" id="html_user_reset_password_by_phone"></span>
+						<span class="mui-pull-right margin-right-20" id="sphone">
+							<span class="autoSwitchLanguager" id="html_user_reset_password_not_bind"></span>
+						</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a onclick="findPasswordByEmail()" class="mui-navigate-right">
+						<span class="autoSwitchLanguager" id="html_user_reset_password_by_mail"></span>
+						<span class="mui-pull-right margin-right-20" id="semail">
+							<span class="autoSwitchLanguager" id="html_user_reset_password_not_bind"></span>
+						</span>
+					</a>
+				</li>
+			</ul>
+			<p id="hintPanel" class='mui-hidden mui-pull-right warning'></p>
+		</div>
+
+	</body>
+
+	<script>
+		var account="";
+		var phoneIsBind=false;
+		var emailIsBind=false;
+		
+		plus.plusReady(function() {
+			setHintTop();
+			getProfile();
+		});
+
+		function setHintTop() {
+			account = decodeURI(getUrlParam("userName"));
+			var hintTop = document.getElementById("hint_top");
+			hintTop.textContent = plus.ehomev5.getLang("html_user_find_password_hint_pre") + account + plus.ehomev5.getLang("html_user_find_password_hint_tail");
+		}
+
+		function getProfile() {
+			var digestAuth = DigestAuthentication.init({
+				onSuccess: function(response, status) {
+					var ret = JSON.parse(response);
+					var hint = statusHelper.mapping(status); //错误码显示
+					if (hint) {
+						alert(hint);
+					} else if (status == "0") {
+						viewProfile(response);
+					} else {
+						alert(plus.ehomev5.getLang("html_user_hint_getinfo_fail"));
+					}
+				},
+				onFailure: function(httpStatus) {
+					alert(plus.ehomev5.getLang("html_user_hint_getinfo_fail"));
+				},
+				sync: false
+			});
+			digestAuth.setHeader('cmd', 'searchUser');
+			var obj = {};
+			obj.account = account;
+			digestAuth.setData(JSON.stringify(obj));
+			digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + '/AMS/user/access');
+		}
+
+		function viewProfile(jsonTxt) {
+			var ret = null;
+			try {
+				phoneIsBind=true;
+				emailIsBind=true;
+				var ret = JSON.parse(jsonTxt);
+				var email = ret.user.xEmail;
+	     		var phoneNum = ret.user.xPhone;
+				if (!email||!email.length > 0||email.trim()=='') {
+					emailIsBind=false;
+					email = plus.ehomev5.getLang("html_user_reset_password_not_bind");
+				}
+				if (!phoneNum||!phoneNum.length > 0||phoneNum.trim()=='') {
+					phoneIsBind=false;
+					phoneNum = plus.ehomev5.getLang("html_user_reset_password_not_bind");
+				}
+				var memail = email.split("@");
+				var lmail=memail[0].substr(0,1)+"****@"+memail[1];
+				document.getElementById("semail").textContent = lmail;
+				document.getElementById("sphone").textContent = phoneNum;
+				return true;
+			} catch (e) {
+				return false;
+			}
+		}
+
+		function findPasswordByPhone() {
+			if (!phoneIsBind) { 
+				showErrorHint(plus.ehomev5.getLang("html_user_not_bind_phone"));
+			}else{
+				var dialog=new inputDialog();
+				var btnArray = [plus.ehomev5.getLang("common_ok"), plus.ehomev5.getLang("cancel")];
+				dialog.showInput(plus.ehomev5.getLang("html_input_phone"), "", btnArray, function(value) {   //"请输入手机号"
+					if(verify.isphone(value)){
+						closeErrorHint();
+						window.location = "findpwdbyPhone.html?phone=" + value;
+					}else{
+						showErrorHint(plus.ehomev5.getLang("html_input_phone_error"));//"手机号格式不正确!"
+					}
+				}, function () {
+					
+				},"text");
+			}
+		}
+
+		function findPasswordByEmail() {
+			if (!emailIsBind) {
+				showErrorHint(plus.ehomev5.getLang("html_user_not_bind_mail"));
+			}else{
+				var dialog=new inputDialog();
+				var btnArray = [plus.ehomev5.getLang("common_ok"), plus.ehomev5.getLang("cancel")];
+				dialog.showInput(plus.ehomev5.getLang("html_input_email"), "", btnArray, function(value) { //"请输入邮箱"
+					if(verify.ismail(value)){
+						closeErrorHint();
+						window.location = "findpwdbyEmail.html?email=" + value;
+					}else{
+						showErrorHint(plus.ehomev5.getLang("html_input_email_error")); //"邮箱格式不正确!"
+					}
+				}, function () {
+					
+				},"text");
+			}
+		}
+		
+		function closeErrorHint () {
+			var nameErrorEle = document.getElementById("hintPanel");
+			nameErrorEle.classList.add("mui-hidden");
+		}
+		
+		function showErrorHint(errHint) {
+			var nameErrorEle = document.getElementById("hintPanel");
+			nameErrorEle.textContent = errHint;
+			nameErrorEle.classList.remove("mui-hidden");
+		}
+	</script>
+
+</html>

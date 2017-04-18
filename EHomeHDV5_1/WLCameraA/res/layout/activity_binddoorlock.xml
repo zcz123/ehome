@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/doorlock_bind_tips"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/grey">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginLeft="16dp"
+            android:gravity="center_vertical"
+            android:text="绑定门锁之后可在监控界面开门"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:id="@+id/tips_del"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:paddingRight="10dp"
+            android:src="@drawable/bind_doorlock_tips_del" />
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/lv_doorlock_bind"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></ListView>
+
+</LinearLayout>

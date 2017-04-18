@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/device_search_pop_layout" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#e6e9eb"
+            android:orientation="horizontal" >
+
+            <cc.wulian.smarthomev5.view.WLEditText
+                android:id="@+id/device_list_search_pop_edit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:hint="@string/common_search"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:textColorHint="#b3b3b3"
+                android:textColor="#878787"
+                android:textCursorDrawable="@null"
+                android:background="@drawable/main_dialog_bg"
+                android:drawableLeft="@drawable/device_icon_search"
+                android:textSize="15dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/device_cancel"
+                android:layout_gravity="center"
+                android:textColor="#3366ff"
+                android:textSize="15dp" />
+        </LinearLayout>
+<!--
+    <ListView
+        android:id="@+id/mListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="invisible" >
+    </ListView> -->
+
+   	<ListView
+            android:id="@+id/device_list_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@drawable/device_item_divider"
+            android:background="@color/white"
+            android:visibility="invisible"
+            android:scrollbars="none" />
+
+</LinearLayout>

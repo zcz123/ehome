@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="keyboard_buttons">
+        <item>@+id/digit0</item>
+        <item>@+id/digit1</item>
+        <item>@+id/digit2</item>
+        <item>@+id/digit3</item>
+        <item>@+id/digit4</item>
+        <item>@+id/digit5</item>
+        <item>@+id/digit6</item>
+        <item>@+id/digit7</item>
+        <item>@+id/digit8</item>
+        <item>@+id/digit9</item>
+        <item>@+id/done</item>
+        <item>@+id/delete</item>
+    </array>
+    
+    <array name="inputarea_buttons">
+        <item>@+id/pwd_1</item>
+        <item>@+id/pwd_2</item>
+        <item>@+id/pwd_3</item>
+        <item>@+id/pwd_4</item>
+    </array>
+    
+
+</resources>

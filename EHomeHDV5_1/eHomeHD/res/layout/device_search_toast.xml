@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/config_search_toast"
+    android:gravity="center"
+     >
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="S"
+        android:textSize="30sp"
+        android:id="@+id/config_search_toast_textview"
+        android:textColor="@color/v5_green_light"
+        />
+</LinearLayout>

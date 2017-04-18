@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal" >
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1" >
+
+        <CheckBox
+            android:id="@+id/device_thermost_layout1_btn1"
+            style="@style/device_thermostat_button_style"
+            android:layout_gravity="right"
+            android:background="@drawable/thermostat_mode_cool_select" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1" >
+
+        <CheckBox
+            android:id="@+id/device_thermost_layout1_btn2"
+            style="@style/device_thermostat_button_style"
+            android:layout_gravity="left"
+            android:background="@drawable/thermostat_mode_auto_select" />
+    </FrameLayout>
+
+</LinearLayout>

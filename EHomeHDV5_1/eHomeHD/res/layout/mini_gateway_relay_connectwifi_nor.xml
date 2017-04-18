@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mini_gateway_relay_connectwifi_nor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:gravity="center_horizontal" >
+
+        <LinearLayout
+                android:id="@+id/mini_gateway_relay_name_ll"
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@drawable/shape_round_all_white" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <ImageView
+                    android:id="@+id/mini_relay_setting_wifi_prompt"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/mini_wifi_prompt" />
+                
+                <ImageView
+                    android:id="@+id/mini_relay_setting_wifi_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@id/mini_relay_setting_wifi_prompt"
+                    android:src="@drawable/mini_wifi_information1" />
+
+                <ImageView
+                    android:id="@+id/mini_relay_setting_wifi_lock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@id/mini_relay_setting_wifi_info"
+                    android:src="@drawable/mini_wifi_lock" />
+
+                <TextView
+                    android:id="@+id/mini_relay_setting_wifi_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/mini_relay_setting_wifi_lock"
+                    android:ellipsize="end"
+                    android:textColor="#222222"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/mini_gateway_rellay_lv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:visibility="gone">
+        </ListView>
+
+        <TextView
+            android:id="@+id/sx_gateway_rellay_remind"
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text=""
+            android:textColor="@color/red"
+            android:textSize="13sp"
+            android:visibility="visible" />
+
+        <EditText
+            android:id="@+id/mini_relay_setting_wifi_pwd"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/shape_round_all_white"
+            android:hint="@string/login_gateway_password_hint"
+            android:inputType="textPassword"
+       	    android:textCursorDrawable="@null"
+            android:singleLine="true"
+            android:visibility="visible"
+            android:textColor="#000000" />
+           
+		<TextView
+		    android:id="@+id/mini_input_password_remind"
+		    android:layout_marginTop="10dp"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:text="@string/gateway_router_setting_wifi_relay_password_error"
+		    android:textColor="@color/black"
+		    android:layout_marginLeft="20dp"
+		    android:visibility="invisible"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:orientation="vertical" >
+     
+        <Button
+            android:id="@+id/mini_relay_setting_wifi_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="8dp"
+            android:background="@color/action_bar_bg"
+            android:text="@string/house_rule_upgrade_timezone_setting_next_steps" />
+    </LinearLayout>
+
+</LinearLayout>

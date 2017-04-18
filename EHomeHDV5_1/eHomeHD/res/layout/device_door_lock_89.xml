@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="bottom"
+    android:background="@drawable/doorlock_89_bg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/passwordfild"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="45dp"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"  
+            android:layout_marginRight="10dp"        
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/password1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:textColor="#ffffff"
+               android:background="@drawable/ic_action_tick_on"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+          android:layout_marginRight="10dp" 
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/password2"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:textColor="#ffffff"
+               android:background="@drawable/ic_action_tick_on" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+         
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/password3"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:textColor="#ffffff"
+               android:background="@drawable/ic_action_tick_on" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+         android:layout_marginLeft="10dp"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/password4"
+                 android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:textColor="#ffffff"
+               android:background="@drawable/ic_action_tick_on" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+          android:layout_marginLeft="10dp"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/password5"
+               android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:textColor="#ffffff"
+               android:background="@drawable/ic_action_tick_on" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/password6"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:textColor="#ffffff"
+                android:background="@drawable/ic_action_tick_on"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+        android:layout_marginTop="50dp">
+
+        <LinearLayout
+            android:id="@+id/k_layout1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/one"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="42dp"
+                android:onClick="one"
+                android:text="1"
+                android:background="@drawable/key_selector_doorlock"
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/two"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:onClick="two"
+                android:text="2"
+                android:background="@drawable/key_selector_doorlock"
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/three"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="42dp"
+                android:onClick="three"
+                android:text="3"
+                android:background="@drawable/key_selector_doorlock"
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/k_layout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="21dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/four"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="42dp"
+                android:onClick="four"
+                android:text="4"
+                android:background="@drawable/key_selector_doorlock"
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/five"
+             android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:onClick="five"
+                android:text="5"
+                android:background="@drawable/key_selector_doorlock"
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/six"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="42dp"
+                android:onClick="six"
+                android:text="6"
+                android:background="@drawable/key_selector_doorlock"
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/k_layout3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="21dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/seven"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="42dp"
+                android:onClick="seven"
+                android:text="7"
+                android:background="@drawable/key_selector_doorlock"
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/eight"
+              android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:onClick="eight"
+                android:text="8"
+                android:background="@drawable/key_selector_doorlock"
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/nine"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="42dp"
+                android:onClick="nine"
+                android:text="9"
+                android:background="@drawable/key_selector_doorlock"
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/k_layout4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="21dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/del"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="42dp"
+                 android:onClick="del"
+                android:text="C"
+                android:background="@drawable/key_selector_doorlock"
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/zero"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:onClick="zero"
+                android:text="0"
+                android:background="@drawable/key_selector_doorlock"
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+
+            <Button
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:id="@+id/ok"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="42dp"
+                android:onClick="ok"
+                android:text="×"
+                android:background="@drawable/key_selector_doorlock"
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+        </LinearLayout>
+    </LinearLayout>
+    
+    
+
+    <RelativeLayout
+        android:id="@+id/lock_relative"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:id="@+id/hawkeye_lock_linear"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:id="@+id/hawkeye_lock_relative"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:background="#444444" >
+
+                <ImageView
+                    android:id="@+id/hawkeye_imageview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/hawkeye" />
+                <View 
+                    
+                    android:layout_width="2dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentRight="true"
+                    android:background="#3a3a3a"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="#444444" >
+
+                <ImageView
+                    android:id="@+id/lock_imageview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/setting_lock_protect" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="25dp">
+
+            <ImageView
+                android:id="@+id/lock_on_imageview"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:gravity="center"
+                android:src="@drawable/lock_on" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

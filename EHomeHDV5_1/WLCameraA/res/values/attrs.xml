@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="SwipeLayout">
+        <attr name="drag_edge">
+            <flag name="left" value="1" />
+            <flag name="right" value="2" />
+            <flag name="top" value="4" />
+            <flag name="bottom" value="8" />
+        </attr>
+        <attr name="leftEdgeSwipeOffset" format="dimension" />
+        <attr name="rightEdgeSwipeOffset" format="dimension" />
+        <attr name="topEdgeSwipeOffset" format="dimension" />
+        <attr name="bottomEdgeSwipeOffset" format="dimension" />
+        <attr name="show_mode" format="enum">
+            <enum name="lay_down" value="0" />
+            <enum name="pull_out" value="1" />
+        </attr>
+        <attr name="clickToClose" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="Lock9View">
+        <attr name="lock9_nodeSrc" format="color|reference" />
+        <attr name="lock9_nodeOnSrc" format="color|reference" />
+        <attr name="lock9_lineColor" format="color" />
+        <attr name="lock9_lineWidth" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+        <attr name="border_overlay" format="boolean" />
+    </declare-styleable>
+    
+    <declare-styleable name="AdjustmentDirection">    
+        <!-- 按钮底层背景 -->  
+        <attr name="pool_background" format="reference" />    
+        <!-- 上层按钮背景 -->  
+        <attr name="btn_background" format="reference" />    
+        <!-- 控件width -->  
+        <attr name="mwidth" format="dimension" />  
+        <!-- 控件height -->  
+        <attr name="mheight" format="dimension" />  
+        <!-- 控件上可拖动按钮width -->  
+        <attr name="mbt_width" format="dimension" />  
+        <!-- 控件上可拖动按钮height -->  
+        <attr name="mbt_height" format="dimension" />  
+    </declare-styleable>    
+   
+    <!--ai kan new -->
+    <declare-styleable name="Record_Ruler">
+
+        <!-- 最小间距的宽度 -->
+        <attr name="min_unit_width" format="dimension" />
+        <!-- 线条的宽度 -->
+        <attr name="line_width" format="dimension" />
+        <!-- 中间线条的宽度 -->
+        <attr name="mid_line_width" format="dimension" />
+        <!-- 中间线三角形的宽度 -->
+        <attr name="triangle_line_width" format="dimension" />
+        <!-- 最短线条的高度 -->
+        <attr name="min_line_height" format="dimension" />
+        <!-- 选择对立布局 -->
+        <attr name="sides" format="boolean"></attr>
+        <!-- 左边选择的颜色 -->
+        <attr name="left_selected_change_color" format="color" />
+        <!-- 左边已经录制的颜色 -->
+        <attr name="left_has_recorded_color" format="color" />
+        <!-- 中间线的颜色 -->
+        <attr name="mid_line_color" format="color" />
+        <!-- 画线的颜色 -->
+        <attr name="line_color" format="color" />
+        <!-- 文字的颜色 -->
+        <attr name="text_color" format="color" />
+        <!-- 文字的大小 -->
+        <attr name="text_size" format="dimension" />
+        <!-- 灵敏度 -->
+        <attr name="sensibility" format="enum">
+            <enum name="low" value="5" />
+            <enum name="normal" value="3" />
+            <enum name="high" value="1" />
+        </attr>
+    </declare-styleable>
+    
+    
+</resources>

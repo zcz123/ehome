@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Smart Home</string>
+    
+    <bool name="use_dual_panel">false</bool>
+    <bool name="use_about_us">true</bool>
+    <bool name="use_about_us_detail">true</bool>
+    <bool name="use_home_adver">true</bool>
+    <bool name="use_update">true</bool>
+    <bool name="use_account">true</bool>
+    <bool name="use_house">true</bool>
+    <bool name="use_fabric">true</bool>
+    <!-- how many scene icon we support -->
+    <integer name="scene_icon_support_count">12</integer>
+
+    <!-- move from language file, because don't need to localization -->
+    <string name="home_monitor_default_port">12201</string>
+    <string name="home_monitor_default_user">admin</string>
+    <string name="monitor_uid">UID:</string>
+    <string name="about_link">www.wuliangroup.com</string>
+    <string name="about_powered_by">Powered by Wulian.</string>
+    <string name="app_from">1</string>
+    <string name="app_type">1</string>
+    <string name="BASE_URL">https://oht2fful5.qnssl.com/</string>
+
+    <!-- Authentication info to access AMS -->
+    <string name="auth_ams_digest_username">wladmin</string>
+    <string name="auth_ams_digest_password">wladmin</string>
+</resources>

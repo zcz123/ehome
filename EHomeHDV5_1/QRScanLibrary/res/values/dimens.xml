@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="corner_width">4dp</dimen>
+    <dimen name="corner_length">20dp</dimen>
+    <dimen name="scan_text_size">16sp</dimen>
+    <dimen name="cancle_text_size">32sp</dimen>
+
+</resources>

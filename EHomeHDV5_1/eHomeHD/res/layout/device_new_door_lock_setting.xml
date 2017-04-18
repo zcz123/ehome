@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+    
+    <include
+        android:id="@+id/device_door_lock_setting_account"
+        layout="@layout/device_new_door_lock_setting_item" >
+    </include>
+
+    <include
+        android:id="@+id/device_door_lock_setting_alarm"
+        layout="@layout/device_new_door_lock_setting_item" >
+    </include>
+    
+    <include
+        android:id="@+id/device_door_lock_setting_stay"
+        layout="@layout/device_new_door_lock_setting_item" >
+    </include>
+    
+    <include
+        android:visibility="gone"
+        android:id="@+id/device_door_lock_setting_video"
+        layout="@layout/device_new_door_lock_setting_item" >
+    </include>
+
+    <include
+        android:id="@+id/device_door_lock_setting_scene"
+        layout="@layout/device_new_door_lock_setting_item" >
+    </include>
+
+    <include
+        android:id="@+id/device_door_lock_setting_history"
+        layout="@layout/device_new_door_lock_setting_item" >
+    </include>
+
+    <include
+        android:visibility="gone"
+        android:id="@+id/device_door_lock_setting_guide"
+        layout="@layout/device_new_door_lock_setting_item" >
+    </include>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/setting_guide_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:paddingLeft="25dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:textColor="@color/gray"
+        android:text="@string/smart_doorlock_door_lock_pinch_plate_notes"
+        android:textSize="16sp" />
+
+    <include
+        android:id="@+id/device_door_lock_setting_wifi"
+        layout="@layout/device_new_door_lock_setting_item" >
+    </include>
+
+    <include
+        android:id="@+id/device_door_lock_setting_version"
+        layout="@layout/device_new_door_lock_setting_item" >
+    </include>
+    
+</LinearLayout>

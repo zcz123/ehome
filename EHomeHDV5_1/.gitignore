@@ -1,0 +1,10 @@
+.gradle
+gradle.properties
+payment.iml
+local.properties
+.idea/workspace.xml
+.idea/libraries
+.idea
+.DS_Store
+build
+

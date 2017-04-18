@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cc.wulian.app.model.device.view.CurtainBlind xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/dev_state_blind_0"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/device_blind_background_big" >
+
+    <cc.wulian.app.model.device.view.BlindCover
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/device_blind_ficelle_big"
+            android:gravity="center"
+            android:orientation="vertical" >
+        </LinearLayout>
+    </cc.wulian.app.model.device.view.BlindCover>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/device_blind_top_cover_big" />
+
+</cc.wulian.app.model.device.view.CurtainBlind>

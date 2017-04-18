@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="请将当前Wi-Fi切换至所要配置的Wi-Fi\n在配置摄像头Wi-Fi过程中，请勿切换Wi-Fi"
+                android:textColor="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="当前Wi-Fi名称:" />
+
+                <EditText
+                    android:id="@+id/et_current_wifi_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="当前Wi-Fi密码:" />
+
+                <EditText
+                    android:id="@+id/et_current_wifi_pwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:hint="密码"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/bt_config_link"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="确定连接"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/bt_discov_device"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="发现设备(暂时不用)"
+                android:textColor="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="配置WIFI的设备ID:" />
+
+                <EditText
+                    android:id="@+id/et_device_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:hint="设备ID"
+                    android:text="cmic1234567891234567"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/bt_broadcast_device"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="组播设备"
+                android:textColor="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="设置单播WIFI的IP:" />
+
+                <EditText
+                    android:id="@+id/et_mul_ip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:hint="IP"
+                    android:text="192.168."
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/bt_get_connect_msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="获取连接信息"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/bt_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="登陆"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/bt_bind_device"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="绑定设备"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/bt_unbind_device"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="解除绑定设备"
+                android:textColor="#000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="返回结果:" />
+
+                <EditText
+                    android:id="@+id/et_result"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dip"
+                    android:focusable="true"
+                    android:hint="返回消息"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    android:weightSum="10">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="@string/home_monitor_default_user"
+            android:textColor="@color/camera_setting_lefttext_color" />
+
+        <EditText
+            android:id="@+id/monitorCameraNameEditText"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:textColor="@color/camera_setting_righttext_color" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="@string/login_gateway_password_hint"
+            android:textColor="@color/camera_setting_lefttext_color" />
+
+        <EditText
+            android:inputType="textPassword"
+            android:id="@+id/monitorPwdEditText"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="@string/login_input_password_hint"
+            android:paddingLeft="10dp"
+            android:textColor="@color/camera_setting_righttext_color" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="UID"
+            android:textColor="@color/camera_setting_lefttext_color" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/monitorUIDEditText"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:textColor="@color/camera_setting_righttext_color" />
+<LinearLayout
+    android:id="@+id/monitor_fast_getUid_layout"
+    android:layout_width="0dp"
+    android:layout_height="30dp"
+    android:layout_marginRight="35dp"
+    android:layout_gravity="center_vertical"
+    android:layout_weight="2">
+    <Button
+        android:id="@+id/netSearchButton"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="15sp"
+        android:background="@color/action_bar_bg"
+        android:text="@string/monitor_cloud_1_search_gain" />
+</LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="@string/monitor_cloud_1_area"
+            android:textColor="@color/camera_setting_lefttext_color" />
+
+        <Spinner
+            android:id="@+id/monitor_Areaname_Choose"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="5"
+            android:gravity="center_vertical"
+            android:textColor="@color/camera_setting_righttext_color"></Spinner>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/monitor_edit_cloud1_button"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:textSize="18sp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_weight="1"
+        android:background="@drawable/selector_shape_btn_normal_round_rect"
+        android:text="@string/common_ok" />
+
+    <Button
+        android:id="@+id/btn_monitor_cloud_delete"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:textSize="18sp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:background="@drawable/selector_camera_setting_delete"
+        android:text="@string/device_config_edit_dev_area_create_item_delete" />
+
+
+</LinearLayout>

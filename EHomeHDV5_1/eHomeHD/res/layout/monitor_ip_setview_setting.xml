@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    android:weightSum="10">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/camera_type_choose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minHeight="@dimen/view_min_height"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/camera_type_dvr_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/content_margin_big"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/monitor_hard_disk_video_camera_4"
+                    android:textColor="@color/black" />
+
+                <ImageView
+                    android:id="@+id/dvr_4_imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#6ea31d"
+                    android:minHeight="4dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/camera_type_dvr_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/content_margin_big"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/monitor_hard_disk_video_camera_8"
+                    android:textColor="@color/black" />
+
+                <ImageView
+                    android:id="@+id/dvr_8_imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#6ea31d"
+                    android:minHeight="4dp"
+                    android:visibility="invisible" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/monitorUserTextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="@string/home_monitor_default_user"
+            android:textColor="@color/camera_setting_lefttext_color" />
+
+        <EditText
+            android:id="@+id/monitorUserEditText"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center_vertical"
+            android:background="@null"
+            android:paddingLeft="10dp"
+            android:text="admin"
+            android:textColor="@color/camera_setting_lefttext_color" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/monitorPwdTextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="@string/login_gateway_password_hint"
+            android:textColor="@color/camera_setting_lefttext_color" />
+
+        <EditText
+            android:id="@+id/monitorPwdEditText"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:inputType="textPassword"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="@string/login_input_password_hint"
+            android:paddingLeft="10dp"
+            android:textColor="@color/camera_setting_lefttext_color" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/monitorNameTextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="名称"
+            android:textColor="@color/camera_setting_lefttext_color" />
+
+        <EditText
+            android:id="@+id/monitorNameEditText"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:layout_weight="5"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:textColor="@color/camera_setting_lefttext_color" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/monitorHostTextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="@string/monitor_host"
+            android:textColor="@color/camera_setting_lefttext_color" />
+
+        <EditText
+            android:id="@+id/monitorHostEditText"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:layout_weight="5"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:textColor="@color/camera_setting_lefttext_color" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/monitorPortTextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="@string/monitor_port"
+            android:textColor="@color/camera_setting_lefttext_color" />
+
+        <EditText
+            android:id="@+id/monitorPortEditText"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:layout_weight="5"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="@string/home_monitor_default_port"
+            android:textColor="@color/camera_setting_lefttext_color" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/monitorLinkageDeviceTextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="@string/monitor_cloud_1_area"
+            android:textColor="@color/camera_setting_lefttext_color" />
+
+        <Spinner
+            android:id="@+id/monitor_Areaname_Choose"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:minHeight="@dimen/view_min_height_small"
+            android:gravity="center_vertical"></Spinner>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/monitor_edit_ip_button"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_weight="1"
+        android:background="@drawable/selector_shape_btn_normal_round_rect"
+        android:text="@string/common_ok" />
+
+    <Button
+        android:id="@+id/monitor_edit_delete"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_weight="1"
+        android:background="@drawable/selector_camera_setting_delete"
+        android:text="@string/common_delete" />
+
+
+</LinearLayout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="NestedWeights" >
+
+    <SurfaceView
+        android:id="@+id/playSurface"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/background_aboutus" />
+
+    <LinearLayout
+        android:id="@+id/mainframe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <!-- <LinearLayout -->
+        <!-- android:layout_width="wrap_content" -->
+        <!-- android:layout_height="wrap_content" -->
+        <!-- android:layout_gravity="bottom" -->
+        <!-- android:orientation="vertical" > -->
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal" >
+
+            <!-- <ImageView -->
+            <!-- android:layout_width="wrap_content" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_marginLeft="10dp" -->
+            <!-- android:src="@drawable/monitor_wl_list_image" -->
+            <!-- android:visibility="invisible" -->
+            <!-- /> -->
+            <!-- <TextView -->
+            <!-- android:id="@+id/monitor_fastscene_uselessTextView" -->
+            <!-- android:layout_width="wrap_content" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_marginLeft="10dp" -->
+            <!-- /> -->
+
+
+            <!-- </LinearLayout> -->
+
+            <ImageView
+                android:id="@+id/monitor_fastscene_expand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_gravity="bottom"
+                android:src="@drawable/monitor_wl_fastscene_expand" />
+
+            <LinearLayout
+                android:id="@+id/monitor_fast_scene_fragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical" >
+
+                <fragment
+                    android:name="cc.wulian.smarthomev5.fragment.monitor.MonitorWLFastSceneFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/monitor_for_shot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/button_snapshot_selector" />
+
+                <ImageView
+                    android:id="@+id/monitor_for_talk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/button_mic_on_selector" />
+
+                <ImageView
+                    android:id="@+id/monitor_for_slience"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/button_speaker_off_selector" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

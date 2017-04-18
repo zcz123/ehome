@@ -1,0 +1,257 @@
+	
+	.selfBigChatimg{
+		position: absolute;
+		left:0px;
+		z-index: 999;
+		width: 100%;
+		height: 100%;
+		display: none;
+		background-color: black;
+		top: 0px;
+	}
+	.chatimg {
+		float: left;
+		width: 13px;
+		height: 13px;
+		margin-left: -18px;
+		margin-top: -22px;
+	}
+	
+	.selfchatimg {
+		float: right;
+		width: 13px;
+		height: 13px;
+		margin-right: -18px;
+		margin-top: -20px;
+	}
+	
+	.selfChatdiv {
+		min-height: 40px;
+		margin-left: -10px;
+		margin-top: 30px;
+		position: relative;
+		width: 60%;
+		background-color: white;
+		word-wrap: break-word;
+		word-break: break-all;
+		padding: 5px;
+		border-radius: 10px;
+		text-align: left;
+	}
+	
+	.custom-nav {
+		background-color: #719E19;
+	}
+	
+	.custom-nav a {
+		color: white;
+	}
+	
+	.custom-nav button {
+		color: white;
+	}
+	
+	.custom-nav h1 {
+		color: white;
+	}
+	
+	.register_btn {
+		border: none;
+		text-align: center;
+		cursor: pointer;
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
+		border-bottom-right-radius: 3px;
+		border-bottom-left-radius: 3px;
+		color: #fff;
+		background-color: #719E19;
+		display: block;
+		left: 4%;
+		width: 92%;
+		padding: 15px 0;
+		font-size: 18px
+	}
+	
+	.logout-btn {
+		margin-top: 5px;
+		width: 100%;
+		height: 50px;
+		background-color: red;
+		width: 92%;
+		color: white;
+	}
+	
+	input[type=checkbox] {
+		-webkit-appearance: none;
+		appearance: none;
+		width: 20px;
+		margin-bottom: 5px;
+		padding: 0px;
+		vertical-align: middle;
+		border: none;
+		height: 20px;
+		cursor: pointer;
+		content: url(../img/uchecked.png);
+	}
+	
+	input[type=checkbox]:checked {
+		content: url(../img/checked.png);
+	}
+	
+	.circular-mask {
+		border-radius: 100%;
+	}
+	
+	.middle-content {
+		vertical-align: middle;
+		text-align: center;
+	}
+	
+	.dialog {
+		width: 300px;
+		height: 207px;
+		position: absolute;
+		z-index: 1000;
+		border-width: 1px;
+		border-style: solid;
+		border-color: #99CCCC;
+		-webkit-box-shadow: 2px 2px 2px #292929;
+		-moz-box-shadow: 2px 2px 2px #292929;
+		box-shadow: 2px 2px 2px #292929;
+		background: -ms-linear-gradient(top, #99CCCC, #99CCFF);
+		/* IE 10 */
+		background: -moz-linear-gradient(top, #99CCCC, #99CCFF);
+		/*火狐*/
+		/*background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#99CCCC), to(#99CCFF));*/
+		/*谷歌*/
+		background: -webkit-gradient(linear, 0% 0%, 100% 100%, from(#82A90E), to(#82A964));
+		/* Safari 4-5, Chrome 1-9*/
+		/*background: -webkit-linear-gradient(top, #99CCCC, #99CCFF);*/
+		/*Safari5.1 Chrome 10+*/
+		background: -o-linear-gradient(top, #99CCCC, #99CCFF);
+		/*Opera 11.10+*/
+	}
+	
+	.dialog .title {
+		height: 30px;
+		line-height: 30px;
+		width: auto;
+		align-content: center;
+		font-size: 10pt;
+		font-weight: bold;
+		cursor: move;
+		color: white;
+		text-overflow: ellipsis;
+		text-align: center;
+	}
+	
+	.dialog .main-area {
+		position: relative;
+		font-size: 10pt;
+		border-width: 2px;
+		border-style: solid;
+		border-color: #b2b2b2;
+		margin: auto;
+		width: 288px;
+		height: 145px;
+		background-color: #ffffff;
+		text-align: center;
+		vertical-align: middle;
+	}
+	
+	.dialog .main-area .content-div {
+		margin: auto;
+		width: 248px;
+		height: 100px;
+		line-height: 100px;
+		text-align: center;
+		vertical-align: middle;
+	}
+	
+	.dialog .main-area .content-div .top {
+		font-size: 16px;
+		margin: auto;
+		width: 248px;
+		height: 60px;
+		line-height: 60px;
+		text-align: left;
+		vertical-align: middle;
+		text-overflow: ellipsis;
+	}
+	
+	.dialog .main-area .content-div .bottom {
+		font-size: 14px;
+		margin: auto;
+		width: 248px;
+		height: 40px;
+		line-height: 40px;
+		text-align: left;
+		vertical-align: middle;
+		text-overflow: ellipsis;
+	}
+	
+	.dialog .main-area .btn-div {
+		margin: auto;
+		width: 228px;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		vertical-align: middle;
+	}
+	
+	.dialog .main-area .content-div .txtInput {
+		margin: auto;
+		width: 210px;
+		height: 40px;
+		text-overflow: ellipsis;
+	}
+	
+	.textDiv {
+		margin: auto;
+		width: 210px;
+		height: 40px;
+	}
+	
+	.textDiv_1 {
+		margin: auto;
+		width: 210px;
+		height: 40px;
+	}
+	
+	.dialog .main-area .content-div .txtTwoInput {
+		width: 210px;
+		height: 20px;
+		text-overflow: ellipsis;
+	}
+	
+	.dialog .main-area .btn-div .leftBtn {
+		display: inline;
+		width: auto;
+		margin-bottom: 6px;
+		position: absolute;
+		bottom: 0;
+		left: 35px;
+	}
+	
+	.dialog .main-area .btn-div .rightBtn {
+		display: inline;
+		width: auto;
+		margin-bottom: 6px;
+		position: absolute;
+		bottom: 0;
+		right: 35px;
+	}
+	
+	.dialog-cover {
+		position: fixed;
+		z-index: 999;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-color: rgba(0, 0, 0, .3);
+	}
+	
+	.autoSwitchLanguager {}
+	
+	.custom-action-back {}

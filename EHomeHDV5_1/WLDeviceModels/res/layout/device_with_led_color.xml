@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+	<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="10dp" >
+
+        <Button
+            android:id="@+id/device_led_bright"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/device_one_wried_wireless_input_btn_pressed"
+            android:text="@string/device_led_colorful"
+            android:singleLine="true"
+        	android:ellipsize="end" />
+
+        <Button
+            android:id="@+id/device_led_color"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/device_one_wried_wireless_output_btn_normal"
+            android:text="@string/device_led_color_temp"
+            android:singleLine="true"
+        	android:ellipsize="end" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/device_led_color_layout" 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_gravity="center">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+        	android:padding="40dp">
+            
+	     <com.yuantuo.customview.seekcircle.SeekCircle
+	        android:id="@+id/dev_state_seekbar_warm"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center"
+	        android:layout_margin="25dp"/>
+	
+	    	<TextView
+	        android:id="@+id/dev_state_textview_warm"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/default_progress"
+	        android:layout_gravity="center"
+	        android:gravity="center"
+	        android:textColor="@color/white"
+	        android:textSize="19dp"
+	        android:background="@drawable/device_button_common_bn"/>
+    	</FrameLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/device_led_bright_layout" 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:orientation="vertical">
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:orientation="vertical">
+        <FrameLayout 
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2.8"
+            android:layout_gravity="center"
+            android:padding="10dp">
+            
+	     <com.yuantuo.customview.seekcircle.SeekCircle
+	        android:id="@+id/dev_state_seekbar_light_led"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center"/>
+	
+	    	<TextView
+	        android:id="@+id/dev_state_textview_0"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/default_progress"
+	        android:layout_gravity="center"
+	        android:gravity="center"
+	        android:background="@drawable/device_button_common_bn"
+	        android:textColor="@color/white" />
+	    	<LinearLayout 
+	    	    android:id="@+id/dev_state_seekbar_light_led_layout"
+	    	    android:layout_width="match_parent"
+	    	    android:layout_height="match_parent"
+	    	    android:orientation="vertical"
+	    	    android:clickable="true"
+	    	    android:background="@android:color/transparent">
+	    	</LinearLayout>
+    	</FrameLayout>
+        <FrameLayout 
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:padding="5dp">
+            <RelativeLayout
+                android:id="@id/dev_state_colorlayout0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center" >
+            </RelativeLayout>
+
+			<EditText
+				android:id="@+id/dev_state_colorlayout_edit"
+				android:layout_width="85dp"
+				android:gravity="center"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="10dp"
+				android:layout_marginTop="10dp"
+				android:textColor="#696969"
+				android:background="@drawable/device_led_adjust_color_bg"
+				android:textCursorDrawable="@null"
+				android:digits="0123456789ABCDEFabcdef"
+				android:maxLines="1"
+				android:cursorVisible="false"
+				android:imeOptions="actionDone"
+				android:clickable="true"
+				android:maxLength="6"/>
+
+            <LinearLayout 
+	    	    android:id="@+id/dev_state_seekbar_color_led_layout"
+	    	    android:layout_width="match_parent"
+	    	    android:layout_height="match_parent"
+	    	    android:orientation="vertical"
+	    	    android:clickable="true"
+	    	    android:background="@android:color/transparent">
+	    	</LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="10dp" >
+         <Button
+           	android:id="@id/dev_state_imageview_0"
+         	android:layout_width="100dp"
+			android:layout_height="wrap_content"
+        	android:background="@drawable/device_light_led_bright_mode" 
+        	android:text="@string/device_colorful_model"/>        
+     </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

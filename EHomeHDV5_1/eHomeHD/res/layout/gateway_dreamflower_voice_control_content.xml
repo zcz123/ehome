@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp"
+    android:orientation="vertical" >
+    <cc.wulian.smarthomev5.view.swipemenu.SwipeMenuListView
+        android:id="@+id/dream_flower_lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@drawable/device_item_divider"
+         >
+    </cc.wulian.smarthomev5.view.swipemenu.SwipeMenuListView>
+
+</LinearLayout>

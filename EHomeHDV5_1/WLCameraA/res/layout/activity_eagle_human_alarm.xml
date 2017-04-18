@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical" >
+
+    <include layout="@layout/titlebar_cat_eye_configuration" />
+
+    <LinearLayout
+        android:id="@+id/lin_human_alarm_0"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:text="@string/cateye_sensitivity_setting_close"
+            android:textColor="@color/black" />
+
+        <CheckBox
+            android:id="@+id/cb_human_alarm_0"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:button="@drawable/checkbox_selector_noside" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lin_human_alarm_1"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:text="@string/cateye_sensitivity_setting_low"
+            android:textColor="@color/black" />
+
+        <CheckBox
+            android:id="@+id/cb_human_alarm_1"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:button="@drawable/checkbox_selector_noside" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lin_human_alarm_2"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:text="@string/cateye_sensitivity_setting_mid"
+            android:textColor="@color/black" />
+
+        <CheckBox
+            android:id="@+id/cb_human_alarm_2"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:button="@drawable/checkbox_selector_noside" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lin_human_alarm_3"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:text="@string/cateye_sensitivity_setting_high"
+            android:textColor="@color/black" />
+
+        <CheckBox
+            android:id="@+id/cb_human_alarm_3"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:button="@drawable/checkbox_selector_noside" />
+    </LinearLayout>
+
+</LinearLayout>

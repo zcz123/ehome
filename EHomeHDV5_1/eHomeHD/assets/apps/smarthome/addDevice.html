@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html style="background-color: #EFEFF4;">
+
+	<head>
+		<meta charset="utf-8">
+		<title>disclaimer</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/custom.css" />
+		<style>
+			html,
+			body {
+				background-color: white;
+			}
+		</style>
+
+		<script type="text/javascript" src="js/plus.js"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/hashmap.js"></script>
+		<script type="text/javascript" src="./js/md5-min.js"></script>
+		<script type="text/javascript" src="./js/digest-auth.js"></script>
+		<!--<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="js/custom.js" type="text/javascript" charset="utf-8"></script>
+
+	</head>
+
+	<body style="background-color: #EFEFF4;">
+		<header class="mui-bar mui-bar-nav custom-nav" style="position: fixed;">
+			<a class="custom-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title"><span id="account_system_select_a_sort" class="autoSwitchLanguager"></span></h1>
+		</header>
+		<div class="mui-content" style="width: 100%;margin: 0 auto;">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell" onclick="eyeCamera() ">
+					<a class="mui-navigate-right">
+						<span id="monitor_video_eagle" class="autoSwitchLanguager">Wulian猫眼</span><span class="mui-pull-right margin-right-20"></span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell" onclick="yikangCamera() ">
+					<a class="mui-navigate-right">
+						<span id="monitor_video_yikang" class="autoSwitchLanguager">移康猫眼</span><span class="mui-pull-right margin-right-20"></span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell" style="display: none;">
+					<a href="addAirCondition.html" class="mui-navigate-right">
+						<span>空调</span><span class="mui-pull-right margin-right-20"></span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell" style="display: none;">
+					<a href="addWashingMachine.html" class="mui-navigate-right">
+						<span>洗衣机</span><span class="mui-pull-right margin-right-20"></span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<script>
+		function yikangCamera(){
+			var data = {};
+			data.action = "yikangWifiSetting";
+			data.params = [];
+			alert(data.action);
+			plus.ehomev5.startActivity(JSON.stringify(data));
+		}
+
+			function eyeCamera() {
+				plus.ehomev5.addEyeCamera("", function(result) {
+				   if(result == '0') {
+						alert(plus.ehomev5.getLang("html_user_gateway_bind_success"));
+						window.location = "gatewayList.html"
+					} else if(result == '-1') {
+						alert(plus.ehomev5.getLang("html_XMLY_loading_error"));
+					} else if(result == '-2') {
+						
+					} else {
+						alert(plus.ehomev5.getLang("html_XMLY_loading_error"));
+					}
+				}, function(result) {
+					alert(plus.ehomev5.getLang("html_XMLY_loading_error"));
+				})
+			}
+		</script>
+	</body>
+
+</html>

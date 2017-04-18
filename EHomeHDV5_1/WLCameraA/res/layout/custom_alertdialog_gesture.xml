@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background" >
+
+    <com.wulian.icam.view.widget.Lock9View
+        android:id="@+id/lockView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:lock9_lineColor="#ff45B4E2"
+        app:lock9_lineWidth="5dp"
+        app:lock9_nodeOnSrc="@drawable/lock_9_view_node_highlighted"
+        app:lock9_nodeSrc="@drawable/lock_9_view_node_normal" />
+
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_above="@id/lockView"
+        android:layout_below="@id/titlebar"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="@string/gesture_checkpwd"
+        android:textSize="@dimen/textsize_large" />
+
+</RelativeLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:orientation="vertical" >
+    
+    <ImageView
+        android:id="@+id/device_ir_air_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:src="@drawable/device_ir_air_add_bt"
+        android:visibility="gone"
+        />
+
+    <FrameLayout
+        android:id="@+id/device_ir_air_add_study_layout" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center">
+        
+    <TextView
+        android:id="@+id/device_ir_air_btn"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:gravity="center"
+        android:background="@drawable/device_ir_circle_gridview_item_select"
+        android:padding="10dp"
+        android:textSize="14dp"
+        android:textColor="@drawable/device_ir_scene_stb_item_font_color_selector"
+        android:text="good" />
+   <ImageView
+       android:id="@+id/device_ir_air_item_delete" 
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:background="@drawable/device_ir_air_item_delete"
+       android:clickable="true"
+       android:visibility="gone"/>
+    </FrameLayout>
+    
+</LinearLayout>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <include layout="@layout/titlebar_general" />
+
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_marginTop="20dp"
+        android:id="@+id/rl_protect_24h"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingLeft="22dp">
+
+        <TextView
+            android:id="@+id/tv_all_day_protect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@string/protect_allday"
+            android:textColor="@color/camera_setting_lefttext_color"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_all_day_protect"
+            android:paddingTop="3dp"
+            android:text="@string/protect_allday_tip"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:visibility="invisible"
+            android:id="@+id/iv_choose_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/desk_move_detection_protect"
+            android:layout_marginRight="15dp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        style="@style/ll_divider"
+        android:visibility="visible">
+
+        <ImageView style="@style/img_divider" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_protect_day"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingLeft="22dp">
+
+        <TextView
+            android:id="@+id/tv_protect_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/protect_day"
+            android:textColor="@color/camera_setting_lefttext_color"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_protect_day"
+            android:paddingTop="3dp"
+            android:text="@string/protect_day_tip"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:visibility="invisible"
+            android:id="@+id/iv_choose_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/desk_move_detection_protect"
+            android:layout_marginRight="15dp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        style="@style/ll_divider"
+        android:visibility="visible">
+
+        <ImageView style="@style/img_divider" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:background="@color/white"
+        android:id="@+id/rl_protect_night"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingLeft="22dp">
+
+        <TextView
+            android:id="@+id/tv_protect_night"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/protect_night"
+            android:textColor="@color/camera_setting_lefttext_color"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_protect_night"
+            android:paddingTop="3dp"
+            android:text="@string/protect_night_tip"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:visibility="invisible"
+            android:id="@+id/iv_choose_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/desk_move_detection_protect"
+            android:layout_marginRight="15dp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        style="@style/ll_divider"
+        android:visibility="visible">
+
+        <ImageView style="@style/img_divider" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:background="@color/white"
+        android:id="@+id/rl_protect_user_define"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingLeft="22dp">
+
+        <TextView
+            android:id="@+id/tv_protect_user_defined"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/protect_user_defined"
+            android:textColor="@color/camera_setting_lefttext_color"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_protect_user_defined"
+            android:paddingTop="3dp"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:visibility="invisible"
+            android:id="@+id/iv_choose_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/desk_move_detection_protect"
+            android:layout_marginRight="15dp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        style="@style/ll_divider"
+        android:visibility="visible">
+
+        <ImageView style="@style/img_divider" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="22dp">
+
+        <CheckBox
+            android:id="@+id/cb_protect_only_weekday"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/protect_only_weekday" />
+
+    </LinearLayout>
+    <TimePicker
+        android:id="@+id/tp_protect_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </TimePicker>
+
+
+</LinearLayout>

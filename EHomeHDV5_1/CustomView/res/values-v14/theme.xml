@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CMTheme" parent="@android:style/Theme.Holo">
+        <item name="android:checkboxStyle">@style/CMWidget.CheckBox</item>
+        <item name="switchStyle">@style/CMWidget.Switch</item>
+        <item name="cornerViewStyle">@style/CMWidget.CustomCornerView</item>
+        <item name="tabViewStyle">@style/CMWidget.TabView</item>
+        <item name="dialogStyle">@style/CMWidget.Dialog</item>
+    </style>
+
+    <style name="CMTheme.Black" parent="@android:style/Theme.Holo"></style>
+
+    <style name="CMTheme.Light" parent="@android:style/Theme.Holo.Light"></style>
+
+    <style name="CMTheme.Dialog" parent="@android:style/Theme.Holo.Dialog"></style>
+
+        <style name="CMWidget.Listview" parent="@android:style/Widget.ListView">
+        <item name="android:divider">@drawable/listview_divider</item>
+        <item name="android:listSelector">@drawable/list_selector_holo_light</item>
+        <item name="android:cacheColorHint">@null</item>
+        <item name="android:dividerHeight">@dimen/dividerHeight</item>
+        <!-- This attribute is deprecated and will be ignored as of API level 14 (ICE_CREAM_SANDWICH) -->
+<!--         <item name="android:fadingEdge">none</item> -->
+        <item name="android:requiresFadingEdge">none</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:layout_marginTop">@dimen/adapterview_default_margin</item>
+        <item name="android:layout_marginBottom">@dimen/adapterview_default_margin</item>
+        <item name="android:scrollbars">none</item>
+    </style>
+</resources>

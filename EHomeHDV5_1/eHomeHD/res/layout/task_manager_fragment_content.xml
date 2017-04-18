@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/v5_gray_light"
+    android:orientation="vertical"
+    android:paddingBottom="5dp"
+    android:paddingTop="10dp" >
+
+    <cc.wulian.smarthomev5.view.swipemenu.SwipeMenuListView
+        android:id="@+id/house_keeper_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </cc.wulian.smarthomev5.view.swipemenu.SwipeMenuListView>
+
+    <LinearLayout
+        android:id="@+id/house_keeper_task_remind_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="20dp" >
+
+        <TextView
+            android:id="@+id/house_keeper_task_remind_layout_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/house_rule_add_rule_remind"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+</LinearLayout>

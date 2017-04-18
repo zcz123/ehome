@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (C) 2008 ZXing authors
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+
+-->
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <string-array name="country_codes" tools:ignore="MissingTranslation">
+        <item>-</item>
+        <item>AR</item>
+        <item>AU</item>
+        <item>BR</item>
+        <item>BG</item>
+        <item>CA</item>
+        <item>CH</item>
+        <item>CN</item>
+        <item>CZ</item>
+        <item>DE</item>
+        <item>DK</item>
+        <item>ES</item>
+        <item>FI</item>
+        <item>FR</item>
+        <item>GB</item>
+        <item>GR</item>
+        <item>HU</item>
+        <item>ID</item>
+        <item>IT</item>
+        <item>JP</item>
+        <item>KR</item>
+        <item>NL</item>
+        <item>PL</item>
+        <item>PT</item>
+        <item>RO</item>
+        <item>RU</item>
+        <item>SE</item>
+        <item>SK</item>
+        <item>SI</item>
+        <item>TR</item>
+        <item>TW</item>
+        <item>US</item>
+    </string-array>
+    <string-array name="preferences_front_light_values" tools:ignore="MissingTranslation">
+        <item>ON</item>
+        <item>AUTO</item>
+        <item>OFF</item>
+    </string-array>
+    <string-array name="preferences_front_light_options">
+        <!-- <item>@string/preferences_front_light_on</item>
+        <item>@string/preferences_front_light_auto</item>
+        <item>@string/preferences_front_light_off</item> -->
+    </string-array>
+    <string-array name="timezone">
+        <item>@string/timezone1</item>
+        <item>@string/timezone2</item>
+        <item>@string/timezone3</item>
+        <item>@string/timezone4</item>
+        <item>@string/timezone5</item>
+        <item>@string/timezone6</item>
+        <item>@string/timezone7</item>
+        <item>@string/timezone8</item>
+        <item>@string/timezone9</item>
+        <item>@string/timezone10</item>
+        <item>@string/timezone11</item>
+        <item>@string/timezone12</item>
+        <item>@string/timezone13</item>
+        <item>@string/timezone14</item>
+        <item>@string/timezone15</item>
+        <item>@string/timezone16</item>
+        <item>@string/timezone17</item>
+        <item>@string/timezone18</item>
+        <item>@string/timezone19</item>
+        <item>@string/timezone20</item>
+        <item>@string/timezone21</item>
+        <item>@string/timezone22</item>
+    </string-array>
+     <string-array name = "keyboard">
+         <item>1</item>
+         <item>2</item>
+         <item>3</item>
+         <item>4</item>
+         <item>5</item>
+         <item>6</item>
+         <item>7</item>
+         <item>8</item>
+         <item>9</item>
+          <item>C</item>
+          <item>0</item>
+          <item>×</item>
+     </string-array>
+</resources>

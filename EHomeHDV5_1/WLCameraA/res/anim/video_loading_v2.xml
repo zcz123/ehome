@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:drawable="@drawable/vloading1"
+        android:duration="350"/>
+    <item
+        android:drawable="@drawable/vloading2"
+        android:duration="350"/>
+    <item
+        android:drawable="@drawable/vloading3"
+        android:duration="350"/>
+    <item
+        android:drawable="@drawable/vloading4"
+        android:duration="350"/>
+    <item
+        android:drawable="@drawable/vloading5"
+        android:duration="350"/>
+    <item
+        android:drawable="@drawable/vloading6"
+        android:duration="350"/>
+
+</animation-list>

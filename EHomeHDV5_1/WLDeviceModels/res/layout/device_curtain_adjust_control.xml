@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+<LinearLayout
+        android:id="@+id/device_curtain_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp"
+         >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="10dp"
+            android:text="off"
+            android:textColor="@color/black" />
+
+        <SeekBar
+            android:id="@+id/device_curtain_adjust_seekbar"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="10"
+            android:padding="10dp"
+            android:progressDrawable="@drawable/device_led_progress_background"
+            android:thumb="@drawable/curtain_adjust_btn" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="on"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+         >
+	<LinearLayout 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal"
+	    android:layout_gravity="center"
+	    android:padding="20dp">
+	    <Button
+            android:id="@+id/device_curtain_adjust_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="ON"
+            android:background="@drawable/device_curtain_task_btn_bg_selector"
+            />
+
+        <Button
+            android:id="@+id/device_curtain_adjust_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/device_curtain_task_btn_bg_selector"
+            android:text="||"
+            />
+
+        <Button
+            android:id="@+id/device_curtain_adjust_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/device_curtain_task_btn_bg_selector"
+            android:text="OFF"
+             />
+	</LinearLayout>
+        
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="5dp"
+    android:paddingTop="15dp"
+    android:background="@color/v5_gray_light" >
+
+    <cc.wulian.smarthomev5.view.swipemenu.SwipeMenuListView
+        android:id="@+id/setting_permission_manager_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </cc.wulian.smarthomev5.view.swipemenu.SwipeMenuListView>
+	<LinearLayout 
+	    android:id="@+id/setting_permission_manager_layout"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="20dp">
+        <TextView 
+            android:layout_marginBottom="16dp"
+            android:id="@+id/setting_permission_manager_layout_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/set_account_manager_permission_remind"
+            android:textColor="@color/black"/>
+	</LinearLayout>
+</LinearLayout>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/rl_replay_player"
+        android:layout_width="match_parent"
+        android:layout_height="200.0dip"
+        android:background="@color/transparent_deeper" >
+
+        <!-- 视屏直播承载View -->
+
+        <com.wulian.icam.view.widget.H264CustomeView
+            android:id="@+id/view_h264video"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+        </com.wulian.icam.view.widget.H264CustomeView>
+
+        <!-- XXXXXXXXXXXXXXXXXXXXXX横屏控制布局XXXXXXXXXXXXXXXXXXXXXXXX -->
+
+        <RelativeLayout
+            android:id="@+id/rl_progress_replay_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" >
+
+            <ImageView
+                android:id="@+id/iv_progress_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:scaleType="matrix"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:src="@drawable/icon_replay_progress" />
+
+            <TextView
+                android:id="@+id/tv_progress_video_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_progress_video"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:text="@string/replay_fetching_videos"
+                android:textColor="@color/white"
+                android:textSize="@dimen/v2_smallest_size" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_control_landscape"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="90dip"
+            android:visibility="gone" >
+
+            <CheckBox
+                android:id="@+id/cb_control_record_landscape"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="@dimen/margin_xlarge"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:layout_marginRight="@dimen/margin_normal"
+                android:background="@drawable/selector_video_landscape_record"
+                android:button="@null"
+                android:visibility="invisible" />
+
+            <Button
+                android:id="@+id/btn_control_snapshot_landscape"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_xlarge"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:layout_marginRight="@dimen/margin_normal"
+                android:layout_toLeftOf="@id/cb_control_record_landscape"
+                android:layout_toStartOf="@id/cb_control_record_landscape"
+                android:background="@drawable/selector_function_snapshot" />
+        </RelativeLayout>
+        <!-- XXXXXXXXXXXXXXXXXXXXXX横屏控制布局XXXXXXXXXXXXXXXXXXXXXXXX -->
+
+        <RelativeLayout
+            android:id="@+id/rl_video_top_landscape"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true" >
+
+            <LinearLayout
+                android:id="@+id/ll_titlebar_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <ImageView
+                    android:id="@+id/iv_titlebar_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/selector_main_titlebar_video" >
+                </ImageView>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_play_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/replay_date"
+                android:drawableLeft="@drawable/replay_date_cirle"
+                android:drawableStart="@drawable/replay_date_cirle"
+                android:gravity="center_horizontal"
+                android:textSize="@dimen/textsize_small" />
+
+            <Button
+                android:id="@+id/btn_control_quit_fullscreen_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/common_normal_left_right_margin"
+                android:layout_marginRight="@dimen/common_normal_left_right_margin"
+                android:visibility="gone"
+                android:background="@drawable/selector_video_btn_landscape_to_potrait"
+                android:gravity="center" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_control_fullscreen_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:padding="10dip" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/common_normal_left_right_margin"
+                android:layout_marginEnd="@dimen/common_normal_left_right_margin"
+                android:layout_marginRight="@dimen/common_normal_left_right_margin"
+                android:background="@drawable/selector_video_btn_fullscreen"
+                android:gravity="center"
+                android:visibility="visible" />
+        </LinearLayout>
+        
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_seekbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="120dip" >
+
+        <TextView
+            android:id="@+id/tv_seekbar_date"
+            android:layout_width="match_parent"
+            android:layout_height="40dip"
+            android:background="@color/transparent"
+            android:gravity="center"
+            android:text="@string/common_today"
+            android:textColor="@color/TextColor" />
+
+        <com.wulian.icam.view.widget.CameraHistorySeekBar
+            android:id="@+id/replay_historyseek"
+            android:layout_width="match_parent"
+            android:layout_height="120dip"
+            android:layout_below="@id/tv_seekbar_date"
+            android:background="#ffffff" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_control_portrait"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:visibility="visible" >
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@color/background"
+            android:layout_weight="1"
+            android:gravity="center" >
+
+            <Button
+                android:id="@+id/btn_control_snapshot_portrait"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:background="@drawable/selector_function_snapshot"
+                android:gravity="bottom|center_horizontal"
+                android:paddingBottom="20dp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <Button
+                android:id="@+id/btn_control_back_live_portrait"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:background="@drawable/selector_function_back_play"
+                android:gravity="bottom|center_horizontal"
+                android:paddingBottom="50dp"
+                android:text="@string/play_back_play"
+                android:textColor="@color/selector_play_video_btn_text_color" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:visibility="gone" >
+
+            <CheckBox
+                android:id="@+id/cb_control_record_portrait"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@drawable/selector_video_portrait_record"
+                android:button="@null"
+                android:gravity="bottom|center_horizontal"
+                android:paddingBottom="20dp"
+                android:text="@string/common_record"
+                android:textColor="@color/selector_record_color" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

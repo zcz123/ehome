@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical" >
+
+    <include layout="@layout/titlebar_general" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp" >
+
+        <EditText
+            android:id="@+id/et_feedback"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/default_margin_top"
+            android:background="@drawable/selector_shape_round_rect_all"
+            android:gravity="top"
+            android:hint="@string/info_feedback_desc"
+            android:textColorHint="@color/DarkGray"
+            android:inputType="textMultiLine"
+            android:maxLength="140"
+            android:maxLines="20"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_middle" >
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:id="@+id/tv_word_limit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@id/et_feedback"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@id/et_feedback"
+            android:text="@string/info_word_limit"
+            android:textColor="@color/DarkGray" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_sure"
+        style="@style/btn_blue_normal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/selector_shape_round_rect_all_white"
+        android:text="@string/common_send" />
+
+</LinearLayout>

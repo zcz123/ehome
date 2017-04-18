@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/add_devices_background" >
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <include layout="@layout/titlebar_add_device_scancode"/>
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" 
+        android:orientation="vertical">
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="vertical"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:minHeight="@dimen/view_min_height"
+                android:orientation="vertical" >
+
+                <EditText
+                    android:id="@+id/et_monitor_input_uid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@null"
+                    android:gravity="center_vertical|left"
+                    android:textColor="@color/black"
+                    android:textCursorDrawable="@null"
+                    android:paddingLeft="3dp"
+                    android:textSize="@dimen/v2_small_size"
+                    android:hint="@string/device_id"
+                    android:minHeight="@dimen/view_min_height_small"
+                    android:singleLine="true" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey"
+                    />
+                 <TextView
+                    android:id="@+id/tv_monitor_show_result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="@dimen/v2_small_size"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@color/red"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/monitor_uid" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/view_min_height"
+                android:orientation="horizontal" >
+            <Button
+                android:id="@+id/btn_monitor_certain"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/monitor_camera_ensure"
+                android:gravity="center"
+                android:text="@string/common_ok" />   
+                </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+</LinearLayout>

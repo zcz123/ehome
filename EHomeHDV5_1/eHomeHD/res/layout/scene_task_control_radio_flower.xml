@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="0dp"
+	    android:layout_weight="1"
+	    android:layout_marginTop="10dp"
+	    android:orientation="vertical"
+	    >
+	    <TextView 
+	        android:layout_weight="1"
+	        android:layout_height="0dp"
+	        android:layout_width="match_parent"
+	        android:text="@string/flower_radio_task_play_text"
+	        android:paddingLeft="10dp"
+	        android:textColor="@color/black"
+	        android:gravity="center_vertical"/>
+	    <LinearLayout 
+	        android:layout_weight="2"
+	        android:layout_height="0dp"
+	        android:layout_width="match_parent"
+	        android:orientation="horizontal"
+	        android:gravity="center"
+	        android:background="@drawable/device_flower_radio_layout_control_bg"
+	        >
+	        <ToggleButton
+		        android:id="@+id/device_radio_task_select_pre"
+		        android:background="@drawable/device_flower_select_radio_previous_drawable"
+		        android:layout_width="35dp"
+            	android:layout_height="35dp"
+            	android:textOn=""
+            	android:textOff=""
+		        android:layout_marginRight="20dp" />
+	        <ToggleButton
+		        android:id="@+id/device_radio_task_select_next"
+		        android:background="@drawable/device_flower_select_radio_next_drawable"
+		        android:layout_width="35dp"
+            	android:layout_height="35dp"
+            	android:textOn=""
+            	android:textOff=""
+		        android:layout_marginRight="20dp" />
+			<ToggleButton
+		        android:id="@+id/device_radio_task_select_pause"
+		        android:background="@drawable/device_flower_select_radio_start_drawable"
+		        android:layout_width="35dp"
+            	android:layout_height="35dp"
+            	android:textOn=""
+            	android:textOff=""
+		        android:layout_marginRight="20dp" />	        
+			<ToggleButton
+		        android:id="@+id/device_radio_task_select_play"
+		        android:background="@drawable/device_flower_select_radio_stop_drawable"
+		        android:layout_width="35dp"
+            	android:layout_height="35dp"
+            	android:textOn=""
+            	android:textOff=""
+		        android:layout_marginRight="20dp" />
+        
+	    </LinearLayout>
+	</LinearLayout>
+	
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="0dp"
+	    android:layout_weight="5"
+	    android:orientation="vertical"
+	    >
+	    
+	    <TextView 
+	        android:layout_weight="1"
+	        android:layout_height="0dp"
+	        android:layout_width="match_parent"
+	        android:text="@string/flower_radio_task_list_play_text"
+	        android:paddingLeft="10dp"
+	        android:textColor="@color/black"
+	        android:gravity="center_vertical"/>
+	    <FrameLayout 
+	        android:layout_weight="10"
+	        android:layout_height="0dp"
+	        android:layout_width="match_parent">
+	        <LinearLayout 
+	        android:layout_height="match_parent"
+	        android:layout_width="match_parent"
+	        android:orientation="horizontal"
+	        android:gravity="center"
+	        android:background="@drawable/device_flower_radio_layout_control_bg">
+        	<ListView 
+        	    android:id="@+id/device_radio_task_list"
+        	    android:layout_width="match_parent"
+        	    android:layout_height="match_parent"
+        	    >
+        	</ListView>
+	        <TextView 
+	            android:id="@+id/device_radio_task_list_empty"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:gravity="center"
+	            android:visibility="gone"
+	            android:text="@string/flower_radio_task_empty_default_text"/>
+	    </LinearLayout>
+
+	    <LinearLayout
+	        android:id="@+id/device_radio_task_list_layout"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:background="@android:color/transparent"
+	        android:clickable="true"
+	        android:visibility="gone"
+	        android:orientation="vertical" >
+	    </LinearLayout>
+
+	    </FrameLayout>
+	    
+	</LinearLayout>
+</LinearLayout>

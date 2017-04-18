@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/include_title"
+        layout="@layout/titlebar_album" />
+
+    <com.wulian.icam.view.widget.PullListView
+        android:id="@+id/lv_more_album"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/include_title"
+        android:background="@drawable/transparent"
+        android:cacheColorHint="#00000000"
+        android:divider="@null"
+        android:listSelector="@color/transparent"
+        android:paddingEnd="10dp"
+        android:paddingLeft="0dp"
+        android:paddingRight="10dp"
+        android:paddingStart="0dp"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbars="vertical" >
+    </com.wulian.icam.view.widget.PullListView>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="@dimen/btn_height"
+        android:layout_height="@dimen/btn_height"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_album_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/album_empty_album_string"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textsize_middle"
+        android:visibility="gone" />
+
+</RelativeLayout>

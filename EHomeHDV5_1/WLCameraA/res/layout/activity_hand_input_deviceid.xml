@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical" >
+
+    <include layout="@layout/titlebar_general" />
+
+    <AutoCompleteTextView
+        android:id="@+id/et_deviceid"
+        style="@style/setting_all_shape"
+        android:background="@drawable/selector_shape_round_rect_edittext"
+        android:padding="@dimen/margin_little"
+        android:layout_marginLeft="@dimen/margin_normal"
+        android:layout_marginRight="@dimen/margin_normal"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        android:hint="@string/config_hand_input_device_id"
+        android:imeOptions="actionDone"
+        android:inputType="textCapCharacters"
+        android:singleLine="true" >
+    </AutoCompleteTextView>
+
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        android:gravity="center"
+        android:textSize="@dimen/margin_xlarge"
+        style="@style/v2_btn_normal_style"
+        android:text="@string/common_sure" />
+
+</LinearLayout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/v5_gray_light"
+    android:orientation="vertical"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        />
+    <LinearLayout
+        android:id="@+id/floorheating_setting_overtemp_open_layout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="@drawable/account_manager_switch_account_item_selector">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:layout_marginLeft="15dp"
+            android:gravity="center_vertical"
+            android:text="@string/AP_over_protect"
+            android:textSize="20sp"
+            android:textColor="#3e3e3e"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="right|center_vertical">
+            <ImageView
+                android:id="@+id/floorheating_setting_overtemp_open_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="20dp"
+                android:src="@drawable/thermost_setting_icon_on"
+                android:clickable="true"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/floorheating_setting_overtemp_select_layout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="@drawable/account_manager_switch_account_item_selector">
+
+        <TextView
+            android:id="@+id/floorheating_setting_overtemp_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:layout_marginLeft="15dp"
+            android:gravity="center_vertical"
+            android:text="@string/AP_select_tempItem"
+            android:textSize="20sp"
+            android:textColor="#3e3e3e"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="right|center_vertical">
+            <TextView
+                android:id="@+id/floorheating_setting_overtemp_temp_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="35dp"
+                android:textSize="15sp"
+                android:text="60℃"
+                android:textColor="#3e3e3e"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

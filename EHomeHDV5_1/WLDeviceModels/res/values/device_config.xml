@@ -1,0 +1,13 @@
+<resources>
+	<!-- move from language file, because don't need to translate -->
+    <string name="default_progress">0%</string>
+    <string name="default_progress_on">ON</string>
+    <string name="default_progress_off">OFF</string>
+    <string name="device_cooker_point">:</string>
+	<string name="device_cooker_mode">M</string>
+    <string name="device_cooker_minute">00</string>
+	<string name="house_rule_condition_device_symbol_more">&gt;</string>
+	<string name="house_rule_condition_device_symbol_less">&lt;</string>
+	<string name="house_rule_condition_device_symbol_centigrade">℃</string>
+	<string name="house_rule_condition_device_symbol_percent">%</string>
+</resources>

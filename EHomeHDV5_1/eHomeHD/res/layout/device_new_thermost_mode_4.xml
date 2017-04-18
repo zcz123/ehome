@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal"
+    android:weightSum="4" >
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+
+        <CheckBox
+            android:id="@+id/device_thermost_layout3_btn1"
+            style="@style/device_thermostat_button_style"
+            android:layout_gravity="right"
+            android:background="@drawable/thermostat_mode_cool_default" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_weight="1" >
+
+        <CheckBox
+            android:id="@+id/device_thermost_layout3_btn2"
+            style="@style/device_thermostat_button_style"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/thermostat_mode_eheat_default" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_weight="1" >
+
+        <CheckBox
+            android:id="@+id/device_thermost_layout3_btn3"
+            style="@style/device_thermostat_button_style"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/thermostat_mode_heat_select" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+
+        <CheckBox
+            android:id="@+id/device_thermost_layout3_btn4"
+            style="@style/device_thermostat_button_style"
+            android:layout_gravity="left"
+            android:background="@drawable/thermostat_mode_switch_default" />
+    </FrameLayout>
+
+</LinearLayout>

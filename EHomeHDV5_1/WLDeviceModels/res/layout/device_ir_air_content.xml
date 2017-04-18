@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="20dp"
+    android:paddingBottom="10dp"
+    android:orientation="vertical" >
+    
+	<GridView 
+	    android:horizontalSpacing="10dp"
+	    android:verticalSpacing="5dp"
+	    android:numColumns="3"
+	    android:id="@+id/device_ir_air_gv"
+	    android:layout_width="match_parent"
+	    android:layout_weight="1"
+	    android:gravity="center"
+	    android:layout_gravity="center"
+	    android:layout_height="0dp"></GridView>
+	<LinearLayout 
+	    android:id="@+id/device_ir_edit_button"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:gravity="center"
+	    android:visibility="gone"
+	    android:padding="10dp">
+	    <ImageView
+            android:id="@+id/devcie_ir_edit_add_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/device_ir_air_edit_img" />
+	    <ImageView
+            android:id="@+id/devcie_ir_cancel_edit_add_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/device_ir_air_cancle_edit_img"
+            android:visibility="gone" />
+	</LinearLayout>
+</LinearLayout>

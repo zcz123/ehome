@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/add_devices_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <include layout="@layout/titlebar_cat_eye_configuration" />
+    </LinearLayout>
+	<ImageView
+		android:id="@+id/iotc_dev_res_img"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center_horizontal"
+		android:layout_marginTop="40dp"
+		android:background="@drawable/eagle_wifi_conn_fail"
+	    />
+    <TextView
+		android:id="@+id/iot_dev_config_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginTop="10dp"
+        />
+    <!--text: config_wifi_tips 请重试并检查wifi密码是否正确  -->
+    <TextView
+		android:id="@+id/iot_dev_config_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/config_wifi_tips"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+		android:visibility="invisible"
+        />
+    <Button 
+        android:id="@+id/eye_retry_button"
+        android:layout_width="match_parent"
+		android:layout_height="48dp"
+		android:background="@drawable/monitor_camera_ensure"
+		android:text="@string/gateway_router_setting_wifi_Relay_connect_retry_hint"
+		android:layout_marginTop="60dp"
+		android:layout_marginLeft="20dp"
+		android:layout_marginRight="20dp"
+		android:textColor="@color/white"
+        />
+    <TextView 
+        android:id="@+id/back_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        />
+    
+</LinearLayout>

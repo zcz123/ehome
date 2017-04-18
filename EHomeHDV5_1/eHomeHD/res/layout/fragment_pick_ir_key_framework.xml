@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+   	android:background="@drawable/circular_corner_dialog"
+   	>
+    
+    <!-- 万能红外以及LED炫彩灯在NFC和摇一摇设备控制中的dialog显示效果 -->
+    <RelativeLayout
+        android:id="@+id/top_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/alertTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:paddingTop="20dp"
+            android:singleLine="true"
+            android:textColor="@color/v5_green_light"
+            android:textSize="23sp" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/infrare_framework"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:minHeight="100dp"
+        android:gravity="center" >
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/dialog_layout_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dialog_btn_height" >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/v5_green_light" />
+
+        <LinearLayout
+            android:id="@+id/leftSpacer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/negativeButton"
+                style="@style/CMWidget.Button.Dialog.V5"
+                android:text="@android:string/cancel"
+                android:background="@drawable/dialog_btn" />       
+            <Button
+                android:id="@+id/positiveButton"
+                style="@style/CMWidget.Button.Dialog.V5"
+                android:text="@android:string/ok"
+                android:background="@drawable/dialog_btn" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/pos_mid_divider"
+            android:layout_width="1dp"
+            android:layout_height="@dimen/dialog_btn_height"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/v5_green_light"  />
+    </FrameLayout>
+
+</LinearLayout>

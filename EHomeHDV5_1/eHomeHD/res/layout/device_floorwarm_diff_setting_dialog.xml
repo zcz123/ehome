@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dip"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="#6EA31D" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" >
+
+           <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <com.yuantuo.customview.ui.wheel.WheelView
+                    android:id="@+id/diff_wheelView"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"/>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent" >
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_marginTop="150dip"
+                    android:background="#6EA31D" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_below="@id/view1"
+                    android:layout_marginTop="95dip"
+                    android:background="#6EA31D" />
+            </RelativeLayout>
+
+        </FrameLayout>
+    </LinearLayout>
+	<ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="250dip"
+            android:layout_gravity="center"
+            android:src="@drawable/scene_timing_line" />
+
+
+
+</LinearLayout>

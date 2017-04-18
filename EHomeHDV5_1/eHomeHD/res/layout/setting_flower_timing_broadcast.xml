@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="5.0" >
+
+        <ListView
+            android:id="@+id/setting_flower_timing_listview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+        <TextView
+            android:id="@+id/setting_flower_timing_empty_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/gateway_dream_flower_time_show_no_tim"
+            android:textColor="@color/black"
+            android:visibility="invisible" />
+    </FrameLayout>
+
+    <Button
+        android:layout_marginBottom="32dp"
+        android:id="@+id/setting_flower_add_timing_bt"
+        android:background="@drawable/flower_button_bg"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32.0dip"
+        android:layout_marginRight="32.0dip"
+        android:text="@string/gateway_dream_flower_time_show_add_time" />
+
+</LinearLayout>

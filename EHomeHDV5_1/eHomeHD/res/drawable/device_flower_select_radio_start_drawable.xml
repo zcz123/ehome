@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+	<item android:drawable="@drawable/device_flower_select_radio_start_light" android:state_pressed="true"></item>
+	<item android:drawable="@drawable/device_flower_select_radio_start_light" android:state_checked="true"></item>
+	<item android:drawable="@drawable/device_flower_select_radio_start_black" ></item>
+</selector>

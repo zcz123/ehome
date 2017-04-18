@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>listUserByDevice</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" href="css/mui.min.css">
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			
+			h5 {
+				margin: 5px 7px;
+			}
+		</style>
+
+		<script type="text/javascript" src="js/mui.js"></script>
+		<script type="text/javascript" src="js/plus.js"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/hashmap.js"></script>
+		<script type="text/javascript" src="./js/md5-min.js"></script>
+		<script type="text/javascript" src="./js/digest-auth.js"></script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="custom-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">客人权限设置</h1>
+		</header>
+		<div class="mui-content">
+			<h4>客人的权限</h4>
+			<div class="mui-content-padded">
+				<ul class="mui-table-view" id="childDeviceList">
+				</ul>
+			</div>
+		</div>
+		<div id="middlePopover" class="mui-popover">
+			<ul class="mui-table-view mui-table-view-radio" id="radio_rights">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">0</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">1</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">2</a>
+				</li>
+			</ul>
+		</div>
+
+	</body>
+	<!--<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>-->
+	<script>
+		var $deviceId = getRequestParam('deviceId');
+		var $bindUserId = getRequestParam('bindUserId');
+		var $childDevices = null;
+		var $currentLi = null;
+		plus.plusReady(function() {
+			loadDevices();
+		});
+
+		function createChildDevicesFromArry(cds) {
+			$childDevices = new HashMap();
+			for (var j = 0; j < cds.length; j++) {
+				cds[j].rights = 0;
+				$childDevices.put(cds[j].device_childId, cds[j]);
+			}
+		}
+
+		function loadDevices() {
+			var digestAuth = DigestAuthentication.init({ 
+				onSuccess: function(response, status) {
+					var ret = JSON.parse(response);
+					var hint=statusHelper.mapping(status); //错误码显示
+					if(hint){
+						alert(hint);
+					}else if(status=="0"){
+						var devices = ret.devices;
+						for (var i = 0; i < devices.length; i++) {
+							if (devices[i].deviceId == $deviceId) {
+								createChildDevicesFromArry(devices[i].device_childs);
+								getRights();
+								break;
+							}
+						}
+					}
+				},
+				onFailure: function(httpStatus) {
+					alert("调用getDeviceByUser失败：" + httpStatus);
+				}
+			});
+			digestAuth.setHeader('cmd', 'getDeviceByUser');
+			digestAuth.setHeader('token', plus.ehomev5.getData('token'));
+			var obj = {};
+			obj.deviceId = $deviceId;
+			digestAuth.setData(JSON.stringify(obj));
+			digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + '/AMS/user/device');
+		}
+
+		function addChildDevice(cdid, cd, test) {
+			var liCD = document.createElement("li");
+			liCD.className = "mui-table-view-cell";
+			liCD.id = "li_" + cd.device_childId;
+			liCD.onclick = function() {
+				var right = this.children[0].textContent;
+				var popover = document.getElementById("middlePopover");
+				var lilist = popover.getElementsByTagName("li");
+				for (var i = 0; i < lilist.length; i++) {
+					lilist[i].className = "mui-table-view-cell";
+					if (lilist[i].children[0].textContent == right) {
+						lilist[i].classList.add("mui-selected");
+					}
+				}
+				mui("#middlePopover").popover("show");
+				$currentLi = this;
+			};
+			liCD.textContent = cd.deviceName;
+			var spanRight = document.createElement("span");
+			spanRight.className = "mui-pull-right";
+			spanRight.textContent = cd.rights;
+			liCD.appendChild(spanRight);
+			document.getElementById("childDeviceList").appendChild(liCD);
+		}
+
+		function getRights() {
+			var digestAuth = DigestAuthentication.init({
+				onSuccess: function(response, status) {
+					var ret = JSON.parse(response);
+					var hint=statusHelper.mapping(status); //错误码显示
+					if(hint){
+						alert(hint);
+					}else if(status=="0"){
+						var userRights = ret.userRights;
+						for (var i = 0; i < userRights.length; i++) {
+							var cd = $childDevices.get(userRights[i].device_childId);
+							cd.rights = userRights[i].rights;
+						}
+						$childDevices.each(addChildDevice);
+					}
+				},
+				onFailure: function(httpStatus) {
+					alert("调用getRights失败：" + httpStatus);
+				}
+			});
+			digestAuth.setHeader('cmd', 'getRights');
+			digestAuth.setHeader('token', plus.ehomev5.getData('token'));
+			var obj = {};
+			obj.deviceId = $deviceId;
+			obj.ngUserId = $bindUserId;
+			digestAuth.setData(JSON.stringify(obj));
+			digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + '/AMS/user/rights');
+		}
+
+		function setRights(device_childId, right) {
+			var digestAuth = DigestAuthentication.init({
+				onSuccess: function(response, status) {
+					var ret = JSON.parse(response);
+					var hint=statusHelper.mapping(status);//错误码显示
+					if(hint){
+						alert(hint);
+					}
+					plus.nativeUI.closeWaiting();
+				},
+				onFailure: function(httpStatus) {
+					alert("调用setRights失败：" + httpStatus);
+					plus.nativeUI.closeWaiting();
+				}
+			});
+			digestAuth.setHeader('cmd', 'setRights');
+			digestAuth.setHeader('token', plus.ehomev5.getData('token'));
+			var obj = {};
+			obj.deviceId = $deviceId;
+			obj.ngUserId = $bindUserId;
+			rightSet = {};
+			rightSet.device_childId = device_childId;
+			rightSet.rights = right;
+			obj.userRights = new Array(rightSet);
+			digestAuth.setData(JSON.stringify(obj));
+			digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + '/AMS/user/rights');
+			plus.nativeUI.showWaiting();
+		}
+		mui("#radio_rights").on('tap', "li", function() {
+			var chID = $currentLi.id.substr("li_".length);
+			var right = this.children[0].textContent;
+			setRights(chID, right);
+			var right = this.children[0].textContent;
+			$currentLi.children[0].textContent = right;
+			mui("#middlePopover").popover("hide");
+			$currentLi = null;
+		});
+	</script>
+
+</html>

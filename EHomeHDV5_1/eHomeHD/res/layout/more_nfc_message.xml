@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/more_message_nfc_dialog"
+    android:orientation="vertical"
+    android:gravity="center" >
+    <TextView 
+        android:layout_marginTop="8dp" 
+        android:textColor="@color/title_color"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:text="@string/home_return_message_titel"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"/>
+    <LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="16dp"
+		android:layout_marginBottom="32dp"
+		android:background="@drawable/et_focused">
+		<EditText
+			android:focusable="true"
+			android:cursorVisible="true"
+			android:textCursorDrawable="@drawable/color_cursor"
+			android:id="@+id/more_nfc_message_edit"
+			android:paddingLeft="30dp"
+			android:paddingRight="30dp"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@null"
+			android:minLines="3"
+			android:textSize="16sp"
+			android:textColor="#222222"  />
+	</LinearLayout>
+</LinearLayout>

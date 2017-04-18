@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- <drawable name="title_bar_background">#14446A</drawable> -->
+    <drawable name="title_bar_background">#709E18</drawable>
+    <drawable name="transparent">#00000000</drawable>
+    <!-- <drawable name="main_menu">#88FFFFFF</drawable> -->
+    <drawable name="main_menu">#EFFFFFFF</drawable>
+    <!-- <drawable name="background">#D9D9D9</drawable> -->
+    <drawable name="background">#EFEFEF</drawable>
+    <drawable name="nodevice_bg">#FF666666</drawable>
+    <drawable name="transparent_white">#DDF4F4F4</drawable>
+    <drawable name="start_bg_color">#00CCCB</drawable>
+
+</resources>

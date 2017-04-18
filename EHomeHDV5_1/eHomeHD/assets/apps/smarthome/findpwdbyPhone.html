@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>findpassword</title>
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/custom.css" />
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			
+			.hint-top {
+				font-size: 16px;
+				color: black;
+			}
+		</style>
+		<script type="text/javascript" src="js/plus.js"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/hashmap.js"></script>
+		<script type="text/javascript" src="./js/md5-min.js"></script>
+		<script type="text/javascript" src="./js/digest-auth.js"></script>
+		<script src="js/custom.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav custom-nav">
+			<a class="custom-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title"><span class="autoSwitchLanguager" id="html_user_reset_password"></span></h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-content-padded" style="margin-top: 64px;margin-left: 10px;margin-right: 10px;">
+				<p class="hint-top autoSwitchLanguager" id="html_user_reset_password_by_phone_hint"></p>
+				<p id="hint_top"></p>
+				<div style="background-color: white; vertical-align: middle;">
+					<div>
+						<div class="mui-input-row" style="display: inline-block;width: 70%;">
+							<label class="autoSwitchLanguager" id="html_user_reset_password_verification_code"style="width:41%"></label>
+							<input type="text" id='verifyCode' class="mui-input-clear" style="width:59%"/>
+						</div>
+						<div style="display:inline;width: 30%;padding: 0px;">
+							<button id="sendCodeBtn" type="button" style="width: 27%; line-height:1; padding: 12px 0 12px 0;margin: 0px;" onclick="sendVerifyCode()">
+								<span class="autoSwitchLanguager" id="html_user_reset_password_get_verification_code"></span>
+							</button>
+						</div>
+						<p id="hintPanel" class='mui-hidden mui-pull-left warning'></p>
+					</div>
+				</div>
+				<div class="mui-button-row" style="margin-top: 50%;">
+					<button type="button" id="nextBtn" onclick="findPassword()">
+						<span class="autoSwitchLanguager" id="html_setting_next_steps_hint"></span>
+					</button>
+				</div>
+			</div>
+		</div>
+
+	</body>
+	<!--<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>-->
+	<script>
+		var phone = "";
+		var verifyCode = "";
+		plus.plusReady(function() {
+			setHintTop();
+		});
+
+		function setHintTop() {
+			phone=decodeURI(getUrlParam("phone"));
+			var hintTop = document.getElementById("hint_top");
+			hintTop.textContent = plus.ehomev5.getLang("html_user_reset_password_by_phone_hint_pre") + phone + plus.ehomev5.getLang("html_user_reset_password_by_phone_hint_tail");
+		}
+
+		function findPassword() {
+			var codeInput = document.getElementById("verifyCode");
+			verifyCode = codeInput.value;
+			if (verifyCode == "undefined" || verifyCode == "") {
+				showHint(plus.ehomev5.getLang("html_user_input_verification_code_hint"));
+				codeInput.style.border = 'thin red dashed';
+				return;
+			} else {
+				hideHint();
+				codeInput.style.border = 'none';
+			}
+			window.location = "resetpassword.html?phoneNum=" + phone + "&verifyCode=" + verifyCode;
+		}
+
+		function sendVerifyCode() {
+			var digestAuth = DigestAuthentication.init({
+				onSuccess: function(response, status) {
+					var ret=JSON.parse(response);
+					var hint=statusHelper.mapping(status);//错误码显示
+					if(hint){
+						alert(hint);
+					}
+					else if(status=="0"){
+						setTimer();
+					}else{
+						alert(plus.ehomev5.getLang("html_user_reset_password_send_fail"));
+					}
+				},
+				onFailure: function(httpStatus) {
+					alert(plus.ehomev5.getLang("html_user_reset_password_send_fail"));
+				}
+			});
+			digestAuth.setHeader('cmd', 'isPhoneExist');
+			var obj = {};
+			obj.phone = phone;
+			obj.action = "3";
+			digestAuth.setData(JSON.stringify(obj));
+			digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_DIGEST_URLBASE) + '/user/access');
+		}
+
+		function setTimer() {
+			var sendCodeBtn = document.getElementById("sendCodeBtn");
+			sendCodeBtn.disabled = true;
+			var count = 1;
+			var t1 = window.setInterval(function(time) {
+				if (count == 60) {
+					window.clearInterval(t1);
+					sendCodeBtn.textContent = plus.ehomev5.getLang("html_user_reset_password_get_verification_code");
+					sendCodeBtn.disabled = false;
+					return;
+				}
+				sendCodeBtn.textContent = 60 - count + plus.ehomev5.getLang("html_user_reset_password_resend");
+				count++;
+			}, 1000);
+		}
+
+		function showHint(hintTxt) {
+			var nameErrorEle = document.getElementById("hintPanel");
+			nameErrorEle.textContent = hintTxt;
+			nameErrorEle.classList.remove("mui-hidden");
+		}
+
+		function hideHint() {
+			var nameErrorEle = document.getElementById("hintPanel");
+			nameErrorEle.classList.add("mui-hidden");
+		}
+	</script>
+
+</html>

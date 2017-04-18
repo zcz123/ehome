@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="?attr/listPreferredItemPaddingLeft" >
+
+        <EditText
+            android:id="@+id/editText_input"
+            android:layout_width="250dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#F8F8F8"
+            android:ems="10"
+            android:hint="@string/scene_add_scene_edit_hint"
+            android:maxLength="16"
+            android:minHeight="@dimen/view_min_height_small"
+            android:paddingLeft="5dp"
+            android:singleLine="true"
+            android:textColor="#878787"
+            android:textCursorDrawable="@null" />
+    </LinearLayout>
+
+    <cc.wulian.smarthomev5.view.CheckedGridView
+        android:id="@+id/gridView_choose_icon"
+        style="@style/CMWidget.GridView.Normal"
+        android:layout_width="wrap_content"
+        android:layout_height="190dp"
+        android:layout_margin="?attr/listPreferredItemPaddingLeft"
+        android:listSelector="@color/transparent"
+        android:numColumns="@integer/gridview_column_scene" >
+    </cc.wulian.smarthomev5.view.CheckedGridView>
+
+</LinearLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CMTheme" parent="@android:style/Theme.Holo">
+        <item name="android:checkboxStyle">@style/CMWidget.CheckBox</item>
+        <item name="numberPickerStyle">@style/CMWidget.NumberPicker</item>
+        <item name="switchStyle">@style/CMWidget.Switch</item>
+        <item name="cornerViewStyle">@style/CMWidget.CustomCornerView</item>
+        <item name="tabViewStyle">@style/CMWidget.TabView</item>
+        <item name="dialogStyle">@style/CMWidget.Dialog</item>
+    </style>
+
+    <style name="CMTheme.Black" parent="@android:style/Theme.Holo"></style>
+
+    <style name="CMTheme.Light" parent="@android:style/Theme.Holo.Light"></style>
+
+    <style name="CMTheme.Dialog" parent="@android:style/Theme.Holo.Dialog"></style>
+
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+	<item android:drawable="@drawable/device_security_switch_off_1" android:state_pressed="true"></item>
+    <item android:drawable="@drawable/device_security_switch_off_0"></item>
+</selector>

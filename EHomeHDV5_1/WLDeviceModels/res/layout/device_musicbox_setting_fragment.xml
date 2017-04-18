@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="@string/device_connect_wifi"
+        android:textColor="@color/holo_gray_dark"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/device_musicbox_wifi_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="15dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="@string/device_wifi_name"
+        android:textColor="@color/holo_gray_dark"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/device_musicbox_wifi_name_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/device_musicbox_wifi_edit"
+        android:maxLength="30"
+        android:singleLine="true"
+        android:textColor="@color/black" >
+    </EditText>
+
+    <TextView
+        android:id="@+id/device_musicbox_wifi_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="@string/device_wifi_password"
+        android:textColor="@color/holo_gray_dark"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/device_musicbox_wifi_password_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/device_musicbox_wifi_edit"
+        android:maxLength="16"
+        android:password="true"
+        android:singleLine="true"
+        android:textColor="@color/black" >
+    </EditText>
+
+</LinearLayout>

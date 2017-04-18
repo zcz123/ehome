@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" 
+    android:padding="10dp">
+    <LinearLayout 
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:gravity="center"
+    	android:layout_marginTop="20dp">
+        <SeekBar
+		android:id="@id/dev_state_seekbar_0"
+		android:layout_width="0dp"
+		android:layout_weight="3"
+		android:layout_height="wrap_content"
+		android:progressDrawable="@drawable/device_led_progress_background"
+		android:thumb="@drawable/device_led_progress_point"
+		android:max="100" />           
+	<TextView
+		android:id="@id/dev_state_textview_0"
+		android:layout_width="0dp"
+		android:layout_weight="0.5"
+		android:gravity="center"
+		android:text="0%"
+		android:textColor="#719F19"
+		android:layout_height="wrap_content" /> 
+    </LinearLayout>
+	
+</LinearLayout>

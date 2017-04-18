@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical" >
+
+    <include layout="@layout/titlebar_general" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dip"
+                android:layout_weight="2.0"
+                android:background="@drawable/icon_share_oauth_bg" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/icon_share_oauth_logo" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/margin_big"
+                    android:gravity="center_horizontal"
+                    android:singleLine="true"
+                    android:text="@string/share_oauth_advent"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/v2_small_size" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dip"
+                android:layout_marginLeft="@dimen/margin_normal"
+                android:layout_marginRight="@dimen/margin_normal"
+                android:layout_weight="3.0"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/ll_oauth_by_userid"
+                    style="@style/setting_top_shape"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/margin_little"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:paddingBottom="@dimen/margin_normal"
+                    android:paddingTop="@dimen/margin_normal" >
+
+                    <ImageView
+                        android:id="@+id/iv_uuid"
+                        style="@style/setting_icon"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/icon_share_account" />
+
+                    <Button
+                        android:id="@+id/btn_share"
+                        style="@style/v2_btn_small_style"
+                        android:layout_width="wrap_content"
+                        android:layout_alignBottom="@id/iv_uuid"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/common_share" />
+
+                    <EditText
+                        android:id="@+id/et_uuid"
+                        style="@style/setting_item"
+                        android:layout_width="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/margin_normal"
+                        android:layout_marginRight="@dimen/margin_normal"
+                        android:layout_toEndOf="@id/iv_uuid"
+                        android:layout_toLeftOf="@id/btn_share"
+                        android:layout_toRightOf="@id/iv_uuid"
+                        android:layout_toStartOf="@id/btn_share"
+                        android:background="@null"
+                        android:hint="@string/share_by_username"
+                        android:inputType="none" >
+                    </EditText>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_oauth_by_barcode"
+                    style="@style/setting_top_shape"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_big"
+                    android:visibility="gone" >
+
+                    <ImageView
+                        style="@style/setting_icon"
+                        android:layout_margin="@dimen/margin_normal"
+                        android:src="@drawable/icon_share_barcode" />
+
+                    <TextView
+                        style="@style/setting_item"
+                        android:text="@string/share_by_barcode" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_oauth_count"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_little"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:textSize="@dimen/textsize_middle" />
+
+                <com.wulian.icam.view.widget.ListViewForScrollView
+                    android:id="@+id/lv_oauth_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:cacheColorHint="#00000000"
+                    android:divider="#00000000"
+                    android:dividerHeight="14dp" >
+                </com.wulian.icam.view.widget.ListViewForScrollView>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

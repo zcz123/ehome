@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_custom_alertdialog"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@drawable/transparent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btn_height"
+        android:background="@drawable/selector_shape_round_rect_top_white"
+        android:gravity="center"
+        android:paddingEnd="15dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingStart="15dp"
+        android:scrollbars="vertical"
+        android:singleLine="false"
+        android:text="@string/login_out_confirm"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/textsize_large" >
+    </TextView>
+
+    <ImageView
+        style="@style/img_divider_full"
+        android:background="@color/divider_color" />
+
+    <Button
+        android:id="@+id/btn_positive"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btn_height"
+        android:background="@drawable/selector_shape_round_rect_bottom_white"
+        android:padding="5dp"
+        android:text="@string/common_sure"
+        android:textColor="@color/red"
+        android:textSize="@dimen/textsize_large" />
+
+    <Button
+        android:id="@+id/btn_negative"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btn_height"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/selector_shape_round_rect_all_white"
+        android:padding="2dp"
+        android:text="@string/common_cancel"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/textsize_large" />
+
+</LinearLayout>

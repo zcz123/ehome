@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lin_projector"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+	<LinearLayout
+	    android:id="@+id/virtualKeyLayout"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical" >
+
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="60dp"
+	        android:gravity="center" >
+
+	        <ImageView
+	            android:id="@+id/iv_projector_light"
+	            android:layout_width="15dp"
+	            android:layout_height="15dp"
+	            android:src="@drawable/remote_control_light_1" />
+	    </LinearLayout>
+
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="10dp" >
+
+	        <LinearLayout
+	            android:id="@+id/lin_projector_power"
+	            android:layout_width="50dp"
+	            android:layout_height="50dp"
+	            android:background="@drawable/remote_control_selector01"
+	            android:gravity="center"
+	            android:orientation="vertical"
+	            android:tag="01" >
+	        </LinearLayout>
+
+	        <View
+	            android:layout_width="0dp"
+	            android:layout_height="50dp"
+	            android:layout_weight="1" />
+
+	        <LinearLayout
+	            android:id="@+id/lin_projector_back"
+	            android:layout_width="50dp"
+	            android:layout_height="50dp"
+	            android:background="@drawable/remote_control_selector37"
+	            android:gravity="center"
+	            android:orientation="vertical"
+	            android:tag="37" >
+	        </LinearLayout>
+	    </LinearLayout>
+
+	    <View
+	        android:layout_width="match_parent"
+	        android:layout_height="0dp"
+	        android:layout_weight="1" />
+
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="20dp"
+	        android:layout_marginRight="20dp"
+	        android:gravity="center_vertical"
+	        android:orientation="horizontal" >
+
+	        <LinearLayout
+	            android:id="@+id/lin_projector_ZOOM"
+	            android:layout_width="50dp"
+	            android:layout_height="150dp"
+	            android:background="@drawable/remote_control_vertical_selector"
+	            android:gravity="center_horizontal"
+	            android:orientation="vertical" >
+
+	             <ImageView 
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:background="@drawable/remote_control_selector_zoomadd"                   
+                    android:layout_weight="1"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:background="@drawable/remote_control_selector_zoomplus"                   
+                    android:layout_weight="1"/>
+	        </LinearLayout>
+
+	        <LinearLayout
+	            android:layout_width="0dp"
+	            android:layout_height="match_parent"
+	            android:layout_weight="1"
+	            android:gravity="center"
+	            android:orientation="vertical" >
+
+	            <LinearLayout
+	                android:layout_width="150dp"
+	                android:layout_height="150dp"
+	                android:background="@drawable/remotecontrol_bg"
+	                android:gravity="center_horizontal"
+	                android:orientation="vertical" >
+
+	                <LinearLayout
+	                    android:id="@+id/lin_projector_above"
+	                    android:layout_width="match_parent"
+	                    android:layout_height="0dp"
+	                    android:layout_weight="1"
+	                    android:gravity="center"
+	                    android:tag="38" >
+
+	                    <ImageView
+	                        android:layout_width="25dp"
+	                        android:layout_height="25dp"
+	                        android:src="@drawable/control_to_up" />
+	                </LinearLayout>
+
+	                <LinearLayout
+	                    android:layout_width="match_parent"
+	                    android:layout_height="wrap_content"
+	                    android:gravity="center_vertical" >
+
+	                    <LinearLayout
+	                        android:id="@+id/lin_projector_left"
+	                        android:layout_width="0dp"
+	                        android:layout_height="match_parent"
+	                        android:layout_weight="1"
+	                        android:gravity="center"
+	                        android:tag="40" >
+
+	                        <ImageView
+	                            android:layout_width="25dp"
+	                            android:layout_height="25dp"
+	                            android:src="@drawable/control_to_left" />
+	                    </LinearLayout>
+
+	                    <LinearLayout
+	                        android:id="@+id/lin_projector_middle"
+	                        android:layout_width="70dp"
+	                        android:layout_height="70dp"
+	                        android:background="@drawable/remote_control_selector"
+	                        android:gravity="center"
+	                        android:tag="42" >
+
+	                        <TextView
+	                            android:layout_width="wrap_content"
+	                            android:layout_height="wrap_content"
+	                            android:text="OK"
+	                            android:textColor="@color/black"
+	                            android:textSize="20sp" />
+	                    </LinearLayout>
+
+	                    <LinearLayout
+	                        android:id="@+id/lin_projector_right"
+	                        android:layout_width="0dp"
+	                        android:layout_height="match_parent"
+	                        android:layout_weight="1"
+	                        android:gravity="center"
+	                        android:tag="41" >
+
+	                        <ImageView
+	                            android:layout_width="25dp"
+	                            android:layout_height="25dp"
+	                            android:src="@drawable/control_to_right" />
+	                    </LinearLayout>
+	                </LinearLayout>
+
+	                <LinearLayout
+	                    android:id="@+id/lin_projector_blew"
+	                    android:layout_width="match_parent"
+	                    android:layout_height="0dp"
+	                    android:layout_weight="1"
+	                    android:gravity="center"
+	                    android:tag="39" >
+
+	                    <ImageView
+	                        android:layout_width="25dp"
+	                        android:layout_height="25dp"
+	                        android:src="@drawable/control_to_down" />
+	                </LinearLayout>
+	            </LinearLayout>
+	        </LinearLayout>
+
+	        <LinearLayout
+	            android:id="@+id/lin_projector_CH"
+	            android:layout_width="50dp"
+	            android:layout_height="150dp"
+	            android:background="@drawable/remote_control_vertical_selector"
+	            android:gravity="center"
+	            android:orientation="vertical" >
+
+	            <ImageView 
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:background="@drawable/remote_control_selector04"
+                    android:tag="04"
+                    android:layout_weight="1"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:background="@drawable/remote_control_selector05"
+                    android:tag="05"
+                    android:layout_weight="1"/>
+	        </LinearLayout>
+	    </LinearLayout>
+
+	    <View
+	        android:layout_width="match_parent"
+	        android:layout_height="0dp"
+	        android:layout_weight="1" />
+
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="10dp" >
+
+	        <LinearLayout
+	            android:layout_width="50dp"
+	            android:layout_height="30dp" 
+	            android:gravity="center"
+	            android:background="@drawable/remote_control_selector33"
+	            android:orientation="vertical"
+	            android:tag="33">
+            	
+        	</LinearLayout>
+
+	        <View
+	            android:layout_width="0dp"
+	            android:layout_height="50dp"
+	            android:layout_weight="1" />
+
+	        <LinearLayout
+	            android:id="@+id/lin_projector_expand"
+	            android:layout_width="50dp"
+	            android:layout_height="30dp"
+	            android:background="@drawable/remote_control_custom_selector"
+	            android:gravity="center" >
+
+	            <ImageView
+	                android:layout_width="20dp"
+	                android:layout_height="20dp"
+	                android:src="@drawable/icon_control_expand" />
+	        </LinearLayout>
+	    </LinearLayout>
+
+	    <View
+	        android:layout_width="match_parent"
+	        android:layout_height="0dp"
+	        android:layout_weight="1" />
+	</LinearLayout>
+
+</LinearLayout>

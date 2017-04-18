@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="action_pop_menu_content"/>
+    <item type="id" name="action_pop_menu_list"/>
+
+    <item type="id" name="tab_view_indicator_title"/>
+    <item type="id" name="tab_view_indicator_icon"/>
+
+    <item type="id" name="tab_pager_container"/>
+    <item type="id" name="tab_pager_tabs"/>
+    <item type="id" name="tab_pager_content"/>
+    
+    <!-- number picker -->
+    <item name="numberPicker_increment" type="id" />
+    <item name="numberPicker_decrement" type="id" />
+    
+    <!-- slide expandable listview -->
+	<item type="id" name="expandable_toggle_button" />
+	<item type="id" name="expandable" />
+    
+</resources>

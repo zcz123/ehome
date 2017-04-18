@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_alignParentLeft="true"
+        android:id="@+id/other_message_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" >
+        <TextView
+            android:id="@+id/other_sender_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="top"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/other_message_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/social_content_textview"
+            android:gravity="center"
+            android:textSize="17sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_alignParentRight="true"
+        android:visibility="gone"
+        android:id="@+id/self_message_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" >
+        <TextView
+            android:id="@+id/self_message_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/social_content_textview"
+            android:gravity="center"
+            android:text="听上去还不错的样子"
+            android:textSize="17sp" />
+         <TextView
+            android:id="@+id/self_sender_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="top"
+            android:text="publisher："
+            android:textSize="17sp" />
+    </LinearLayout>
+
+</RelativeLayout>

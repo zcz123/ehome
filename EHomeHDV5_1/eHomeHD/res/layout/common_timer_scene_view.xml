@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <FrameLayout
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="0.8" >
+
+        <cc.wulian.smarthomev5.view.RepeatWeekDayView
+            android:id="@id/task_details_timer_weekday"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" >
+        </cc.wulian.smarthomev5.view.RepeatWeekDayView>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="2"
+        android:orientation="horizontal" >
+
+        <ImageView           
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/scene_timing_line" />
+
+        <FrameLayout            
+            android:layout_width="0dip"
+            android:layout_height="350dip"
+            android:layout_gravity="center"
+            android:layout_weight="1" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dip"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="-1dip"
+                    android:src="@drawable/scene_timing_hour" />
+
+                <com.yuantuo.customview.ui.wheel.WheelView
+                    android:id="@+id/wheel1"
+                    android:layout_width="0dip"
+                    android:layout_height="350dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_weight="1.0" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent" >
+
+                <View
+                    android:id="@+id/view1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_marginTop="150dip"
+                    android:background="#6EA31D" />
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_below="@id/view1"
+                    android:layout_marginTop="50dip"
+                    android:background="#6EA31D" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="350dip"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="20dip"
+                    android:layout_marginRight="21dip"
+                    android:text="@string/scene_hour"
+                    android:textColor="#000000" />
+            </RelativeLayout>
+        </FrameLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/scene_timing_line" />
+
+        <FrameLayout
+            android:layout_width="0dip"
+            android:layout_height="350dip"
+            android:layout_gravity="center"
+            android:layout_weight="1" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <com.yuantuo.customview.ui.wheel.WheelView
+                    android:id="@+id/wheel2"
+                    android:layout_width="0dip"
+                    android:layout_height="350dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_weight="1.0" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent" >
+
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_marginTop="150dip"
+                    android:background="#6EA31D" />
+
+                <View
+                    android:id="@+id/view4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_below="@id/view3"
+                    android:layout_marginTop="50dip"
+                    android:background="#6EA31D" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="350dip"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="20dip"
+                    android:layout_marginRight="21dip"
+                    android:text="@string/scene_munite"
+                    android:textColor="#000000" />
+            </RelativeLayout>
+        </FrameLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/scene_timing_line" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1" >
+    </LinearLayout>
+
+</LinearLayout>

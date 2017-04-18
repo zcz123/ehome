@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="horizontal" >
+
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:descendantFocusability="blocksDescendants"
+	    android:orientation="vertical" >
+		<TextView
+		    android:id="@+id/tv_request_time"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:textColor="@color/grey_2"
+		   	android:paddingLeft="@dimen/margin_normal"
+	        android:paddingRight="@dimen/margin_normal"
+		    android:textSize="@dimen/textsize_small"
+		    android:paddingTop="@dimen/margin_normal"
+		    />
+
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content" 
+	        android:orientation="horizontal"
+	        android:paddingLeft="@dimen/margin_normal"
+	        android:paddingRight="@dimen/margin_normal"
+		    >
+			
+	        <TextView
+	            android:id="@+id/tv_request_account"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="用户名"
+	            android:textColor="@color/black"
+	            android:textSize="@dimen/textsize_middle" />
+	    </LinearLayout>
+	    
+	    <LinearLayout
+	        android:id="@+id/ll_request_device_desc"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="@dimen/margin_little"
+	        android:orientation="horizontal" 
+	        android:paddingLeft="@dimen/margin_normal"
+	        android:paddingRight="@dimen/margin_normal"
+	        android:paddingBottom="@dimen/margin_little"
+		    >
+	        
+	        <TextView
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/share_request_device"
+	            android:textColor="@color/grey_2"
+	            android:textSize="@dimen/textsize_small" />
+	
+	        <TextView
+	            android:id="@+id/tv_request_device"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:textColor="@color/grey_2"
+	            android:text=""
+	            android:textSize="@dimen/textsize_small" />
+	    </LinearLayout>
+	    
+	    <View style="@style/img_divider_full"
+	        android:layout_marginTop="@dimen/margin_little"/>
+	    
+	    <TextView
+	            android:id="@+id/tv_request_desc"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_marginTop="@dimen/margin_little"
+	      		android:layout_marginBottom="@dimen/margin_little"
+	            android:textColor="@color/black"
+	            android:textSize="@dimen/textsize_middle" 
+	            android:paddingLeft="@dimen/margin_big"
+		    	android:paddingRight="@dimen/margin_big"
+		    	android:visibility="gone"/>
+	    
+	    <LinearLayout
+	        android:id="@+id/ll_response_oauth"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical">
+		    <LinearLayout
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal">
+		        
+				<Button
+		            android:id="@+id/bt_decline_reques"
+		            android:layout_width="0dip"
+		            style="@style/setting_bottom_shape"
+		            android:layout_height="@dimen/btn_height_min"
+		            android:layout_weight="1"
+		            android:text="@string/common_decline"
+		            android:textColor="@color/red"
+		            android:textSize="@dimen/textsize_large"
+		            android:layout_gravity="center_vertical" />
+				
+				<View style="@style/img_divider_vertical"
+				    android:layout_marginLeft="0dp"
+				    android:layout_marginRight="0dp"
+				    android:layout_marginTop="0dp"
+				    android:layout_height="@dimen/btn_height_min"
+				    android:background="@color/divider_color"
+				    android:layout_width="1dp"/>
+				
+				<Button
+		            android:id="@+id/bt_accept_request"
+		            android:layout_width="0dip"
+		            style="@style/setting_bottom_shape"
+		            android:layout_height="@dimen/btn_height_min"
+		            android:layout_weight="1"
+		            android:text="@string/common_accept"
+		            android:textColor="@color/title_bar_background"
+		            android:textSize="@dimen/textsize_large" 
+		            android:layout_gravity="center_vertical"/>
+				
+				<View style="@style/img_divider_vertical"
+				    android:layout_marginLeft="0dp"
+				    android:layout_marginRight="0dp"
+				    android:layout_marginTop="0dp"
+				    android:layout_height="@dimen/btn_height_min"
+				    android:background="@color/divider_color"
+				    android:layout_width="1dp"/>
+				
+				<Button
+		            android:id="@+id/bt_ignore"
+		            android:layout_width="0dip"
+		            style="@style/setting_bottom_shape"
+		            android:layout_height="@dimen/btn_height_min"
+		            android:layout_weight="1"
+		            android:text="@string/common_ignore"
+		            android:textColor="@color/grey_2"
+		            android:textSize="@dimen/textsize_large"
+		            android:layout_gravity="center_vertical" />
+		    </LinearLayout>
+		    <View style="@style/img_divider_full"/>
+	    </LinearLayout>
+	</LinearLayout>
+</RelativeLayout>

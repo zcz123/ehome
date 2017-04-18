@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/gateway_name_change_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp" >
+
+    <cc.wulian.smarthomev5.view.WLEditText
+        android:id="@+id/gateway_name_change_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F8F8F8"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="10dp"
+        android:textColor="#878787"
+        android:textCursorDrawable="@null" />
+
+    <TextView
+        android:id="@+id/gateway_name_length_prompt_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/set_account_manager_gw_name_length_text"
+        android:textColor="@color/red"
+        android:visibility="gone" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="4dp"
+        android:text="@string/set_account_manager_gw_name_modify_text"
+        android:textColor="#878787" />
+
+</LinearLayout>

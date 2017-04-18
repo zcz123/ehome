@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/homepage_information_weather_ll"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_margin="10dp"
+    android:layout_weight="1"
+    android:background="@drawable/information_weather_ch_bg"
+    android:orientation="horizontal">
+
+</LinearLayout>

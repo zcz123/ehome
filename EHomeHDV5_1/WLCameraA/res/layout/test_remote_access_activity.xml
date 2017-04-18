@@ -1,0 +1,384 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff" >
+
+    <LinearLayout
+        android:id="@+id/mainframe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="注册\n服务\n器"
+                android:textColor="#000000" />
+
+            <EditText
+                android:id="@+id/et_servername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="请输入服务器的名称譬如(wuliangroup.cn)"
+                android:inputType="text"
+                android:text="sh.gg" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="注册\n账号:"
+                android:textColor="#000000" />
+
+            <EditText
+                android:id="@+id/et_registernum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="请输入注册的账号,譬如(1001)"
+                android:inputType="text"
+                android:text="us18g3hwp8zwec24rtdk" >
+
+                <requestFocus />
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="注册\n密码:"
+                android:textColor="#000000" />
+
+            <EditText
+                android:id="@+id/et_registerpwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="请输入注册的密码,譬如(1001)"
+                android:inputType="text"
+                android:text="zhangkb" >
+
+                <requestFocus />
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="远程\n账号"
+                android:textColor="#000000" />
+
+            <EditText
+                android:id="@+id/et_remote_sip"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:hint="请输入远程Sip账号,譬如(1001)"
+                android:text="cmic0365aea213cd8a3a" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/bt_initsip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="初始化" />
+
+        <Button
+            android:id="@+id/bt_registeraccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="注册账号" />
+
+        <Button
+            android:id="@+id/bt_bindaccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="绑定账号(接收报警消息)" />
+
+        <Button
+            android:id="@+id/bt_unbindaccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="解除绑定账号(停止接收报警消息)" />
+
+        <Button
+            android:id="@+id/bt_sendvideo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="发送视频" />
+
+        <Button
+            android:id="@+id/bt_closevideo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="关闭视频" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="\n\n" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#888888"
+            android:gravity="center_horizontal"
+            android:text="通用API"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/bt_NotifySynchroPermission"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="150:同步权限" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="\n\n" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#888888"
+            android:gravity="center_horizontal"
+            android:text="通用API"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/bt_QueryDeviceDescriptionInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="00:查询设备描述信息" />
+
+        <Button
+            android:id="@+id/bt_QueryCameraInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="01:查询摄像头配置信息" />
+
+        <Button
+            android:id="@+id/bt_ConfigCSC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="02:CSC设置" />
+
+        <Button
+            android:id="@+id/bt_ConfigEncode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="03:编码设置" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="\n\n" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#888888"
+            android:gravity="center_horizontal"
+            android:text="侦测联动布防"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/bt_ConfigMovementDetection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="20:配置运动侦测" />
+
+        <Button
+            android:id="@+id/bt_QueryMovementDetectionInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="21:查询运动侦测配置信息" />
+
+        <Button
+            android:id="@+id/bt_ConfigBlockDetection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="22:遮挡侦测配置" />
+
+        <Button
+            android:id="@+id/bt_QueryBlockDetectionInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="23:查询遮挡侦测配置信息" />
+
+        <Button
+            android:id="@+id/bt_ConfigLinkageArming"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="39:联动布防设置" />
+
+        <Button
+            android:id="@+id/bt_QueryLinkageArmingInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="40:获取联动布防信息" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="\n\n" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#888888"
+            android:gravity="center_horizontal"
+            android:text="报警"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/bt_QueryAlarmEvent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="61:查询报警事件" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="\n\n" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#888888"
+            android:gravity="center_horizontal"
+            android:text="PTZ"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/bt_QueryPTZInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="90:摄像头 PTZ 信息" />
+
+        <Button
+            android:id="@+id/bt_ControlPTZMovement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="91:控制 PTZ 运动****INFO"
+            android:textColor="#ff0000" />
+
+        <Button
+            android:id="@+id/bt_ControlPreset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="92:设置预置点" />
+
+        <Button
+            android:id="@+id/bt_ControlDeletePreset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="93:删除预置点" />
+
+        <Button
+            android:id="@+id/bt_QueryPreset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="94:查询预置点列表" />
+
+        <Button
+            android:id="@+id/bt_ConfigCruiseLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="95:设置巡航路线" />
+
+        <Button
+            android:id="@+id/bt_ConfigDeleteCruiseLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="96:删除巡航路线" />
+
+        <Button
+            android:id="@+id/bt_QueryCruiseLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="97:查询巡航列表" />
+        <Button  
+            android:id="@+id/bt_QueryStorageStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="122:请求存储状态信息" />
+              <Button
+            android:id="@+id/bt_ConfigLocalStorageDeviceFormat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="123:本地存储设备格式化" />
+                    <Button
+            android:id="@+id/bt_ConfigPrerecordPlan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="125:录像计划" />
+                          <Button
+            android:id="@+id/bt_QueryPrerecordPlan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="126:查询录像计划"/>
+
+        <Button
+            android:id="@+id/bt_QueryFirewareVersion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="155:查询固件版本" />
+
+        <Button
+            android:id="@+id/bt_NotifyFirewareUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="156:固件升级" />
+
+        <Button
+            android:id="@+id/bt_QueryDeviceOnline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="157:查询摄像在线" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="结果:" />
+
+            <EditText
+                android:id="@+id/et_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="结果" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

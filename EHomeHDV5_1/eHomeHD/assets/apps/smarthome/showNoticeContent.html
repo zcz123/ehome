@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>login</title>
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/custom.css">
+		<style>
+			
+			
+		</style>
+		
+		<script type="text/javascript" src="js/plus.js" ></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/hashmap.js"></script>
+		<script type="text/javascript" src="./js/md5-min.js"></script>
+		<script type="text/javascript" src="./js/digest-auth.js"></script>
+		<script type="text/javascript" src="js/custom.js" charset="utf-8"></script>	
+	</head>
+
+	<body>
+		<div id="wrap">
+			<div id="main" class="clearfix">
+				<header class="mui-bar mui-bar-nav custom-nav">
+					<button style="color: white;" class="custom-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left">
+				        <span class="mui-icon mui-icon-left-nav"></span><span>返回</span>
+				    </button>
+				    <h1 class="mui-title"><span >公告</span></h1> 
+				</header>
+				<div class="mui-content">
+					<div id="notice">
+						
+					</div>
+				</div>
+			</div>
+		</div>	
+		
+	</body>
+	<!--<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>-->
+	<script>
+	
+		plus.plusReady(function () {
+			var notice=document.getElementById("notice");
+			notice.innerHTML=plus.ehomev5.getData($CONSTANTS.TEXT_WILL_SHOW);
+		});
+
+		
+	</script>
+
+</html>

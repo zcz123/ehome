@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/colortime_cancel"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:text="@string/common_cancel"
+            android:gravity="center"
+            android:layout_alignParentLeft="true"/>
+
+        <TextView
+            android:id="@+id/colortime_ok"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:text="@string/common_ok"
+            android:textColor="#6EA31D"
+            android:gravity="center"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#6EA31D" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dip"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="0dip"
+            android:layout_height="250dip"
+            android:layout_gravity="center"
+            android:layout_weight="1" >
+
+           <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <com.yuantuo.customview.ui.wheel.WheelView
+                    android:id="@+id/colortime_wheel1"
+                    android:layout_width="0dip"
+                    android:layout_height="250dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_weight="1.0" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent" >
+
+                <View
+                    android:id="@+id/colortime_view1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_marginTop="100dip"
+                    android:background="#6EA31D" />
+
+                <View
+                    android:id="@+id/colortime_view2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_below="@id/view1"
+                    android:layout_marginTop="150dip"
+                    android:background="#6EA31D" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="250dip"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:id="@+id/colortime_texView_hour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="25dip"
+                    android:text="@string/device_adjust_second_common"
+                    android:textSize="16dp"
+                    android:textColor="@color/black" />
+            </RelativeLayout>
+        </FrameLayout>
+	<ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="250dip"
+            android:layout_gravity="center"
+            android:src="@drawable/scene_timing_line" />
+
+        <FrameLayout
+            android:layout_width="0dip"
+            android:layout_height="250dip"
+            android:layout_gravity="center"
+            android:layout_weight="1" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <com.yuantuo.customview.ui.wheel.WheelView
+                    android:id="@+id/colortime_wheel2"
+                    android:layout_width="0dip"
+                    android:layout_height="250dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_weight="1.0" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent" >
+
+                <View
+                    android:id="@+id/colortime_view3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_marginTop="100dip"
+                    android:background="#6EA31D" />
+
+                <View
+                    android:id="@+id/colortime_view4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_below="@id/view3"
+                    android:layout_marginTop="150dip"
+                    android:background="#6EA31D" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="250dip"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:id="@+id/colortime_textView_minues"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="25dip"
+                    android:text="@string/device_led_ms"
+                    android:textSize="16dp"
+                    android:textColor="@color/black" />
+            </RelativeLayout>
+        </FrameLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

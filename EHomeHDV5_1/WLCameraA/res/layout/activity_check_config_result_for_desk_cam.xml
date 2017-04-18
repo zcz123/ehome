@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+android:background="@drawable/background"
+android:orientation="vertical" >
+
+<include layout="@layout/titlebar_general" />
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:text="@string/desktop_wifi_setup_wait_tip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/textsize_middle"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/tv_wait_tip"
+        />
+
+    <ImageView
+        android:src="@drawable/desktop_cam_wifi_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/tv_wait_tip"
+        android:layout_above="@+id/tv_config_wifi_success_tip"
+        android:id="@+id/imageView" />
+
+    <TextView
+        android:text="@string/desktop_wifi_setup_success_tip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="@dimen/textsize_middle"
+        android:gravity="center_horizontal"
+        android:layout_above="@+id/btn_finish"
+        android:layout_alignLeft="@+id/btn_finish"
+        android:layout_alignStart="@+id/btn_finish"
+        android:id="@+id/tv_config_wifi_success_tip"
+         />
+
+    <Button
+        android:id="@+id/btn_finish"
+        style="@style/v2_btn_normal_style"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/common_finish"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+         />
+
+</RelativeLayout>
+</LinearLayout>

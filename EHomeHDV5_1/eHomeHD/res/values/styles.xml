@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="WindowTitle">
+        <item name="android:singleLine">true</item>
+        <item name="android:shadowColor">#00000000</item>
+        <item name="android:shadowRadius">0</item>
+        <item name="android:textColor">@color/trant</item>
+    </style>
+
+    <style name="CMWidget.TextView.Normal" />
+
+    <style name="CMWidget.TextView.RightMenu">
+        <item name="android:background">@drawable/list_selector_holo_light</item>
+        <item name="android:drawablePadding">@dimen/content_margin_small</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="CMWidget.CheckBox.Empty.Toggle">
+        <item name="android:background">@drawable/scene_timing</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:textColor">@drawable/scene_week_color</item>
+        <item name="android:maxLines">2</item>
+    </style>
+
+    <style name="CMWidget.GridView.Normal">
+        <item name="android:horizontalSpacing">@dimen/content_margin_mid</item>
+        <item name="android:verticalSpacing">@dimen/content_margin_35</item>
+        <item name="android:scrollbars">none</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@color/trant</item>
+        <item name="android:cacheColorHint">@null</item>
+        <item name="android:stretchMode">columnWidth</item>
+        <item name="android:numColumns">auto_fit</item>
+        <item name="android:listSelector">@drawable/list_selector_holo_light</item>
+    </style>
+
+    <style name="CMWidget.Listview.Event">
+        <item name="android:divider">@color/list_item_event_msg_divider</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:layout_marginBottom">0dp</item>
+        <item name="android:dividerHeight">@dimen/content_margin_small</item>
+    </style>
+
+    <style name="CMWidget.Listview.UnClickable">
+        <item name="android:divider">@null</item>
+        <item name="android:dividerHeight">0dp</item>
+        <item name="android:listSelector">@color/trant</item>
+    </style>
+
+    <style name="CMWidget.Listview.V4">
+        <item name="android:dividerHeight">0.5dp</item>
+        <item name="android:divider">@color/list_item_event_msg_divider</item>
+    </style>
+
+    <style name="CMWidget.TextView.DropViewTitle">
+        <item name="android:layout_marginRight">@dimen/content_margin_big</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="CMWidget.ProgressBar.V4">
+        <item name="android:progressDrawable">@drawable/wl_v4_progress_drawable</item>
+    </style>
+
+    <style name="CMWidget.ProgressBar.V4.SeekBar">
+        <item name="android:thumb">@drawable/wl_v4_progress_thumb_drawable_selector</item>
+        <item name="android:thumbOffset">0dp</item>
+        <item name="android:minHeight">16dp</item>
+        <item name="android:maxHeight">16dp</item>
+    </style>
+
+    <style name="CMWidget.ProgressBar.V4.Progress">
+        <item name="android:thumb">@drawable/wl_v4_progress_thumb_drawable_selector</item>
+        <item name="android:minHeight">8dp</item>
+        <item name="android:maxHeight">8dp</item>
+    </style>
+
+    <style name="ActionBar_Style" parent="@style/Widget.Sherlock.ActionBar">
+        <item name="displayOptions">useLogo|showHome|showTitle</item>
+        <item name="background">@color/menubar_background</item>
+        <item name="android:background">@color/menubar_background</item>
+    </style>
+
+    <style name="spinner_style">
+        <item name="android:background">@drawable/spinner_selector</item>
+        <item name="android:paddingLeft">5dip</item>
+    </style>
+
+    <style name="config_progress_circle_style">
+        <item name="android:indeterminateOnly">true</item>
+        <item name="android:indeterminateDrawable">@drawable/config_progressbar_circle</item>
+        <item name="android:minWidth">25dp</item>
+        <item name="android:minHeight">25dp</item>
+        <item name="android:maxWidth">60dp</item>
+        <item name="android:maxHeight">60dp</item>
+    </style>
+
+    <style name="setting_update_progressbar_horizontal_style">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/setting_update_progressbar_horizontal</item>
+        <item name="android:indeterminateDrawable">
+            @android:drawable/progress_indeterminate_horizontal
+        </item>
+        <item name="android:minHeight">20dip</item>
+        <item name="android:maxHeight">20dip</item>
+    </style>
+
+    <style name="feedbackRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/ratingbar_drawable</item>
+        <item name="android:minHeight">48dip</item>
+        <item name="android:maxHeight">48dip</item>
+    </style>
+
+    <style name="loading_dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/social_edit_background</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="popwin_anim_style">
+        <item name="android:windowEnterAnimation">@anim/popupwindow_show</item>
+        <item name="android:windowExitAnimation">@anim/popupwindow_hide</item>
+    </style>
+
+    <style name="device_thermostat_button_style">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:button">@null</item>
+    </style>
+
+    <style name="ImageTranslucentTheme" parent="AppTheme">
+        <!-- 在Android 4.4之前的版本上运行，直接跟随系统主题 -->
+    </style>
+
+    <style name="history_unlock_style0">
+            <item name="android:textSize">16sp</item>
+            <item name="android:textColor">#aa000000</item>
+    </style>
+
+    <style name="history_unlock_style1">
+            <item name="android:textSize">14sp</item>
+            <item name="android:textColor">#55000000</item>
+    </style>
+    <style name="custom_checkbox" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/my_checkbox</item>
+    </style>
+    <style name="custom_checkbox_choose" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/my_checkbox_choose</item>
+    </style>
+</resources>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="200dip"
+    android:layout_height="2dp"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center"
+    android:paddingLeft="2dp"
+    android:paddingRight="2dp"
+    android:paddingTop="2dp" >
+
+   <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center"
+        android:orientation="horizontal" >
+      <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center"
+        android:orientation="vertical" >
+            <TextView
+             android:text="@string/WL_28_hour"
+             android:layout_gravity="center_horizontal|center"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"/>
+            <com.yuantuo.customview.wheel.WheelView
+             android:id="@+id/hour"
+             android:layout_width="50dip"
+             android:layout_height="wrap_content" />
+       </LinearLayout>
+       <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center"
+        android:orientation="vertical" >
+           <TextView
+            android:text="@string/WL_28_minute"
+            android:layout_gravity="center_horizontal|center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+           <com.yuantuo.customview.wheel.WheelView
+            android:id="@+id/mins"
+            android:layout_width="50dip"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center" 
+        android:orientation="vertical">
+           <TextView
+            android:text="@string/WL_28_second"
+            android:layout_gravity="center_horizontal|center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+           <com.yuantuo.customview.wheel.WheelView
+            android:id="@+id/second"
+            android:layout_width="50dip"
+            android:layout_height="wrap_content" />
+         </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,40 @@
+<resources>
+
+    <string name="operation_title">Prompt</string>
+    <string name="operation_sure">Determine</string>
+    <string name="menu_item_bottom">Bottom</string>
+    <string name="hint_neterror">Network anomalies, make sure the network connection!</string>
+    <string name="hint_net_timeout">Connection timed out……</string>
+    <string name="hint_account_mange">Account Management</string>
+    <string name="switch_on">Open</string>
+    <string name="switch_off">Shut down</string>
+    <string name="week_sun">sun</string>
+    <string name="week_mon">mon</string>
+    <string name="week_tue">tue</string>
+    <string name="week_wed">wed</string>
+    <string name="week_thu">thu</string>
+    <string name="week_fri">fri</string>
+    <string name="week_sat">sat</string>
+    <string name="calendar_today">today</string>
+    <string name="dialog_titel">title</string>
+    <string name="dialog_back">back</string>
+    <!-- water value -->
+    <string name="WL_28_time_chose">time_choose</string>
+    <string name="WL_28_hour">hour</string>
+    <string name="WL_28_minute">minute</string>
+    <string name="WL_28_second">second</string>
+
+    <!-- 下拉 -->
+    <string name="down_pull_refresh">pull to Refresh</string>
+    <string name="last_update">Last updated</string>
+    <string name="release_refresh">Refresh release</string>
+    <string name="refresh_now">Refreshing&#8230;</string>
+    <string name="recent_update">Last Updated:</string>
+
+    <!--时间 -->
+    <string name="month_ago">Months ago</string>
+    <string name="day_ago">Days ago</string>
+    <string name="hour_ago">Hours ago</string>
+    <string name="min_ago">Minutes ago</string>
+    <string name="just">Just</string>
+</resources>

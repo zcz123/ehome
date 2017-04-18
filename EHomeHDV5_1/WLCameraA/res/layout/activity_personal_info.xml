@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical" >
+
+    <include layout="@layout/titlebar_general" />
+
+    <LinearLayout
+        android:id="@+id/ll_avatar"
+        style="@style/setting_top_shape"
+        android:layout_height="68dp"
+        android:layout_marginTop="@dimen/default_margin_top" >
+
+        <TextView
+            style="@style/setting_item"
+            android:text="@string/info_avatar" />
+
+        <com.wulian.icam.view.widget.CircleImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/default_head_gray"
+            app:border_color="#EEEFEFEF"
+            app:border_width="2dp" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/ll_divider" >
+
+        <ImageView style="@style/img_divider" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_username"
+        style="@style/setting_top_shape" >
+
+        <TextView
+            style="@style/setting_item"
+            android:text="@string/message_username" />
+
+        <TextView
+            android:id="@+id/tv_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/info_undefined"
+            android:textSize="@dimen/textsize_middle" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/ll_divider" >
+
+        <ImageView style="@style/img_divider" />
+    </LinearLayout>
+
+    <!-- <ImageView style="@style/img_divider" android:id="@+id/iv_info_divider"/> -->
+
+    <LinearLayout
+        android:id="@+id/ll_email"
+        style="@style/setting_middle_shape" >
+
+        <TextView
+            style="@style/setting_item"
+            android:text="@string/info_email" />
+
+        <TextView
+            android:id="@+id/tv_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/common_unbind"
+            android:textColor="@color/control_color"
+            android:textSize="@dimen/textsize_middle" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_change_pwd_up"
+        style="@style/ll_divider" >
+
+        <ImageView style="@style/img_divider" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_change_pwd"
+        style="@style/setting_bottom_shape" >
+
+        <TextView
+            style="@style/setting_item"
+            android:text="@string/common_change_pwd" />
+
+        <ImageView style="@style/setting_arrow" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/ll_divider"
+        android:visibility="gone" >
+
+        <ImageView style="@style/img_divider" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_phonenum"
+        style="@style/setting_bottom_shape"
+        android:visibility="gone" >
+
+        <TextView
+            style="@style/setting_item"
+            android:text="@string/info_phonenum" />
+
+        <TextView
+            android:id="@+id/tv_phonenum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/common_unbind"
+            android:textSize="@dimen/textsize_middle" />
+    </LinearLayout>
+
+</LinearLayout>

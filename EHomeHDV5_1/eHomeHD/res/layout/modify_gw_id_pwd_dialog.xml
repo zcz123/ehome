@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/vpi__bright_foreground_disabled_holo_light" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="@string/home_gateway_modify_prompt"
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/modify_gw_dialog_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/device_common_edittext_img"
+        android:hint="@string/set_account_manager_gw_name"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/modify_gw_dialog_pwd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/device_common_edittext_img"
+        android:hint="@string/login_gateway_password_hint"
+        android:padding="10dp"
+        android:password="true"
+        android:singleLine="true"
+        android:textColor="@color/black" />
+
+</LinearLayout>

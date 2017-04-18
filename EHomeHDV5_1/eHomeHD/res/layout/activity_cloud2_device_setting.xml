@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+    <include layout="@layout/titlebar_general" />
+    <LinearLayout
+        android:id="@+id/ll_delete_device"
+        style="@style/setting_all_shape_logout"
+        android:layout_marginBottom="@dimen/margin_normal"
+        android:layout_marginEnd="@dimen/margin_normal"
+        android:layout_marginLeft="@dimen/margin_big"
+        android:layout_marginRight="@dimen/margin_big"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/selector_shape_round_rect_share_delete">
+
+        <TextView
+            android:id="@+id/tv_delete_info"
+            style="@style/setting_item_single_textview"
+            android:gravity="center"
+            android:text="@string/setting_delete_device"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</LinearLayout>

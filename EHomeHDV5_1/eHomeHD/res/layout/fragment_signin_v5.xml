@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yuantuo.customview.ui.VerticalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroll_page"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background_v5" >
+
+    <!-- 登录页 -->
+	<TextView 
+	    android:id="@+id/goto_account_login_page_tv"
+	    android:textColor="@android:color/black"
+	    android:textSize="16sp"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="@string/login_with_wulian_account" 
+	    android:paddingTop="16dp"
+	    android:paddingLeft="16dp" />
+	
+    <LinearLayout
+        android:id="@+id/page_signin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal|bottom"
+        android:orientation="vertical"
+        android:paddingBottom="25dp"
+        android:paddingLeft="@dimen/frame_lr_padding"
+        android:paddingRight="@dimen/frame_lr_padding" >
+
+        <!-- 扫一扫和进度条 -->
+
+        <FrameLayout
+            android:id="@+id/layout_loading_scan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <FrameLayout
+                android:id="@+id/layout_fragment_scan"
+                android:layout_width="0dp"
+                android:layout_height="0dp" >
+            </FrameLayout>
+
+            <com.yuantuo.customview.ui.WLProgressView
+                android:id="@+id/view_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="invisible" />
+        </FrameLayout>
+
+        <CheckBox
+            android:id="@+id/scan_barcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginBottom="15dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="15dp"
+            android:button="@null"
+            android:drawablePadding="3dp"
+            android:drawableTop="@drawable/qr_scan"
+            android:text="@string/login_rich_scan"
+            android:textColor="@color/v5_gray_mid" />
+
+        <!-- 登录框 -->
+
+        <FrameLayout
+            android:id="@+id/server_ip_fl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:visibility="gone" >
+
+            <EditText
+                android:id="@+id/et_gw_server_ip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_rect_background_gray"
+                android:hint="@string/login_gateway_server_hint"
+                android:nextFocusForward="@+id/et_gw_id"
+                android:paddingBottom="10dp"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:paddingTop="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="16sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp" >
+
+            <EditText
+                android:id="@+id/et_gw_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_rect_background_gray"
+                android:hint="@string/login_gateway_name_hint"
+                android:inputType="textVisiblePassword"
+                android:nextFocusForward="@+id/et_password"
+                android:paddingBottom="10dp"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:paddingTop="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="16sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp" >
+
+            <ToggleButton
+                android:id="@+id/remember_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:background="@null"
+                android:button="@null"
+                android:drawableLeft="@drawable/remember_password_background"
+                android:drawablePadding="10dp"
+                android:paddingLeft="10dp"
+                android:textColor="@color/v5_red_light"
+                android:textOff="@string/login_remember_password_hint"
+                android:textOn="@string/login_remember_password_hint"
+                android:textSize="20sp" />
+
+            <FrameLayout
+                android:id="@+id/layout_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <!-- android:imeActionLabel="登录" -->
+
+                <EditText
+                    android:id="@id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_rect_background_red"
+                    android:hint="@string/login_gateway_password_hint"
+                    android:imeActionLabel="@string/login_login"
+                    android:imeOptions="actionSend"
+                    android:inputType="textVisiblePassword"
+                    android:password="true"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:paddingTop="10dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="right|center_vertical"
+                    android:orientation="vertical"
+                    android:paddingRight="20dp" >
+
+                    <TextView
+                        android:id="@+id/auto_password"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/background_email_send_button"
+                        android:gravity="center_vertical"
+                        android:paddingBottom="2dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingTop="2dp"
+                        android:text="@string/login_auto_set_password"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </FrameLayout>
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/btn_signin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_rect_background_green"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:text="@string/login_login"
+            android:textColor="@color/v5_gray_dark"
+            android:textSize="20sp" />
+
+        <!-- 选择去网关 -->
+
+        <TextView
+            android:id="@+id/handle_to_gateway"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableBottom="@drawable/icon_arrow_down"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:paddingBottom="15dp"
+            android:paddingTop="30dp"
+            android:text="@string/login_gateway_search_hint"
+            android:textColor="@color/v5_gray_dark"
+            android:textSize="22sp" />
+    </LinearLayout>
+    <!-- 网关页 -->
+
+    <LinearLayout
+        android:id="@+id/page_gateway"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/handle_to_signin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawablePadding="10dp"
+            android:drawableTop="@drawable/icon_arrow_up"
+            android:gravity="center"
+            android:paddingBottom="50dp"
+            android:paddingTop="15dp"
+            android:text="@string/login_other_way_login"
+            android:textColor="@color/v5_gray_dark"
+            android:textSize="22sp" />
+
+        <RelativeLayout
+            android:id="@+id/layout_try_again"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white" >
+
+            <TextView
+                android:id="@+id/text_view_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:padding="3dp"
+                android:text="@string/login_gateway_search_list"
+                android:textColor="@color/v5_gray_mid"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/text_search_again"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/login_not_search_gateway"
+                android:textColor="@color/red"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/list_view_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null"
+            android:paddingTop="15dp" >
+        </ListView>
+    </LinearLayout>
+
+</com.yuantuo.customview.ui.VerticalScrollView>

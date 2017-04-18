@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dev_light_switch_child_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    >
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+        <LinearLayout
+            android:id="@+id/dev_light_switch_layout"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:gravity="center"
+            android:padding="23dp"
+            android:background="@drawable/device_other_touch_scene_child_backbind" >
+
+            <ImageView
+                android:id="@+id/dev_light_switch_imageview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                 />
+        </LinearLayout>
+
+    <TextView
+        android:id="@+id/dev_light_switch_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+         />
+    </LinearLayout>
+</LinearLayout>

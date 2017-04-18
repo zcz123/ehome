@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <LinearLayout 
+        android:id="@+id/house_keeper_task_time_layout"
+        android:layout_width="match_parent"
+        android:layout_weight="6"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        >
+    <!-- <include layout="@layout/common_timer_scene_view"/> -->
+    </LinearLayout>
+	<LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_weight="0.8"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:paddingTop="5dp"
+        android:paddingBottom="8dp"
+        >
+		<Button
+		    android:id="@+id/house_keeper_task_time_ensure" 
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent"
+		    android:layout_marginLeft="30dp"
+        	android:layout_marginRight="30dp"
+		    android:text="@string/common_ok"
+		    android:textSize="13sp"
+		    android:textColor="@color/black"
+		    android:background="@drawable/house_keeper_button_ensure"/>
+	</LinearLayout>
+</LinearLayout>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/gateway_router_setting_device_name"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/router_setting_device_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/account_sigin_records_background"
+                android:gravity="center_vertical"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="5dp"
+                android:text="@string/gateway_router_setting_device_IP"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/router_setting_device_ip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/account_sigin_records_background"
+                android:gravity="center_vertical"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="5dp"
+                android:text="@string/gateway_router_setting_device_MAC"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/router_setting_device_mac"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/account_sigin_records_background"
+                android:gravity="center_vertical"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="5dp"
+                android:text="@string/gateway_router_setting_device_up_speed"
+                android:textColor="@color/black" />
+
+            <!-- <Spinner
+                android:id="@+id/router_setting_device_upspeed_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" /> -->
+                <LinearLayout 
+                    android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginTop="10dp"
+	                android:padding="5dp"
+	                android:gravity="center"
+	                android:background="@drawable/account_sigin_records_background"
+	                android:orientation="horizontal">
+	                <TextView
+		                android:layout_width="0dp"
+		                android:layout_weight="1"
+		                android:layout_height="match_parent"
+		                android:gravity="center"
+		                android:textColor="@color/black" />
+                    <TextView
+		                android:id="@+id/router_setting_device_upspeed_textview"
+		                android:layout_width="0dp"
+		                android:layout_weight="1"
+		                android:layout_height="match_parent"
+		                android:gravity="center"
+		                android:text="100"
+		                android:textColor="@color/black" />
+                    <TextView
+		                android:layout_width="0dp"
+		                android:layout_weight="1"
+		                android:layout_height="match_parent"
+		                android:text="%"
+		                android:textColor="@color/black" />
+                </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="5dp"
+                android:text="@string/gateway_router_setting_device_down_speed"
+                android:textColor="@color/black" />
+
+             <LinearLayout 
+                    android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginTop="10dp"
+	                android:padding="5dp"
+	                android:gravity="center"
+	                android:background="@drawable/account_sigin_records_background"
+	                android:orientation="horizontal">
+	                <TextView
+		                android:layout_width="0dp"
+		                android:layout_weight="1"
+		                android:layout_height="wrap_content"
+		                android:gravity="center"
+		                android:textColor="@color/black" />
+                    <TextView
+		                android:id="@+id/router_setting_device_downspeed_textview"
+		                android:layout_width="0dp"
+		                android:layout_weight="1"
+		                android:layout_height="wrap_content"
+		                android:gravity="center"
+		                android:text="100"
+		                android:textColor="@color/black" />
+                    <TextView
+		                android:layout_width="0dp"
+		                android:layout_weight="1"
+		                android:layout_height="wrap_content"
+		                android:text="%"
+		                android:textColor="@color/black" />
+                </LinearLayout>
+            
+           <!--  <Spinner
+                android:id="@+id/router_setting_device_downspeed_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" /> -->
+
+            <Button
+                android:id="@+id/router_setting_device_add_black"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_gravity="center|bottom"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/dm_router_setting_add_black"
+                android:text="@string/gateway_router_setting_device_add_black" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

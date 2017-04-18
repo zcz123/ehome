@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>login</title>
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/custom.css">
+		<script type="text/javascript" src="js/mui.js"></script>
+		<script type="text/javascript" src="js/plus.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+
+		<script type="text/javascript" src="js/hashmap.js"></script>
+		<script type="text/javascript" src="./js/md5-min.js"></script>
+		<script type="text/javascript" src="./js/digest-auth.js"></script>
+		<script type="text/javascript" src="js/custom.js" charset="utf-8"></script>
+		<script type="text/javascript" src="js/crypto-js.js"></script>
+		<style>
+			html,
+			body {
+				background-image: url(img/account_login_bg.png);
+				background-repeat: no-repeat;
+				background-size: cover;
+				height: 100%;
+				width: 100%;
+			}
+			
+			h5 {
+				margin: 5px 7px;
+			}
+			
+			.mui-input-row .mui-input-clear ~ .mui-icon-clear
+			 {
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				z-index: 1;
+				width: 38px;
+				height: 38px;
+				font-size: 20px;
+				color: white;
+				text-align: center
+			}
+			
+			.m-footer {
+				height: 70px;
+				margin-top: -70px;
+				width: 100%;
+				text-align: center;
+			}
+			
+			.custom-input-div {
+				width: 100%;
+				padding-left: 6%;
+				padding-right: 6%;
+				margin-top: 10px;
+			}
+			
+			.custom-input-div .left-div {
+				vertical-align: middle;
+				float: left;
+				width: 33%;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				height: 30px;
+				line-height: 30px;
+				padding-right: 5px;
+				display: inline;
+			}
+			
+			.custom-input-div .right-input {
+				width: 67%;
+				margin: 0px;
+				padding: 0px;
+				background: none;
+				border: none;
+				height: 30px;
+				display: inline;
+			}
+			
+			.custom-input-div .bottom-white-line {
+				width: 100%;
+				height: 1px;
+				background-color: white;
+			}
+			
+			.mui-input-group:after {
+				height: 0px;
+				background-color: transparent;
+			}
+			
+			.mui-input-group:before {
+				height: 0px;
+				background-color: transparent;
+			}
+			
+			.mui-input-group .mui-input-row:after {
+				height: 0px;
+				background-color: transparent;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div id="wrap">
+			<div id="main">
+				<header class="mui-bar-nav" style="background-color: transparent;">
+				</header>
+				<div class="mui-content" style="background-color: transparent;">
+					<p style="text-align: center;margin-top: 5%;margin-bottom: 5%;"><img style="height: 120px; width: 120px;" src="img/icon.png" alt="" /></p>
+					<form class="mui-input-group" style="background-color: transparent;">
+						<div class="custom-input-div mui-input-row">
+							<div class="left-div">
+									<img style="height: 20px; width: 20px;" src="img/account_icon.png" />
+									<span class="autoSwitchLanguager" id="html_user_account" style="font-size: smaller;"></span>
+							</div>
+							<input class="right-input  mui-input-clear" type="text" id='account' onblur="verifyAccount()">
+							<div class="bottom-white-line"></div>
+						</div>
+
+						<div class="custom-input-div mui-input-row">
+							<div class="left-div">
+									<img style="height: 20px; width: 20px;" src="img/account_password_icon.png" />
+									<span class="autoSwitchLanguager" id="html_user_password_hint" style="font-size: smaller;"></span>
+							</div>
+							<input class="right-input mui-input-clear" type="password" id='password' onblur="verifyPassword()">
+							<div class="bottom-white-line"></div>
+						</div>
+					</form>
+					<p id="hintPanelOne" class='mui-hidden mui-pull-right warning' style="margin-right: 5%;"></p>
+					<button type="button" style="margin-top: 10%;width: 88%;left:6%" id="btnLogin" class="register_btn" onclick="doLogin();return false;">
+						<span class="autoSwitchLanguager" id="html_login_login_hint"></span>
+					</button>
+					<br>
+					<p style="text-align: right;margin-right: 6%;">
+						<a id="html_login_gw_hint" class="autoSwitchLanguager" style="color: #DCDCDC;" href="javascript: jump2AppLoginPage()"></a>
+					</p>
+
+				</div>
+			</div>
+		</div>
+		<div class="footer" style="width: 88%;right: 6%;">
+			<a href="findpassword.html" id='a_findpassword' style="float: left;">
+				<span class="autoSwitchLanguager" style="color: #DCDCDC;" id="html_login_forget_password_hint"></span><span style="color: #DCDCDC;">?</span>
+			</a>
+			<a id="registerLink" href="Zh_register.html" style="float: right"><span class="autoSwitchLanguager"  style="color: #DCDCDC;" id="html_user_regiest"></span></a>
+		</div>
+
+	</body>
+
+	<script>
+		var autoLoginFlag = 0; //说明：自动登录为1，否则为0
+		plus.plusReady(function() {
+			plus.event.addEventListener(plus.event.KEYCODE_BACK, function() {
+				plus.webView.currentWebview().close();
+			});
+			var flag = plus.ehomev5.getLang();
+			if (flag != "zh-cn" && flag != "zh-Hans-CN" && flag != "zh-") {
+				document.getElementById("registerLink").href = "En_register.html";
+			}
+			init();
+		});
+
+		function init() {
+			try {
+				autoLoginFlag = 0;
+				plus.ehomev5.setData($CONSTANTS.IS_LOGIN, "false");
+				var account = plus.ehomev5.getData($CONSTANTS.ACCOUNT);
+				if (account != null && account != '') {
+					document.getElementById('account').value = account;
+				}
+				var from = getUrlParam("from");
+				var PIN = plus.ehomev5.getData($CONSTANTS.MD5PWD).trim();
+				if (from != "register") {
+					document.getElementById("password").value = PIN;
+				}
+				plus.ehomev5.setData($CONSTANTS.IS_LOGIN, "false");
+				var account_1 = plus.ehomev5.getData($CONSTANTS.ACCOUNT).trim();
+				if (account != null && account != '' && PIN != null && PIN != '' && plus.ehomev5.getData($CONSTANTS.GATEWAYID) != '') {
+					autoLoginFlag = 1;
+					doLogin();
+				}
+			} catch (e) {
+				console.log(e);
+			}
+		}
+
+		function doLogin() {
+			if (verifyAccount()) {
+				return;
+			}
+			if (verifyPassword()) {
+				return;
+			}
+
+			var obj = getLoginBody();
+			obj.account = document.getElementById('account').value;
+			if(obj.account!=plus.ehomev5.getData($CONSTANTS.ACCOUNT)){
+				plus.ehomev5.setData($CONSTANTS.DEVICES_JSON,"");
+			}
+			obj.password = getPassword();
+			var digestAuth = DigestAuthentication.init({
+				onSuccess: function(response, status) {
+					try {
+						var ret = JSON.parse(response);
+						if (status == "0") {
+							plus.ehomev5.userLogin(obj.account, obj.password, ret.token);
+							getProfile();
+						} else {
+							var hint = statusHelper.mapping(status);
+							if (hint) {
+								alert(hint);
+							}
+						}
+					} catch (e) {
+						console.log(e);
+					}
+				},
+				onFailure: function(httpStatus) {
+					var hintContent = plus.ehomev5.getLang("html_user_hint_login_fail");
+					alert(hintContent);
+				}
+			});
+			digestAuth.setHeader('cmd', 'userLogin');
+			digestAuth.setData(JSON.stringify(obj));
+			digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + '/AMS/user/access');
+		}
+
+		function getPassword() {
+
+			var passwd = document.getElementById('password').value;
+			if (passwd && passwd.length != 32) {
+				passwd = CryptoJS.MD5(passwd).toString();
+			}
+			return passwd;
+		}
+
+		function verifyAccount() {
+			hideHint();
+			document.getElementById("account").style.border = 'none';
+			var userName = document.getElementById("account").value.trim();
+			if (verify.isphone(userName)) {
+				return false;
+			}
+			if (verify.ismail(userName)) {
+				return false;
+			}
+			if (verify.iswuliannum(userName)) {
+				return false;
+			}
+			showHint(plus.ehomev5.getLang("html_user_account_Illegal"));
+			return true;
+		}
+
+		function verifyPassword() {
+			var pwd = document.getElementById("password").value.trim();
+			var passwdHints = "";
+			var passwordRex = /^[\S]*$/;
+			if (pwd.length < 6) {
+				showHint(plus.ehomev5.getLang("html_user_regist_password_too_short_hint"));
+				return true;
+			} else if (pwd.length > 20 && pwd.length != 32) {
+				showHint(plus.ehomev5.getLang("html_user_regist_password_too_long_hint"));
+				return true;
+			} else if (passwordRex.test(pwd) == false) {
+				showHint(plus.ehomev5.getLang("html_user_regist_password_has_space_hint"));
+				return true;
+			}
+			hideHint();
+			document.getElementById("password").style.border = 'none';
+			return false;
+		}
+
+		function showHint(hintTxt) {
+			var nameErrorEle = document.getElementById("hintPanelOne");
+			nameErrorEle.textContent = hintTxt;
+			nameErrorEle.classList.remove("mui-hidden");
+		}
+
+		function hideHint() {
+			var nameErrorEle = document.getElementById("hintPanelOne");
+			nameErrorEle.classList.add("mui-hidden");
+		}
+
+		function jump2AppLoginPage() {
+			// TODO 跳转到原生登录页
+			var data = {};
+			data.action = "login";
+			data.params = [];
+			plus.ehomev5.startActivity(JSON.stringify(data));
+		}
+
+		function getProfile() {
+			var hintContent = plus.ehomev5.getLang("html_user_hint_getinfo_fail");
+			var digestAuth = DigestAuthentication.init({
+				onSuccess: function(response, status) {
+					var ret = JSON.parse(response);
+					var hint = statusHelper.mapping(status); //错误码显示
+					if (hint) {
+						alert(hint);
+					} else if (status == "0") {
+						plus.ehomev5.setData($CONSTANTS.PROFILE, response);
+						plus.ehomev5.setData($CONSTANTS.USERID, ret.userId);
+						window.location = "gatewayList.html?autoLoginFlag=" + autoLoginFlag;
+					} else {
+						alert(hintContent);
+					}
+				},
+				onFailure: function(httpStatus) {
+					alert(hintContent);
+				},
+				sync: false
+			});
+			digestAuth.setHeader('cmd', 'getUserInfo');
+			digestAuth.setHeader('token', plus.ehomev5.getData($CONSTANTS.TOKEN));
+			digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + '/AMS/user/access');
+		}
+	</script>
+
+</html>

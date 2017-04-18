@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:gravity="center"
+    	android:orientation="horizontal" >
+    
+
+	<ToggleButton
+        android:id="@+id/radio_all"
+        style="@style/CMWidget.CheckBox.Empty.Toggle"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:textOff="@string/house_condition_time_all_weekday"
+        android:textOn="@string/house_condition_time_all_weekday" 
+        />
+        <ToggleButton
+        android:id="@+id/radio_sun"
+        style="@style/CMWidget.CheckBox.Empty.Toggle"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:textOff="@string/scene_sun"
+        android:textOn="@string/scene_sun" 
+        android:layout_marginLeft="5dp"
+        />
+    
+    <ToggleButton
+        android:id="@+id/radio_mon"
+        style="@style/CMWidget.CheckBox.Empty.Toggle"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:textOff="@string/scene_mon"
+        android:textOn="@string/scene_mon"
+        android:layout_marginLeft="5dp" />
+	
+	
+    <ToggleButton
+        android:id="@+id/radio_tur"
+        style="@style/CMWidget.CheckBox.Empty.Toggle"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:textOff="@string/scene_tue"
+        android:textOn="@string/scene_tue"
+        android:layout_marginLeft="5dp" />
+    
+	
+    <ToggleButton
+        android:id="@+id/radio_thre"
+        style="@style/CMWidget.CheckBox.Empty.Toggle"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:textOff="@string/scene_wed"
+        android:textOn="@string/scene_wed"
+        android:layout_marginLeft="5dp" />
+	
+    <ToggleButton
+        android:id="@+id/radio_thu"
+        style="@style/CMWidget.CheckBox.Empty.Toggle"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:textOff="@string/scene_thu"
+        android:textOn="@string/scene_thu"
+        android:layout_marginLeft="5dp" />
+    
+    <ToggleButton
+        android:id="@+id/radio_fir"
+        style="@style/CMWidget.CheckBox.Empty.Toggle"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:textOff="@string/scene_fri"
+        android:textOn="@string/scene_fri" 
+        android:layout_marginLeft="5dp"/>
+    <ToggleButton
+        android:id="@+id/radio_sat"
+        style="@style/CMWidget.CheckBox.Empty.Toggle"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:textOff="@string/scene_sat"
+        android:textOn="@string/scene_sat" 
+        android:layout_marginLeft="5dp"/>
+    </LinearLayout>

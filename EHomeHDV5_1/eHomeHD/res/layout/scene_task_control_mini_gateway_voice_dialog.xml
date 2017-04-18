@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white" >
+
+    <SeekBar
+        android:id="@+id/device_mini_geteway_led_voice_seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:max="99"
+        android:progress="50"
+        android:maxHeight="5dip"
+        android:minHeight="5dip"
+        android:progressDrawable="@drawable/seekbar_style"
+        android:thumbOffset="0dp" />
+    
+    <ListView
+        android:layout_marginTop="10dp"
+        android:id="@+id/voice_choose_lv"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:divider="@color/v5_gray_mid" >
+    </ListView>
+
+</LinearLayout>

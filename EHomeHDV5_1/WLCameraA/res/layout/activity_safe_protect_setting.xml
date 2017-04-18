@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <include layout="@layout/titlebar_general" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_container_move"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_protect_time_move"
+                style="@style/setting_middle_shape"
+                android:layout_marginTop="10dp"
+                android:visibility="visible">
+
+                <TextView
+                    style="@style/setting_item"
+                    android:textColor="@color/camera_setting_lefttext_color"
+                    android:text="@string/protect_time" />
+
+                <TextView
+                    android:id="@+id/tv_move_time_show"
+                    style="@style/setting_item"
+                    android:layout_weight="2"
+                    android:textColor="@color/camera_setting_righttext_color" />
+
+                <ImageView style="@style/setting_arrow" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_divider">
+
+                <ImageView style="@style/img_divider" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_protect_area_move"
+                style="@style/setting_top_shape"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    style="@style/setting_item"
+                    android:text="@string/protect_area"
+                    android:textColor="@color/camera_setting_lefttext_color"
+                    android:id="@+id/textView2" />
+
+                <TextView
+                    android:id="@+id/tv_move_area_show"
+                    style="@style/setting_item"
+                    android:gravity="right"
+                    android:layout_weight="2"
+                    android:textColor="@color/camera_setting_righttext_color" />
+
+                <ImageView style="@style/setting_arrow" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_divider">
+
+                <ImageView style="@style/img_divider" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/ll_sensitivity_move"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:background="#ffffff">
+
+                <TextView
+                    android:id="@+id/tv_preotect_area"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:text="@string/protect_sensitivity"
+                    android:textColor="@color/camera_setting_lefttext_color"
+                    android:textSize="15sp" />
+
+                <SeekBar
+                    android:id="@+id/sb_move"
+                    style="@style/SeekBar_mini"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_preotect_area"
+                    android:layout_marginTop="40dp"
+                    android:max="100"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:progress="50"></SeekBar>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_start_protect"
+            style="@style/v2_btn_normal_style"
+            android:layout_marginTop="27dp"
+            android:text="@string/protect_launch" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/tv_protect_tips"
+            android:textColor="#808080"
+            android:text="开启后，摄像机一旦发现异常情况将自动录像并即时通知您。"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>

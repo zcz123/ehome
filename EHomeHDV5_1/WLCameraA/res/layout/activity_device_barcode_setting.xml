@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical" >
+
+    <include layout="@layout/titlebar_general" />
+
+    <RelativeLayout
+        android:id="@+id/rl_barcode_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:id="@+id/ll_barcode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_little"
+            android:layout_marginRight="@dimen/margin_little"
+            android:layout_marginTop="@dimen/v2_body_margin_top"
+            android:background="@drawable/shape_rectangle"
+            android:orientation="horizontal"
+            android:padding="@dimen/margin_little" >
+
+            <ImageView
+                android:id="@+id/iv_barcode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:contentDescription="@string/config_barcode_link"
+                android:scaleType="centerCrop" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_barcode_link_tips"
+            style="@style/v2_normal_little_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_barcode"
+            android:layout_marginTop="@dimen/margin_big"
+            android:gravity="center"
+            android:text="@string/config_barcode_tips_hear_voice" />
+
+        <TextView
+            android:id="@+id/tv_help"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_barcode_link_tips"
+            android:layout_marginTop="@dimen/margin_little"
+            android:gravity="center_horizontal"
+            android:onClick="onClick"
+            android:text="@string/config_not_hear_tip_voice"
+            android:textColor="@color/action_bar_bg"
+            android:textSize="@dimen/v2_small_size" />
+
+        <Button
+            android:id="@+id/btn_next_step"
+            style="@style/v3_btn_normal_style"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/margin_normal"
+            android:text="@string/common_next_step" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>modifyprofile</title>
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/custom.css" />
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			
+			span.margin-right-20 {
+				margin-right: 25px;
+			}
+			
+			.mui-popover {
+				height: 150px;
+			}
+			
+			li a {
+				text-decoration: none;
+			}
+			
+			li a:active {
+				text-decoration: none;
+			}
+			
+			li a:hover {
+				text-decoration: none;
+			}
+			
+			li a:visited {
+				text-decoration: none;
+			}
+			
+			input[type="date"]::-webkit-clear-button {
+				display: none;
+			}
+		</style>
+
+		<script type="text/javascript" src="js/mui.js"></script>
+		<script type="text/javascript" src="js/plus.js"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/hashmap.js"></script>
+		<script type="text/javascript" src="./js/md5-min.js"></script>
+		<script type="text/javascript" src="./js/digest-auth.js"></script>
+		<script type="text/javascript" src="js/custom.js"></script>
+	</head>
+
+	<body>
+		<div id="wrap">
+			<div id="main" class="clearfix">
+				<header class="mui-bar mui-bar-nav custom-nav">
+					<a class="custom-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+					<h1 class="mui-title autoSwitchLanguager" id="html_user_preson_data"></h1>
+				</header>
+				<div class="mui-content">
+					<div class="middle-content" style="margin-bottom: 5px; margin-top: 5px;">
+						<div id="head-div" class="middle-content" style=" margin: 5px 0px 5px;height: 90px;">
+							<img src="img/icon120x120.png" style="height: 80px; width: 80px;" id="head-icon" class="circular-mask" onclick="selectHeadImg()" />
+						</div>
+						<!--<label style="margin-left: 100px;" class="middle-content" id="nickName"></label>
+						<img id="editNickName" onclick="modifyNickName()" style="height: 20px; width: 20px; margin-left: 68px; vertical-align: middle;" src="img/modify.png">-->
+					</div>
+
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							<span class="autoSwitchLanguager" id="html_user_account"></span><span class="mui-pull-right margin-right-20" id="suserName" style="color: forestgreen;"></span>
+						</li>
+						<li class="mui-table-view-cell">
+							<span class="autoSwitchLanguager" id="html_user_wulian_id"></span><span class="mui-pull-right margin-right-20" id="swulianId" style="color: forestgreen;"></span>
+						</li>
+					</ul>
+					<br />
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							<a href="#middlePopover" class="mui-navigate-right" id="agender">
+								<span class="autoSwitchLanguager" id="html_user_sex"> </span>
+								<span class="mui-pull-right margin-right-20" id="sgender" style="color: forestgreen;"></span>
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<span class="mui-navigate-right">
+								<span class="autoSwitchLanguager " id="html_user_birthday" ></span>
+							<input type="date" id="abirth" style="color: forestgreen;border:none;height: 25px;float: right; width: auto; margin-top:0px;margin-bottom:0px ;text-align: right; margin-right: -2px;" />
+							</span>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" id="aheight" onclick="setHeight()">
+								<span class="autoSwitchLanguager" id="html_user_height"></span>
+								<span class="mui-pull-right margin-right-20" id="sheight" style="color: forestgreen;">
+									<span class="autoSwitchLanguager" id="html_user_hint_not_set" style="color: forestgreen;"></span>
+								</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div id="middlePopover" class="mui-popover">
+					<input type="hidden" id="value_gender" value="2" />
+					<ul class="mui-table-view mui-table-view-radio" id="radio_gender">
+						<li class="mui-table-view-cell" id="gender_0">
+							<a class="mui-navigate-right"><span class="autoSwitchLanguager" id="html_user_sex_man"></span></a>
+						</li>
+						<li class="mui-table-view-cell" id="gender_1">
+							<a class="mui-navigate-right"><span class="autoSwitchLanguager" id="html_user_sex_woman"></span></a>
+						</li>
+						<li class="mui-table-view-cell" id="gender_2">
+							<a class="mui-navigate-right"><span class="autoSwitchLanguager" id="html_user_sex_secret"></span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</body>
+	<!--<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>-->
+	<script>
+		var lastDay;
+		plus.plusReady(function() {
+			//			document.getElementById("nickName").textContent=plus.ehomev5.getLang("html_nickname_hint");
+			initEvent();
+			viewProfile(plus.ehomev5.getData($CONSTANTS.PROFILE));
+			getProfile();
+			downLoadHeadImg();
+		});
+
+		function initEvent() {
+			document.getElementById("abirth").addEventListener('input', function() {
+				var dstr = document.getElementById("abirth").value;
+				if(dstr == "" || dstr == " ") {
+					document.getElementById("abirth").value = lastDay;
+					document.getElementById("abirth").blur();
+					if(lastDay == " ") {
+						updateProfile("birthday", null);
+					} else {
+						updateProfile("birthday", lastDay);
+					}
+					return;
+				}
+				updateProfile("birthday", dstr);
+			});
+			document.getElementById("agender").addEventListener('tap', function() {
+				var gender = document.getElementById("value_gender").value;
+				var radio = document.getElementById("radio_gender");
+				var lilist = radio.getElementsByTagName("li");
+				for(var i = 0; i < lilist.length; i++) {
+					lilist[i].className = "mui-table-view-cell";
+				}
+				document.getElementById("gender_" + gender).classList.add("mui-selected");
+			});
+			mui("#radio_gender").on('tap', "li", function() {
+				var gendervalue = this.id.substr("gender_".length);
+				var that = this;
+				mui("#middlePopover").popover("toggle");
+				updateProfile("gender", gendervalue, function() {
+					document.getElementById("value_gender").value = gendervalue;
+					document.getElementById("sgender").textContent = that.innerText;
+				});
+			});
+		}
+
+		function setHeight() {
+			var btnSubmitText = plus.ehomev5.getLang("common_ok");
+			var btnCancleText = plus.ehomev5.getLang("cancel");
+			var dialogTitle = plus.ehomev5.getLang("html_user_hint_input_height");
+			var btnArray = [btnSubmitText, btnCancleText];
+			var heightNow = document.getElementById("sheight").textContent;
+			var item = new inputDialog();
+			item.showInput(dialogTitle, dialogTitle, btnArray, function(result) {
+				if(result) {
+					updateProfile("height", result, function() {
+						document.getElementById("sheight").textContent = result + "cm";
+					});
+				}
+			}, function() {}, "number");
+		}
+
+		function viewProfile(jsonTxt) {
+			try {
+				var ret = JSON.parse(jsonTxt);
+				lastDay = ret.birthday;
+				document.getElementById("abirth").value = ret.birthday;
+				document.getElementById("sheight").textContent = ret.height + "cm";
+				document.getElementById("value_gender").value = ret.gender;
+				document.getElementById("sgender").textContent = document.getElementById("gender_" + ret.gender).innerText;
+				//				if(ret.nick&&ret.nick.length>0){
+				//					document.getElementById("nickName").textContent = ret.nick;
+				//				}
+				document.getElementById("swulianId").textContent = ret.userId;
+				document.getElementById("suserName").textContent = ret.userName;
+				plus.ehomev5.setData($CONSTANTS.USERID, ret.userId + "");
+				return true;
+			} catch(e) {
+				return false;
+			}
+		}
+
+		function getProfile() {
+			var hintContent = plus.ehomev5.getLang("html_user_hint_getinfo_fail");
+			var digestAuth = DigestAuthentication.init({
+				onSuccess: function(response, status) {
+					var ret = JSON.parse(response);
+					var hint = statusHelper.mapping(status); //错误码显示
+					if(hint) {
+						alert(hint);
+					} else if(status == "0") {
+						viewProfile(response);
+						plus.ehomev5.setData($CONSTANTS.PROFILE, response);
+					} else {
+						alert(hintContent);
+					}
+				},
+				onFailure: function(httpStatus) {
+					alert(hintContent);
+				},
+				sync: false
+			});
+			digestAuth.setHeader('cmd', 'getUserInfo');
+			digestAuth.setHeader('token', plus.ehomev5.getData($CONSTANTS.TOKEN));
+			digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + '/AMS/user/access');
+		}
+
+		function updateProfile(key, info, successCallback) {
+			var hintContent = plus.ehomev5.getLang("html_user_hint_updata_info_fail");
+			var digestAuth = DigestAuthentication.init({
+				onSuccess: function(response, status) {
+					var ret = JSON.parse(response);
+					var hint = statusHelper.mapping(status); //错误码显示
+					if(hint) {
+						alert(hint);
+					} else if(status == "0") {
+						if(typeof successCallback == "function") {
+							successCallback();
+						}
+					}
+				},
+				onFailure: function(httpStatus) {
+					alert(hintContent);
+				}
+			});
+			digestAuth.setHeader('cmd', 'userUpdate');
+			digestAuth.setHeader('token', plus.ehomev5.getData($CONSTANTS.TOKEN));
+			var obj = {};
+			obj[key] = info;
+			digestAuth.setData(JSON.stringify(obj));
+			digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + '/AMS/user/access');
+		}
+
+		//		function modifyNickName() {
+		//			var btnSubmitText = plus.ehomev5.getLang("common_ok");
+		//			var btnCancleText = plus.ehomev5.getLang("cancel");
+		//			var dialogTitle = plus.ehomev5.getLang("html_user_hint_input_nickname");
+		//			var btnArray = [btnSubmitText, btnCancleText];
+		//			var btnArray = [btnSubmitText, btnCancleText];
+		//			var item = new inputDialog();
+		//			item.showInput(dialogTitle, dialogTitle, btnArray, function(result) {
+		//				updateProfile("nick",result,function(){
+		//					document.getElementById("nickName").textContent = result;
+		//					plus.ehomev5.setData($CONSTANTS.NICKNAME,result);
+		//				});
+		//			},function() {}, "text" ,20 );
+		//		}
+
+		function selectHeadImg() {
+			plus.ehomev5.selectPhoto(function(path) {
+				plus.ehomev5.uploadFile(path, function(ret) {
+					setHeadImg(path);
+				}, function() {
+					var hint_uploadFail = plus.ehomev5.getLang("html_user_hint_upload_icon_fail");
+					alert(hint_selectFail);
+				});
+			}, function() {
+				var hint_selectFail = plus.ehomev5.getLang("html_user_hint_select_icon_fail");
+				alert(hint_selectFail);
+			});
+		}
+
+		function setHeadImg(path) {
+			var headDiv = document.getElementById("head-div");
+			var headImg = document.createElement("img");
+			headImg.style.height = "90px";
+			headImg.style.width = "90px";
+			headImg.className = "circular-mask";
+			headImg.onclick = selectHeadImg;
+			if(path != null && path.length > 0) {
+				headImg.src = "file://" + path + "?_=" + Math.random() * 10000;
+			} else {
+				headImg.src = "img/icon120x120.png";
+			}
+			headDiv.innerHTML = "";
+			headDiv.appendChild(headImg);
+			return;
+		}
+
+		function downLoadHeadImg() {
+			plus.ehomev5.downloadFile("head.png", function(path) {
+				setHeadImg(path);
+			}, function() {
+				setHeadImg(null);
+			});
+		}
+	</script>
+
+</html>

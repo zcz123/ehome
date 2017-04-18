@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>listUserByDevice</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" href="css/mui.min.css">
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			
+			h5 {
+				margin: 5px 7px;
+			}
+		</style>
+
+		<script type="text/javascript" src="js/plus.js"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/hashmap.js"></script>
+		<script type="text/javascript" src="./js/md5-min.js"></script>
+		<script type="text/javascript" src="./js/digest-auth.js"></script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="custom-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">用户授权</h1>
+		</header>
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<p>在此处输入用户ID，授权该用户可以访问网关下的设备，为确认您的行为，需要您输入密码。</p>
+				<div class="mui-input-row">
+					<label>授权给用户</label>
+					<input type="text" id='ngAccount' class="mui-input-clear" placeholder="物联名/物联号/邮箱/手机">
+				</div>
+				<div class="mui-input-row">
+					<label>密码</label>
+					<input type="password" id='adminPasswd' class="mui-input-clear" placeholder="您的密码">
+				</div>
+				<div class="mui-button-row">
+					<button type="button" class="mui-btn mui-btn-primary" onclick="javascript:doBindUser();">
+						确定授权
+					</button>
+				</div>
+			</form>
+			<h5 class="mui-content-padded" style="margin: 35px 10px 15px 10px;">设备的MQTT信息</h5>
+			<div class="mui-content-padded">
+				<ul class="mui-table-view" id="mqttInfoPanel">
+					<li class="mui-table-view-cell">deviceKey<span id="sdeviceKey" class="mui-pull-right"></span>
+					</li>
+					<li class="mui-table-view-cell">host<span id="shost" class="mui-pull-right"></span>
+					</li>
+					<li class="mui-table-view-cell">port<span id="sport" class="mui-pull-right"></span>
+					</li>
+					<li class="mui-table-view-cell">user<span id="suser" class="mui-pull-right"></span>
+					</li>
+					<li class="mui-table-view-cell">passwd<span id="spasswd" class="mui-pull-right"></span>
+					</li>
+					<li class="mui-table-view-cell">deskey<span id="sdeskey" class="mui-pull-right"></span>
+					</li>
+					<li class="mui-table-view-cell">qos<span id="sqos" class="mui-pull-right"></span>
+					</li>
+				</ul>
+			</div>
+			<h5 class="mui-content-padded" style="margin: 35px 10px 15px 10px;">已绑定的用户列表</h5>
+			<div class="mui-content-padded">
+				<ul class="mui-table-view" id="bindedUserList">
+				</ul>
+			</div>
+		</div>
+	</body>
+	<!--<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>-->
+	<script>
+		var $deviceId = getRequestParam('deviceId');
+		plus.plusReady(function() {
+			loadUserList();
+			loadDeviceMqttInfo();
+		});
+		/**
+		 * 为设备增加授权用户
+		 */
+		function doBindUser() {
+			obj.ngAccount = document.getElementById("ngAccount").value;
+			obj.adminPasswd = document.getElementById("adminPasswd").value;
+			obj.deviceIds = new Array($deviceId);
+			if (obj.ngAccount == plus.ehomev5.getData($CONSTANTS.USERNAME)) {
+				alert("你已经是管理员了，不需要绑定自己。");
+				return;
+			}
+			plus.nativeUI.showWaiting();
+			var digestAuth = DigestAuthentication.init({
+				onSuccess: function(response, status) {
+					plus.nativeUI.closeWaiting();
+					var ret = JSON.parse(response);
+					var hint=statusHelper.mapping(status); //错误码显示
+					if(hint){
+						alert(hint);
+					}else if(status=="0") {
+						alert("绑定成功");
+						loadUserList();
+					}
+				},
+				onFailure: function(httpStatus) {
+					plus.nativeUI.closeWaiting();
+					alert("调用bindUser失败：httpStatus=" + httpStatus);
+				}
+			});
+			digestAuth.setHeader('cmd', 'bindUser');
+			digestAuth.setHeader('token', plus.ehomev5.getData('token'));
+			var obj = {};
+			digestAuth.setData(JSON.stringify(obj));
+			digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + '/AMS/user/rights');
+		}
+
+		function doUnbindUser(userId, aDel) {
+			var digestAuth = DigestAuthentication.init({
+				onSuccess: function(response, status) {
+					var ret = JSON.parse(response);
+					var hint=statusHelper.mapping(status); //错误码显示
+					if(hint){
+						alert(hint);
+					}else if(status=="0"){
+						var liNode = aDel.parentElement.parentElement;
+						document.getElementById("bindedUserList").removeChild(liNode);
+					}
+				},
+				onFailure: function(httpStatus) {
+					alert("调用unBindUser失败：httpStatus=" + httpStatus);
+				}
+			});
+			digestAuth.setHeader('cmd', 'unBindUser');
+			digestAuth.setHeader('token', plus.ehomev5.getData('token'));
+			var obj = {};
+			obj.ngAccount = userId + "";
+			obj.adminPasswd = document.getElementById("adminPasswd").value;
+			obj.deviceIds = new Array($deviceId);
+			digestAuth.setData(JSON.stringify(obj));
+			digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + '/AMS/user/rights');
+		}
+
+		function loadDeviceMqttInfo() {
+			var digestAuth = DigestAuthentication.init({
+				onSuccess: function(response, status) {
+					var ret = JSON.parse(response);
+					var hint=statusHelper.mapping(status); //错误码显示
+					if(hint){
+						alert(hint);
+					}else if(status=="0"){
+					   if (response != '') {
+						document.getElementById("sdeviceKey").textContent = ret.deviceKey;
+						document.getElementById("shost").textContent = ret.mqsUrl.host;
+						document.getElementById("sport").textContent = ret.mqsUrl.port;
+						document.getElementById("suser").textContent = ret.mqsUrl.user;
+						document.getElementById("spasswd").textContent = ret.mqsUrl.passwd;
+						document.getElementById("sdeskey").textContent = ret.mqsUrl.deskey;
+						document.getElementById("sqos").textContent = ret.mqsUrl.qos;
+					   }
+					}
+				},
+				onFailure: function(httpStatus) {
+					alert("调用getDeviceMqttInfo失败：" + httpStatus);
+				}
+			});
+			digestAuth.setHeader('cmd', 'getDeviceMqttInfo');
+			digestAuth.setHeader('token', plus.ehomev5.getData('token'));
+			var obj = {};
+			obj.deviceId = $deviceId;
+			digestAuth.setData(JSON.stringify(obj));
+			digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + '/AMS/user/device');
+		}
+		/**
+		 * 加载所有绑定的用户列表
+		 */
+		function loadUserList() {
+			var digestAuth = DigestAuthentication.init({
+				onSuccess: function(response, status) {
+					var ret = JSON.parse(response);
+					var hint=statusHelper.mapping(status); //错误码显示
+					if(hint){
+						alert(hint);
+					} else if(status=="0"){
+						var ret = JSON.parse(response);
+						var users = ret.users;
+						for (var i = 0; i < users.length; i++) {
+							var item = users[i];
+							createUserLine(item.userId, item.userName, item.isAdmin);
+						}
+					}
+				},
+				onFailure: function(httpStatus) {
+					alert("调用getUserByDevice失败：" + httpStatus);
+				}
+			});
+			digestAuth.setHeader('cmd', 'getUserByDevice');
+			digestAuth.setHeader('token', plus.ehomev5.getData('token'));
+			var obj = {};
+			obj.deviceId = $deviceId;
+			digestAuth.setData(JSON.stringify(obj));
+			digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + '/AMS/user/device');
+		}
+		/**
+		 * 在用户列表增加一行
+		 * @param {String} userName
+		 * @param {Boolean} isAdmin
+		 */
+		function createUserLine(userId, userName, isAdmin) {
+			if (document.getElementById("li_" + userName) != null) {
+				return;
+			}
+			var itemEle = document.createElement("li");
+			itemEle.id = "li_" + userId;
+			itemEle.className = "mui-table-view-cell";
+			itemEle.onclick = function(e) {
+				window.location = 'grantUser.html?deviceId=' + $deviceId + "&bindUserId=" + (userId+"");
+			}
+			var divInfo = document.createElement("div");
+			divInfo.className = "mui-slider-handle";
+			divInfo.textContent = userName;
+			var spanType = document.createElement("span");
+			spanType.className = "mui-pull-right";
+			if (isAdmin) {
+				spanType.textContent = "主人";
+			} else {
+				spanType.textContent = "被授权";
+			}
+			var divDel = document.createElement("div");
+			//左划显示
+			divDel.className = "mui-slider-right mui-disabled";
+			var aDel = document.createElement("a");
+			aDel.className = "mui-btn mui-btn-red";
+			aDel.textContent = "解绑";
+			//点击按钮解除设备绑定
+			aDel.onclick = function(e) {
+				doUnbindUser(userId, this);
+				e.stopPropagation();
+			};
+			divInfo.appendChild(spanType);
+			divDel.appendChild(aDel);
+			itemEle.appendChild(divInfo);
+			itemEle.appendChild(divDel);
+			document.getElementById("bindedUserList").appendChild(itemEle);
+		}
+	</script>
+
+</html>

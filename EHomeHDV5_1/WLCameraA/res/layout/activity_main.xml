@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- 内容区域 -->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/background"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" 
+            android:layout_weight="1"
+            >
+        </FrameLayout>
+
+        <ImageView style="@style/img_divider_full" />
+
+        <RelativeLayout
+            android:id="@+id/main_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+          >
+
+            <RadioGroup
+                android:id="@+id/rg_menu_radio"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/menu_height"
+                android:layout_gravity="bottom"
+                android:background="@drawable/main_menu"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/rb_menu_device"
+                    style="@style/main_tab_bottom"
+                    android:drawableTop="@drawable/selector_menu_device"
+                    android:tag="radio_button0"
+                    android:text="@string/main_device" />
+
+                <RadioButton
+                    android:id="@+id/rb_menu_msg"
+                    style="@style/main_tab_bottom"
+                    android:drawableTop="@drawable/selector_menu_mesg"
+                    android:tag="radio_button1"
+                    android:text="@string/main_info" />
+
+                <RadioButton
+                    android:id="@+id/rb_menu_album"
+                    style="@style/main_tab_bottom"
+                    android:drawableTop="@drawable/selector_menu_album"
+                    android:tag="radio_button2"
+                    android:text="@string/album" />
+
+                <!--
+                 <RadioButton
+                android:id="@+id/rb_menu_more"
+                style="@style/main_tab_bottom"
+                android:drawableTop="@drawable/selector_menu_more"
+                android:tag="radio_button3"
+                android:text="@string/more_setting" />
+                -->
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tv_refer"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_centerInParent="true"
+                android:background="@color/blue" />
+
+            <TextView
+                android:id="@+id/tv_msg_count"
+                android:layout_width="@dimen/red_circle_width"
+                android:layout_height="@dimen/red_circle_width"
+                android:layout_marginLeft="13dp"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="3dp"
+                android:layout_toEndOf="@id/tv_refer"
+                android:layout_toRightOf="@id/tv_refer"
+                android:background="@drawable/shape_red_circle"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textsize_small" />
+        </RelativeLayout>
+    </LinearLayout>
+    <!-- 导航区域 better than dialog impl 240dp是2/3宽度 -->
+
+
+    <include
+        android:id="@+id/left_drawer"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        layout="@layout/layout_drawer_menu" />
+
+</android.support.v4.widget.DrawerLayout>

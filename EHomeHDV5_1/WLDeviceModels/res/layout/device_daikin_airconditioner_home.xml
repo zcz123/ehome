@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="50dp">
+        
+        <ImageView 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/icon_logo_daikin_ac"/>
+        
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center">
+        
+        <LinearLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            
+            <ImageView 
+                android:id="@+id/iv_ac_failed"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/icon_refreshfailure"/>
+            
+            <TextView 
+                android:id="@+id/tv_ac_refresh_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:textSize="15sp"
+                android:text="@string/device_refresh_aircondtioner_default"/>
+            
+            <TextView 
+                android:id="@+id/tv_ac_refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/green"
+                android:layout_marginLeft="20dp"
+                android:textSize="15sp"
+                android:text="@string/device_refresh_aircondtioner"/>
+            
+        </LinearLayout>
+        
+    </LinearLayout>
+    
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center">
+       
+        <ImageView 
+            android:id="@+id/iv_list_daikin_acs"
+         	android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/icon_list_daikinairconditioner_grey"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item android:drawable="@drawable/modul_tab_checked_selector">
+    </item>
+    <item
+        android:bottom="8dp"
+        android:drawable="@drawable/radiobutton_tab_monitors"
+        android:left="8dp"
+        android:right="8dp"
+        android:top="8dp">
+    </item>
+
+</layer-list>

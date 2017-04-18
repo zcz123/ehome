@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+        <LinearLayout 
+    	    android:layout_width="match_parent"
+    	     android:layout_height="0dp"
+        	android:layout_weight="1"
+    	    android:id="@+id/device_light_one">
+	    <FrameLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:paddingBottom="0dp"
+            >
+            
+	     <com.yuantuo.customview.seekcircle.SeekCircle
+	        android:id="@+id/dev_light_one_seek"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center"/>
+	     <TextView
+	        android:id="@+id/dev_light_one_text0"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/default_progress_on"
+	        android:layout_gravity="center"
+	        android:gravity="center"
+	        android:textColor="@color/white"
+	        android:textSize="19dp"
+	        android:background="@drawable/device_button_common_bn"
+	        android:visibility="gone" />
+	    	<TextView
+	        android:id="@+id/dev_light_one_text1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/default_progress"
+	        android:layout_gravity="center"
+	        android:gravity="center"
+	        android:textColor="@color/white"
+	        android:textSize="19dp"
+	        android:background="@drawable/device_button_common_bn"
+	        android:visibility="gone" />
+	    	<TextView
+	        android:id="@+id/dev_light_one_text2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/default_progress_off"
+	        android:layout_gravity="center"
+	        android:gravity="center"
+	        android:textColor="@color/white"
+	        android:textSize="19dp"
+	        android:background="@drawable/device_button_common_bn"
+	        android:visibility="gone" />
+    	</FrameLayout>
+    	</LinearLayout>
+    	<LinearLayout 
+    	    android:layout_width="match_parent"
+    	   	android:layout_height="0dp"
+        	android:layout_weight="0.3"
+    	    android:gravity="center_horizontal"
+    	    android:id="@+id/dev_light_text_switch">
+    	    <TextView 
+    	        android:layout_width="wrap_content"
+    	        android:layout_height="wrap_content"
+    	        android:id="@+id/dev_child_text"
+    	        android:textColor="@color/black"
+    	        android:text="一路调光开关"
+    	        />
+    	</LinearLayout>
+
+</LinearLayout>

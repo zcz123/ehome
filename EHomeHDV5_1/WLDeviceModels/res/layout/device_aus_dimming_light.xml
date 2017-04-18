@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:padding="10dp"
+	android:orientation="vertical" >
+
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:gravity="center"
+		android:id="@+id/device_aus_scene_ll"
+		android:orientation="vertical"
+		android:background="@drawable/device_other_touch_scene_child_backbind"
+		>
+		<ImageView
+			android:id="@+id/device_aust_scene_iv"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/device_light_module_scene" />
+	</LinearLayout>
+	<TextView
+		android:id="@+id/device_aus_scene_tv"
+		android:padding="5dp"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:text="changjing"
+		/>
+	<FrameLayout
+		android:paddingTop="40dp"
+		android:layout_width="200dp"
+		android:layout_height="0dp"
+		android:layout_weight="1"
+		android:layout_gravity="center"
+		android:gravity="center"
+		>
+		<com.yuantuo.customview.seekcircle.SeekCircle
+			android:id="@+id/device_aus_dimming_light_sc"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"/>
+
+		<TextView
+			android:id="@+id/device_aus_on_tv"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/default_progress_on"
+			android:layout_gravity="center"
+			android:gravity="center"
+			android:textColor="@color/white"
+			android:textSize="19dp"
+			android:background="@drawable/device_button_common_bn"
+			android:visibility="gone" />
+		<TextView
+			android:id="@+id/device_aus_process_tv"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/default_progress"
+			android:layout_gravity="center"
+			android:gravity="center"
+			android:textColor="@color/white"
+			android:textSize="19dp"
+			android:background="@drawable/device_button_common_bn"
+			android:visibility="gone" />
+		<TextView
+			android:id="@+id/device_aus_off_tv"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/default_progress_off"
+			android:layout_gravity="center"
+			android:gravity="center"
+			android:textColor="@color/white"
+			android:textSize="19dp"
+			android:background="@drawable/device_button_common_bn"
+			android:visibility="gone" />
+	</FrameLayout>
+
+
+</LinearLayout>

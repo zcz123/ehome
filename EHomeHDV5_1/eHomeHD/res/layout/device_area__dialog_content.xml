@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="5dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="40dp" >
+
+    <RelativeLayout
+        android:id="@+id/fragemnt_device_btn_add"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/button_device_area_add_bg"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center" >
+
+        <ImageButton
+            android:id="@+id/device_area_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:clickable="false"
+            android:focusable="false"
+            android:src="@drawable/fragement_device_area_add" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/device_area_add"
+            android:text="@string/device_edit_area_add"
+            android:textColor="@color/v5_green_light" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/fragement_device_area_name_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/fragemnt_device_btn_add"
+        android:layout_marginTop="
+        20dp" >
+    </ListView>
+
+</RelativeLayout>

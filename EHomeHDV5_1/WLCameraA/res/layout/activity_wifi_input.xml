@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+    <include layout="@layout/titlebar_general" />
+
+    <EditText
+        android:id="@+id/et_wifi_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_normal"
+        android:layout_marginRight="@dimen/margin_normal"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/shape_round_all_white"
+        android:drawableLeft="@drawable/selector_wifi_name"
+        android:drawablePadding="@dimen/margin_normal"
+        android:drawableStart="@drawable/selector_wifi_name"
+        android:enabled="false"
+        android:hint=""
+        android:singleLine="true"
+        android:textSize="@dimen/textsize_middle" />
+
+    <TextView
+        android:id="@+id/tv_wifi_change"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="10dp"
+        android:text="@string/sb_camera_not_use_5g"
+        android:textColor="@color/TextColor"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="10dp"
+            android:textSize="14sp"
+            android:text="请点击"
+            android:visibility="gone"
+            android:textColor="@color/TextColor" />
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_change_wifi"
+            android:text="@string/device_state_convert"
+            android:textColor="@color/action_bar_bg"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_wifi_pwd_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_normal"
+        android:layout_marginRight="@dimen/margin_normal"
+        android:layout_marginTop="@dimen/margin_little"
+        android:background="@drawable/shape_round_all_white">
+
+        <ImageView
+            android:id="@+id/iv_wifi_pwd_left_draw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icon_pwd_normal" />
+
+        <CheckBox
+            android:id="@+id/cb_wifi_pwd_show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:button="@drawable/selector_checkbox_wifi_pwd" />
+
+        <EditText
+            android:id="@+id/et_wifi_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_little"
+            android:layout_marginRight="@dimen/margin_little"
+            android:layout_toLeftOf="@id/cb_wifi_pwd_show"
+            android:inputType="textPassword"
+            android:layout_toRightOf="@id/iv_wifi_pwd_left_draw"
+            android:background="@null"
+            android:hint="@string/setting_input_wifi_pwd"
+            android:imeOptions="actionDone"
+            android:singleLine="true"
+            android:textCursorDrawable="@null" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp">
+
+        <CheckBox
+            android:id="@+id/no_wifi_pwd_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/no_START_noWifiPassword"
+            android:textColor="@color/TextColor" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_config_wifi_tips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btn_start_linkwifi"
+            android:layout_marginLeft="@dimen/margin_normal"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:gravity="center_horizontal"
+            android:text="@string/config_how_to_speed_up_config_wifi"
+            android:textColor="@color/TextColor"
+            android:textSize="16sp"></TextView>
+
+        <Button
+            android:id="@+id/btn_start_linkwifi"
+            style="@style/v2_btn_normal_style"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/btn_height"
+            android:layout_marginTop="@dimen/margin_big"
+            android:text="@string/common_next_step" />
+    </RelativeLayout>
+</LinearLayout>

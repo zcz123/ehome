@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/custom.css" rel="stylesheet" />
+
+		<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/plus.js"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/custom.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/hashmap.js"></script>
+		<script type="text/javascript" src="./js/md5-min.js"></script>
+		<script type="text/javascript" src="js/crypto-js.js"></script>
+		<script type="text/javascript" src="js/digest-auth.js"></script>
+		<style>
+			.search-div {
+				margin-left: 10px;
+				margin-right: 10px;
+				height: 46px;
+				line-height: 46px;
+				vertical-align: middle;
+			}
+			
+			.search-div .search-input {
+				width: 100%;
+				height: 44px;
+				padding-right: 24px;
+			}
+			
+			.search-div .search-btn {
+				width: 33px;
+				height: 33px;
+				position: absolute;
+				right: 15px;
+				top: 6px;
+				border: none;
+				cursor: pointer;
+				text-align: center;
+				background-image: url(img/search-icon.png);
+				background-size: 33px 33px;
+				background-repeat: no-repeat;
+			}
+			
+			.result-button {
+				width: 80%;
+				height: 40px;
+				margin-top: 25px;
+				background-color: #D8D8D8;
+				border: 1px solid #000000
+			}
+			
+			.result-hint-span {
+				text-align: center;
+				width: 80%;
+				font-size: 0.7em;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav custom-nav">
+			<button style="color: white;" class="custom-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left nav-type">
+				<span class="mui-icon mui-icon-left-nav"></span><span class="autoSwitchLanguager" id="about_back"></span>
+			</button>
+			<h1 class="mui-title" style="color: white; padding-left: 60px; padding-right: 50px;">
+				<span id="html_accunt_permission_bar_title" class="autoSwitchLanguager"></span>
+			</h1>
+		</header>
+
+		<div id="titlebar_main" class="mui-input-row custom-head" style="margin-top: 64px;background-color:white;height: 46px; line-height: 46px;">
+			<div class="search-div">
+				<input id="searchInput" class="search-input" placeholder="" ; type="text">
+				<input type="button" class="search-btn" onclick="doSearch()" />
+			</div>
+		</div>
+		<div class="mui-content" id="no-search-hint" style="text-align: center; display: none;">
+			<span id="html_no_search_error" class="autoSwitchLanguager" style="color: red;"></span>
+		</div>
+		<div class="mui-content" style="text-align: center; display: none;" id="search-hint">
+			<div class="mui-content" id="search-div-id">
+				<img id="account-img" align="center" style="width: 70px; height: 70px;" />
+				<span id="account-span">南京的家</span>
+			</div>
+			<button id="account-button-id" class="mui-btn result-button" onclick="ok()">授权登录当前网关</button>
+			<div class="mui-content" style="margin-top: 15px;">
+				<span id="account-search-span-id" class="result-hint-span">如果授权，该用户可以不需要密码就能连接本网关。</span>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			var searchInput = document.getElementById("searchInput");
+			var noSearch = document.getElementById("no-search-hint");
+			var search = document.getElementById("search-hint");
+			var accountImg = document.getElementById("account-img");
+			var searchName = document.getElementById("account-span");
+			var accountbutton = document.getElementById("account-button-id");
+			var accountspan = document.getElementById("account-search-span-id");
+			var accountArray = new Array();
+            var authorizationArray = new Array();
+			var accountcUrl = "/AMS/user/access";
+			var dialogkey = "searchkey";
+			var isPermission = false;
+            var isauthorization = false;
+            var userId ;
+			plus.plusReady(function() {
+				searchInput.placeholder=plus.ehomev5.getLang("html_placeholder_phone_and_wulianID");
+				accountArray = getUrlArrayParams("account").split(",");
+                authorizationArray =getUrlArrayParams("array_authorizationArray").split(",");
+			});
+			//搜索
+			function doSearch() {
+				var keyValue = searchInput.value;
+				if (keyValue == null || keyValue.length == 0 || typeof(keyValue) == "undefined") {
+					alert("没输入账号");
+					return;
+				}
+				searchInput.innerHTML = "";
+				searchAccounts(function(result) {
+						try {
+							if (JSON.parse(result).status == "2000") {
+								search.style.display = "none";
+								noSearch.style.display = "block";
+								alert(result);
+							} else {
+								searchAccountSuccess(result);
+							}
+						} catch (e) {
+							console.log(e);
+						}
+					},
+					function(error) {
+						alert("获取失败");
+					}, keyValue);
+			}
+			//http请求获取已授权列表
+			function searchAccounts(onSuccess, onFailed, searchAccount) {
+				var data = {
+					account: searchAccount
+				};
+				sendJsonPostRequest(data, plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + accountcUrl, 'searchUser', onSuccess, onFailed);
+			}
+
+			function sendJsonPostRequest(data, url, param, onSuccess, onFailed) {
+				var digestAuth = DigestAuthentication.init({
+					onSuccess: function(response, status) {
+						onSuccess(response);
+					},
+					onFailure: function(httpStatus) {
+						onFailed(httpStatus);
+					},
+					sync: false
+				});
+				if (param != null) {
+					digestAuth.setHeader('cmd', param);
+				}
+				digestAuth.setHeader('Content-Type', 'application/json');
+				digestAuth.setHeader('token', plus.ehomev5.getData($CONSTANTS.TOKEN));
+				digestAuth.setData(JSON.stringify(data));
+				digestAuth.call(url);
+			}
+			//显示搜索到的帐号
+			function searchAccountSuccess(data) {
+				if (data == null || typeof(data) == "undefined" || data.length == 0) return;
+				//创建列表节点
+				try {
+					data = JSON.parse(data);
+					var bodyJson = data.user;
+					if (bodyJson != null) {
+						search.style.display = "block";
+						noSearch.style.display = "none";
+						//判断存在的帐号是否已经绑定
+						userId = bodyJson.userId + "";
+						isPermission = false;
+                         isauthorization = false;
+						for (i = 0; i < accountArray.length; i++) {
+							if ((accountArray[i] + "") == userId) {
+								isPermission = true;
+								break;
+							}
+						}
+                        for(i=0;i<authorizationArray.length;i++){
+                            if((authorizationArray[i]+"")==userId){
+                                isauthorization = true;
+                            }
+                        }
+						var iconSrc = bodyJson.avatar;
+						if (iconSrc == null || typeof(iconSrc) == "undefined" || iconSrc.length == 0) {
+							iconSrc = "img/access-item-default-img.png";
+						}
+						accountImg.src = iconSrc;
+						searchName.textContent = bodyJson.userName;
+						if (isauthorization) { //已授权
+							accountbutton.textContent =  plus.ehomev5.getLang("html_edit_user_rights_hint");   // "编辑用户权限";
+							accountspan.textContent = plus.ehomev5.getLang("html_user_had_rights_hint");   // "该用户已有权限连接本网关";
+						}
+                        else if((!isauthorization)&&isPermission){
+                            accountbutton.textContent = plus.ehomev5.getLang("html_account_had_binded_hint");   //  "此账号已经绑定网关";
+                            accountspan.textContent = plus.ehomev5.getLang("html_user_had_binded_cannot_authorize_hint");   //  "已经绑定的用户不能再次授权。";
+                        }
+                        else { //没绑定
+							accountbutton.textContent =  plus.ehomev5.getLang("html_account_will_authorized_hint");   // "授权登录当前网关";
+							accountspan.textContent = plus.ehomev5.getLang("html_user_will_login_without_pw_hint");   //  "如果授权，该用户可以不需要密码就能连接本网关。";
+						}
+//						accountbutton.addEventListener('tap', function() {
+//							if(isauthorization){
+//								window.location = "device-scene.html?ngUserId=" + userId;
+//							}
+//                          else if((!isauthorization)&&isPermission){
+//                          alert("该用户是已绑定的!");
+//                          }
+//                          else{
+//								bindUser(userId,function (response, status) {
+//									if(status=="0"){
+//										window.location = "device-scene.html?ngUserId=" + userId;
+//									}else{
+//										var hint=statusHelper.mapping(status);
+//										alert(hint ? hint : status);
+//									}
+//								});
+//							}
+//						});
+					} else {
+						search.style.display = "none";
+						noSearch.style.display = "block";
+					}
+				} catch (e) {
+					console.log(e);
+				}
+			}
+			function ok(){
+				if(isauthorization){
+								window.location = "device-scene.html?ngUserId=" + userId;
+							}
+                            else if((!isauthorization)&&isPermission){
+                            alert(plus.ehomev5.getLang("html_account_had_binded_error"));//"该用户是已绑定的!"
+                            }
+                            else{
+								bindUser(userId,function (response, status) {
+									if(status=="0"){
+										window.location = "device-scene.html?ngUserId=" + userId;
+									}else{
+										var hint=statusHelper.mapping(status);
+										alert(hint ? hint : status);
+									}
+								});
+							}
+			}
+			function bindUser (userId,onSuccess,onFailed) {
+				var digestAuth = DigestAuthentication.init({
+					onSuccess: function(response, status) {
+						onSuccess(response,status);
+					},
+					onFailure: function(httpStatus) {
+						onFailed(httpStatus);
+					},
+					sync: false
+				});
+				digestAuth.setHeader('cmd', "bindUser");
+				digestAuth.setHeader('Content-Type', 'application/json');
+				digestAuth.setHeader('token', plus.ehomev5.getData($CONSTANTS.TOKEN));
+				var data={};
+				data.adminPasswd=plus.ehomev5.getData($CONSTANTS.MD5PWD);
+	 			data.ngAccount=userId+"";
+				data.deviceIds= [plus.ehomev5.getData($CONSTANTS.GATEWAYID)];
+				digestAuth.setData(JSON.stringify(data));
+				digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE)+"/AMS/user/rights");
+			}
+		</script>
+	</body>
+
+</html>

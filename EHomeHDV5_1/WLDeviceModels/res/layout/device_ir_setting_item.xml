@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:paddingBottom="5dp"
+    android:paddingTop="5dp" >
+
+    <LinearLayout
+        android:id="@+id/device_ir_setting_bg_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:gravity="center_vertical|right"
+        android:background="@color/white"
+        android:orientation="horizontal" >
+
+
+        <Button
+            android:id="@+id/device_ir_setting_study"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/device_ir_setting_study"
+            android:text="@string/device_ir_study" />
+
+        <Button
+            android:id="@+id/device_ir_setting_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/device_ir_setting_delete"
+            android:text="@string/device_ir_delete" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/device_ir_setting_font_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="left|center_vertical"
+        android:background="@color/white"
+        android:clickable="true"
+        android:paddingLeft="10dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/device_ir_setting_title"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="title"
+            android:textColor="@color/black" />
+         <ImageView
+                android:id="@+id/device_ir_setting_font_imageview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginRight="15dp"
+                android:padding="5dp"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:src="@drawable/device_list_show"
+                 />
+    </LinearLayout>
+
+</FrameLayout>

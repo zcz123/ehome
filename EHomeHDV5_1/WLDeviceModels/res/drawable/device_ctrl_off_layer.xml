@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item android:drawable="@drawable/common_button_normal"/>
+    <item android:drawable="@drawable/ctrl_state_cover"/>
+    <item android:drawable="@drawable/ctrl_off_selector"/>
+
+</layer-list>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="0dp"
+	    android:orientation="vertical"
+	    android:layout_weight="1"
+	    android:gravity="center"
+	    android:padding="20dp">
+			<LinearLayout 
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:orientation="vertical"
+			    android:gravity="center"
+			    android:layout_gravity="center">
+			    <TextView
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:text="@string/bright_control"
+			        android:textColor="@color/black"
+			        android:textSize="18dp"
+			        android:singleLine="true"
+			        android:id="@id/dev_light_text"
+			        android:ellipsize="end"/>
+			    <LinearLayout 
+			        android:layout_width="match_parent"
+			        android:layout_height="37dp"
+			        android:orientation="horizontal"
+			        android:layout_marginTop="30dp"
+			        android:layout_gravity="center"
+			        android:gravity="center">
+			        <SeekBar
+		                android:id="@id/dev_state_seekbar_0"
+		                android:layout_width="0dp"
+		                android:layout_weight="1"
+		                android:layout_height="wrap_content"
+		                android:max="255" />
+		            <TextView
+		                android:id="@id/dev_state_textview_0"
+		                android:layout_width="0dp"
+		                android:layout_weight="0.2"
+		                android:layout_gravity="center"
+		                android:gravity="center"
+		                android:text="0%"
+		                android:textColor="@color/black"
+		                android:layout_height="wrap_content" />
+			    </LinearLayout>
+			</LinearLayout>
+
+	</LinearLayout>
+	
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="0dp"
+	    android:orientation="vertical"
+	    android:layout_weight="1"
+	    android:gravity="center"
+        android:padding="20dp"
+        android:id="@id/dev_adjust_color">
+
+			<LinearLayout 
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:orientation="vertical"
+			    android:gravity="center"
+			    android:layout_gravity="center">
+			    <LinearLayout 
+			        android:layout_width="match_parent"
+			        android:layout_height="40dp"
+			        android:gravity="center_vertical"
+			        android:orientation="horizontal">
+			        <TextView
+			        android:layout_width="0dp"
+			        android:layout_weight="1"
+			        android:layout_height="wrap_content"
+			        android:text="@string/device_color_control"
+			        android:textColor="@color/black"
+			        android:textSize="18dp"
+			        android:singleLine="true"
+			        android:ellipsize="end"/>
+			        <LinearLayout
+			            android:layout_width="0dp"
+			            android:layout_height="wrap_content"
+			            android:layout_weight="1"
+			            android:layout_gravity="center"
+			            android:gravity="right">
+			           
+			            <Button 
+			                android:id="@+id/scene_link_adjust_color"
+			                android:layout_width="30dp"
+			                android:textSize="12dp"
+			                android:layout_height="30dp"
+			                android:background="@drawable/select_light_color_shape"/>
+			        </LinearLayout>
+			    </LinearLayout>
+			    <LinearLayout 
+			        android:layout_width="match_parent"
+			        android:layout_height="37dp"
+			        android:orientation="horizontal"
+			        android:layout_marginTop="30dp"
+			        android:layout_gravity="center">
+			        <SeekBar
+		                android:id="@id/dev_state_seekbar_1"
+		                android:layout_width="match_parent"
+		                android:layout_height="wrap_content"
+		                android:layout_centerInParent="true"
+		                android:progressDrawable="@drawable/seek_light_color"
+		                android:maxHeight="37dp"
+		                android:minHeight="37dp"
+		                android:paddingLeft="1dp"
+		                android:paddingRight="1dp"
+		                android:thumb="@drawable/seekbar_color_gestures"
+		                android:thumbOffset="1dp"
+		                android:max="510" />
+			    </LinearLayout>
+			</LinearLayout>
+	</LinearLayout>
+</LinearLayout>

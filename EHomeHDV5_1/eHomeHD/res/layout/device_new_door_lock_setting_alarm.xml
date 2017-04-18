@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.75" >
+
+        <Button
+            android:id="@+id/device_new_door_lock_setting_alarm_defense_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/device_musicbox_sd_seletor"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@string/device_setup" />
+        <Button
+            android:id="@+id/device_new_door_lock_setting_alarm_undefense_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/device_musicbox_sta_seletor"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@string/device_unsetup" />
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        >
+        <LinearLayout
+            android:id="@+id/device_new_door_lock_setting_alarm_layout"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none" />
+    </ScrollView>
+
+
+</LinearLayout>

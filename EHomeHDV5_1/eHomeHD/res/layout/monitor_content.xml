@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E0E2E7"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/mointor_useless_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp" />
+
+    <LinearLayout
+        android:id="@+id/listContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#E0E2E7"
+            android:orientation="vertical" >
+            <LinearLayout
+                android:id="@+id/monitor_scrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#E0E2E7"
+                android:orientation="vertical" >
+            </LinearLayout>
+
+            <cc.wulian.smarthomev5.view.swipemenu.RefreshListView
+                android:id="@+id/monitor_wulian_camera_listview_dest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/background" >
+            </cc.wulian.smarthomev5.view.swipemenu.RefreshListView>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,95 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content_signin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background_v5"
+    android:orientation="vertical">
+	<LinearLayout
+		android:id="@+id/uei_remote_control_edit"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
+		<RelativeLayout android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:background="@color/white"
+			android:layout_marginTop="5dp"
+			android:layout_marginBottom="1dp"
+			>
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="50dp"
+				android:gravity="center_vertical"
+				android:paddingLeft="20dp"
+				android:textSize="12sp"
+				android:textColor="@color/black"
+				android:text="@string/uei_remote_control_name"/>
+			<Button android:id="@+id/brandName_btn"
+				android:layout_alignParentRight="true"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:background="@color/transparent"
+				android:textColor="@color/grey_1"
+				android:textSize="15sp"
+				android:gravity="right|center_vertical"
+				android:layout_marginRight="10dp"
+				android:text="@string/html_setGateway_clickToset"/>
+		</RelativeLayout>
+		<Button android:id="@+id/delete_btn"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@color/white"
+			android:textColor="@color/black"
+			android:textSize="12sp"
+			android:gravity="left|center_vertical"
+			android:paddingLeft="20dp"
+			android:text="@string/uei_delete_remote_control"/>
+		<LinearLayout android:id="@+id/tvOperatorslayout"
+			android:visibility="visible"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:background="@color/white"
+			android:layout_marginTop="10dp"
+			android:layout_marginBottom="1dp"
+			>
+			<TextView
+				android:layout_width="0dp"
+				android:layout_height="50dp"
+				android:gravity="center_vertical"
+				android:paddingLeft="20dp"
+				android:layout_weight="0.3"
+				android:textSize="12sp"
+				android:textColor="@color/black"
+				android:text="电视运营商"/>
+			<Button android:id="@+id/tvOperators_btn"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="0.7"
+				android:background="@color/transparent"
+				android:textColor="@color/grey_1"
+				android:textSize="15sp"
+				android:gravity="right|center_vertical"
+				android:layout_gravity="center_vertical"
+				android:text=""/>
+			<ImageView android:id="@+id/tvOperators_iv"
+				android:layout_width="24dp"
+				android:layout_height="24dp"
+				android:layout_gravity="center_vertical"
+				android:scaleType="centerInside"
+				android:src="@drawable/control_to_right"/>
+		</LinearLayout>
+	</LinearLayout>
+	<Button android:id="@+id/uei_remote_control_delete"
+		android:visibility="gone"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dp"
+		android:background="@color/white"
+		android:textColor="@color/black"
+		android:textSize="12sp"
+		android:gravity="left|center_vertical"
+		android:paddingLeft="20dp"
+		android:text="@string/uei_clear_code_library"/>
+
+</LinearLayout>

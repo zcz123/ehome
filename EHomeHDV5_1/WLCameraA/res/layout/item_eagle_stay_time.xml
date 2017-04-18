@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_marginTop="1dp"
+        android:id="@+id/rl_stay_time"
+        style="@style/setting_top_shape">
+        <TextView
+            android:id="@+id/tv_stay_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:paddingLeft="10dp"
+            android:layout_centerVertical="true"
+            android:textColor="@color/camera_setting_lefttext_color" />
+        <ImageView
+            android:id="@+id/iv_stay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:visibility="gone"
+            android:background="@drawable/eagle_gallery_checked"/>
+    </RelativeLayout>
+</LinearLayout>

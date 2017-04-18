@@ -1,0 +1,387 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="以下信息为扫描二维码获取到的信息" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="设备序列号:" />
+
+            <EditText
+                android:id="@+id/et_deviceId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:hint="请输入设备ID"
+                android:text="cmic01efaea2134f63a1" >
+
+                <requestFocus />
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="摄像头SSID名称:" />
+
+            <EditText
+                android:id="@+id/et_ssid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:hint="请输入SSID"
+                android:text="WL_Camera_4566" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="摄像头SSID密码:" />
+
+            <EditText
+                android:id="@+id/et_ssid_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:hint="请输入SSID 密码"
+                android:text="87654321" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="设置WIFI名称:" />
+
+            <EditText
+                android:id="@+id/et_wifi_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:hint="设置WIFI名称"
+                android:text="HiWiFi_Willin" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="设置WIFI密码:" />
+
+            <EditText
+                android:id="@+id/et_wifi_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:hint="设置WIFI密码"
+                android:text="wulian123" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="远程Mac地址:" />
+
+            <EditText
+                android:id="@+id/et_remote_mac"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:hint="请输入远程Mac地址"
+                android:text="00:00:23:34:45:66" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#888888"
+            android:gravity="center_horizontal"
+            android:text="用户登录"
+            android:textColor="#000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="用户名:" />
+
+            <EditText
+                android:id="@+id/et_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:hint="请输入用户名"
+                android:text="zkb" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="用户密码:" />
+
+            <EditText
+                android:id="@+id/et_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:hint="请输入用户密码"
+                android:text="zhangkb" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/bt_user_smscode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="发送验证码"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/bt_user_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="注册"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/bt_user_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="登录" />
+
+        <Button
+            android:id="@+id/bt_get_devices_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="获取设备列表" />
+
+        <EditText
+            android:id="@+id/et_upload_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:hint="请输入上传用户名"
+            android:text="zhangkb" />
+
+        <Button
+            android:id="@+id/bt_binding_notice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="上报未推送消息" />
+
+        <Button
+            android:id="@+id/bt_binding_notices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="下载未读消息" />
+
+        <Button
+            android:id="@+id/bt_device_edit_meta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="修改设备描述" />
+
+        <Button
+            android:id="@+id/bt_add_device"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="添加设备(设置值)" />
+
+        <Button
+            android:id="@+id/bt_is_device_bind"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="查询设备是否绑定" />
+
+        <Button
+            android:id="@+id/bt_device_bind"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="绑定设备" />
+
+        <Button
+            android:id="@+id/bt_connect_camera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="（连接WL_Camera）局域网（手机连接）" />
+
+        <Button
+            android:id="@+id/bt_connect_normal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="切换至原来Wi-Fi" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#888888"
+            android:gravity="center_horizontal"
+            android:text="设备发现"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/bt_SearchAllDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="搜索周围设备 01" />
+
+        <Button
+            android:id="@+id/bt_SearchCurrentDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="搜索当前设备信息 02" />
+
+        <Button
+            android:id="@+id/bt_getCurrentDeviceInformation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="获取当前设备信息 03" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="\n" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#888888"
+            android:gravity="center_horizontal"
+            android:text="wireless配置"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/bt_setWirelessWifiForDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="配置wifi 73" />
+
+        <Button
+            android:id="@+id/bt_getWirelessWifiConnectInformationForDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="获取连接信息 75" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="\n" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#888888"
+            android:gravity="center_horizontal"
+            android:text="时间设置"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/bt_getTimeZoneInformationForDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="获取时区列表" />
+
+        <Button
+            android:id="@+id/bt_setTimeZoneInformationForDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="设置设备时区" />
+
+        <Button
+            android:id="@+id/bt_syncTimeLocalToDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="同步本地时间" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="\n" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#888888"
+            android:gravity="center_horizontal"
+            android:text="系统工具"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/bt_resetSystemTheDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="恢复出厂设置" />
+
+        <Button
+            android:id="@+id/bt_rebootSystemTheDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="重启设备" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="结果" />
+
+            <EditText
+                android:id="@+id/et_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

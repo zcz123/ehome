@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+    <include layout="@layout/titlebar_general" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- 用于隐藏闪烁点 -->
+
+        <EditText
+            android:id="@+id/et_focus"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:focusable="true"
+            android:inputType="none"></EditText>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ll_device_desc"
+                    style="@style/setting_top_shape"
+                    android:layout_marginTop="16dp">
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        style="@style/setting_icon"
+                        android:src="@drawable/icon_setting_device" />
+
+                    <TextView
+                        style="@style/setting_item_single_textview"
+                        android:text="@string/camera_name" />
+
+                    <TextView
+                        android:id="@+id/tv_device_desc"
+                        style="@style/btn_blue_normal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/transparent"
+                        android:maxLength="50"
+                        android:singleLine="true"
+                        android:text="@string/setting_desc" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/ll_divider">
+
+                    <ImageView style="@style/img_divider" />
+                </LinearLayout>
+                s
+
+                <LinearLayout
+                    android:id="@+id/ll_device_description"
+                    style="@style/setting_middle_shape">
+
+                    <ImageView
+                        style="@style/setting_icon"
+                        android:src="@drawable/icon_setting_device_msg" />
+
+                    <TextView
+                        style="@style/setting_item_single_textview"
+                        android:text="@string/cateye_deviceInfo" />
+
+                    <ImageView
+                        style="@style/setting_arrow"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_video_invert"
+                    style="@style/setting_top_shape"
+                    android:layout_marginTop="@dimen/default_margin_top">
+
+                    <ImageView
+                        style="@style/setting_icon"
+                        android:src="@drawable/icon_video_invert" />
+
+                    <TextView
+                        style="@style/setting_item_single_textview"
+                        android:text="@string/camera_settings_flip_image" />
+
+                    <CheckBox
+                        android:id="@+id/cb_video_invert"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:button="@drawable/selector_checkbox_toggle" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_alarm_invert"
+                    style="@style/setting_middle_shape"
+                    android:visibility="gone">
+
+                    <ImageView
+                        style="@style/setting_icon"
+                        android:src="@drawable/icon_setting_alarm" />
+
+                    <TextView
+                        style="@style/setting_item_single_textview"
+                        android:text="@string/setting_push_alarm" />
+
+                    <CheckBox
+                        android:id="@+id/cb_alarm_invert"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:button="@drawable/selector_checkbox_toggle" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/ll_divider"
+                    android:visibility="visible">
+
+                    <ImageView style="@style/img_divider" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_led_invert"
+                    style="@style/setting_middle_shape"
+                    android:visibility="visible">
+
+                    <ImageView
+                        style="@style/setting_icon"
+                        android:src="@drawable/icon_setting_device_lamp" />
+
+                    <TextView
+                        style="@style/setting_item_single_textview"
+                        android:text="@string/camera_settings_led_light" />
+
+                    <CheckBox
+                        android:id="@+id/cb_led_invert"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:button="@drawable/selector_checkbox_toggle" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/ll_divider"
+                    android:visibility="visible">
+
+                    <ImageView style="@style/img_divider" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_voice_invert"
+                    style="@style/setting_middle_shape"
+                    android:visibility="visible">
+
+                    <ImageView
+                        style="@style/setting_icon"
+                        android:src="@drawable/icon_setting_device_voice" />
+
+                    <TextView
+                        style="@style/setting_item_single_textview"
+                        android:text="@string/camera_settings_voice_broadcast" />
+
+                    <CheckBox
+                        android:id="@+id/cb_voice_invert"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:button="@drawable/selector_checkbox_toggle" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/ll_divider">
+
+                    <ImageView
+                        style="@style/img_divider"
+                        android:visibility="visible" />
+                </LinearLayout>
+
+                <View
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp" />
+
+                <LinearLayout
+                    android:id="@+id/ll_device_function"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:id="@+id/ll_wifi_setting"
+                        style="@style/setting_top_shape">
+
+                        <ImageView
+                            style="@style/setting_icon"
+                            android:src="@drawable/icon_setting_wifi" />
+
+                        <TextView
+                            style="@style/setting_item_single_textview"
+                            android:text="@string/sb_wifisetting" />
+
+                        <ImageView
+                            style="@style/setting_arrow"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginRight="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_divider">
+
+                        <ImageView
+                            style="@style/img_divider"
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_doorlock_bind"
+                        style="@style/setting_top_shape">
+
+                        <ImageView
+                            style="@style/setting_icon"
+                            android:src="@drawable/icon_setting_device_doorlock_bind" />
+
+                        <TextView
+                            style="@style/setting_item_single_textview"
+                            android:text="@string/camera_settings_door_lock_binding" />
+
+                        <TextView
+                            android:id="@+id/tv_bind_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginRight="5dp"
+                            android:textColor="@color/gray" />
+
+                        <ImageView
+                            style="@style/setting_arrow"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginRight="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_divider">
+
+                        <ImageView
+                            style="@style/img_divider"
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_device_protect"
+                        style="@style/setting_middle_shape">
+
+                        <ImageView
+                            style="@style/setting_icon"
+                            android:src="@drawable/icon_setting_device_protect" />
+
+                        <TextView
+                            style="@style/setting_item_single_textview"
+                            android:text="@string/safety_protection" />
+
+                        <TextView
+                            android:id="@+id/tv_protect_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginRight="5dp"
+                            android:textColor="@color/gray" />
+
+                        <ImageView
+                            style="@style/setting_arrow"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginRight="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_divider">
+
+                        <ImageView
+                            style="@style/img_divider"
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_history_video_setting"
+                        style="@style/setting_middle_shape">
+
+                        <ImageView
+                            style="@style/setting_icon"
+                            android:src="@drawable/icon_his_video_setting" />
+
+                        <TextView
+                            style="@style/setting_item_single_textview"
+                            android:text="@string/wl_record_store" />
+
+                        <TextView
+                            android:id="@+id/tv_sdcard_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginRight="5dp"
+                            android:textColor="@color/gray" />
+
+                        <ImageView
+                            style="@style/setting_arrow"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginRight="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_device_for_v5"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="visible"></LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_weixin_link"
+                        style="@style/setting_middle_shape"
+                        android:visibility="gone">
+
+                        <ImageView
+                            style="@style/setting_icon"
+                            android:src="@drawable/icon_setting_weixin_link" />
+
+                        <TextView
+                            style="@style/setting_item_single_textview"
+                            android:text="@string/setting_weixin_link" />
+
+                        <ImageView
+                            style="@style/setting_arrow"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginRight="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/ll_divider"
+                        android:visibility="visible">
+
+                        <ImageView style="@style/img_divider" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_firmware_update"
+                        style="@style/setting_middle_shape"
+                        android:visibility="visible">
+
+                        <ImageView
+                            style="@style/setting_icon"
+                            android:src="@drawable/icon_setting_fireware" />
+
+                        <TextView
+                            style="@style/setting_item_single_textview"
+                            android:text="@string/setting_firmware_update" />
+
+                        <TextView
+                            android:id="@+id/tv_device_version"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginRight="5dp"
+                            android:text="@string/already_latest"
+                            android:textColor="@color/gray" />
+
+                        <ImageView
+                            style="@style/setting_arrow"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginRight="10dp"
+                            android:visibility="invisible" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/ll_divider">
+
+                        <ImageView style="@style/img_divider" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_delete_device"
+                    style="@style/setting_all_shape_logout"
+                    android:layout_marginBottom="@dimen/margin_normal"
+                    android:layout_marginEnd="@dimen/margin_normal"
+                    android:layout_marginLeft="@dimen/margin_big"
+                    android:layout_marginRight="@dimen/margin_big"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/selector_shape_round_rect_share_delete">
+
+                    <TextView
+                        android:id="@+id/tv_delete_info"
+                        style="@style/setting_item_single_textview"
+                        android:gravity="center"
+                        android:text="@string/wl_delete_camera_device"
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+    <include layout="@layout/titlebar_general" />
+
+</LinearLayout>

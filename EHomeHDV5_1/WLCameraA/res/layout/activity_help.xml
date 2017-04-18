@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical" >
+
+    <include layout="@layout/titlebar_general" />
+
+    <LinearLayout
+        android:id="@+id/ll_function_intro"
+        style="@style/setting_top_shape"
+        android:layout_marginTop="@dimen/default_margin_top" >
+
+        <TextView
+            style="@style/setting_item"
+            android:text="@string/help_function_intor" />
+
+        <ImageView style="@style/setting_arrow" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/ll_divider" >
+
+        <ImageView style="@style/img_divider" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_faq"
+        style="@style/setting_bottom_shape" >
+
+        <TextView
+            style="@style/setting_item"
+            android:text="@string/help_faq" />
+
+        <ImageView style="@style/setting_arrow" />
+    </LinearLayout>
+
+</LinearLayout>

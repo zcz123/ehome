@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_gravity="center_vertical"
+    android:background="@drawable/account_manager_item_background"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/house_link_add_task_device_icon_iv"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/device_co2_normal" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/house_custom_message_add_device_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="left|center_vertical"
+                android:singleLine="true"
+                android:textSize="15sp"
+                android:layout_marginTop="8dp"
+                android:text="红外感应器"
+                android:textColor="#3E3E3E" />
+
+            <TextView
+                android:id="@+id/house_custom_message_add_device_area_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:textSize="12sp"
+                android:layout_marginBottom="8dp"
+                android:text="[大门]"
+                android:gravity="left|center_vertical"
+                android:singleLine="true"
+                android:textColor="@color/v5_green_light_area" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

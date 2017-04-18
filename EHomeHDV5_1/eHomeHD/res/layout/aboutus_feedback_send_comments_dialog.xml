@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/gateway_password_change_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    <LinearLayout
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+            <EditText
+                android:paddingLeft="5dp"
+                android:id="@+id/aboutus_feedback_send_comments_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textCursorDrawable="@drawable/shape_text_grey_cursor"
+                android:maxHeight="300dp"
+                android:background="@drawable/gateway_password_change_tv_bg"
+                android:textColor="@color/black"
+                 />
+            <TextView
+                android:id="@+id/msgtv"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/red"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="5dp"
+                android:text="不能为空！"/>
+    </LinearLayout>
+</LinearLayout>

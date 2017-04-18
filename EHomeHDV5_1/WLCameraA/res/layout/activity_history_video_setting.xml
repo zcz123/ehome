@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+    <include layout="@layout/titlebar_sure" />
+
+    <LinearLayout
+        style="@style/setting_top_shape"
+        android:layout_marginTop="@dimen/default_margin_top"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/ll_sd_override"
+            style="@style/setting_top_shape"
+            android:descendantFocusability="blocksDescendants"
+            android:visibility="visible">
+
+            <TextView
+                style="@style/setting_item_single_textview"
+                android:layout_marginLeft="@dimen/margin_normal"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:text="@string/replay_sd_override" />
+
+            <CheckBox
+                android:id="@+id/cb_sd_override"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:layout_marginRight="@dimen/margin_normal"
+                android:button="@drawable/selector_checkbox_toggle"
+                android:checked="true"
+                android:clickable="false"
+                android:enabled="false" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_container_move"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin_top"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/ll_recoding_only_change"
+            style="@style/setting_top_shape"
+            android:descendantFocusability="blocksDescendants"
+            android:visibility="visible">
+
+            <TextView
+                style="@style/setting_item_single_textview"
+                android:layout_marginLeft="@dimen/margin_normal"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:text="@string/replay_record_only_when_change" />
+
+            <CheckBox
+                android:id="@+id/cb_record_only_change"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:layout_marginRight="@dimen/margin_normal"
+                android:button="@drawable/selector_checkbox_toggle"
+                android:clickable="false"
+                android:enabled="false" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/background"></View>
+        <!-- 自定义存储时间设置,  目前已取消 -->
+        <LinearLayout
+            android:id="@+id/ll_custom_time"
+            style="@style/setting_top_shape"
+            android:descendantFocusability="blocksDescendants"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/setting_item_single_textview"
+                android:layout_marginLeft="@dimen/margin_normal"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:text="@string/replay_record_time_setting" />
+
+            <CheckBox
+                android:id="@+id/cb_sd_savetime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:layout_marginRight="@dimen/margin_normal"
+                android:button="@drawable/selector_checkbox_toggle"
+                android:clickable="false"
+                android:enabled="false" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_custom_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/background"></View>
+
+            <LinearLayout
+                android:id="@+id/ll_save_time"
+                style="@style/setting_middle_shape">
+
+                <TextView
+                    style="@style/setting_item_single_textview"
+                    android:layout_marginLeft="@dimen/margin_normal"
+                    android:layout_marginStart="@dimen/margin_normal"
+                    android:text="@string/replay_save_time" />
+
+                <TextView
+                    android:id="@+id/tv_save_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="@dimen/margin_normal"
+                    android:layout_marginRight="@dimen/margin_normal"
+                    android:textColor="@color/control_color" />
+
+                <ImageView
+                    style="@style/setting_arrow"
+                    android:layout_marginEnd="@dimen/margin_normal"
+                    android:layout_marginRight="@dimen/margin_normal" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/background"></View>
+
+            <LinearLayout
+                android:id="@+id/ll_save_time_day"
+                style="@style/setting_middle_shape">
+
+                <TextView
+                    style="@style/setting_item_single_textview"
+                    android:layout_marginLeft="@dimen/margin_normal"
+                    android:layout_marginStart="@dimen/margin_normal"
+                    android:text="@string/common_repeat" />
+
+                <TextView
+                    android:id="@+id/tv_save_time_day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="@dimen/margin_normal"
+                    android:layout_marginRight="@dimen/margin_normal"
+                    android:textColor="@color/control_color" />
+
+                <ImageView
+                    style="@style/setting_arrow"
+                    android:layout_marginEnd="@dimen/margin_normal"
+                    android:layout_marginRight="@dimen/margin_normal" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/setting_top_shape"
+            android:descendantFocusability="blocksDescendants"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/setting_item_single_textview"
+                android:text="@string/replay_record_only_when_change" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="1dp"
+                android:layout_marginRight="1dp"
+                android:button="@drawable/selector_checkbox_toggle"
+                android:clickable="false"
+                android:enabled="false" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/background"></View>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_height="43dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="可用容量"
+            android:textColor="#3e3e3e"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_sd_storage_free"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:textColor="#808080"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+    <LinearLayout style="@style/ll_divider">
+
+        <ImageView
+            style="@style/img_divider"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="总容量"
+            android:textColor="#3e3e3e"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_sd_storage_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:textColor="#808080"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_disk_format"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btn_height"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/margin_heigh_big"
+        android:layout_marginRight="@dimen/margin_heigh_big"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/selector_shape_round_rect_red"
+        android:enabled="false"
+        android:textSize="17sp"
+        android:text="@string/replay_disk_format"
+        android:textColor="@color/white" />
+</LinearLayout>

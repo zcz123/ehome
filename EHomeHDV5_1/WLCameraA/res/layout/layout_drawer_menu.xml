@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/rl_head_bg"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/head_bg" >
+
+        <com.wulian.icam.view.widget.CircleImageView
+            android:id="@+id/iv_head_img"
+            android:layout_width="76dp"
+            android:layout_height="76dp"
+            android:layout_centerInParent="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/default_head"
+            app:border_color="#EEEFEFEF"
+            app:border_width="2dp" />
+
+        <TextView
+            android:id="@+id/tv_nick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_head_img"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/textsize_large" />
+    </RelativeLayout>
+    <!-- 滚动视图好处：1、便于无限扩展 2、避免点击事件穿透 -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_fun_setting"
+                style="@style/drawer_menu"
+                android:drawableLeft="@drawable/drawer_fun_setting"
+                android:drawableStart="@drawable/drawer_fun_setting"
+                android:text="@string/setting_function_setting" />
+
+            <TextView
+                android:id="@+id/tv_feedback"
+                style="@style/drawer_menu"
+                android:drawableLeft="@drawable/drawer_feedback"
+                android:drawableStart="@drawable/drawer_feedback"
+                android:text="@string/info_feedback" />
+
+            <TextView
+                android:id="@+id/tv_help"
+                style="@style/drawer_menu"
+                android:drawableLeft="@drawable/drawer_help"
+                android:drawableStart="@drawable/drawer_help"
+                android:text="@string/help_guide" />
+
+            <TextView
+                android:id="@+id/tv_update"
+                style="@style/drawer_menu"
+                android:drawableLeft="@drawable/drawer_update"
+                android:drawableStart="@drawable/drawer_update"
+                android:text="@string/setting_version_update" />
+
+            <TextView
+                android:id="@+id/tv_about_us"
+                style="@style/drawer_menu"
+                android:drawableLeft="@drawable/drawer_about_us"
+                android:drawableStart="@drawable/drawer_about_us"
+                android:text="@string/info_about_us" />
+
+            <TextView
+                android:id="@+id/tv_logout"
+                style="@style/drawer_menu"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="80dp"
+                android:drawableLeft="@drawable/drawer_logout"
+                android:drawableStart="@drawable/drawer_logout"
+                android:text="@string/login_out" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

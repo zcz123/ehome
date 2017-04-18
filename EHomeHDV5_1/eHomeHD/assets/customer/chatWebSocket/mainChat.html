@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>model search</title>
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/custom.css" />
+		<script type="text/javascript" src="js/plus.js" charset="utf-8"></script>
+		<script type="text/javascript" src="js/common.js" charset="utf-8"></script>
+		<style type="text/css">
+			.customHead {
+				margin-top: 30px;
+				position: absolute;
+				top: 0px;
+				width: 100%;
+				height: 40px;
+			}
+			
+			.customHeadFather {
+				position: relative;
+				width: 15%;
+				height: 0px;
+			}
+			
+			.customChat {
+				margin-left: 10px;
+				margin-top: 30px;
+				position: relative;
+				left: 20%;
+				max-width: 60%;
+				background-color: white;
+				word-wrap: break-word;
+				word-break: break-all;
+				padding: 5px;
+				line-height: 0px;
+				border-radius: 10px;
+				min-width: 30px;
+				min-height: 40px;
+			}
+			
+			.selfChat {
+				min-height: 40px;
+				margin-left: -10px;
+				margin-top: 30px;
+				position: relative;
+				left: 20%;
+				background-color: rgb(115, 161, 25);
+				width: 60%;
+				word-wrap: break-word;
+				word-break: break-all;
+				padding: 5px;
+				border-radius: 10px;
+				text-align: left;
+			}
+			
+			.selfHeadFather {
+				position: relative;
+				width: 15%;
+				right: -85%;
+				height: 0px;
+			}
+			
+			.selfHead {
+				position: absolute;
+				width: 100%;
+				height: 44px;
+				top: 0px;
+			}
+			
+			#chat::-webkit-scrollbar {
+				width: 0px;
+			}
+			
+			#chat {
+				width: 100%;
+				overflow-x: hidden;
+				overflow-y: scroll;
+				position: absolute;
+				padding-top: 50px;
+				height: 100%;
+				background-color: aliceblue;
+				padding-bottom: 70px;
+			}
+			
+			.headImg {
+				margin-left: 5px;
+				width: 38px;
+			}
+			
+			.headName {
+				font-size: 11px;
+				width: 100%;
+				position: absolute;
+				text-align: center;
+			}
+			
+			.customChatSpan {
+				padding: 5px;
+				line-height: 0px;
+			}
+		</style>
+	</head>
+
+	<body style="background-color: aliceblue;">
+		<header class="mui-bar mui-bar-nav custom-nav" style="position: fixed;top: 0px;">
+			<button id="gobackBtn" style="color: white;" class="custom-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left">
+				<span class="mui-icon mui-icon-left-nav"></span><span id="about_back"></span>
+			</button>
+			<h1 class="mui-title"><span>在线客服</span></h1>
+		</header>
+		<div id="chat" onclick="closeTool()">
+		</div>
+		<footer id="foot" style="width: 100%;height: 50px;position: absolute;bottom: 0px;background-color: white;">
+			<div style="width: 80%;float: left;">
+				<!--<input type="text" placeholder="请输入您要咨询的问题" style="width: 90%;float: left;border: 1px solid gainsboro;min-height: 30px;height:30px;margin-top: 7px;margin-left: 5%;word-break: break-all;word-wrap: break-word;" />-->
+				<textarea id="inputText" placeholder="请输入您要咨询的问题" onfocus="closeTool()" style="padding-top: 5px;font-size: 15px;line-height:15px;width: 90%;float: left;border: 1px solid gainsboro;min-height: 30px;height:30px;margin-top: 7px;margin-left: 5%;" onkeypress="uniCharCode(event)" ; onkeydown="uniKeyCode(event)" ;></textarea>
+			</div>
+			<div style="width: 20%;float: left;height: 100%;" align="center">
+				<div style="border: 1px solid gainsboro;background-color: white;width: 30px;border-radius: 20px;height:30px;margin-top: 7px;line-height: 30px;" align="center" onclick="switchTool()"><span style="color: darkgrey">＋</span></div>
+			</div>
+			<div id="tools" style="width: 100%;margin-top:-3px;height: 100px;background-color: white;float: left;display: none;">
+				<div style="float: left;width: 50px;height: 70px;margin-left: 20px;" onclick="selectImg()">
+					<div style="width: 100%;height: 50px;background: url(img/icon_pic.png);background-size: 100%;"></div>
+					<p align="center">照片</p>
+				</div>
+				<div style="float: left;width: 50px;height: 70px;margin-left: 20px;" onclick="takePhoto()">
+					<div style="background: url(img/icon_photos.png);background-size: 100%;width: 100%;height: 50px;"></div>
+					<p align="center">拍照</p>
+				</div>
+			</div>
+		</footer>
+		<div class="selfBigChatimg">
+			<img id="selfBigChatimg" onclick="removeBigPic()" style="width: 100%;height: 100%;" src="img/编辑.png" />
+		</div>
+		<script>
+			var timer;
+			plus.plusReady(function() {
+				console.log("1")
+			});
+
+			function removeBigPic() {
+				document.getElementsByClassName("selfBigChatimg")[0].style.display = "none";
+			}
+
+			function showBigPic(path) {
+				document.getElementById("selfBigChatimg").src = path;
+				document.getElementsByClassName("selfBigChatimg")[0].style.display = "block";
+			}
+
+			function switchTool() {
+				if(document.getElementById("tools").style.display == "none") {
+					showTool()
+				} else {
+					closeTool()
+				}
+			}
+
+			function showTool() {
+				document.getElementById("tools").style.display = "block";
+				document.getElementById("foot").style.bottom = "100px";
+			}
+
+			function closeTool() {
+				document.getElementById("tools").style.display = "none";
+				document.getElementById("foot").style.bottom = "0px";
+			}
+			var chat = document.getElementById("chat");
+
+			function createCustom(textC) {
+				var customHeadFather = document.createElement("div");
+				customHeadFather.className = "customHeadFather";
+				var head = document.createElement("div");
+				head.className = "customHead";
+				var headImg = document.createElement("img");
+				headImg.className = "headImg";
+				headImg.src = "img/icon120x120.png";
+				head.appendChild(headImg);
+				var headName = document.createElement("p");
+				headName.className = "headName";
+				headName.innerHTML = "客服01";
+				head.appendChild(headName);
+				customHeadFather.appendChild(head);
+				chat.appendChild(customHeadFather);
+				var cusChat = document.createElement("div");
+				cusChat.className = "customChat";
+				var cusChatSpan = document.createElement("div");
+				cusChatSpan.className = "customChatSpan";
+				cusChatSpan.innerHTML = textC;
+				cusChat.appendChild(cusChatSpan);
+				chat.appendChild(cusChat);
+				var img = document.createElement("img");
+				img.className = "chatimg";
+				img.src = "img/arrows_1.png";
+				cusChat.appendChild(img);
+				var ddv = document.createElement("div");
+				ddv.innerHTML = textC;
+				ddv.style.visibility = "hidden";
+				ddv.style.position = "absolute";
+				chat.appendChild(ddv)
+				if(Number(cusChat.clientHeight) <= 40) {
+					cusChatSpan.style.lineHeight = "20px";
+					cusChat.style.width = Number(ddv.clientWidth) + 20 + "px";
+				}
+				if(Number(cusChat.clientHeight) > 40) {
+					img.style.marginTop = 22 - Number(cusChat.clientHeight) + "px"
+				}
+			}
+
+			function createSelf(data) {
+				var cusChat = document.createElement("div");
+				cusChat.className = "selfChat";
+				var cusChatSpan = document.createElement("div");
+				cusChatSpan.className = "customChatSpan_self";
+				cusChatSpan.innerHTML = data;
+				cusChat.appendChild(cusChatSpan);
+				chat.appendChild(cusChat);
+				var img = document.createElement("img");
+				img.className = "selfchatimg";
+				img.src = "img/arrows.png";
+				cusChat.appendChild(img);
+				var ddv = document.createElement("div")
+				ddv.innerHTML = data;
+				ddv.style.visibility = "hidden";
+				ddv.style.position = "absolute"
+				chat.appendChild(ddv)
+				var headFather = document.createElement("div");
+				headFather.className = "selfHeadFather";
+				var head = document.createElement("div");
+				head.className = "selfHead";
+				head.style.top = -cusChat.clientHeight + "px"
+				var headImg = document.createElement("img");
+				headImg.className = "headImg";
+				headImg.src = "img/icon120x120.png";
+				head.appendChild(headImg);
+				var headName = document.createElement("p");
+				headName.className = "headName";
+				headName.innerHTML = "客户01";
+				head.appendChild(headName);
+				headFather.appendChild(head);
+				chat.appendChild(headFather);
+				if(Number(cusChat.clientHeight) <= 40) {
+					cusChatSpan.style.lineHeight = "26px";
+					cusChat.style.width = Number(ddv.clientWidth) + 20 + "px";
+					cusChat.style.left = chat.clientWidth * 0.73 - Number(ddv.clientWidth) + "px"
+				}
+				if(Number(cusChat.clientHeight) > 40) {
+					img.style.marginTop = 20 - Number(cusChat.clientHeight) + "px"
+				}
+			}
+
+			function createSelfimg(path) {
+				var cusChat = document.createElement("div");
+				cusChat.className = "selfChatdiv";
+				cusChat.style.visibility = "hidden";
+				var selfChatimg = document.createElement("img");
+				selfChatimg.src = path; //"file://" + path + "?_=" + Math.random() * 10000;; // "img/编辑.png";
+				selfChatimg.addEventListener("click", function() {
+					showBigPic(path);
+				});
+				cusChat.appendChild(selfChatimg);
+				chat.appendChild(cusChat);
+				var headFather = document.createElement("div");
+				headFather.className = "selfHeadFather";
+				var head = document.createElement("div");
+				head.className = "selfHead";
+				var headImg = document.createElement("img");
+				headImg.className = "headImg";
+				headImg.src = "img/icon120x120.png";
+				head.appendChild(headImg);
+				var headName = document.createElement("p");
+				headName.className = "headName";
+				headName.innerHTML = "客服01";
+				head.appendChild(headName);
+				headFather.appendChild(head);
+				chat.appendChild(headFather);
+				selfChatimg.addEventListener("load", function() {
+					selfChatimg.style.maxWidth = cusChat.clientWidth * 0.6 + "px";
+					head.style.top = -selfChatimg.clientHeight + "px";
+					cusChat.style.width = selfChatimg.clientWidth + 10 + "px";
+					cusChat.style.left = window.screen.width * 0.7 - selfChatimg.clientWidth + "px";
+				    cusChat.style.visibility = "visible";
+				});
+			}
+
+			function createCustomimg(path) {
+				var customHeadFather = document.createElement("div");
+				customHeadFather.className = "customHeadFather";
+				var head = document.createElement("div");
+				head.className = "customHead";
+				var headImg = document.createElement("img");
+				headImg.className = "headImg";
+				headImg.src = "img/icon120x120.png";
+				head.appendChild(headImg);
+				var headName = document.createElement("p");
+				headName.className = "headName";
+				headName.innerHTML = "客服01";
+				head.appendChild(headName);
+				customHeadFather.appendChild(head);
+				chat.appendChild(customHeadFather);
+				var cusChat = document.createElement("div");
+				cusChat.className = "customChat";
+				var CusChatimg = document.createElement("img");
+				CusChatimg.src = path;
+				CusChatimg.addEventListener("click", function() {
+					showBigPic(path);
+				});
+				CusChatimg.id = "CusChatimg";
+				cusChat.appendChild(CusChatimg);
+				chat.appendChild(cusChat);
+				CusChatimg.addEventListener("load", function() {
+					CusChatimg.style.maxWidth = cusChat.clientWidth * 0.6 + "px";
+					cusChat.style.width = CusChatimg.clientWidth + 10 + "px";
+					cusChat.style.left = window.screen.width * 0.6 - CusChatimg.clientWidth + "px";
+				});
+			}
+
+			var wsUri = "wss://v2.wuliancloud.com:52189/OSS/websocket/wuliancloud";
+
+			function init() {
+				testWebSocket();
+			}
+
+			function testWebSocket() {
+				websocket = new WebSocket(wsUri);
+				websocket.onopen = function(evt) {
+					onOpen(evt)
+				};
+				websocket.onclose = function(evt) {
+					onClose(evt)
+				};
+				websocket.onmessage = function(evt) {
+					onMessage(evt)
+				};
+				websocket.onerror = function(evt) {
+					onError(evt)
+				};
+			}
+
+			function onOpen(evt) {
+				console.log("onOpen" + evt)
+				timer = window.setInterval("heartBeat()", 10000);
+				doSend("WebSocket rocks");
+			}
+
+			function onClose(evt) {
+				window.clearInterval(timer); 
+				console.log("onClose" + evt)
+
+			}
+
+			function onMessage(evt) {
+				console.log("onMessage" + evt + evt.data)
+				var cmd = JSON.parse(evt.data).retData.cmd
+				if(cmd == "sendMsg") {
+					createCustom(JSON.parse(evt.data).retData.msgContent)
+				} else if(cmd == "sendPic") {
+					createCustomimg(JSON.parse(evt.data).retData.url)
+				}else if(cmd == "heartBeat"){
+					
+				}
+				else if(cmd == "checkUserInfo" && JSON.parse(evt.data).retCode == "501000"){
+					
+				}
+				else{
+					createCustom(JSON.parse(evt.data).retData.msgContent)
+				}
+			}
+
+			function onError(evt) {
+				console.log("onError" + evt)
+			}
+
+			function doSend(message) {
+				var gwId = plus.ehomev5.getData("gwID");
+				var appId = plus.ehomev5.getData("appId")
+				var userID = plus.ehomev5.getData("userID")
+				var data = {
+					"cmd": "checkUserInfo",
+					"userId": userID,
+					"type": "2",
+					"gwId": gwId,
+					"token": "46141551sfesfsegf454r53454f5f",
+					"appId": appId,
+				}
+				websocket.send(JSON.stringify(data));
+			}
+
+			function heartBeat() {
+				var userID = plus.ehomev5.getData("userID")
+				var data = {
+					"cmd": "heartBeat",
+					"userId": userID,
+				}
+				websocket.send(JSON.stringify(data));
+			}
+
+			function writeToScreen(message) {
+				var pre = document.createElement("p");
+				pre.style.wordWrap = "break-word";
+				pre.innerHTML = message;
+				output.appendChild(pre);
+			}
+
+			window.addEventListener("load", init, false);
+
+			function uniCharCode(event) {
+				var char = event.which || event.keyCode;
+				console.log(char + "______________")
+			}
+
+			function uniKeyCode(event) {
+				var key = event.keyCode;
+				console.log(key + "______________")
+				if(key == "13") {
+					var value = document.getElementById("inputText").value;
+					createSelf(value)
+					document.getElementById("inputText").value = "";
+					document.getElementById("inputText").innerHTML = "";
+					var data = {
+						"cmd": "sendMsg",
+						"type": "2",
+						"msgContent": value
+					}
+					websocket.send(JSON.stringify(data));
+				}
+			}
+
+			function takePhoto() {
+				closeTool();
+				plus.ehomev5.takePhotoForCus(function(path) {
+					plus.ehomev5.uploadChatPic(path, function(ret) {
+						var data = {
+							"cmd": "sendPic",
+							"url": ret,
+							"type": "2",
+						}
+						websocket.send(JSON.stringify(data));
+						createSelfimg(ret)
+					}, function(err1) {
+
+					});
+				}, function(result) {
+
+				})
+			}
+
+			function selectImg() {
+				closeTool();
+				plus.ehomev5.selectPhotoForCus(function(path) {
+					plus.ehomev5.uploadChatPic(path, function(ret) {
+						var data = {
+							"cmd": "sendPic",
+							"url": ret,
+							"type": "2",
+						}
+						websocket.send(JSON.stringify(data));
+						createSelfimg(ret)
+					}, function(err1) {
+
+					});
+				}, function(result) {
+
+				})
+			}
+		</script>
+	</body>
+</html>
+ 

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@drawable/shape_round_rect_all_trans_white"
+    android:gravity="center"
+    android:orientation="vertical" 
+    android:id="@+id/ll_custom_alertdialog"
+    >
+
+    <LinearLayout
+        android:layout_width="@dimen/dialog_width"
+        android:layout_height="@dimen/btn_height"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/btn_height_min"
+            android:drawableLeft="@drawable/help_info_pressed"
+            android:drawableStart="@drawable/help_info_pressed"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/textsize_middle"
+            android:text="@string/lan_video_pwd" />
+    </LinearLayout>
+
+    <ImageView style="@style/img_divider_full" />
+
+    <EditText
+        android:id="@+id/et_input"
+        android:layout_width="@dimen/dialog_width"
+        android:layout_height="@dimen/btn_height"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/shape_rect_transparent"
+        android:hint="@string/lan_video_pwd_input"
+        android:singleLine="true"
+        android:textSize="@dimen/textsize_large" >
+    </EditText>
+
+    <ImageView style="@style/img_divider_full" />
+
+    <LinearLayout
+        android:layout_width="@dimen/dialog_width"
+        android:layout_height="@dimen/btn_height"
+        android:gravity="center_vertical" >
+
+        <Button
+            android:id="@+id/btn_positive"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/btn_height_min"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:textSize="@dimen/textsize_middle"
+            android:background="@drawable/selector_shape_round_rect_all_stroke"
+            android:padding="5dp"
+            android:text="@string/common_sure" />
+
+        <Button
+            android:id="@+id/btn_negative"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/btn_height_min"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:textSize="@dimen/textsize_middle"
+            android:background="@drawable/selector_shape_round_rect_all_stroke"
+            android:padding="5dp"
+            android:text="@string/common_cancel" />
+    </LinearLayout>
+
+</LinearLayout>

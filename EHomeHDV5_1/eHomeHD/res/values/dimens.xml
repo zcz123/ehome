@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="content_margin_35">35dp</dimen>
+    <dimen name="content_margin_big">20dp</dimen>
+    <dimen name="content_margin_big_mid">12dp</dimen>
+    <dimen name="content_margin_bigs_mid">20dp</dimen>
+    <dimen name="content_margin_mid">8dp</dimen>
+    <dimen name="content_margin_6">6dp</dimen>
+    <dimen name="content_margin_small">2dp</dimen>
+    <dimen name="content_margin_home_message_big">40dp</dimen>
+    <dimen name="content_margin_home_message_middle">25dp</dimen>
+    <dimen name="content_margin_home_message_small">20dp</dimen>
+    <dimen name="menubar_width">90dp</dimen>
+    <dimen name="menubar_text_padding">4dp</dimen>
+
+    <item name="gridview_column_frames" type="integer">2</item>
+    <item name="gridview_column_scene" type="integer">4</item>
+
+    <dimen name="view_min_height">60dp</dimen>
+    <dimen name="view_min_height_small">30dp</dimen>
+    <dimen name="numberpicker_min_height">64dp</dimen>
+    <dimen name="dimen_150">150dp</dimen>
+    <dimen name="dimen_15">15dp</dimen>
+    <!-- menu -->
+
+    <dimen name="slidingmenu_shadow_width">0dp</dimen>
+    <dimen name="slidingmenu_offset">60dp</dimen>
+    <dimen name="slidingmenu_margin_threshold">150dp</dimen>
+    <dimen name="slidingmenu_width">300dp</dimen>
+    <dimen name="nav_item_spacing">29dp</dimen>
+
+    <!-- action bar 高度 -->
+    <dimen name="actionbar_height">50dp</dimen>
+    <!-- 导航菜单内容的列宽 -->
+    <dimen name="nav_column_width">75dp</dimen>
+    <!-- fragment界面边距 -->
+    <dimen name="fragment_content_spacing">8dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+</resources>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:background="@color/add_devices_background">
+	<include layout="@layout/titlebar_cat_eye_configuration" />
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal"
+		android:layout_marginTop="40dp"
+		android:src="@drawable/eagle_wifi_conn_success"
+		android:contentDescription="@string/eagle_wifi_conn_fail"
+		/>
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/smartLock_receive_wifi_succeed"
+		android:gravity="center_horizontal"
+		android:textColor="@color/black"
+		android:textSize="18sp"
+		android:layout_marginTop="10dp"
+		/>
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/eagle_wifi_conn_voice_next"
+		android:gravity="center_horizontal"
+		android:textSize="18sp"
+		android:textColor="@color/black"
+		android:layout_marginTop="30dp"
+		/>
+
+	<!-- ============================================================================= -->
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:gravity="center_vertical"
+		android:layout_marginTop="40dp"
+		>
+		<LinearLayout
+			android:layout_weight="1"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:paddingLeft="20dp">
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/eagle_wifi_conn_voice"
+				android:gravity="center_horizontal"
+				android:textSize="16sp"
+				/>
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/cateye_connect_voice_success"
+				android:gravity="center_horizontal"
+				android:textSize="16sp"
+				android:textColor="@color/YellowGreen"
+				/>
+		</LinearLayout>
+		<LinearLayout
+			android:layout_weight="1"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:paddingLeft="20dp">
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/eagle_wifi_conn_voice"
+				android:gravity="center_horizontal"
+				android:textSize="16sp"
+				/>
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/eagle_wifi_conn_voice_fail"
+				android:gravity="center_horizontal"
+				android:textSize="16sp"
+				android:textColor="@color/YellowGreen"
+				/>
+		</LinearLayout>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:gravity="center_vertical"
+		android:layout_marginTop="20dp"
+		>
+		<Button
+			android:id="@+id/okBtn"
+			android:layout_weight="1"
+			android:layout_width="0dp"
+			android:layout_height="48dp"
+			android:layout_marginLeft="20dp"
+			android:layout_marginRight="20dp"
+			android:background="@drawable/shape_green_stroke_button"
+			android:textColor="@color/YellowGreen"
+			android:layout_gravity="center_horizontal"
+			android:enabled = "false"
+			android:padding="5dp"
+			/>
+
+		<Button
+			android:id="@+id/failBtn"
+			android:layout_weight="1"
+			android:layout_width="0dp"
+			android:layout_height="48dp"
+			android:layout_marginLeft="20dp"
+			android:layout_marginRight="20dp"
+			android:background="@drawable/shape_green_stroke_button"
+			android:text="@string/eagle_wifi_conn_fail"
+			android:textColor="@color/YellowGreen"
+			android:layout_gravity="center_horizontal"
+			android:padding="5dp"
+			/>
+
+	</LinearLayout>
+
+</LinearLayout>

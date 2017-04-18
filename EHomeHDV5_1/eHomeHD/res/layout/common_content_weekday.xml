@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <ToggleButton
+        android:id="@+id/radio_sun"
+        style="@style/CMWidget.CheckBox.Empty.Toggle"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:textOff="@string/scene_sun"
+        android:textOn="@string/scene_sun" />
+    
+    <View 
+        android:layout_width="wrap_content"
+        android:layout_height="5dip"/>
+    
+    <ToggleButton
+        android:id="@+id/radio_mon"
+        style="@style/CMWidget.CheckBox.Empty.Toggle"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:textOff="@string/scene_mon"
+        android:textOn="@string/scene_mon" />
+    
+	<View 
+        android:layout_width="wrap_content"
+        android:layout_height="5dip"/>
+	
+    <ToggleButton
+        android:id="@+id/radio_tur"
+        style="@style/CMWidget.CheckBox.Empty.Toggle"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:textOff="@string/scene_tue"
+        android:textOn="@string/scene_tue" />
+    
+	<View 
+        android:layout_width="wrap_content"
+        android:layout_height="5dip"/>
+	
+    <ToggleButton
+        android:id="@+id/radio_thre"
+        style="@style/CMWidget.CheckBox.Empty.Toggle"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:textOff="@string/scene_wed"
+        android:textOn="@string/scene_wed" />
+    
+	<View 
+        android:layout_width="55dp"
+        android:layout_height="5dip"/>
+	
+    <ToggleButton
+        android:id="@+id/radio_thu"
+        style="@style/CMWidget.CheckBox.Empty.Toggle"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:textOff="@string/scene_thu"
+        android:textOn="@string/scene_thu" />
+    
+	<View 
+        android:layout_width="wrap_content"
+        android:layout_height="5dip"/>
+	
+    <ToggleButton
+        android:id="@+id/radio_fir"
+        style="@style/CMWidget.CheckBox.Empty.Toggle"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:textOff="@string/scene_fri"
+        android:textOn="@string/scene_fri" />
+    
+	<View 
+        android:layout_width="wrap_content"
+        android:layout_height="5dip"/>
+	
+    <ToggleButton
+        android:id="@+id/radio_sat"
+        style="@style/CMWidget.CheckBox.Empty.Toggle"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:textOff="@string/scene_sat"
+        android:textOn="@string/scene_sat" />
+
+</LinearLayout>

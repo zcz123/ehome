@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="content_margin_mid">8dp</dimen>
+
+    <dimen name="device_four_convert_small">20dp</dimen>
+    <dimen name="device_four_convert_mid">30dp</dimen>
+    <dimen name="device_four_convert_big">40dp</dimen>
+</resources>

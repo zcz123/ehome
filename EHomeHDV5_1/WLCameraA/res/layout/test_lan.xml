@@ -1,0 +1,228 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4位字符串:" />
+
+            <EditText
+                android:id="@+id/et_four_str"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:hint="请输入4位字符串"
+                android:text="" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_remote_mac"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:hint="请输入远程Mac地址"
+            android:text="00:00:23:34:45:66" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#888888"
+            android:gravity="center_horizontal"
+            android:text="设备发现"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/bt_getFourStringPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="返回8位密码" />
+
+        <Button
+            android:id="@+id/bt_SearchAllDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SearchAllDevice" />
+
+        <Button
+            android:id="@+id/bt_SearchAllDeviceByMulticast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SearchAllDeviceByMulticast" />
+
+        <Button
+            android:id="@+id/bt_getAllDeviceInformationByMulticast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="getAllDeviceInformationByMulticast" />
+<Button
+            android:id="@+id/bt_StopRequestByMulticast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="StopRequestByMulticast" />
+        <Button
+            android:id="@+id/bt_getAllDeviceInformation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="getAllDeviceInformation" />
+
+        <Button
+            android:id="@+id/bt_getCurrentDeviceInformation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="获取当前设备信息 " />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="\n" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#888888"
+            android:gravity="center_horizontal"
+            android:text="network配置"
+            android:textColor="#000000"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/bt_getNetworkDeviceWanConfigInformation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="获取WAN配置信息"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/bt_setNetworkDeviceWanConfigInformation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="配置WAN"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="\n"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#888888"
+            android:gravity="center_horizontal"
+            android:text="wireless配置"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/bt_getWirelessAllApInformationForDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="扫描AP热点"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/bt_setWirelessWifiForDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="配置wifi" />
+
+        <Button
+            android:id="@+id/bt_getWirelessWifiConnectInformationForDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="获取连接信息" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="\n" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#888888"
+            android:gravity="center_horizontal"
+            android:text="时间设置"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/bt_getTimeZoneInformationForDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="获取时区列表" />
+
+        <Button
+            android:id="@+id/bt_setTimeZoneInformationForDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="设置设备时区" />
+
+        <Button
+            android:id="@+id/bt_syncTimeLocalToDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="同步本地时间" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="\n" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#888888"
+            android:gravity="center_horizontal"
+            android:text="系统工具"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/bt_configSystemFramewareUpgrade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="系统固件升级" />
+
+        <Button
+            android:id="@+id/bt_resetSystemTheDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="恢复出厂设置" />
+
+        <Button
+            android:id="@+id/bt_rebootSystemTheDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="重启设备" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="结果" />
+
+            <EditText
+                android:id="@+id/et_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/flower_tip_scrollView"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+<LinearLayout     
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"  >
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dip"
+        android:paddingLeft="16dip"
+        android:paddingRight="16dip"
+        android:paddingTop="32dp"
+        android:text="@string/gateway_dream_flower_Tap_light_hint"
+        android:textColor="@color/black"
+        android:textSize="16.0sp" />
+     <LinearLayout 
+         android:orientation="vertical"
+         android:id="@+id/flower_light_effect_list"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:gravity="center" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/flower_light_colorlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="5dp">
+            <RelativeLayout
+                android:id="@+id/flower_light_color"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center" >
+            </RelativeLayout>
+    </LinearLayout>
+    
+    
+    
+    <LinearLayout
+        android:background="@drawable/account_manager_item_background"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:gravity="center_vertical"
+	    android:orientation="horizontal" >
+        <TextView   
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="16.0sp"
+            android:text="@string/gateway_dream_flower_light_duration" 
+            android:layout_width="0dp"
+            android:layout_weight="2"
+	    	android:layout_height="match_parent" />
+        <TextView 
+            android:id="@+id/flower_light_time_txt"
+            android:background="@drawable/bg_radio"
+            android:gravity="right|center_vertical"
+            android:text="1.5"
+            android:textColor="@color/green"
+            android:padding="8dp"
+             android:layout_width="64dp"
+             android:layout_height="32dp"/>
+	    <!-- <FrameLayout
+	        android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="160dp"
+            android:layout_gravity="center" >
+            <ImageView 
+                android:layout_gravity="center"
+                android:src="@drawable/scene_state_unuse"
+                android:layout_width="80dp"
+                android:layout_height="80dp"/>
+            <com.yuantuo.customview.ui.wheel.WheelView
+                android:layout_gravity="center"
+                android:id="@+id/flower_light_time_wheel"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"/>
+        </FrameLayout> -->
+         <TextView    
+             android:gravity="center"
+             android:textColor="@color/black"
+             android:textSize="16.0sp"
+             android:text="@string/gateway_dream_flower_light_duration_hour"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+	    	android:layout_height="match_parent" />
+	</LinearLayout>
+    
+</LinearLayout>
+    
+
+</ScrollView>

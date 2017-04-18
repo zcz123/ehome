@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html style="background-color: #EFEFF4;">
+
+	<head>
+		<meta charset="utf-8">
+		<title>disclaimer</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/custom.css" />
+		<style>
+			html,
+			body {
+				background-color: white;
+			}
+		</style>
+
+		<script type="text/javascript" src="js/plus.js"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/hashmap.js"></script>
+		<script type="text/javascript" src="./js/md5-min.js"></script>
+		<script type="text/javascript" src="./js/digest-auth.js"></script>
+		<!--<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="js/custom.js" type="text/javascript" charset="utf-8"></script>
+
+	</head>
+
+	<body style="background-color: #EFEFF4;">
+		<header class="mui-bar mui-bar-nav custom-nav" style="position: fixed;">
+			<a class="custom-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title"><span id="uei_html_bind" class="autoSwitchLanguager"></span></h1>
+		</header>
+		<div class="mui-content" style="width: 100%;margin: 0 auto;">
+			<button style="position: absolute;width: 80%;height: 50px;left: 10%;top: 25%;background-color: #719E19;color: white;" onclick="gotoAddGateway()" id="html_user_bind_gateway" class="autoSwitchLanguager">绑定网关</button>
+			<p style="position: absolute;top: 35%;width: 80%;left: 11%;font-size: 14px;line-height: 18px;" id="account_system_binded_gateway_hint" class="autoSwitchLanguager">使用开关、插座、红外转发器、摄像机等产品请选择绑定网关</p>
+			<button style="position: absolute;width: 80%;height: 50px;left: 10%;top: 55%;background-color: #719E19;color: white;" onclick="gotoAddDevice()" id="account_system_binded_device" class="autoSwitchLanguager">绑定设备</button>
+			<p style="position: absolute;top: 65%;width: 80%;left: 11%;font-size: 14px;line-height: 18px;" id="account_system_binded_device_hint" class="autoSwitchLanguager">使用Wulian猫眼、空调、洗衣机等产品请选择绑定设备</p>
+		</div>
+	 <script>
+	 	//去绑定新网关
+		function gotoAddGateway() {
+			plus.callbackUtil.putCallback("BindGatewaySuccessBlock",function(result){
+				window.location = "gatewayList.html";
+			});
+			var data = {};
+			data.action = "bindGateway";
+			data.params = [];
+			plus.ehomev5.startActivity(JSON.stringify(data));
+		}
+		function gotoAddDevice() {
+			window.location = "addDevice.html"
+		}
+	 </script>
+	</body>
+
+</html>

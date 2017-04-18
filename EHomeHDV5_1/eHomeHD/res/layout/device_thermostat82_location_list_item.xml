@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+ 	android:background="@color/white_normal"   
+    android:orientation="horizontal" >
+    <LinearLayout
+        android:background="@drawable/account_manager_switch_account_item_selector"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="8dp"
+        android:paddingRight="20dp" 
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content" >
+        <TextView
+            android:textColor="@color/black" 
+	        android:gravity="left|center_vertical"
+	        android:layout_weight="1"
+	        android:id="@+id/location_item_name_tv"
+	    	android:layout_width="0dp"
+	    	android:layout_height="wrap_content"/>
+        <ImageView 
+	        android:gravity="right|center_vertical"
+	        android:id="@+id/location_item_name_iv"
+	    	android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	    	android:src="@drawable/thermost_setting_arrow_right"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <LinearLayout 
+        android:paddingLeft="8dp"
+    	android:paddingRight="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+    	android:layout_height="64dp">
+        <TextView 
+            android:textColor="@color/black"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/gateway_timezone_setting_autoset_hint"/>
+        <CheckedTextView
+            android:gravity="center"
+            android:textColor="@color/black" 
+            android:text="@string/auto_sync_zone"
+            android:id="@+id/zonelist_syncho_tv"
+            android:background="@drawable/synchro_with_phone_btn_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    
+    <ListView
+        android:scrollbars="none"
+        android:id="@+id/setting_zone_lv"
+        android:divider="@color/v5_gray_mid"
+        android:cacheColorHint="@color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+    </ListView>
+
+</LinearLayout>

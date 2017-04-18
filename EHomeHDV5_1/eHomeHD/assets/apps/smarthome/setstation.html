@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>setlocation</title>
+	<link rel="stylesheet" type="text/css" href="css/default.css" />
+	<link rel="stylesheet" href="css/mui.min.css">
+	<link rel="stylesheet" href="css/custom.css" />
+	    
+	<script type="text/javascript" src="js/plus.js" ></script>
+	<!--<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>-->
+    <script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="./js/digest-auth.js"></script>
+    <script src="js/custom.js" type="text/javascript" charset="utf-8"></script>
+    
+    <style type="text/css">
+        ul {
+            padding: 0px;
+        }
+
+        .autolist {
+            overflow:auto;
+            position: fixed;
+            z-index: 100;
+            max-height: 300px;
+            width: 70%;
+            border: 1px solid #9ACCFB;
+            background-color: white;
+            text-align: left;
+            box-shadow: 5px 5px 5px #444;
+
+        }
+        .autolist li {
+            list-style-type: none;
+        }
+        .highlight {
+            background-color: #9ACCFB;
+        }
+
+    </style>
+
+
+
+</head>
+
+<body>
+<header class="mui-bar mui-bar-nav custom-nav">
+	<button style="color: white;" class="custom-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left">
+        <span class="mui-icon mui-icon-left-nav"></span><span class="autoSwitchLanguager" id="gateway_dream_flower">梦想之花</span>
+    </button>
+    <h1 class="mui-title" ><span class="autoSwitchLanguager" id="gateway_dream_flower_position_city_selection">城市选择</span></h1> 
+</header>
+<div class="mui-content">
+    <div class="mui-input-row" id="search_div">
+        <input id="search_input" type="text" class="mui-input-clear" style="margin-bottom: 0px;" placeholder="输入所在地区名或者字母" />
+    </div>
+    <ul  class="mui-table-view" style="margin-top: 1px;" id="citypanel"></ul>
+</div>
+
+</body>
+
+<script type="text/javascript">
+    var itemlist=null;
+    var selectedItem = null;
+    var searchInput;
+    var timeoutid = null;
+    var lastTouchItem=null;
+    var citys = new Array('北京', '上海', '广州', '深圳', '天津', '重庆', '南京', '无锡', '苏州', '杭州', '沈阳', '大连', '济南', '西安', '青岛', '宁波', '厦门', '武汉', '成都', '香港', '澳门', '台北', '兰州', '西宁', '银川', '郑州', '太原', '合肥', '贵阳', '昆明', '南宁', '拉萨', '南昌', '福州', '海口');
+    
+    plus.plusReady(function () {
+    	creatCityList();
+    });
+    
+    function creatCityList(){
+    	searchInput=document.getElementById("search_input");
+	    var cityList = document.getElementById("citypanel");
+	    var autoPosition=document.createElement("li");
+	    autoPosition.className+="mui-table-view-cell";
+	    autoPosition.innerHTML="自动定位";//plus.ehomev5.getLang("html_user_automatic_positioning");  
+	    cityList.appendChild(autoPosition);
+	    for (var i = 0; i < citys.length; i++) {
+	        var child = document.createElement("li");
+	        child.innerHTML = citys[i];
+	        child.className += "mui-table-view-cell";
+	        cityList.appendChild(child);
+	    }
+	    cityList.onclick = function(e) {
+	        if(e.srcElement==autoPosition){
+	            getLocation();
+	            return;
+	        }
+	        searchInput.value = e.target.innerHTML; //鼠标单击下拉列表的这一项的话，就将这一项的值添加到输入框中
+	        saveData(e.target.innerHTML);
+	        closeThisPage ();
+	    };
+	    
+	    document.body.ontouchmove=function(event){
+	        hideList();
+	    }
+	    
+	    searchInput.addEventListener("input",function() {
+	        if (this.value.length>=2) {
+	            clearTimeout(timeoutid);
+	            timeoutid = setTimeout(searchTxtChange(this.value),500);
+	        }else{
+	        	timeoutid = setTimeout(hideList(),300);	        	
+	        }
+	    });
+    }
+
+    function searchTxtChange(key) {
+        var xmlRq = new plus.net.XMLHttpRequest();
+        xmlRq.timeout = 5000;
+        xmlRq.onreadystatechange=function(){
+            if(xmlRq.status==200){
+                var result=JSON.parse(xmlRq.responseText);
+                if(result!=null&&result.status==1){
+                    if(result.data.length>0){
+                        createList(result.data);
+                    }else{
+                        hideList();
+                    }
+                }
+            }
+        };
+        xmlRq.open( "POST", "https://api.sh.gg/v2/weather/search" );
+        xmlRq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xmlRq.send("key="+key);
+    }  
+
+    function clear() {  			//清除搜索结果列表
+        if(itemlist==null)return;
+        itemlist.innerHTML = "";
+        itemlist.style.display = "none";
+    }
+
+    function hideList(){
+    	if(itemlist==null)return;
+        itemlist.style.display = "none";
+    }
+
+    function createList(data) {
+    	if(itemlist==null){
+    		itemlist = document.createElement('div');
+		    itemlist.className += " autolist";
+		    document.getElementById("search_div").appendChild(itemlist);
+		    itemlist.style.display = "none";
+		    itemlist.onclick=function(event){
+		        var tag=event.srcElement;
+		        searchInput.value = tag.innerHTML;
+		        var tempParam=tag.innerHTML;
+		        saveData(tempParam.substring(tempParam.lastIndexOf(",")+1,tempParam.length));
+		        closeThisPage ();
+		    };
+    	}   	
+        itemlist.innerHTML = "";
+        if (data!=null) {
+            for (var i = 0; i < data.length; i++) {
+                var child = document.createElement("li");
+                child.className += 'mui-table-view-cell';
+                child.innerHTML = data[i].province+","+data[i].city+","+data[i].station;
+                itemlist.appendChild(child);
+            }
+            //显示下拉列表
+            itemlist.style.display = "block";
+        }
+    }
+
+    function getTopPosition(item) {
+        var top = item.offsetTop;
+        while (item = item.offsetParent) {
+            top += item.offsetTop;
+        }
+        return top;
+    }
+
+    function getLeftPosition(item) {
+        var left = item.offsetLeft;
+        while (item = item.offsetParent) {
+            left += item.offsetLeft;
+        }
+        return left;
+    }
+
+    function getLocation() {   		
+        var rq = new plus.net.XMLHttpRequest();
+        rq.timeout = 5000;
+        rq.onreadystatechange=function(){
+            if(rq.status==200){
+                var result=JSON.parse(rq.responseText);
+                if(result!=null&&result.status==0){
+                	var address=result.content.address_detail.city;
+                    saveData(address);
+                    closeThisPage();
+                }
+            }
+        };
+        rq.open( "GET", "http://api.map.baidu.com/location/ip?ak=f4pxR43G4FDjnNp8GQoQNOrG" );
+        rq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        rq.send();
+    }
+
+    function closeThisPage () {  //关闭当前页面
+    	plus.webView.currentWebview().close();
+    }
+
+    function saveData(data){ 	//将数据保存到缓存
+        plus.ehomev5.setData($CONSTANTS.MXZH_DISTRICT, data);
+    }
+	
+</script>
+
+</html>

@@ -1,0 +1,40 @@
+<resources>
+
+    <string name="operation_title">Hemen</string>
+    <string name="operation_sure">Belirle</string>
+    <string name="menu_item_bottom">Alt</string>
+    <string name="hint_neterror">Ağ hatası, bağlantıyı kontrol edin!</string>
+    <string name="hint_net_timeout">Bağlantı zaman aşımı……</string>
+    <string name="hint_account_mange">Hesap ayarları</string>
+    <string name="switch_on">Aç</string>
+    <string name="switch_off">Kapa</string>
+    <string name="week_sun">paz</string>
+    <string name="week_mon">pzt</string>
+    <string name="week_tue">sal</string>
+    <string name="week_wed">çrş</string>
+    <string name="week_thu">per</string>
+    <string name="week_fri">cum</string>
+    <string name="week_sat">cts</string>
+    <string name="calendar_today">bugün</string>
+    <string name="dialog_titel">başlık</string>
+    <string name="dialog_back">geri</string>
+    <!-- water value -->
+    <string name="WL_28_time_chose">zaman seçimi</string>
+    <string name="WL_28_hour">saat</string>
+    <string name="WL_28_minute">dakika</string>
+    <string name="WL_28_second">saniye</string>
+
+    <!-- 下拉 -->
+    <string name="down_pull_refresh">yenilemek için aşağıya çekin</string>
+    <string name="last_update">Son güncelleme</string>
+    <string name="release_refresh">Tazeleme</string>
+    <string name="refresh_now">Tazeleniyor&#8230;</string>
+    <string name="recent_update">Son güncelleme:</string>
+
+    <!--时间 -->
+    <string name="month_ago">Aylar önce</string>
+    <string name="day_ago">Günler önce</string>
+    <string name="hour_ago">Saatler önce</string>
+    <string name="min_ago">Dakikalar önce</string>
+    <string name="just">Şimdi</string>
+</resources>

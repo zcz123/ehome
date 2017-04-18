@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background01"
+    android:orientation="vertical" >
+
+    <com.wulian.icam.view.widget.RefreshableView
+        android:id="@+id/device_oauth_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <com.wulian.icam.view.widget.TitledListView
+            android:id="@+id/list_oauth_msg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent"
+            android:cacheColorHint="@color/transparent"
+            android:choiceMode="none"
+            android:divider="@color/transparent"
+            android:dividerHeight="1dp"
+            android:listSelector="@color/transparent"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollbars="vertical"
+            android:scrollingCache="false"
+            >
+        </com.wulian.icam.view.widget.TitledListView>
+
+    </com.wulian.icam.view.widget.RefreshableView>
+	
+        <TextView
+            android:id="@+id/tv_oauth_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/message_no_user_msg"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_middle" />
+</FrameLayout>

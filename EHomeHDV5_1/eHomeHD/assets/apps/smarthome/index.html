@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/custom.css" rel="stylesheet" />
+
+		<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/plus.js"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/custom.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/hashmap.js"></script>
+		<script type="text/javascript" src="./js/md5-min.js"></script>
+		<script type="text/javascript" src="js/crypto-js.js"></script>
+		<script type="text/javascript" src="js/digest-auth.js"></script>
+
+		<style type="text/css">
+			.message-li {
+				padding: 0px;
+				padding-top: 10px;
+				border: 1px solid black;
+			}
+			
+			.message-li .message-li-imag {
+				width: 50px;
+				height: 50px;
+				margin-left: 25px;
+			}
+			
+			.message-li .message-li-div {
+				margin-top: 8px;
+				color: black;
+				border: 0;
+				border-radius: 0px;
+				border-top: 1px solid black;
+				line-height: 50px;
+				background: #DDDDDD;
+			}
+			
+			.message-dialog {
+				padding: 0px;
+				margin-bottom: 0px;
+				line-height: 2px;
+			}
+			
+			.message-dialog .message-input {
+				padding-left: 5px;
+				padding-right: 0px;
+				height: 30px;
+				margin-top: 8px;
+				text-overflow: ellipsis;
+			}
+			
+			.permission-img {
+				line-height: 20px;
+				position: absolute;
+				right: 0px;
+				top: 10px;
+				text-align: center;
+				width: 20px;
+				height: 30px;
+			}
+			
+			.permission-div {
+				margin-left: 90px;
+			}
+			
+			.permission-div .middle-div {
+				height: 22px;
+				line-height: 22px;
+				width: 70%;
+			}
+			
+			.permission-div .middle-div .middle-span {
+				text-align: center;
+				line-height: 25px;
+			}
+			
+			.permission-div .middle-div .middle-img {
+				width: 15px;
+				padding-top: 5px;
+				height: 20px;
+				text-align: center;
+				line-height: 20px;
+			}
+			
+			.permission-div .middle-div .middle-small-span {
+				text-align: center;
+				line-height: 25px;
+				font-size: 0.7em;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav custom-nav" style="position: fixed;">
+			<button style="color: white;" class="custom-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left nav-type">
+				<span class="mui-icon mui-icon-left-nav"></span><span id="about_back" class="autoSwitchLanguager"></span>
+			</button>
+			<button class="mui-btn mui-btn-link mui-btn-nav mui-pull-right" style="color: white; margin-right: 3px;" id="access-control-bar-right-add">
+				<img src="img/common_use_add.png" style="width: 20px; padding-top: 10px; margin-right: 10px;" onclick="searchAccountHtml()"/>
+			</button>
+			<h1 class="mui-title" style="color: white; padding-left: 60px; padding-right: 50px;">
+				<span id="html_authorize_info_List_titie" class="autoSwitchLanguager"></span>
+			</h1>
+		</header>
+		<div class="mui-content">
+			<!--<button id="message-button-id" class="mui-btn" style="position: fixed; bottom: 0; right: 0; margin-bottom: 2px; margin-right: 2px;">有授权请求</button>-->
+		  <!--<ul class="mui-table-view" id="permission-message-ul">
+			</ul> -->
+
+			<p id="html_account_had_binded_hint" class="autoSwitchLanguager" style="height: 40px;font-size: 18px;color: black;margin: 16px 0px 0px 16px;"></p>
+			<ul id="permission-list-ul" class="mui-table-view">
+				<!--<li class="mui-table-view-cell">
+				<div class="mui-slider-right">
+					<a class="mui-btn mui-btn-red">解绑</a>
+				</div>
+				<div class="mui-slider-handle">
+					<img class="mui-media-object mui-pull-left" style="max-width: 50px; width: 50px; height: 50px; margin-left: 10px;" src="img/access-item-default-img.png">
+					<div class = "mui-media-body permission-div">
+						<div class = "mui-media-body middle-div">
+							<span class="middle-span">红外感应器</span>
+							<img class="middle-img" src="img/control-permission.png">
+						</div>
+						<div class = "mui-media-body middle-div">
+							<span class="middle-small-span">红外感应器</span>
+						</div>
+						<img class="permission-img" src="img/other-picture.png">
+					</div>
+				</div>
+			</li>-->
+			</ul>
+			<p id="html_account_had_authorized_hint" class="autoSwitchLanguager" style="height: 40px;font-size: 18px;color: black;margin: 16px 0px 0px 16px;"></p>
+			<ul class="mui-table-view" id="authorization-message-ul">
+			</ul>
+		</div>
+		<script type="text/javascript">
+			var deviceId = "";
+			var isAdmin = 0;
+			var currentGwId = "";
+			var permissionUrl = "/AMS/user/rights";
+			var permissionUl = document.getElementById("permission-list-ul");
+			var messageul = document.getElementById("permission-message-ul");
+			var authorizationUl = document.getElementById("authorization-message-ul");
+			var messageButton = document.getElementById("message-button-id");
+			var permissionMessageUrl = "/AMS/gateway/queryGwOauthUser";
+			var agreenMessageUrl = "/AMS/gateway/oauthGwUser";
+			var accountcUrl = "/AMS/user/access";
+			var customDialog = new inputDialog();
+			var permissionArray = new Array();
+			var authorizationArray = new Array();
+			var dialogkey = "permissionkey";
+			plus.plusReady(function() {
+				plus.event.addEventListener(plus.event.KEYCODE_BACK, function() {
+					plus.webView.currentWebview().close();
+				});
+				currentGwId = plus.ehomev5.getData($CONSTANTS.GATEWAYID);
+				plus.ehomev5.showWaiting(dialogkey);
+				isAdmin = 0;
+				getDeviceByUser(function(result, status) {
+					if (status == "0") {
+						try {
+							result = JSON.parse(result);
+							var devices = result.devices;
+							for (var i = 0; i < devices.length; i++) {
+								if (devices[i].deviceId == currentGwId) {
+									if (devices[i].isAdmin == "1") {
+										isAdmin = 1;
+									}
+								}
+							}
+						} catch (e) {
+							console.log(e);
+						}
+					}
+					loadPermissions();
+					plus.ehomev5.closeWaiting(dialogkey);
+				}, function() {
+					plus.ehomev5.closeWaiting(dialogkey);
+					loadPermissions();
+				});
+			});
+
+			function getDeviceByUser(onSuccess, onFailed) {
+				var data = {
+					deviceId: plus.ehomev5.getData($CONSTANTS.GATEWAYID)
+				};
+				sendJsonPostRequest(data, plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + "/AMS/user/device", 'getDeviceByUser', onSuccess, onFailed);
+			}
+			//http请求获取已授权列表
+			function loadPermissions() {
+				var data = {
+					deviceId: plus.ehomev5.getData($CONSTANTS.GATEWAYID)
+				};
+				sendJsonPostRequest(data, plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + permissionUrl, 'getUserByDevice', function(result) {
+						try {
+							//result--{"users":[]}
+							if (JSON.parse(result).status == "2000") {
+								var hinterror = plus.ehomev5.getLang("html_token_is_invalid_error"); //"Token失效,请重新初始化"
+								alert(hinterror);
+							} else if (JSON.parse(result).status == "0") {
+								
+								var hint = plus.ehomev5.getLang("html_succeed_without_body_error");//"成功,无返回Body"
+								alert(hint);  
+							} else {
+								createPermissionList(result);
+							}
+						} catch (e) {
+							console.log(e);
+						}
+					},
+					function(error) {						
+						alert(plus.ehomev5.getLang("html_device_save_error")); //"获取失败"
+					}
+				);
+			}
+
+			function sendJsonPostRequest(data, url, param, onSuccess, onFailed) {
+				var digestAuth = DigestAuthentication.init({
+					onSuccess: function(response, status) {
+						onSuccess(response, status);
+					},
+					onFailure: function(httpStatus) {
+						onFailed(httpStatus);
+					},
+					sync: false
+				});
+				if (param != null) {
+					digestAuth.setHeader('cmd', param);
+				}
+				digestAuth.setHeader('Content-Type', 'application/json');
+				digestAuth.setHeader('token', plus.ehomev5.getData($CONSTANTS.TOKEN));
+				digestAuth.setData(JSON.stringify(data));
+				digestAuth.call(url);
+			}
+			//http请求获取授权请求列表
+			function loadPermissionMessages(onSuccess, onFailed) {
+				var data = {
+					deviceId: plus.ehomev5.getData($CONSTANTS.GATEWAYID)
+				};
+				sendJsonMessagePostRequest(data, plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + permissionMessageUrl, onSuccess, onFailed);
+			}
+
+			function sendJsonMessagePostRequest(data, url, onSuccess, onFailed) {
+				var digestAuth = DigestAuthentication.init({
+					onSuccess: function(response, status) {
+						onSuccess(response);
+					},
+					onFailure: function(httpStatus) {
+						onFailed(httpStatus);
+					}
+				});
+				digestAuth.setHeader('Content-Type', 'application/json');
+				digestAuth.setHeader('token', plus.ehomev5.getData($CONSTANTS.TOKEN));
+				digestAuth.setData(JSON.stringify(data));
+				digestAuth.call(url);
+			}
+
+			function createPermissionMessageList(data) {
+				if (data == null || typeof(data) == "undefined" || data.length == 0) {
+					messageButton.style.display = "none";
+					return;
+				}
+				messageButton.style.display = "block";
+				messageButton.addEventListener('tap', function() {
+					//创建列表节点
+					messageul.className = "mui-table-view";
+					try {
+						data = JSON.parse(data);
+						var bodyJsonArray = data.body.retData;
+						for (var i = 0; i < bodyJsonArray.length; i++) {
+							var item = createRequestListItem(bodyJsonArray[i]);
+							messageul.appendChild(item);
+						}
+					} catch (e) {
+						console.log(e);
+					}
+				});
+			}
+			//创建已授权列表
+			function createPermissionList(data) {
+				var profile = plus.ehomev5.getData($CONSTANTS.PROFILE);
+				if (data == null || typeof(data) == "undefined" || data.length == 0) return;
+				//创建列表节点
+				permissionUl.innerHTML = "";
+				authorizationUl.innerHTML = "";
+				try {
+					data = JSON.parse(data);
+					var bodyJsonArray = data.users;
+					for (var i = 0; i < bodyJsonArray.length; i++) {
+						ret = JSON.parse(profile);
+						
+						var object = {};
+						object.userId = bodyJsonArray[i].userId + "";
+						object.isAdmin = bodyJsonArray[i].isAdmin;
+						object.userName = bodyJsonArray[i].userName;
+						object.isCompany = false;
+						permissionArray.push(object);
+						if(ret.userId==bodyJsonArray[i].userId){   //列表不显示自身
+							continue;
+						}
+                        if(bodyJsonArray[i].isAdmin=='1'){                        	
+						var item = createListItem(bodyJsonArray[i]);
+						permissionUl.appendChild(item);
+						}
+                        else
+                        {
+						var object1 = {};
+						object1.userId = bodyJsonArray[i].userId + "";
+						object1.isAdmin = bodyJsonArray[i].isAdmin;
+						object1.userName = bodyJsonArray[i].userName;
+						object1.isCompany = false;
+						authorizationArray.push(object1);
+						var item = createListItem(bodyJsonArray[i]);
+						authorizationUl.appendChild(item);	
+						}
+					}
+				} catch (e) {
+					console.log(e);
+				}
+			}
+			//动态创建创建授权列表的item
+			function createListItem(itemData) {
+				
+				var item = document.createElement("li");
+				item.id = "peimission-item-li";
+				item.className = "mui-table-view-cell";
+				
+				if (itemData.isAdmin=='1') {
+						var sliderBtnDiv = document.createElement("div");
+				        sliderBtnDiv.className = "mui-slider-right";
+				        var deleteA = document.createElement("a");
+				        deleteA.className = "mui-btn mui-btn-red";
+						deleteA.textContent = plus.ehomev5.getLang("html_authorize_unbundling_hint")    //"解绑";
+						deleteA.addEventListener("click", function() {
+                    removeBind(itemData);
+				});
+				sliderBtnDiv.appendChild(deleteA);
+				item.appendChild(sliderBtnDiv);
+					} else {
+						var sliderBtnDiv = document.createElement("div");
+				        sliderBtnDiv.className = "mui-slider-right";
+				        var deleteA = document.createElement("a");
+				        deleteA.className = "mui-btn mui-btn-red";
+						deleteA.textContent = plus.ehomev5.getLang("html_authorize_unbundling_hint");    //"解绑";
+						deleteA.addEventListener("click", function() {
+                    removeBind(itemData);
+				});
+				sliderBtnDiv.appendChild(deleteA);
+				item.appendChild(sliderBtnDiv);
+					}
+				var contextDiv = document.createElement("div");
+				contextDiv.style="border:1px;border-color: red;";
+				contextDiv.className = "mui-slider-handle";
+				var contextImg = document.createElement("img");
+				contextImg.className = "mui-media-object mui-pull-left";
+				contextImg.style.maxWidth = "50px";
+				contextImg.style.width = "50px";
+				contextImg.style.height = "50px";
+				contextImg.style.marginLeft = "10px";
+				//账号搜索加载图片地址
+				searchAccounts(itemData.userId + "", function(result) {
+					try {
+						var bodyJson = JSON.parse(result).user;
+						if (bodyJson.avatar && bodyJson.avatar.length > 0) {
+							contextImg.src = bodyJson.avatar;
+						} else {
+							contextImg.src = "img/access-item-default-img.png";
+						}
+					} catch (e) {
+						contextImg.src = "img/access-item-default-img.png";
+						console.log(e);
+					}
+				}, function(error) {
+					contextImg.src = "img/access-item-default-img.png";
+				});
+				contextDiv.appendChild(contextImg);
+				var contenTextDiv = document.createElement("div");
+				contenTextDiv.className = "mui-media-body permission-div";
+				var textDiv = document.createElement("div");
+				textDiv.className = "mui-media-body middle-div";
+				var textSpan = document.createElement("span");
+				textSpan.className = "middle-span";
+				if(itemData.userName==null){
+				   textSpan.textContent = itemData.userId;	
+				}else{
+				textSpan.textContent = itemData.userName;
+				}
+				var textImg = document.createElement("img");
+				textImg.className = "middle-img";
+				textImg.src = "img/control-permission.png";
+				textDiv.appendChild(textSpan);
+				if (itemData.isCompany != null && typeof(itemData.isCompany) != "undefined" && itemData.isCompany) {
+					textDiv.appendChild(textImg);
+				}
+				contenTextDiv.appendChild(textDiv);
+				var textsmallDiv = document.createElement("div");
+				textsmallDiv.className = "mui-media-body middle-div";
+				var textSpan = document.createElement("span");
+				textSpan.className = "middle-small-span";
+				if (itemData.isAdmin=='1') {
+						textSpan.textContent = plus.ehomev5.getLang("html_authorize_bunded_hint");    //"已绑定";
+					} else {
+						textSpan.textContent = plus.ehomev5.getLang("html_authorize_authorized_hint");   //"已授权";
+					}				
+				textsmallDiv.appendChild(textSpan);
+				contenTextDiv.appendChild(textsmallDiv);
+				contextDiv.appendChild(contenTextDiv);
+				var clickImg = document.createElement("img");
+				clickImg.className = "permission-img";
+				clickImg.src = "img/other-picture.png";
+				contextDiv.appendChild(clickImg);
+				item.appendChild(contextDiv);
+				contextDiv.addEventListener('click', function() {
+					if (itemData.isAdmin=='0') {
+						window.location = "device-scene.html?ngUserId=" + itemData.userId;
+					}else{
+					//	alert("您无权限进行操作");
+					}
+				});
+				return item;
+			}
+
+			function searchAccounts(searchAccount, onSuccess, onFailed) {
+				//判断搜索的帐号格式是 手机号、物联ID、还是昵称
+				var searchAccountBody = {
+					account: searchAccount + ""
+				}
+				sendJsonPostRequest(searchAccountBody, plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + accountcUrl, 'searchUser', onSuccess, onFailed);
+			}
+			//动态创建创建授权请求的item
+			function createRequestListItem(itemData) {
+				var messageItm = document.createElement("li");
+				messageItm.id = "message-item";
+				messageItm.value = "";
+				messageItm.className = "mui-table-view-cell message-li";
+				var meaageIcon = document.createElement("img");
+				meaageIcon.className = "mui-pull-left message-li-imag";
+				meaageIcon.src = "img/access-item-default-img.png";
+				var messageItemDiv = document.createElement("div");
+				messageItemDiv.style.overflow = "hidden";
+				var messageContentDiv = document.createElement("div");
+				messageContentDiv.style.overflow = "hidden";
+				messageContentDiv.style.marginLeft = "5px";
+				var messageContentImg = document.createElement("img");
+				messageContentImg.style.width = "20px";
+				messageContentImg.style.height = "20px";
+				messageContentImg.src = "img/access-item-default-img.png";
+				var messageContentSpan = document.createElement("span");
+				messageContentSpan.style.textAlign = "center";
+				messageContentSpan.style.lineHeight = "25px";
+				messageContentSpan.style.marginLeft = "3px";
+				messageContentSpan.textContent = itemData.name;
+				messageContentDiv.appendChild(messageContentImg);
+				messageContentDiv.appendChild(messageContentSpan);
+				var messageContentChildDiv = document.createElement("div");
+				messageContentChildDiv.style.overflow = "hidden";
+				messageContentChildDiv.style.marginLeft = "29px";
+				var messageContentChildSpan = document.createElement("span");
+				messageContentChildSpan.style.textAlign = "center";
+				messageContentChildSpan.style.lineHeight = "25px";
+				messageContentChildSpan.style.fontSize = "25px";
+				messageContentChildSpan.textContent = plus.ehomev5.getLang("html_authorize_not_bunded_hint"); //"未绑定";
+				messageContentChildDiv.appendChild(messageContentChildSpan);
+				messageItemDiv.appendChild(messageContentDiv);
+				messageItemDiv.appendChild(messageContentChildDiv);
+				var messageChoseDiv = document.createElement("div");
+				messageChoseDiv.className = "message-li-div mui-segmented-control mui-segmented-control-positive";
+				var messageRefuse = document.createElement("a");
+				messageRefuse.style.color = "black";
+				messageRefuse.className = "mui-control-item";
+				messageRefuse.textContent = plus.ehomev5.getLang("html_authorize_refuse_hint");   //"拒绝";
+				messageRefuse.addEventListener('tap', function() {
+					sendRefuseMessages(function(result) {
+						var resultString = JSON.parse(result).header.retCode;
+						if (resultString == "SUCCESS") {
+							messageul.removeChild(messageItm);
+							alert(plus.ehomev5.getLang("html_authorize_refuse_succeed_hint"));//"拒绝成功"
+						} else {
+							alert(plus.ehomev5.getLang("html_authorize_refuse_fail_error"));//"拒绝失败"
+						}
+					}, function(error) {
+						alert(plus.ehomev5.getLang("html_authorize_refuse_fail_error"));//"拒绝失败"
+					}, "1", itemData.userId + "");
+				});
+				var messageAgreen = document.createElement("a");
+				messageAgreen.id = "message-agreen-id";
+				messageAgreen.style.color = "black";
+				messageAgreen.className = "message-dialog mui-control-item";
+				messageAgreen.textContent = plus.ehomev5.getLang("html_authorize_ok_hint");    //"同意";
+				messageAgreen.addEventListener('tap', function() {
+					//				var dialogForm = document.createElement("form");
+					//				dialogForm.className ="mui-input-group";
+					var dialogContent1 = document.createElement("div");
+					dialogContent1.className = "mui-input-row message-dialog";
+					var dialogAdressInput = document.createElement("input");
+					dialogAdressInput.className = "mui-input-clear message-input ";
+					dialogAdressInput.type = "text";
+					dialogAdressInput.placeholder = plus.ehomev5.getLang("html_authorize_input_gw_address_hint");      //"请输入您的网关所在地址";
+					dialogAdressInput.focus();
+					//				dialogContent1.appendChild(dialogAdressInput);
+					//				var dialogContent2 = document.createElement("div");
+					//				dialogContent2.className = "mui-input-row message-dialog";
+					var dialogPhoneInput = document.createElement("input");
+					dialogPhoneInput.className = "mui-input-clear message-input";
+					dialogPhoneInput.type = "text";
+					dialogPhoneInput.placeholder = plus.ehomev5.getLang("html_authorize_input_phone_num_hint");      //"请输入您的手机号码";
+					dialogContent1.appendChild(dialogAdressInput);
+					dialogContent1.appendChild(dialogPhoneInput);
+					//				dialogForm.appendChild(dialogContent1);
+					//				dialogForm.appendChild(dialogContent2);
+					showAdressAndPhoneDialog(plus.ehomev5.getLang("html_authorize_perfect_profile_hint"), dialogContent1, function(adress, phone) { //"完善资料"
+						//判断地址和电话是否正确或者为空
+						if (checkInputContent(dialogAdressInput, dialogPhoneInput)) {
+							//正确时的处理，发送相关命令
+							sendAgreenMessages(function(result) {
+								var resultString = JSON.parse(result).header.retCode;
+								if (resultString == "SUCCESS") {
+									var object = {};
+									object.userId = itemData.userId + "";
+									object.isAdmin = 0;
+									object.userName = itemData.name;
+									object.isCompany = true;
+									permissionArray.push(object);
+									permissionUl.innerHTML = "";
+									for (var i = 0; i < permissionArray.length; i++) {
+										var item = createListItem(permissionArray[i]);
+										permissionUl.appendChild(item);
+									}
+									messageul.removeChild(messageItm);
+									alert("同意成功");
+								} else {
+									alert("同意失败");
+								}
+							}, function(error) {
+								alert("同意失败");
+							}, "0", itemData.userId + "", dialogAdressInput.value, dialogPhoneInput.value);
+							return true;
+						} else {
+							return false;
+						}
+					}, function() {});
+				});
+				var messageIgnore = document.createElement("a");
+				messageIgnore.id = "message-ignore-id";
+				messageIgnore.style.color = "black";
+				messageIgnore.className = "mui-control-item";
+				messageIgnore.textContent = "忽略";
+				messageIgnore.addEventListener('tap', function() {
+					sendRefuseMessages(function(result) {
+						var resultString = JSON.parse(result).header.retCode;
+						if (resultString == "SUCCESS") {
+							messageul.removeChild(messageItm);
+							alert("忽略成功");
+						} else {
+							alert("忽略失败");
+						}
+					}, function(error) {
+						alert("忽略失败");
+					}, "1");
+				});
+				messageChoseDiv.appendChild(messageRefuse);
+				messageChoseDiv.appendChild(messageAgreen);
+				messageChoseDiv.appendChild(messageIgnore);
+				messageItm.appendChild(meaageIcon);
+				messageItm.appendChild(messageItemDiv);
+				messageItm.appendChild(messageChoseDiv);
+				return item;
+			}
+			//http请求获取已授权列表
+			function sendAgreenMessages(onSuccess, onFailed, status, userId, adress, phone) {
+				var data = {
+					gwID: plus.ehomev5.getData($CONSTANTS.GATEWAYID),
+					userID: userId,
+					status: status,
+					adress: adress,
+					phone: phone
+				};
+				sendJsonPostRequest(data, plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + agreenMessageUrl, 'getUserByDevice', onSuccess, onFailed);
+			}
+
+			function sendRefuseMessages(onSuccess, onFailed, status, userId) {
+				var data = {
+					gwID: plus.ehomev5.getData($CONSTANTS.GATEWAYID),
+					userID: userId,
+					status: status
+				};
+				sendJsonPostRequest(data, plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + agreenMessageUrl, 'getUserByDevice', onSuccess, onFailed);
+			}
+			//检测地址以及电话输入内容
+			function checkInputContent(dialogAdressInput, dialogPhoneInput) {
+				var phoneNumber = dialogPhoneInput.value.trim();
+				var adressInput = dialogAdressInput.value.trim();
+				var phoneNumberRex = /^1[3|4|5|8][0-9]\d{4,8}$/;
+				if (adressInput == "") {
+					dialogAdressInput.style.border = 'thin red dashed';
+					dialogAdressInput.placeholder.color = "red";
+					dialogAdressInput.placeholder = "地址不能为空";
+					return false;
+				} else {
+					dialogAdressInput.style.border = '';
+					dialogAdressInput.placeholder.color = "";
+				}
+				if (phoneNumber == "") {
+					dialogPhoneInput.style.border = 'thin red dashed';
+					dialogPhoneInput.placeholder = "手机号码不能为空";
+					dialogPhoneInput.placeholder.color = "red";
+					return false;
+				} else if (phoneNumberRex.test(phoneNumber) == false) {
+					dialogPhoneInput.value = "";
+					dialogPhoneInput.style.border = 'thin red dashed';
+					dialogPhoneInput.placeholder = "请输入正确的电话号码";
+					dialogPhoneInput.placeholder.color = "red";
+					return false;
+				}
+				return true;
+			}
+			//显示输入提示对话框
+			function showAdressAndPhoneDialog(title, dialogcontent, onOk, onCancel) {
+				var btnArray = [plus.ehomev5.getLang("common_ok"), plus.ehomev5.getLang("cancel")];
+				customDialog.showAdressAndPhoneInput(title, dialogcontent, btnArray, onOk, onCancel);
+			}
+
+			function removeBind(itemData) {
+				if (typeof(itemData.isCompany) != "undefined" && itemData.isCompany != null && itemData.isCompany) {
+					//企业解绑
+					sendRefuseMessages(function(result) {
+						var resultString = JSON.parse(result).header.retCode;
+						if (resultString == "SUCCESS") {
+							alert(plus.ehomev5.getLang("html_authorize_refuse_succeed_hint"));//"拒绝成功"
+						} else {
+							alert(plus.ehomev5.getLang("html_authorize_refuse_fail_error"));//"拒绝失败"
+						}
+					}, function(error) {
+						alert(plus.ehomev5.getLang("html_authorize_refuse_fail_error"));//"拒绝失败"
+					}, "1", itemData.userId + "");
+				} else {
+					//弹出对话框要用户输入密码才能接触授权 ---参考接口3.3.5
+					showInputHintDialog("解除绑定", "删除后对方将不能登录此网关！", function() {
+						//value = value.replace("[\r\n]", "");
+						//获取密码后的处理
+						//value="123457";
+						unPermission(itemData.userId + "", function(result) {
+							var hint = statusHelper.mapping(JSON.parse(result).status);
+							if (hint) {
+								alert(hint);
+							} else {
+								for (var i = 0; i < permissionArray.length; i++) {
+									if ((itemData.userId + "") == (permissionArray[i].userId + "")) {
+										permissionArray.splice(i, 1);
+										break;
+									}
+								}
+								for (var i = 0; i < authorizationArray.length; i++) {
+									if ((itemData.userId + "") == (authorizationArray[i].userId + "")) {
+										authorizationArray.splice(i, 1);
+										break;
+									}
+								}
+								permissionUl.innerHTML = "";
+								authorizationUl.innerHTML = "";
+								for (var i = 0; i < permissionArray.length; i++) {
+//									var item = createListItem(permissionArray[i]);
+//									permissionUl.appendChild(item);
+                                 var profile = plus.ehomev5.getData($CONSTANTS.PROFILE);
+								if(permissionArray[i].userId==JSON.parse(profile).userId){
+									continue;
+								}
+								if(permissionArray[i].isAdmin=='1'){
+									var item = createListItem(permissionArray[i]);
+									permissionUl.appendChild(item);
+									}else{
+									var item = createListItem(permissionArray[i]);
+									authorizationUl.appendChild(item);
+								}
+								}
+								alert(plus.ehomev5.getLang("html_remove_binding_succeed_hint"));//"解绑成功"
+							}
+						}, function(error) {
+							alert(plus.ehomev5.getLang("html_remove_binding_fail_error"));  //"解绑失败"
+						});
+					}, function() {});
+				}
+			}
+			//http请求获取已授权列表
+			function unPermission(userId, onSuccess, onFailed) {
+				var data = {
+			//		adminPasswd: CryptoJS.MD5(adminPasswd).toString(),
+					ngAccount: "" + userId,
+					deviceIds: [plus.ehomev5.getData($CONSTANTS.GATEWAYID)]
+				};
+				sendJsonPostRequest(data, plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + permissionUrl, 'unbindUser', onSuccess, onFailed);
+			}
+			//		function sendJsonUnPermissionPostRequest(data, url, onSuccess, onFailed) {
+			//			var xmlRq = new plus.net.XMLHttpRequest();
+			//			xmlRq.timeout = 5000;
+			//			xmlRq.onreadystatechange = function() {
+			//			if (xmlRq.readyState == 4) {
+			//				if (xmlRq.status == 200) {
+			//					onSuccess(xmlRq.responseText);
+			//				} else {
+			//					//tp请求异常
+			//					onFailed(xmlRq.responseText);
+			//				}
+			//					plus.ehomev5.closeWaiting(dialogkey);
+			//				}
+			//			};
+			//			xmlRq.open("POST", url);
+			//			xmlRq.setRequestHeader('Content-Type', 'application/json')
+			//			plus.ehomev5.showWaiting(dialogkey);
+			//			xmlRq.setRequestHeader('token', plus.ehomev5.getData($CONSTANTS.TOKEN))
+			//			xmlRq.setRequestHeader('cmd', 'unbindUser')
+			//			xmlRq.send(JSON.stringify(data));
+			//		}
+			//显示输入提示对话框
+			function showInputHintDialog(title, defaultText, onOk, onCancel) {
+				var btnArray = [plus.ehomev5.getLang("common_ok"), plus.ehomev5.getLang("cancel")];
+				customDialog.showPrompt(title, defaultText, btnArray, function() {
+//					if (value == null || typeof(value) == "undefined" || value.length == 0) {
+//						alert(plus.ehomev5.getLang("html_disk_enter_content_first"));
+//					} else {
+						onOk();
+				//	}
+				}, onCancel);
+			}
+			//		//解除绑定
+			//		function removeBind(id)
+			//			{
+			//				var btnArray = ['是', '否'];
+			//				mui.confirm('请确定是否解除绑定', '提示', btnArray, function(e) {
+			//					if (e.index == 0) {		
+			//					 var s = document.getElementById(id);
+			// 					 s.remove();
+			//					} else {
+			//						 
+			//					}
+			//				})
+			//		}
+			function searchAccountHtml() {
+				var array = [];    //已经授权＋已经绑定
+				for (var i = 0; i < permissionArray.length; i++) {
+					array.push(permissionArray[i].userId + "");
+				}
+				var array_authorizationArray = []; //已经授权
+				for (var i = 0; i < authorizationArray.length; i++) {
+					array_authorizationArray.push(authorizationArray[i].userId + "");
+				}
+				window.location = "search-account.html?account=" + array+","+"&array_authorizationArray="+array_authorizationArray;
+			}
+		</script>
+	</body>
+
+</html>

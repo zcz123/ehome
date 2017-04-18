@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>公司公告</title>
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			
+			.content {
+				height: auto;
+				margin: 13px 16px 16px 13px;
+			}
+			
+			.title{
+				font-size: 16px;
+				color: #2b2b2b;
+				margin-top:0px;
+				margin-bottom:6px;
+			}
+			
+			.release-time {
+				font-size: 14px;
+				color: #878881;
+				margin-top:0px;
+				margin-bottom: 8px;
+			}
+			
+			.img {
+				width: 100%;
+				max-height: 30%;
+			}
+
+			.content-body {
+				font-size: 14px;
+				color: #2b2b2b;
+				margin: 15px 0px 0px 0px;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<div class="content">
+			<p id="title" class="title"> 活动一</p>
+			<p id="release-time" class="release-time"> 2015-11-13 10:48</p>
+			<img class="img" id="img" src="announcement-default.png" onerror="setDefaultImg(this)" />
+			<div class="content-body" id="content">
+				物联公告
+			</div>
+		</div>
+	</body>
+	<script>
+		window.addEventListener("load", function() {
+			var data = getURLParam();
+			resetView(data);
+		});
+		
+		//刷新界面
+		function resetView(data) {
+			if (data.name != null && data.name.length > 0) {
+				document.getElementById("title").innerHTML = data.name;
+			}
+			if (data.detail != null && data.detail.length > 0) {
+				document.getElementById("content").innerHTML = data.detail;
+			}
+			if (data.deployTime != null && data.deployTime.length > 0) {
+				document.getElementById("release-time").innerHTML = format(parseInt(data.deployTime));
+			}
+			if (data.pictureUrl != null && data.pictureUrl.length > 0) {
+				document.getElementById("img").src = data.pictureUrl;
+			}
+		}
+		//获取随url传过来的参数
+		function getURLParam() {
+			var reg2 = /data=(.*)(&.*=.*)*/;
+			var param = window.location.search;
+			if (reg2.test(param)) {
+				param = RegExp.$1;
+				param = JSON.parse(decodeURIComponent(param));
+			} else {
+				param = "";
+			}
+			return param;
+		}
+
+		function setDefaultImg(imgItem){
+			imgItem.src="announcement-default.png"
+		}
+		
+		function add0(m) {
+			return m < 10 ? '0' + m : m
+		}
+		//格式化时间戳--> yyyy-MM-dd HH:mm
+		function format(timeStamp) {
+			var time = new Date(timeStamp);
+			var y = time.getFullYear();
+			var m = time.getMonth() + 1;
+			var d = time.getDate();
+			var h = time.getHours();
+			var mm = time.getMinutes();
+			return y + '-' + add0(m) + '-' + add0(d) + ' ' + add0(h) + ':' + add0(mm);
+		}
+	</script>
+
+</html>

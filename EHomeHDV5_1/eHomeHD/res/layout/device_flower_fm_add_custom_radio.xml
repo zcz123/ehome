@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+	<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:gravity="center"
+            android:layout_gravity="center"  >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:paddingLeft="5dp"
+                android:text="电台名称:"
+                android:textColor="#5c5c5c" />
+
+            <EditText
+                android:id="@+id/device_radio_name_edittext"
+                android:layout_width="0dp"
+                android:layout_weight="2.5"
+                android:layout_height="30dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/house_keeper_choose_device_imv"
+                android:hint="我的电台"
+                android:textColor="#5c5c5c"
+                android:textColorHint="#dcdcdc"
+                android:cursorVisible="true"
+                android:textCursorDrawable="@null"
+                android:textSize="13sp"
+                android:maxLength="12" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="10dp"  >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingLeft="5dp"
+                android:text="电台地址:"
+                android:textColor="#5c5c5c" />
+
+            <EditText
+                android:id="@+id/device_radio_address_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingLeft="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/house_keeper_choose_device_imv"
+                android:hint="mms://s1 thmz com/radio11"
+                android:textColor="#5c5c5c"
+                android:gravity="top"
+                android:textColorHint="#dcdcdc"
+                android:cursorVisible="true"
+                android:textCursorDrawable="@null"
+                android:textSize="13sp"
+                android:maxLength="300" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"  >
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingLeft="5dp"
+                android:text="支持mms协议"
+                android:textColor="#dcdcdc" />
+        </LinearLayout>
+</LinearLayout>

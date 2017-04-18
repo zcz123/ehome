@@ -1,0 +1,229 @@
+# To enable ProGuard in your project, edit project.properties
+# to define the proguard.config property as described in that file.
+#
+# Add project specific ProGuard rules here.
+# By default, the flags in this file are appended to flags specified
+# in ${sdk.dir}/tools/proguard/proguard-android.txt
+# You can edit the include path and order by changing the ProGuard
+# include property in project.properties.
+#
+# For more details, see
+#   http://developer.android.com/guide/developing/tools/proguard.html
+
+# Add any project specific keep options here:
+
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
+-optimizationpasses 5                                                           # 指定代码的压缩级别
+-dontusemixedcaseclassnames                                                     # 是否使用大小写混合
+-dontskipnonpubliclibraryclasses                                                # 是否混淆第三方jar
+-dontpreverify                                                                  # 混淆时是否做预校验
+-verbose                                                                        # 混淆时是否记录日志
+-optimizations !code/simplification/arithmetic,!field/*,!class/merging/*        # 混淆时所采用的算法
+-ignorewarnings
+-dontoptimize
+-keepattributes *Annotation*
+-keepattributes SourceFile,LineNumberTable
+
+-keep public class * extends java.lang.Exception
+-keep public class * extends android.app.Activity                               # 保持哪些类不被混淆
+-keep public class * extends android.app.Application                            # 保持哪些类不被混淆
+-keep public class * extends android.app.Service                                # 保持哪些类不被混淆
+-keep public class * extends android.content.BroadcastReceiver                  # 保持哪些类不被混淆
+-keep public class * extends android.content.ContentProvider                    # 保持哪些类不被混淆
+-keep public class * extends android.app.backup.BackupAgentHelper               # 保持哪些类不被混淆
+-keep public class * extends android.preference.Preference                      # 保持哪些类不被混淆
+-keep public class com.android.vending.licensing.ILicensingService              # 保持哪些类不被混淆
+-keep public class com.google.vending.licensing.ILicensingService
+-keep public class cc.wulian.smarthomev5.fragment.monitor.MonitorFragment
+-keep public class core.*
+
+
+-keepclasseswithmembernames class * {                                           # 保持 native 方法不被混淆
+    native <methods>;
+}
+
+-keepclasseswithmembers class * {                                               # 保持自定义控件类不被混淆
+    public <init>(android.content.Context, android.util.AttributeSet);
+}
+
+-keepclasseswithmembers class * {
+    public <init>(android.content.Context, android.util.AttributeSet, int);     # 保持自定义控件类不被混淆
+}
+-keepclassmembers public class * extends android.view.View {
+   void set*(***);
+   *** get*();
+}
+-keepclassmembers class * extends android.app.Activity {                        # 保持自定义控件类不被混淆
+   public void *(android.view.View);
+}
+
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+
+-keep class * implements android.os.Parcelable {
+  public static final android.os.Parcelable$Creator *;
+}
+
+#保持哪些类不被混淆
+-keep class de.greenrobot.event.**{*;}
+-keep class com.lidroid.xutils.**{*;}
+-keep class * extends java.lang.annotation.Annotation { *; }
+-keep class com.google.zxing.**{*;}
+-keep class android.support.v7.**{*;}
+-keep class cc.wulian.h5plus.**{*;}
+-keep class com.wulian.siplibrary.**{*;}
+-keep class org.xmlpull.**{*;}
+-keep class org.xbill.DNS.**{*;}
+-keep class com.android.**{*;}
+-keep class ipc.android.sdk.**{*;}
+-keep class org.joda.time.**{*;}
+-keep class com.google.zxing.library.integration.**{*;}
+-keep class com.thoughtworks.xstream.**{*;}
+-keep class android.support.v4.**{*;}
+-keep class com.jeremyfeinstein.slidingmenu.lib.**{*;}
+-keep class com.actionbarsherlock.**{*;}
+-keep class android.support.v4.app.**{*;}
+-keep class com.yuantuo.netsdk.**{*;}
+-keep class com.decoder.util.**{*;}
+-keep class com.encoder.util.**{*;}
+-keep class com.yuantuo.netsdk.**{*;}
+-keep class com.hikvision.netsdk.**{*;}
+-keep class com.yuantuo.netsdk.**{*;}
+-keep class org.MediaPlayer.PlayM4.**{*;}
+-keep class com.viewpagerindicator.**{*;}
+-keep class com.yuantuo.customview.**{*;}
+-keep class cc.wulian.app.model.device.**{*;}
+-keep class cc.wulian.smarthomev5.activity.**{*;}
+-keep class cc.wulian.smarthomev5.service.**{*;}
+-keep class cc.wulian.smarthomev5.event.**{*;}
+-keep class cc.wulian.smarthomev5.entity.**{*;}
+-keep class cc.wulian.smarthomev5.tools.**{*;}
+-keep class com.baidu.speechsynthesizer.**{*;}
+-keep class android.content.pm.**{*;}
+-keep class com.baidu.android.common.**{*;}
+-keep class demo.**{*;}
+-keep class com.hp.hpl.sparta.**{*;}
+-keep class net.sourceforge.pinyin4j.**{*;}
+-keep class pinyindb.**{*;}
+-keep class com.nineoldandroids.**{*;}
+-keep class com.iflytek.**{*;}
+-keep class com.baidu.location.**{*;}
+-keep class io.dcloud.**{*;}
+-keep class com.alibaba.fastjson.**{*;}
+-keep class org.apache.http.**{*;}
+-keep class org.eclipse.paho.client.mqttv3.**{*;}
+-keep class org.apache.commons.logging.**{*;}
+
+-keep class com.loopj.android.http.**{*;}
+-keep class com.tencent.**{*;}
+-keep class com.wulian.siplibrary.**{*;}
+-keep class org.pjsip.pjsua.**{*;}
+-keep class org.webrtc.videoengine.**{*;}
+-keep class cn.tencent.**{*;}
+-keep class cn.jpush.android.**{*;}
+-keep class com.google.zxing.**{*;}
+-keep class com.realtek.simpleconfiglib.**{*;}
+-keep class com.wulian.lanlibrary.**{*;}
+-keep class com.wulian.routelibrary.**{*;}
+-keep class org.apache.http.entity.mime.**{*;}
+-keep class com.qiniu.android.**{*;}
+-keep class com.barcode.**{*;}
+-keep class com.photoview.**{*;}
+-keep class com.swiperefresh.**{*;}
+-keep class com.wheel.**{*;}
+-keep class com.wulian.icam.**{*;}
+-keep class com.hyphenate.** {*;}
+-keep class com.crashlytics.** { *; }
+-keep class com.wulian.iot.** {*;}
+-keep class com.tutk.** {*;}
+
+-keepclasseswithmembers class * {
+   public void on*(***);     #EventBus 不混调 
+}
+-keepclassmembers class **.R$* {
+    public static <fields>;
+}
+-keepclasseswithmembernames class * {
+    native <methods>;
+}
+
+-keepclasseswithmembers class * {
+    public <init>(android.content.Context, android.util.AttributeSet);
+}
+
+-keepclasseswithmembers class * {
+    public <init>(android.content.Context, android.util.AttributeSet, int);
+}
+
+-keepclassmembers class * extends android.app.Activity {
+   public void *(android.view.View);
+}
+
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+
+-keep class * implements android.os.Parcelable {
+  public static final android.os.Parcelable$Creator *;
+}
+
+-dontwarn org.dom4j.**
+-dontwarn net.sf.cglib.**
+-dontwarn sun.net.spi.**
+-dontwarn org.xmlpull.**
+-dontwarn android.**
+-dontwarn java.awt.**
+-dontwarn javax.swing.**
+-dontwarn java.beans.**
+-dontwarn javax.xml.**
+-dontwarn sun.misc.**
+-dontwarn org.codehaus.jettison.**
+-dontwarn com.bea.xml.**
+-dontwarn org.jdom2.**
+-dontwarn org.jdom.**
+-dontwarn org.kxml2.**
+-dontwarn com.ctc.**
+-dontwarn nu.xom.**
+-dontwarn org.joda.**
+-dontwarn sun.net.spi.**
+-dontwarn android.support.**
+-dontwarn com.wulian.siplibrary.**
+-dontwarn com.yuantuo.customview.**
+-dontwarn com.actionbarsherlock.**      
+-dontwarn com.google.zxing.**
+-dontwarn com.jeremyfeinstein.slidingmenu.**
+-dontwarn demo.**
+-dontwarn pinyindb.**
+-dontwarn com.baidu.android.common.**
+-dontwarn io.dcloud.**
+-dontwarn com.alibaba.fastjson.**
+-dontwarn org.apache.http.**
+-dontwarn org.eclipse.paho.client.mqttv3.**
+-dontwarn org.apache.commons.logging.**
+-dontwarn com.loopj.android.http.**
+-dontwarn com.tencent.**
+-dontwarn com.wulian.siplibrary.**
+-dontwarn org.pjsip.pjsua.**
+-dontwarn org.webrtc.videoengine.**
+-dontwarn cn.jpush.android.**
+-dontwarn com.realtek.simpleconfiglib.**
+-dontwarn com.wulian.lanlibrary.**
+-dontwarn com.wulian.routelibrary.**
+-dontwarn org.apache.http.entity.mime.**
+-dontwarn com.qiniu.android.**
+-dontwarn com.barcode.**
+-dontwarn com.photoview.**
+-dontwarn com.swiperefresh.**
+-dontwarn com.wheel.**
+-dontwarn com.wulian.icam.**
+
+
+-dontwarn com.crashlytics.**

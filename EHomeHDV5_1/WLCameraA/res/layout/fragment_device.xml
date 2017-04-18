@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/include_title"
+        layout="@layout/titlebar_main" />
+
+    <RelativeLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:id="@+id/rl_click_add"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/iv_click_add_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/v2_click_add_arrow"
+                android:visibility="visible" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/iv_click_add_logo" 
+                android:text="@string/main_no_device_tip"
+                android:textColor="@color/v2_text_orange_1_color"
+                android:textSize="@dimen/v2_small_size"
+                android:layout_marginRight="@dimen/margin_little"
+				android:layout_alignBottom="@id/iv_click_add_logo"
+                />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_nodevice_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/v2_no_device" />
+
+        <TextView
+            android:id="@+id/tv_nodevice_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_nodevice_img"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="@string/main_nodevice_yet"
+            android:textColor="#DDDEDE"
+            android:textSize="@dimen/textsize_middle"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/device_item_title_height"
+            android:background="@drawable/selector_shape_round_rect_all"
+            android:hint="@string/main_filtering"
+            android:imeOptions="actionDone"
+            android:paddingEnd="5dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="0dp"
+            android:paddingStart="5dp"
+            android:singleLine="true"
+            android:textSize="@dimen/textsize_middle"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_device_size"
+            android:layout_width="@dimen/device_item_size_dia"
+            android:layout_height="@dimen/device_item_size_dia"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="@dimen/device_item_size_dia_margin"
+            android:layout_marginRight="@dimen/device_item_size_dia_margin"
+            android:layout_marginTop="@dimen/device_item_size_dia_margin"
+            android:background="@drawable/shape_round"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textsize_middle"
+            android:visibility="gone" />
+
+        <com.wulian.icam.view.widget.PullListView
+            android:id="@+id/lv_devices"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/et_search"
+            android:cacheColorHint="@color/transparent"
+            android:clickable="true"
+            android:divider="@color/transparent"
+            android:dividerHeight="10dp"
+            android:listSelector="@color/transparent"
+            android:paddingEnd="@dimen/device_list_padding"
+            android:paddingLeft="@dimen/device_list_padding"
+            android:paddingRight="@dimen/device_list_padding"
+            android:paddingStart="@dimen/device_list_padding"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollbars="vertical" >
+        </com.wulian.icam.view.widget.PullListView>
+    </RelativeLayout>
+
+</LinearLayout>

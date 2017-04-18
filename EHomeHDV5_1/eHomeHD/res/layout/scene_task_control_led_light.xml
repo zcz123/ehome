@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:wulian="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:orientation="vertical">
+
+	<FrameLayout
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="3">
+
+	<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+			android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+				android:layout_gravity="center_horizontal"
+				android:layout_marginTop="10dp"
+                android:textColor="#719F19"
+                android:text="@string/device_led_color_color"
+                android:maxLines="1"
+        		android:ellipsize="end"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:padding="5dp">
+            <RelativeLayout
+                android:id="@id/dev_state_colorlayout0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center" >
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+			android:paddingTop="5dp"
+            android:gravity="center_horizontal">
+            <ToggleButton
+                android:id="@+id/device_led_toggle_1"
+		        android:background="@drawable/device_led_adjust_normal"
+		        android:layout_width="35dp"
+		        android:layout_height="35dp"
+		        android:textOff=""
+        		android:textOn="" />
+        </LinearLayout>
+	</LinearLayout>
+
+		<EditText
+			android:id="@+id/device_led_colorful_edit"
+			android:layout_width="85dp"
+			android:gravity="center"
+			android:layout_height="wrap_content"
+			android:layout_gravity="bottom"
+			android:layout_marginBottom="10dp"
+			android:layout_marginLeft="20dp"
+			android:textColor="#696969"
+			android:background="@drawable/device_led_adjust_color_bg"
+			android:textCursorDrawable="@null"
+			android:digits="0123456789ABCDEFabcdef"
+			android:maxLines="1"
+			android:cursorVisible="false"
+			android:imeOptions="actionDone"
+			android:clickable="true"
+			android:maxLength="6"/>
+
+		<TextView
+			android:id="@+id/device_led_colorful_value"
+			android:layout_width="85dp"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:layout_gravity="bottom"
+			android:layout_marginBottom="10dp"
+			android:layout_marginLeft="20dp"
+			android:textColor="#696969"
+			android:background="@drawable/device_led_adjust_color_bg"
+			android:visibility="gone"/>
+
+	</FrameLayout>
+
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:background="#66878881"/>
+
+	<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <LinearLayout 
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+            <TextView 
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+				android:gravity="center"
+                android:textColor="#719F19"
+                android:text="@string/device_led_color_light"
+               android:maxLines="1"
+        		android:ellipsize="end"/>
+        </LinearLayout>
+        <LinearLayout 
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center">
+             <SeekBar
+		     	android:id="@id/dev_state_seekbar_0"
+		   	    android:layout_width="0dp"
+		     	android:layout_weight="1"
+		     	android:layout_height="wrap_content"
+		     	android:progressDrawable="@drawable/device_led_progress_background"
+		     	android:thumb="@drawable/device_led_progress_point"
+		   	    android:max="255" />           
+		      <TextView
+		        android:id="@id/dev_state_textview_0"
+		     	android:layout_width="0dp"
+		       	android:layout_weight="0.25"
+		   		android:layout_gravity="center"
+		      	android:gravity="center"
+		       	android:text="0%"
+		       	android:textColor="#719F19"
+		       	android:layout_height="wrap_content" />                       
+        </LinearLayout>
+        <LinearLayout 
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+			android:paddingTop="5dp"
+            android:gravity="center_horizontal">
+
+			<ToggleButton
+                android:id="@+id/device_led_toggle_3"
+                android:background="@drawable/device_led_adjust_normal"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:textOff=""
+                android:textOn="" />
+		</LinearLayout>
+	</LinearLayout>
+
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:background="#66878881"/>
+
+	<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <LinearLayout 
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+            <TextView 
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+				android:gravity="center"
+                android:textColor="#719F19"
+                android:text="@string/device_led_color_temp"
+                android:maxLines="2"
+        		android:ellipsize="end"/>
+        </LinearLayout>
+        <LinearLayout 
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center">
+            <SeekBar
+		     	android:id="@id/dev_state_seekbar_1"
+		   	    android:layout_width="0dp"
+		     	android:layout_weight="1"
+		     	android:layout_height="wrap_content"
+		     	android:progressDrawable="@drawable/device_led_progress_color"
+		     	android:thumb="@drawable/device_led_progress_point"
+		   	    android:max="255" />           
+		      <TextView
+		        android:id="@id/dev_state_textview_1"
+		     	android:layout_width="0dp"
+		       	android:layout_weight="0.25"
+		   		android:layout_gravity="center"
+		      	android:gravity="center"
+		       	android:text="0%"
+		       	android:textColor="#719F19"
+		       	android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout 
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+			android:paddingTop="5dp"
+            android:gravity="center_horizontal">
+            <ToggleButton
+                android:id="@+id/device_led_toggle_4"
+		        android:background="@drawable/device_led_adjust_normal"
+		        android:layout_width="35dp"
+		        android:layout_height="35dp"
+		        android:textOff=""
+        		android:textOn="" />
+        </LinearLayout>
+	</LinearLayout>
+
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:background="#66878881"/>
+
+	<LinearLayout
+		android:id="@+id/device_led_colorful_layout"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="0.6"
+		android:orientation="horizontal">
+		<LinearLayout
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			android:gravity="center"
+			android:paddingLeft="10dp">
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:textColor="#719F19"
+				android:gravity="center"
+				android:text="@string/device_colorful_model"
+				android:maxLines="2"
+				android:ellipsize="end"
+				android:id="@+id/textView7"/>
+		</LinearLayout>
+		<LinearLayout
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="3"
+			android:gravity="center">
+
+			<ImageView
+				android:id="@+id/device_led_colorful_imag"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/device_led_adjust_colorful"
+				android:visibility="gone"/>
+
+		</LinearLayout>
+		<LinearLayout
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			android:paddingTop="5dp"
+			android:gravity="center_horizontal">
+			<ToggleButton
+				android:id="@+id/device_led_toggle_2"
+				android:background="@drawable/device_led_adjust_normal"
+				android:layout_width="35dp"
+				android:layout_height="35dp"
+				android:textOff=""
+				android:textOn="" />
+		</LinearLayout>
+	</LinearLayout>
+
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:background="#66878881"/>
+
+	<LinearLayout
+		android:id="@+id/device_led_colorful_time_layout"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1"
+		android:orientation="horizontal">
+
+		<LinearLayout
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="2"
+			android:gravity="center"
+			android:orientation="horizontal">
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:gravity="center"
+				android:textColor="#719F19"
+				android:padding="8dp"
+				android:text="@string/housekeeper_led_rainbow_time"
+				android:maxLines="2"
+				android:ellipsize="end"/>
+		</LinearLayout>
+		<LinearLayout
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="3"
+			android:gravity="center_vertical">
+			<TextView
+				android:id="@+id/device_led_colorful_time"
+				android:layout_width="150dp"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:text="0秒 0毫秒"
+				android:textColor="#878881"
+				android:layout_marginLeft="10dp"
+				android:background="@drawable/device_led_adjust_time_bg"/>
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			android:paddingTop="5dp"
+			android:gravity="center_horizontal">
+			<ToggleButton
+				android:id="@+id/device_led_toggle_5"
+				android:background="@drawable/device_led_adjust_normal"
+				android:layout_width="35dp"
+				android:layout_height="35dp"
+				android:textOff=""
+				android:textOn="" />
+		</LinearLayout>
+	</LinearLayout>
+
+</LinearLayout>

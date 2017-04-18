@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/action_bar_bg"
+    >
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+		android:gravity="center_vertical"
+    	android:paddingLeft="10dp"
+    	android:paddingRight="10dp"
+    	android:weightSum="6"
+	    >
+	    <LinearLayout
+	        android:id="@+id/common_action_bar_left_icon_and_text"
+	        android:layout_width="0dp"
+	        android:layout_weight="1.5"
+	        android:layout_height="match_parent"
+	        android:clickable="true"
+	        android:gravity="center_vertical" >
+	
+	        <ImageView
+	            android:id="@+id/common_action_bar_left_icon"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@null"
+	            android:paddingLeft="10dp"
+	            android:src="@drawable/action_bar_menu" />
+	
+	        <TextView
+	            android:id="@+id/common_action_bar_left_icon_text"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="3dp"
+	            android:ellipsize="end"
+	            android:singleLine="true"
+	            android:text="@string/about_back"
+	            android:textColor="@color/white"
+	            android:textSize="16sp" />
+	    </LinearLayout>
+
+	    <TextView
+	        android:id="@+id/common_action_bar_center_title"
+	        android:layout_width="0dp"
+	        android:gravity="center"
+	        android:singleLine="true"
+	        android:ellipsize="end"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="3"
+	        android:text="@string/set_action_bar_titel"
+	        android:textColor="@color/white"
+	        android:paddingRight="3dp"
+	        android:paddingLeft="3dp"
+	        android:textSize="19sp" />
+	    <!-- actionbar 右边按钮 -->
+	
+	    <LinearLayout
+	        android:id="@+id/common_action_bar_right_icon_and_text"
+	        android:layout_width="0dp"
+	        android:layout_weight="1.5"
+	        android:layout_height="match_parent"
+	        android:clickable="true"
+	        android:gravity="center_vertical|right" >
+	
+	        <TextView
+	            android:id="@+id/common_action_bar_right_icon_text"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginRight="5dp"
+	            android:text="@string/set_sound_notification_bell_prompt_choose_complete"
+	            android:textColor="@color/white"
+	            android:singleLine="true"
+	        	android:ellipsize="end"
+	            android:textSize="16sp" />
+	
+	        <ImageView
+	            android:id="@+id/common_action_bar_right_icon"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@null"
+	            android:paddingRight="10dp"
+	            android:src="@drawable/action_bar_menu" />
+	        <LinearLayout
+	            android:id="@+id/common_action_bar_right_icon_custom"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="2dp"
+	            android:paddingBottom="2dp"
+	            android:gravity="right"
+	            android:orientation="horizontal"
+	            ></LinearLayout>
+	    </LinearLayout>
+	</LinearLayout>
+</RelativeLayout>

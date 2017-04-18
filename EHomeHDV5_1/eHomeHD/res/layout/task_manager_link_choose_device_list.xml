@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/house_task_choose_device_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e6e9eb"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
+
+        <cc.wulian.smarthomev5.view.WLEditText
+            android:id="@+id/house_task_choose_device_search"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_weight="1"
+            android:textCursorDrawable="@null"
+            android:textColor="@color/grey_pulllisthead_bg"
+            android:background="@drawable/main_dialog_bg"
+            android:clickable="true"
+            android:drawableLeft="@drawable/device_icon_search"
+            android:focusable="true"
+            android:singleLine="true" />
+
+        <ImageView
+            android:id="@+id/house_task_choose_device_search_area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/device_area_group_arrow_selector"></ImageView>
+
+        <ImageView
+            android:id="@+id/house_task_choose_device_search_function_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/device_category_group_arrow_selector"></ImageView>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/house_keeper_task_link_choose_device"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/v5_gray_mid"></ListView>
+</LinearLayout>

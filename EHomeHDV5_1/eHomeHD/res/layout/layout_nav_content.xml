@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/navigation_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2b2b2b"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/nav_log_bar_ll"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/title"
+        android:gravity="bottom|left"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:visibility="visible" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/logo_user" >
+        </ImageView>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+    <LinearLayout
+        android:id="@+id/layout_user_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="25dp" >
+
+        <cc.wulian.smarthomev5.view.CircleImageView
+            android:id="@+id/head_imageView"
+            android:layout_width="73dp"
+            android:layout_height="73dp"
+            android:paddingLeft="25dp"
+            android:paddingTop="35dp"
+            android:src="@drawable/home_gateway_connected" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="13dp"
+                android:paddingBottom="4.0dip"
+                android:text="@string/login_no_user_name"
+                android:textColor="#ffffff"
+                android:textSize="19.0sp" />
+
+            <TextView
+                android:id="@+id/gateway_name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="13dp"
+                android:paddingTop="5.0dip"
+                android:text="@string/login_not_login_gateway"
+                android:textColor="#709E18"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:paddingLeft="18dp"
+        android:paddingRight="25dp" >
+
+        <GridView
+            android:id="@+id/nav_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fadingEdge="none"
+            android:horizontalSpacing="@dimen/nav_item_spacing"
+            android:listSelector="@drawable/nav_item_selector"
+            android:numColumns="3"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="23dp" >
+        </GridView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/nav_about_feedback_ll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="26dp"
+        android:visibility="visible" >
+
+        <TextView
+            android:id="@+id/nav_contact_us_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@null"
+            android:drawableLeft="@drawable/nav_feedback"
+            android:drawablePadding="13dp"
+            android:text="@string/about_us"
+            android:textColor="#709E18"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/nav_contact_us_reddot_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/red_dot_selector" />
+        <TextView
+            android:paddingLeft="10dp"
+            android:id="@+id/nav_customer_service_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@null"
+            android:drawableLeft="@drawable/customer_server"
+            android:drawablePadding="13dp"
+            android:text="客服系统"
+            android:textColor="#709E18"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/nav_about_us_ll"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:visibility="visible" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingBottom="20dp"
+                android:paddingTop="10dp"
+                android:text="@string/about_powered_by"
+                android:textColor="#B3B3B3"
+                android:textSize="14sp" />
+        </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center_vertical"
+        android:text="常见"
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
+
+    <ListView
+        android:id="@+id/common_brand_lv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:divider="@drawable/device_item_divider"
+         />
+
+    <TextView
+        android:id="@+id/custom_tv"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="8dp"
+        android:text="自定义"
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
+
+    <ListView
+        android:id="@+id/brand_lv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:divider="@drawable/device_item_divider"
+         />
+
+</LinearLayout>

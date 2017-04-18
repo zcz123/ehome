@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="dialogAnimation" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/left_in</item>
+        <item name="android:windowExitAnimation">@anim/right_out</item>
+    </style>
+
+    <style name="dialogStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@drawable/dialog_bg</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@style/dialogAnimation</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+
+    <style name="dialogStyle.Alarm">
+        <item name="android:windowBackground">@drawable/dialog_bg_alarm_red</item>
+    </style>
+
+    <!-- customProgressDialog -->
+    <style name="customProgressDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+
+    <style name="AnimBottom" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
+    </style>
+
+    <style name="Animations_PopUpMenu_Bottom" parent="@android:style/Theme.Dialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@style/AnimBottom</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+
+    <style name="CMTheme" parent="@android:style/Theme">
+        <item name="android:checkboxStyle">@style/CMWidget.CheckBox</item>
+        <item name="numberPickerStyle">@style/CMWidget.NumberPicker</item>
+        <item name="switchStyle">@style/CMWidget.Switch</item>
+        <item name="cornerViewStyle">@style/CMWidget.CustomCornerView</item>
+        <item name="tabViewStyle">@style/CMWidget.TabView</item>
+        <item name="dialogStyle">@style/CMWidget.Dialog</item>
+    </style>
+
+    <style name="CMTheme.Black" parent="@android:style/Theme.Black"></style>
+
+    <style name="CMTheme.Light" parent="@android:style/Theme.Light"></style>
+
+    <style name="CMTheme.Dialog" parent="@android:style/Theme.Dialog"></style>
+
+    <!-- 登录框样式 -->
+    <style name="signinDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowBackground">@drawable/main_background_v5</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <!-- V5 -->
+    <style name="toast_anim_v5" parent="@android:style/Animation.Toast">
+        <item name="android:windowEnterAnimation">@anim/toast_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/toast_fade_out</item>
+    </style>
+    <!-- toast alarm -->
+    <style name="toast_anim_alarm" parent="@android:style/Animation.Toast">
+        <item name="android:windowEnterAnimation">@anim/toast_alarm_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/toast_alarm_fade_out</item>
+    </style>
+       <!-- WLDialog样式 -->
+    <style name="dialog_style_v5" parent="@android:style/Theme.Dialog">
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@style/dialog_animation_v5</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowBackground">@drawable/dialog_background</item>
+    </style>
+    <style name="dialog_style_fullscreen" >    
+    	<item name="android:windowIsTranslucent">true</item><!--半透明-->
+		<item name="android:windowNoTitle">true</item>
+		<item name="android:background">@android:color/transparent</item>
+		<item name="android:windowBackground">@android:color/transparent</item>
+		<item name="android:backgroundDimEnabled">false</item><!--模糊-->
+		<item name="android:windowFullscreen">true</item>  
+		<item name="android:windowAnimationStyle">@+android:style/Animation.Translucent</item>    
+  	</style>  
+    <style name="dialog_animation_v5" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/left_in</item>
+        <item name="android:windowExitAnimation">@anim/right_out</item>
+    </style>
+	<style name="keyboardanimstyle">
+	        <item name="android:windowEnterAnimation">@anim/keyboardfade_in</item>
+	        <item name="android:windowExitAnimation">@anim/keyboardfade_out</item>
+	</style>
+</resources>

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@color/background01"
+    android:orientation="vertical" >
+
+    <include layout="@layout/titlebar_msg" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/ll_count"
+            android:layout_width="match_parent"
+            android:padding="@dimen/margin_little"
+            android:layout_height="30dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:visibility="visible" >
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/tv_msg_alarm_count"
+                    android:layout_width="@dimen/red_circle_width"
+                    android:layout_height="@dimen/red_circle_width"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/margin_big"
+                    android:layout_marginEnd="@dimen/margin_big"
+                    android:background="@drawable/shape_red_circle"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textsize_small"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/tv_msg_system_count"
+                    android:layout_width="@dimen/red_circle_width"
+                    android:layout_height="@dimen/red_circle_width"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/margin_big"
+                    android:layout_marginEnd="@dimen/margin_big"
+                    android:background="@drawable/shape_red_circle"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textsize_small" 
+                    android:visibility="invisible"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/tv_msg_oauth_count"
+                    android:layout_width="@dimen/red_circle_width"
+                    android:layout_height="@dimen/red_circle_width"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/margin_big"
+                    android:layout_marginEnd="@dimen/margin_big"
+                    android:background="@drawable/shape_red_circle"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textsize_small"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/rg_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_count"
+            android:layout_marginTop="-30dp"
+            android:orientation="horizontal"
+            android:padding="@dimen/margin_little"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp" >
+
+            <RadioButton
+                android:id="@+id/rb_alarm_msg_choose"
+                style="@style/message_tab_bottom"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:gravity="center"
+                android:singleLine="false"
+                android:text="@string/message_alarm_msg_tab"
+                android:textSize="@dimen/textsize_middle" />
+
+            <RadioButton
+                android:id="@+id/rb_system_msg_choose"
+                style="@style/message_tab_bottom"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:gravity="center"
+                android:singleLine="false"
+                android:text="@string/message_system_msg_tab"
+                android:textSize="@dimen/textsize_middle" />
+
+            <RadioButton
+                android:id="@+id/rb_oauth_msg_choose"
+                style="@style/message_tab_bottom"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:gravity="center"
+                android:singleLine="false"
+                android:text="@string/message_user_msg_tab"
+                android:textSize="@dimen/textsize_middle" />
+        </RadioGroup>
+
+        <View
+            style="@style/img_divider_full"
+            android:layout_alignBottom="@id/rg_msg" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/rg_msg" >
+
+            <TextView
+                android:id="@+id/tv_alarm_line"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/msg_line_height"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@color/theme_color" />
+
+            <TextView
+                android:id="@+id/tv_system_line"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/msg_line_height"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@color/theme_color" />
+
+            <TextView
+                android:id="@+id/tv_oauth_line"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/msg_line_height"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@color/theme_color" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+        android:orientation="vertical">
+
+        <com.wulian.icam.view.widget.CustomViewPager
+            android:id="@+id/viewpager_msg_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+        </com.wulian.icam.view.widget.CustomViewPager>
+
+        <LinearLayout
+            android:id="@+id/deletePanel"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/menu_height"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <View style="@style/img_divider_full" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/tv_select_count"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingEnd="0dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="0dp"
+                    android:paddingStart="20dp"
+                    android:text="@string/common_check_count"
+                    android:textSize="@dimen/textsize_middle" />
+
+                <CheckBox
+                    android:id="@+id/cb_delete_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="15dp"
+                    android:button="@drawable/selector_checkbox_toggle_hook"
+                    android:checked="false"
+                    android:paddingEnd="0dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="0dp"
+                    android:paddingStart="5dp"
+                    android:text="@string/common_check_all"
+                    android:textColor="@color/theme_color" />
+
+                <Button
+                    android:id="@+id/btn_delete"
+                    android:layout_width="54dp"
+                    android:layout_height="38dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/selector_shape_btn_color"
+                    android:text="@string/common_delete"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

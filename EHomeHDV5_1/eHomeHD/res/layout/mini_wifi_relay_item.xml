@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mini_gateway_relay_item"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#FFFFFF"
+        android:gravity="center_horizontal" >
+
+        <ImageView
+            android:id="@+id/mini_setting_wifi_prompt_iv"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:visibility="invisible"
+            android:src="@drawable/mini_wifi_prompt" />
+
+        <ImageView
+            android:id="@+id/mini_setting_wifi_information_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="7dp"
+            android:layout_toLeftOf="@id/mini_setting_wifi_prompt_iv"
+            android:src="@drawable/mini_wifi_information1" />
+
+        <ImageView
+            android:id="@+id/mini_setting_wifi_lock_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@id/mini_setting_wifi_information_iv"
+            android:src="@drawable/mini_wifi_lock" />
+
+        <TextView
+            android:id="@+id/mini_setting_wifi_name_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingLeft="10dp"
+            android:layout_toLeftOf="@id/mini_setting_wifi_lock_iv"
+            android:ellipsize="end"
+            android:textColor="#222222"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/v5_gray_light" />
+
+</LinearLayout>

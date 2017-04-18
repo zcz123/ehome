@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical" >
+
+    <include layout="@layout/titlebar_general" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_big"
+            android:layout_marginLeft="@dimen/margin_normal"
+            android:layout_marginRight="@dimen/margin_normal"
+            android:layout_marginTop="55dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_prompt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:textColor="#333333"
+                android:text="@string/config_get_remoteip_success_setting_wifi"
+                android:textSize="@dimen/textsize_large" />
+
+            <TextView
+                android:id="@+id/tv_wait_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:gravity="center_vertical"
+                android:text="@string/setting_wifi_prompt"
+                android:textSize="@dimen/textsize_middle"
+                android:textColor="#666666" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_config_wifi_img"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/v2_body_margin_top" >
+
+            <ImageView
+                android:id="@+id/iv_oval_left_device"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_oval_device_3" />
+
+            <ImageView
+                android:id="@+id/iv_oval_rigth_device"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_oval_step_1" />
+
+            <ImageView
+                android:id="@+id/iv_config_wifi_step_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@anim/wifi_config_anim" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_config_wifi_step"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/v2_config_wifi_prog_height"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/margin_normal"
+            android:layout_marginRight="@dimen/margin_normal"
+            android:background="@drawable/shape_round_all_white"
+            android:focusable="true"
+            android:paddingBottom="@dimen/margin_big"
+            android:paddingLeft="@dimen/v2_config_wifi_prog_left_right_margin"
+            android:paddingRight="@dimen/v2_config_wifi_prog_left_right_margin"
+            android:paddingTop="@dimen/margin_big"
+            android:visibility="gone" >
+
+            <View
+                android:layout_width="2dip"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/margin_normal"
+                android:layout_marginLeft="@dimen/margin_normal"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:background="@color/wifi_setting_gray" />
+
+            <RelativeLayout
+                android:id="@+id/rl_step_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/tv_left_draw_1"
+                    android:layout_width="@dimen/v2_config_wifi_left_draw_width"
+                    android:layout_height="@dimen/v2_config_wifi_left_draw_width"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/margin_little"
+                    android:background="@drawable/selector_shape_oval_gray_rect"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/v2_small_size" />
+
+                <TextView
+                    android:id="@+id/tv_right_draw_1"
+                    android:layout_width="@dimen/v2_config_wifi_right_draw_width"
+                    android:layout_height="@dimen/v2_config_wifi_right_draw_width"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/selector_shape_oval_rect"
+                    android:enabled="true"
+                    android:gravity="center"
+                    android:text="21"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/v2_small_size" />
+
+                <TextView
+                    android:id="@+id/tv_center_name_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_normal"
+                    android:layout_toLeftOf="@id/tv_right_draw_1"
+                    android:layout_toRightOf="@id/tv_left_draw_1"
+                    android:text="@string/setting_config_wifi_network"
+                    android:textColor="@color/selector_wifi_config_color"
+                    android:textSize="@dimen/v2_small_size" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_step_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_step_1"
+                android:layout_marginTop="@dimen/v2_config_wifi_step_height"
+                android:focusable="false" >
+
+                <TextView
+                    android:id="@+id/tv_left_draw_2"
+                    android:layout_width="@dimen/v2_config_wifi_left_draw_width"
+                    android:layout_height="@dimen/v2_config_wifi_left_draw_width"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/margin_little"
+                    android:background="@drawable/selector_shape_oval_gray_rect"
+                    android:gravity="center"
+                    android:text="2"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/v2_small_size" />
+
+                <TextView
+                    android:id="@+id/tv_right_draw_2"
+                    android:layout_width="@dimen/v2_config_wifi_right_draw_width"
+                    android:layout_height="@dimen/v2_config_wifi_right_draw_width"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/selector_shape_oval_rect"
+                    android:gravity="center"
+                    android:text="21"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/v2_small_size" />
+
+                <TextView
+                    android:id="@+id/tv_center_name_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_normal"
+                    android:layout_toLeftOf="@id/tv_right_draw_2"
+                    android:layout_toRightOf="@id/tv_left_draw_2"
+                    android:text="@string/config_register_server"
+                    android:textColor="@color/selector_wifi_config_color"
+                    android:textSize="@dimen/v2_small_size" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_step_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_step_2"
+                android:layout_marginTop="@dimen/v2_config_wifi_step_height" >
+
+                <TextView
+                    android:id="@+id/tv_left_draw_3"
+                    android:layout_width="@dimen/v2_config_wifi_left_draw_width"
+                    android:layout_height="@dimen/v2_config_wifi_left_draw_width"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/margin_little"
+                    android:background="@drawable/selector_shape_oval_gray_rect"
+                    android:gravity="center"
+                    android:text="3"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/v2_small_size" />
+
+                <TextView
+                    android:id="@+id/tv_right_draw_3"
+                    android:layout_width="@dimen/v2_config_wifi_right_draw_width"
+                    android:layout_height="@dimen/v2_config_wifi_right_draw_width"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/selector_shape_oval_rect"
+                    android:gravity="center"
+                    android:text="21"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/v2_small_size" />
+
+                <TextView
+                    android:id="@+id/tv_center_name_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_normal"
+                    android:layout_toLeftOf="@id/tv_right_draw_3"
+                    android:layout_toRightOf="@id/tv_left_draw_3"
+                    android:text="@string/config_bind_user"
+                    android:textColor="@color/selector_wifi_config_color"
+                    android:textSize="@dimen/v2_small_size" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

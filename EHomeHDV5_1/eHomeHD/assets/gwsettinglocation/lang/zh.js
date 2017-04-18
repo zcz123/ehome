@@ -1,0 +1,9 @@
+$lang = {};
+$lang.name = '';
+$lang.day="天";
+$lang.week="周";
+$lang.navTitle="门窗磁统计";
+$lang.num = '次';
+$lang.hour = '时';
+$lang.time = '日';
+$lang.alarmNum = '报警次数:';

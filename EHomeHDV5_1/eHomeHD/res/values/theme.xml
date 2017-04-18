@@ -1,0 +1,46 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="BaseAppTheme" parent="@style/Theme.Sherlock" />
+
+    <style name="WLTheme" parent="BaseAppTheme">
+        <item name="android:windowBackground">@drawable/main_background_v5</item>
+        <item name="android:progressBarStyle">@style/CMWidget.ProgressBar.V4.Progress</item>
+        <item name="android:seekBarStyle">@style/CMWidget.ProgressBar.V4.SeekBar</item>
+        <item name="android:checkboxStyle">@style/CMWidget.CheckBox</item>
+        <item name="android:editTextStyle">@style/CMWidget.EditText.Dark</item>
+        <item name="switchStyle">@style/CMWidget.Switch</item>
+        <item name="cornerViewStyle">@style/CMWidget.CustomCornerView</item>
+        <item name="tabViewStyle">@style/CMWidget.TabView</item>
+        <item name="dialogStyle">@style/CMWidget.Dialog</item>
+        <item name="actionBarSize">@dimen/actionbar_height</item>
+        <item name="actionBarStyle">@style/ActionBar_Style</item>
+        <item name="vpiIconPageIndicatorStyle">@style/Widget.IconPageIndicator</item>
+        <item name="vpiTabPageIndicatorStyle">@style/Widget.TabPageIndicator</item>
+        <item name="listPreferredItemPaddingLeft">@dimen/content_margin_6</item>
+         <item name="android:fitsSystemWindows">true</item>
+        <!-- Main theme colors -->  
+        <!-- App主题颜色（滑动阴影等）   your app's branding color (for the app bar)-->  
+        <!-- <item name="android:colorPrimary">#FF6600</item>   -->
+        <!-- 状态栏颜色   darker variant of colorPrimary (for status bar, contextual app bars) -->  
+       <!--  <item name="android:colorPrimaryDark">#e86053</item>   -->
+    </style>
+
+    <!--
+    <style name="WLTheme.Skin_1">
+        <item name="android:windowBackground">@drawable/common_global_window_background_skin_1</item>
+    </style>
+
+    <style name="WLTheme.Skin_2">
+        <item name="android:windowBackground">@drawable/common_global_window_background_skin_2</item>
+    </style>
+
+    <style name="WLTheme.Skin_3">
+        <item name="android:windowBackground">@drawable/common_global_window_background_skin_3</item>
+    </style>
+
+    <style name="WLTheme.Skin_4">
+        <item name="android:windowBackground">@drawable/common_global_window_background_skin_4</item>
+    </style>
+    -->
+
+</resources>

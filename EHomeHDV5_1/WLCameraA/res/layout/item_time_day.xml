@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.wulian.icam.view.widget.CheckableFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/btn_height_min"
+    android:background="@drawable/selector_shape_round_rect_middle"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|center_vertical"
+        android:layout_marginLeft="@dimen/margin_big"
+        android:layout_marginStart="@dimen/margin_big"
+        android:text="周一"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textsize_middle" />
+
+    <CheckBox
+        android:id="@+id/cb_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|center_vertical"
+        android:layout_marginEnd="@dimen/margin_big"
+        android:layout_marginRight="@dimen/margin_big"
+        android:button="@drawable/selector_checkbox"
+        android:clickable="false"
+        android:focusable="false" />
+
+</com.wulian.icam.view.widget.CheckableFrameLayout>

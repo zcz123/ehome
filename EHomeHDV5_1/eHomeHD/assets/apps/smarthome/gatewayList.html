@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>bindDevice</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/custom.css" />
+		<script type="text/javascript" src="./js/md5-min.js"></script>
+		<script type="text/javascript" src="js/crypto-js.js"></script>
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			
+			h5 {
+				margin: 5px 7px;
+			}
+			
+			.right-nav-add {
+				background: #719E19;
+				border-width: 0px;
+				height: 100%;
+				cursor: pointer;
+			}
+			
+			.right-nav-add img {
+				height: 18px;
+				width: 18px;
+			}
+			
+			#noBoundDiv p {
+				vertical-align: middle;
+				text-align: left;
+				width: 240px;
+				height: 30px;
+				line-height: 30px;
+				margin: auto;
+				font-size: 16px;
+				color: black;
+				cursor: pointer;
+			}
+			
+			#noBoundDiv p img {
+				height: 16px;
+				width: 16px;
+				margin-right: 8px;
+				vertical-align: middle;
+			}
+			
+			.grayscale {
+				-webkit-filter: grayscale();
+				-moz-filter: grayscale();
+				-ms-filter: grayscale();
+				-o-filter: grayscale();
+				filter: grayscale();
+			}
+			
+			.setIMG {
+				width: 80%;
+				margin: 0 auto;
+			}
+		</style>
+		<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/plus.js"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/custom.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/hashmap.js"></script>
+		<script type="text/javascript" src="./js/md5-min.js"></script>
+		<script type="text/javascript" src="./js/digest-auth.js"></script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav custom-nav" style="position: fixed;">
+			<button id="gobackBtn" style="color: white;" class="mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left custom-action-back">
+				<span class="mui-icon mui-icon-left-nav"></span><span id="about_back"></span>
+			</button>
+			<button class="mui-pull-right right-nav-add" onclick="gotoAddDeviceOrGateway()">    <!-- onclick="gotoAddDevice()" -->
+				<img src="img/common_use_add.png" />
+			</button>
+			<h1 class="mui-title"><span class="autoSwitchLanguager" id="account_system_bind_list_title"></span></h1>
+		</header>
+		<div class="mui-content">
+
+			<div id="hasBoundDiv" style="display: none;">
+				<p id="html_gw_had_binded_hint" class="autoSwitchLanguager" style="height: 40px;font-size: 18px;color: black;margin: 16px 0px 0px 16px;"></p>
+				<div class="mui-card">
+					<ul class="mui-table-view" id="gateway_list"></ul>
+				</div>
+
+				<p id="html_gw_authorization_hint" class="autoSwitchLanguager" style="height: 40px;font-size: 18px;color: black;margin: 40px 0px 0px 16px;"></p>
+				<div class="mui-card">
+					<ul class="mui-table-view" id="authorization_list"></ul>
+				</div>
+
+				<p id="account_system_binded_device_list" class="autoSwitchLanguager" style="height: 40px;font-size: 18px;color: black;margin: 40px 0px 0px 16px;">已绑定的设备</p>
+				<div class="mui-card">
+					<ul class="mui-table-view" id="devices_list"></ul>
+				</div>
+			</div>
+
+			<div id="noBoundDiv" style="display: none;">
+				<div id="html_gw_had_not_binded_hint" class="autoSwitchLanguager" style="text-align: center;font-size: 19px; color: gray;margin-top: 30px;margin-bottom: 20px;">
+
+				</div>
+				<div class="mui-table-view">
+					<div id="html_with_gw_bind_immediately_hint" class="mui-table-view-cell autoSwitchLanguager" onclick="gotoAddDeviceOrGateway()">
+
+						<img style="float: right; height: 20px;" src="img/other-picture.png">
+					</div>
+					<div id="html_without_gw_try_bind_hint" class="mui-table-view-cell autoSwitchLanguager" onclick="toTryOut()">
+
+						<img style="float: right; height: 20px;" src="img/other-picture.png">
+					</div>
+					<div id="html_how_to_authorize_hint" class="mui-table-view-cell autoSwitchLanguager" onclick="toGrantAuthorization()">
+
+						<img style="float: right; height: 20px;" src="img/other-picture.png">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div style="left: 30%;width: 40%;height: 40px;background-color: black;position: fixed;top: 100px;opacity: 0.5;color: white;line-height: 40px;display: none;" align="center" id="camera_settings_wrong_password"></div>
+	</body>
+
+	<script>
+		var Admin;
+		var DemoGateWay = new Array(
+			'007C4A3C82A9',
+			'0285F2EB43FD',
+			'04483EFB3DC8',
+			'048936E2AE12',
+			'04BC5B3163C6',
+			'04BDC9A24C8F',
+			'065FEA39B3D2',
+			'0666DB20FCD0',
+			'06771E2F11C6',
+			'06BDC94011FA'
+		);
+
+		var gatewayList = document.getElementById("gateway_list");
+		var authorizationList = document.getElementById("authorization_list");
+		var devices_list = document.getElementById("devices_list");
+		plus.plusReady(function() {
+			var cachedDeviceList = plus.ehomev5.getData($CONSTANTS.DEVICES_JSON);
+			plus.event.addEventListener(plus.event.onActivityResume, function(result) {
+				loadDevices();
+
+			});
+			initGoback();
+			try {
+				creatList(cachedDeviceList);
+			} catch(e) {
+				alert(e.name + e.message);
+			}
+			var autoLoginFlag = getUrlParam("autoLoginFlag");
+			if(autoLoginFlag == 1) {
+				loadDevicesforauto();
+			} else {
+				loadDevices();
+			}
+		});
+
+		function gotoAddDeviceOrGateway() {
+			window.location = "addDeviceOrGateway.html";
+		}
+
+		function viewProfile(jsonTxt) {
+			var ret = null;
+			try {
+				var ret = JSON.parse(jsonTxt);
+				plus.ehomev5.setData($CONSTANTS.USERID, ret.userId + "");
+				plus.ehomev5.setData($CONSTANTS.NICKNAME, decodeURIComponent(ret.nick))
+				return true;
+			} catch(e) {
+				return false;
+			}
+		}
+
+		function getProfile() {
+			var hintContent = plus.ehomev5.getLang("html_user_hint_getinfo_fail");
+			var digestAuth = DigestAuthentication.init({
+				onSuccess: function(response, status) {
+					var ret = JSON.parse(response);
+					var hint = statusHelper.mapping(status); //错误码显示
+					if(hint) {
+						alert(hint);
+					} else if(status == "0") {
+						viewProfile(response);
+						plus.ehomev5.setData($CONSTANTS.PROFILE, response);
+					} else {
+						alert(hintContent);
+					}
+				},
+				onFailure: function(httpStatus) {
+					alert(hintContent);
+				},
+				sync: false
+			});
+			digestAuth.setHeader('cmd', 'getUserInfo');
+			digestAuth.setHeader('token', plus.ehomev5.getData($CONSTANTS.TOKEN));
+			digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + '/AMS/user/access');
+		}
+
+		function initGoback() {
+			var action = getUrlParam("action");
+			var backActionFun = null;
+			var backSpan = document.getElementById("about_back");
+			if(!action || action.length == 0 || plus.ehomev5.getData($CONSTANTS.IS_LOGIN) == "false") {
+				backSpan.textContent = plus.ehomev5.getLang("about_back"); //返回
+				backActionFun = function() {
+					logout();
+				};
+			} else if(action == "controlCenter") {
+				backSpan.textContent = plus.ehomev5.getLang("about_back"); //"控制中心"html_control_center_hint;
+				backActionFun = function() {
+					plus.webView.currentWebview().close();
+				};
+			}
+			personalBack = backActionFun;
+		}
+
+		function getDeviceInfo(deviceId, onsuccess, onfailed) {
+			var digestAuth = DigestAuthentication.init({
+				onSuccess: onsuccess,
+				onFailure: onfailed,
+				sync: false
+			});
+			digestAuth.setHeader('cmd', 'getDeviceInfo');
+			digestAuth.setHeader('token', plus.ehomev5.getData('token'));
+			var data = {
+				deviceId: deviceId
+			};
+			digestAuth.setData(JSON.stringify(data));
+			digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + '/AMS/user/device');
+		}
+
+		function loadDevicesforauto() {
+			var digestAuth = DigestAuthentication.init({
+				onSuccess: function(response, status) {
+					auotLogin(response);
+				},
+				onFailure: function(httpStatus) {
+					alert(plus.ehomev5.getLang("html_user_load_bind_device_fail"));
+				},
+				sync: false
+			});
+			digestAuth.setHeader('cmd', 'getSimpleDeviceByUser');
+			digestAuth.setHeader('token', plus.ehomev5.getData('token'));
+			digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + '/AMS/user/device');
+		}
+
+		function loadDevices() {
+			var digestAuth = DigestAuthentication.init({
+				onSuccess: function(response, status) {
+					var res = JSON.parse(response);
+					var hint = statusHelper.mapping(status); //错误码显示
+					if(hint) {
+						alert(hint);
+					} else if(status == "0") {
+						creatList(response);
+						plus.ehomev5.setData($CONSTANTS.DEVICES_JSON, response);
+						getProfile();
+					} else {
+						alert(plus.ehomev5.getLang("html_user_load_bind_device_fail"));
+					}
+				},
+				onFailure: function(httpStatus) {
+					alert(plus.ehomev5.getLang("html_user_load_bind_device_fail"));
+				},
+				sync: false
+			});
+			digestAuth.setHeader('cmd', 'getSimpleDeviceByUser');
+			digestAuth.setHeader('token', plus.ehomev5.getData('token'));
+			digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + '/AMS/user/device');
+		}
+
+		function creatList(response) {
+			gatewayList.innerHTML = "";
+			authorizationList.innerHTML = "";
+			devices_list.innerHTML = "";
+			document.getElementById("noBoundDiv").style.display = "none";
+			try {
+				if(response != null && typeof(response) != "undefined") {
+					var devices = JSON.parse(response).devices;
+					if(devices.length == 0) {
+						noBoundGateWay();
+						return;
+					}
+					document.getElementById("hasBoundDiv").style.display = "block";
+					for(var index = 0; index < devices.length; index++) {
+						if(devices[index].deviceType == "CAMERA") {
+							createDeviceListItem(devices[index]);
+						}
+						if(devices[index].deviceType != "GW") {
+							if(devices[index].deviceType == "CAMERA" && plus.device.getOsName() == "iOS") {
+								plus.ehomev5.registerClientToTutkAndMappingWithDevice(devices[index].deviceId);
+							}
+							continue;
+						}
+						createListItem(devices[index]);
+					}
+				}
+			} catch(e) {
+				console.log(e);
+			}
+		}
+
+		function createDeviceListItem(device) {
+			var houseName = device.houseName;
+			var deviceAlias = device.deviceAlias;
+			if(deviceAlias) {
+				houseName = deviceAlias;
+			} else if(houseName) {
+				houseName = " "; //device.houseName;
+			} else {
+				houseName = plus.ehomev5.getLang("html_user_gateway_bind_not_named");
+			}
+			var parentDiv = document.createElement("div");
+			var divDel = document.createElement("div");
+			var childLi = document.createElement("li");
+			var childImg = document.createElement("img");
+			var childDiv = document.createElement("div");
+			var childP = document.createElement("p");
+			var aDel = document.createElement("a");
+			parentDiv.className = "mui-slider-handle";
+			divDel.className = "mui-slider-right mui-disabled"; //左划显示
+			aDel.className = "mui-btn mui-btn-red";
+			aDel.style.backgroundColor = "#729D28";
+			var setImg = document.createElement("img");
+			setImg.src = "img/accountSet.png";
+			setImg.className = "setIMG";
+			aDel.appendChild(setImg);
+			aDel.onclick = function() { //点击按钮解除设备绑定
+				plus.ehomev5.goToSetEyeCamera(device.deviceId, device.isAdmin, function(result) {
+					if(result == '0') {
+						window.location = "gatewayList.html";
+					} else if(result == '-1') {
+						alert("html_XMLY_loading_error");
+					} else if(result == '-2') {
+
+					} else {
+						alert("html_XMLY_loading_error");
+					}
+				}, function(result) {
+					alert("html_XMLY_loading_error");
+				})
+			};
+			divDel.appendChild(aDel);
+			childLi.className = "mui-table-view-cell mui-media";
+			childImg.className = "mui-media-object mui-pull-left circular-mask";
+			childDiv.className = "mui-media-body";
+			childP.className = "mui-ellipsis";
+			childImg.src = "img/icon_catEye_Online.png"
+//			plus.ehomev5.getGateWayPic(device.deviceId, function(data) {
+//				if(data && data.length > 0) {
+//					childImg.src = "data:image/png;base64," + data;
+//				}
+//			}, function() {
+//				childImg.src = "img/icon120x120.png"
+//			});
+			parentDiv.appendChild(childImg);
+			childDiv.innerHTML = device.deviceId;
+			if(device.masterGw != '' && device.masterGw) {
+				childP.innerHTML = houseName + "[已管理]";
+			} else {
+				childP.innerHTML = houseName;
+			}
+			childDiv.appendChild(childP);
+			parentDiv.appendChild(childDiv);
+			childLi.appendChild(parentDiv);
+			childLi.appendChild(divDel);
+			parentDiv.addEventListener("click", function() {
+				plus.ehomev5.goToEyeCamera(device.deviceId, function(result) {
+					if(result == '0') {
+
+					} else if(result == '-1') {
+						alert(plus.ehomev5.getLang("html_XMLY_loading_error"));
+					} else if(result == '-2') {
+
+					} else {
+						alert(plus.ehomev5.getLang("html_XMLY_loading_error"));
+					}
+				}, function(result) {
+					alert(plus.ehomev5.getLang("html_XMLY_loading_error"));
+				})
+			});
+			devices_list.appendChild(childLi);
+		}
+
+		function createListItem(device) {
+			var houseName = device.houseName;
+			var deviceAlias = device.deviceAlias;
+			if(deviceAlias) {
+				houseName = deviceAlias;
+			} else if(houseName) {
+				houseName = " "; //device.houseName;
+			} else {
+				houseName = plus.ehomev5.getLang("html_user_gateway_bind_not_named");
+			}
+			var parentDiv = document.createElement("div");
+			var divDel = document.createElement("div");
+			var childLi = document.createElement("li");
+			var childImg = document.createElement("img");
+			var childDiv = document.createElement("div");
+			var childP = document.createElement("p");
+			var aDel = document.createElement("a");
+			parentDiv.className = "mui-slider-handle";
+			divDel.className = "mui-slider-right mui-disabled"; //左划显示
+			aDel.className = "mui-btn mui-btn-red";
+			aDel.style.backgroundColor = "#729D28";
+			//			aDel.textContent = "设置";
+			var setImg = document.createElement("img");
+			setImg.src = "img/accountSet.png"
+			setImg.className = "setIMG";
+			aDel.appendChild(setImg);
+			//			aDel.onclick = function() { //点击按钮解除设备绑定
+			//				doUnbindDevice(device.deviceId, function() {
+			//					loadDevices();
+			//				});
+			//			};
+			aDel.onclick = function() { //点击按钮解除设备绑定
+				if(deviceAlias) {
+					window.location = "gatewaySet.html?deviceID=" + device.deviceId + "&deviceAlias=" + deviceAlias;
+				} else {
+					window.location = "gatewaySet.html?deviceID=" + device.deviceId;
+				}
+
+			};
+			divDel.appendChild(aDel);
+			childLi.className = "mui-table-view-cell mui-media";
+			if(device.status == "0") {
+				childImg.className = "mui-media-object mui-pull-left circular-mask grayscale";
+			} else {
+				childImg.className = "mui-media-object mui-pull-left circular-mask";
+			}
+
+			childDiv.className = "mui-media-body";
+			childP.className = "mui-ellipsis";
+			childImg.src = "img/icon120x120.png"
+			plus.ehomev5.getGateWayPic(device.deviceId, function(data) {
+				if(data && data.length > 0) {
+					childImg.src = "data:image/png;base64," + data;
+				}
+			}, function() {
+				childImg.src = "img/icon120x120.png"
+			});
+			parentDiv.appendChild(childImg);
+			childDiv.innerHTML = device.deviceId;
+			if(device.masterGw != '' && device.masterGw) {
+				childP.innerHTML = houseName + "[已管理]";
+			} else {
+				childP.innerHTML = houseName;
+			}
+			childDiv.appendChild(childP);
+			parentDiv.appendChild(childDiv);
+			childLi.appendChild(parentDiv);
+			childLi.appendChild(divDel);
+			if(device.isAdmin == "1") {
+				parentDiv.addEventListener("click", function() {
+					var passwordUserKey = "Account" + device.deviceId;
+					var passwordUserValue = plus.ehomev5.getData(passwordUserKey);
+					if(!passwordUserValue && passwordUserValue.length < 6) {
+						setGatewayPass(device.deviceId, device.isAdmin);
+						return;
+					}
+					getDeviceInfo(device.deviceId, function(result, status) {
+						if(status == "0") {
+							result = JSON.parse(result);
+							passwordUserValue = judgeMd5(passwordUserValue);
+							changeGw(result.deviceId, passwordUserValue, device.isAdmin);
+						} else {
+							var hint = statusHelper.mapping(status);
+							alert(hint);
+						}
+					}, function() {
+						var hint = plus.ehomev5.getLang("html_search_deviceInfo_error"); //"查询设备信息失败"
+						alert(hint);
+					});
+				});
+				gatewayList.appendChild(childLi);
+			} else {
+				parentDiv.addEventListener("click", function() {
+					getDeviceInfo(device.deviceId, function(result, status) {
+						if(status == "0") {
+							var result = JSON.parse(result);
+							changeGw(result.deviceId, result.password, device.isAdmin);
+						} else {
+							var hint = statusHelper.mapping(status);
+							alert(hint);
+						}
+					}, function() {
+						var hint = plus.ehomev5.getLang("html_search_deviceInfo_error"); //"查询设备信息失败"
+						alert(hint);
+					});
+				});
+				authorizationList.appendChild(childLi);
+			}
+		}
+		//没有已绑定的网关
+		function noBoundGateWay() {
+			document.getElementById("hasBoundDiv").style.display = "none";
+			document.getElementById("noBoundDiv").style.display = "block";
+		}
+
+		function doUnbindDevice(deviceId, onSuccessCallback) {
+			var digestAuth = DigestAuthentication.init({
+				onSuccess: function(response, status) {
+					var hint = statusHelper.mapping(status);
+					if(hint) {
+						alert(hint);
+					} else if(status == "0") {
+						//						alert(plus.ehomev5.getLang("html_user_gateway_unbind_success"));
+						if(onSuccessCallback != null && typeof(onSuccessCallback) == "function") {
+							onSuccessCallback();
+						}
+					} else {
+						alert(plus.ehomev5.getLang("html_user_gateway_unbind_fail"));
+					}
+				},
+				onFailure: function(httpStatus) {
+					alert(plus.ehomev5.getLang("html_user_gateway_unbind_fail"));
+				}
+			});
+			digestAuth.setHeader('cmd', 'unbindDevice');
+			digestAuth.setHeader('token', plus.ehomev5.getData('token'));
+			var obj = {};
+			obj.deviceId = deviceId;
+			digestAuth.setData(JSON.stringify(obj));
+			digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + '/AMS/user/device');
+		}
+
+		//去试用
+		function toTryOut() {
+			var rand = Math.floor(Math.random() * DemoGateWay.length);
+			var gwID = DemoGateWay[rand];
+			var gwPwd = gwID.substr(6);
+			changeGw(gwID, gwPwd, "2");
+		}
+		//去授权
+		function toGrantAuthorization() {
+			window.location = "authorizationHelp.html";
+		}
+		//跳转到原生页面
+		function jump2AppPager(action, params) {
+			var data = {};
+			data.action = action;
+			data.params = (params == null || typeof params == "undefined") ? [] : params;
+			plus.ehomev5.startActivity(JSON.stringify(data));
+		}
+		//切换网关
+		function changeGw(gwID, gwPwd, isAdmin) {
+			var cakkbackId = "changeGateWay";
+			var key = "showWaitingDialog";
+			plus.ehomev5.showWaiting(key);
+			var data = {};
+			data.gwID = gwID;
+			data.gwPwd = gwPwd;
+			data.isAdmin = isAdmin;
+			plus.ehomev5.changeGateWay(JSON.stringify(data), cakkbackId, function(result) {
+				plus.ehomev5.setData($CONSTANTS.GATEWAYID, gwID);
+				plus.ehomev5.closeWaiting(key);
+			}, function(result) {
+				if(result == 'fail') {
+					loadDevices();
+				} else if(result = 'passworderror') {
+					loadDevices();
+					showPwdErr("camera_settings_wrong_password")
+					setGatewayPass(gwID, isAdmin);
+				}
+				plus.ehomev5.closeWaiting(key);
+			});
+		}
+
+		function showPwdErr(hint) {
+			var PASSWORDERROR = document.getElementById("camera_settings_wrong_password");
+			PASSWORDERROR.textContent = plus.ehomev5.getLang(hint);
+			PASSWORDERROR.style.display = "block";
+			setTimeout("document.getElementById('camera_settings_wrong_password').style.display = 'none'", 2000);
+		}
+
+		function auotLogin(response) {
+			if(response != null && typeof(response) != "undefined") {
+				var devices = JSON.parse(response).devices;
+				if(devices.length == 0) {
+					noBoundGateWay();
+					return;
+				}
+				//	document.getElementById("hasBoundDiv").style.display = "block";
+				var autoLoginFlag = getUrlParam("autoLoginFlag");
+				var preDeviceId = plus.ehomev5.getData($CONSTANTS.GATEWAYID);
+				for(var index = 0; index < devices.length; index++) {
+					if(devices[index].deviceType != "GW") continue;
+					if(autoLoginFlag == 1) {
+						if(preDeviceId == devices[index].deviceId) {
+							Admin = devices[index].isAdmin;
+							var passwordUserKey = "Account" + device.deviceId;
+							var passwordUserValue = plus.ehomev5.getData(passwordUserKey);
+							if(!passwordUserValue || passwordUserValue.length < 6) {
+								setGatewayPass(device.deviceId, device.isAdmin);
+								return;
+							}
+							getDeviceInfo(devices[index].deviceId, function(result) {
+								result = JSON.parse(result);
+								passwordUserValue = judgeMd5(passwordUserValue);
+								changeGw(result.deviceId, passwordUserValue, Admin);
+							}, function() {
+								var hint = plus.ehomev5.getLang("html_search_deviceInfo_error"); //"查询设备信息失败"
+								alert(hint);
+							});
+						}
+					}
+				}
+			}
+		}
+
+		function logout() {
+			var digestAuth = DigestAuthentication.init({
+				onSuccess: function(response, status) {
+					digestAuth.goLoginPage();
+				},
+				onFailure: function(httpStatus) {
+					digestAuth.goLoginPage();
+				}
+			});
+			digestAuth.setHeader('cmd', 'userLogout');
+			digestAuth.setHeader('token', plus.ehomev5.getData($CONSTANTS.TOKEN));
+			var obj = {};
+			obj.imei = plus.device.getImei();
+			digestAuth.setData(JSON.stringify(obj));
+			digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + '/AMS/user/access');
+		}
+
+		function setGatewayPass(deviceId, isAdmin) {
+			var data = {};
+			data.title = plus.ehomev5.getLang("account_system_gateway_password_hint"); //"请重新输入网关密码";
+			data.cancel = plus.ehomev5.getLang("cancel"); //"取消";
+			data.ok = plus.ehomev5.getLang("common_ok"); //"确定";
+			data.hint = "";
+			data.name = "";
+			plus.ehomev5.myDialogWithLink(data, function(result) {
+				console.log(result)
+				if(result == "") {
+					showPwdErr("set_password_not_null_hint");
+					setGatewayPass(deviceId, isAdmin)
+				} else {
+					result = judgeMd5(result);
+					getDeviceInfo(deviceId, function(res) {
+						res = JSON.parse(res);
+						changeGw(res.deviceId, result, isAdmin);
+					}, function(res) {
+						var hint = plus.ehomev5.getLang("html_search_deviceInfo_error"); //"查询设备信息失败"
+						alert(hint);
+					})
+				}
+			}, function(forgetPWD) {
+				if('forgetPWD' == forgetPWD) {
+					window.location = "forgetwgpassword.html?back=back";
+				}
+			});
+		}
+	</script>
+
+</html>

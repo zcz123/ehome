@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+    <include layout="@layout/titlebar_general" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/view_center"
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_centerInParent="true"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/tv_config_wifi_success_tip"
+            style="@style/v2_normal_little_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_config_wifi_success"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/margin_normal"
+            android:text="@string/config_success_tips" />
+
+        <ImageView
+            android:id="@+id/iv_wifi_conifg_success"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/margin_big"
+            android:layout_marginTop="100dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icon_config_wifi_success" />
+
+        <Button
+            android:id="@+id/btn_config_success"
+            style="@style/v2_btn_normal_style"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="30dp"
+            android:text="@string/common_finish" />
+
+        <TextView
+            android:id="@+id/tv_config_wifi_success"
+            style="@style/v2_normal_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/view_center"
+            android:gravity="center_horizontal"
+            android:text="@string/config_success"
+            android:textColor="#333333"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+</LinearLayout>

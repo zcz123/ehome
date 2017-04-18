@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    <cc.wulian.smarthomev5.view.swipemenu.SwipeMenuListView
+            android:layout_weight="9"
+            android:id="@+id/device_lv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="5dp"
+            android:dividerHeight="0.1dp"
+            android:divider="@color/v5_gray_mid" >
+        </cc.wulian.smarthomev5.view.swipemenu.SwipeMenuListView>
+    <Button 
+        android:background="@color/v5_green_light"
+        android:id="@+id/add_remote_control_btn"
+        android:textSize="16sp"
+        android:layout_margin="32dp"
+        android:layout_weight="1"
+        android:text="@string/device_uei_add_remote_control"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:textColor="@color/white"/>
+    <Button 
+        android:background="@color/gray"
+        android:id="@+id/hidebtn_getepdata"
+        android:textSize="16sp"
+        android:layout_margin="32dp"
+        android:layout_weight="1"
+        android:text="获取epdata-test"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"/>
+    <LinearLayout android:id="@+id/clearitems_layout" 
+        android:focusable="true"
+        android:clickable="true"
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp">
+        <ImageView android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:src="@drawable/device_ir_key_delete_normal"/>
+        <TextView  android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/uei_clear_code_library"/>
+    </LinearLayout>
+ <LinearLayout android:id="@+id/cleartest_layout" 
+        android:focusable="true"
+        android:clickable="true"
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:visibility="gone">
+        <TextView  android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/red_orange"
+            android:text="测试按键"/>
+    </LinearLayout>
+</LinearLayout>

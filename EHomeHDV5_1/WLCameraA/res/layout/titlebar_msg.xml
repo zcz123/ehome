@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_titlebar"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/title_bar_height"
+    android:background="@drawable/title_bar_background"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/title_bar_height"
+        android:layout_centerHorizontal="true"
+        android:gravity="center" >
+
+        <TextView
+            android:id="@+id/tv_titlebar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:gravity="center_vertical"
+            android:text="@string/main_info"
+            android:textColor="@color/title_bar_textcolor"
+            android:textSize="@dimen/title_bar_textsize" />
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_right"
+        android:layout_width="@dimen/title_bar_height"
+        android:layout_height="@dimen/title_bar_height" 
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true">
+
+        <Button
+            android:id="@+id/titlebar_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/selector_msg_delete"
+            android:textColor="@color/theme_color"
+            android:textSize="@dimen/textsize_large" >
+        </Button>
+    </RelativeLayout>
+
+    <ImageView
+        style="@style/img_divider_full"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

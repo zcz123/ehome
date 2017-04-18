@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_custom_alertdialog"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@drawable/shape_round_rect_all_trans_white"
+    android:gravity="center"
+    android:maxHeight="@dimen/btn_height_min"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="@dimen/dialog_width"
+        android:layout_height="@dimen/btn_height"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height_min"
+            android:gravity="center"
+            android:text="@string/common_prompt"
+            android:textSize="@dimen/textsize_middle" />
+    </LinearLayout>
+
+    <ImageView style="@style/img_divider_green" />
+
+    <!-- 外包scrollview maxHeight 不起作用 -->
+
+    <ProgressBar
+        android:id="@+id/pb_format"
+        android:layout_marginTop="10dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="@dimen/dialog_width"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_rect_transparent"
+        android:gravity="start|center_vertical"
+        android:maxHeight="240dp"
+        android:minHeight="@dimen/btn_height"
+        android:paddingEnd="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingStart="5dp"
+        android:scrollbars="vertical"
+        android:singleLine="false"
+        android:text="@string/login_out_confirm"
+        android:textSize="@dimen/textsize_large" >
+    </TextView>
+
+    <ImageView style="@style/img_divider_full" />
+
+    <LinearLayout
+        android:id="@+id/layout_format_button"
+        android:layout_width="@dimen/dialog_width"
+        android:layout_height="@dimen/btn_height"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_positive"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_shape_rect"
+            android:padding="5dp"
+            android:text="@string/common_sure"
+            android:textSize="@dimen/textsize_middle" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/img_divider_full" />
+
+        <Button
+            android:id="@+id/btn_negative"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_shape_rect"
+            android:padding="5dp"
+            android:text="@string/common_cancel"
+            android:textSize="@dimen/textsize_middle" />
+    </LinearLayout>
+
+</LinearLayout>

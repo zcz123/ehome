@@ -1,0 +1,42 @@
+package cc.wulian.smarthomev5.callback.router;
+
+public class KeyTools {
+	public static final String msg = "msg";
+	public static final String code = "code";
+	public static final String wifi_iface = "wifi_iface";
+	public static final String key = "key";
+	public static final String mode = "mode";
+	public static final String on = "on";
+	public static final String ssid = "ssid";
+	public static final String encryption = "encryption";
+	public static final String radio0 = "radio0";
+	public static final String radio1 = "radio1";
+	public static final String disabled = "disabled";
+	public static final String channel = "channel";
+	public static final String set_channel = "set_channel";
+	public static final String info = "info";
+	public static final String mac = "mac";
+	public static final String name = "name";
+	public static final String up = "up";
+	public static final String assoc = "assoc";
+	public static final String uptime = "uptime";
+	public static final String down = "down";
+	public static final String ip = "ip";
+	public static final String list = "list";
+	public static final String band = "band";
+	public static final String bandwidth_up = "bandwidth_up";
+	public static final String bandwidth_down = "bandwidth_down";
+	public static final String upload = "upload";
+	public static final String download = "download";
+	public static final String qos = "qos";
+	public static final String status = "status";
+	public static final String maxdownper = "maxdownper";
+	public static final String downmin = "downmin";
+	public static final String upmax = "upmax";
+	public static final String upmin = "upmin";
+	public static final String level = "level";
+	public static final String downmax = "downmax";
+	public static final String upmaxper = "upmaxper";
+	public static final String type = "type";
+	public static final String bwList = "bwList";
+}

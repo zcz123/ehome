@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:weightSum="4" >
+
+        <Button
+            android:id="@+id/device_converters_input_btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/device_one_wried_wireless_input_btn_pressed"
+            android:layout_weight="1"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/device_converters_input_btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/device_one_wried_wireless_output_btn_normal"
+            android:layout_weight="1"
+            android:text="2" />
+        <Button
+            android:id="@+id/device_converters_input_btn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/device_one_wried_wireless_output_btn_normal"
+            android:layout_weight="1"
+            android:text="3" />
+        <Button
+            android:id="@+id/device_converters_input_btn4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/device_one_wried_wireless_output_btn_normal"
+            android:layout_weight="1"
+            android:text="4" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/device_one_wried_wireless_input"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="6" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:gravity="center" >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/device_one_wried_wireless_switch_png_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:padding="30dp"
+                    android:src="@drawable/device_one_wried_wireless_switch_open" />
+
+                <ProgressBar
+                    android:id="@+id/device_one_wried_wireless_alarm"
+                    style="?android:attr/progressBarStyleLarge"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:indeterminateBehavior="repeat"
+                    android:indeterminateDrawable="@drawable/device_one_translator_alarm_layer"
+                    android:indeterminateOnly="true"
+                    android:padding="5dp"
+                    android:scrollbarStyle="insideInset"
+                    android:visibility="invisible" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:gravity="center" >
+           <TextView
+                android:id="@+id/device_one_wried_wireless_epname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/device_type_A1"
+                 >
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="15dp"
+            android:layout_weight="1"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/device_one_wried_wireless_ctrl_defense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/device_one_wried_wireless_defense" >
+            </ImageView>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/desktop_preset_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/desktop_preset_textview"
+            android:textColor="#222222"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/desktop_preset_click_imgview"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/device_security_switch_on_1" >
+        </ImageView>
+
+        <TextView
+            android:id="@+id/desktop_preset_show_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/desktop_preset_click_imgview"
+            android:textSize="16sp"
+            android:textColor="#222222"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/desktop_motion_detection_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/desktop_motion_detection_textview"
+            android:textColor="#222222"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/desktop_motion_detection_click_imgview"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/device_security_switch_on_1" >
+        </ImageView>
+
+        <ToggleButton
+            android:id="@+id/desktop_motion_detection_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/desktop_motion_detection_click_imgview"
+            android:background="@android:color/transparent"
+            android:button="@drawable/button_toggle_switch"
+            android:text=""
+            android:textOff=""
+            android:textOn=""
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/desktop_continue_video_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/desktop_continue_video_textview"
+            android:textColor="#222222"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/desktop_continue_video_click_imgview"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/device_security_switch_on_1" >
+        </ImageView>
+
+        <ToggleButton
+            android:id="@+id/desktop_continue_video_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/desktop_continue_video_click_imgview"
+            android:background="@android:color/transparent"
+            android:button="@drawable/button_toggle_switch"
+            android:text=""
+            android:textOff=""
+            android:textOn=""
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/desktop_short_video_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/desktop_short_video_textview"
+            android:textColor="#222222"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/desktop_short_video_click_imgview"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/device_security_switch_on_1" >
+        </ImageView>
+
+        <TextView
+            android:id="@+id/desktop_short_video_show_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/desktop_short_video_click_imgview"
+            android:textSize="16sp"
+            android:textColor="#222222"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+</LinearLayout>

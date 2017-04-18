@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical" >
+
+    <include layout="@layout/titlebar_request_view" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/v2_request_view_height"
+        android:layout_marginTop="@dimen/margin_heigh_big"
+        android:background="@drawable/selector_shape_round_rect_all" >
+
+        <ImageView
+            android:id="@+id/view_top"
+            style="@style/img_divider_full" />
+        <ImageView
+            android:id="@+id/view_end"
+            android:layout_alignParentBottom="true"
+            style="@style/img_divider_full" />
+
+        <TextView
+            android:id="@+id/tv_word_limit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/view_end"
+            android:gravity="end"
+            android:text="@string/config_word_limit_60"
+            android:textColor="@color/DarkGray" />
+
+        <EditText
+            android:id="@+id/et_request_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/tv_word_limit"
+            android:layout_below="@id/view_top"
+            android:background="@null"
+            android:gravity="top"
+            android:hint="@string/config_request_view_desc"
+            android:inputType="textMultiLine"
+            android:maxLength="60"
+            android:maxLines="10"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/DarkGray"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/textsize_middle" >
+
+            <requestFocus />
+        </EditText>
+    </RelativeLayout>
+</LinearLayout>

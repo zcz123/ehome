@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="gray">#898A89</color>
+    <color name="dividerline">#e4e4e4</color>
+    <color name="trant">#00ffffff</color>
+    <color name="progress_gray">#c8c8c8</color>
+    <color name="progress_text_black">#000000</color>
+    <color name="toast_text_shadow">#bb000000</color>
+    <color name="toast_text_color">#f68807</color>
+    <color name="holo_blue_light">#ff33b5e5</color>
+    <color name="holo_green_light">#ff99cc00</color>
+    <color name="holo_red_light">#ffff4444</color>
+    <color name="holo_blue_dark">#ff0099cc</color>
+    <color name="holo_green_dark">#ff669900</color>
+    <color name="holo_red_dark">#ffcc0000</color>
+    <color name="holo_purple">#ffaa66cc</color>
+    <color name="holo_orange_light">#ffffbb33</color>
+    <color name="holo_orange_dark">#ffff8800</color>
+    <color name="holo_blue_bright">#ff00ddff</color>
+    <color name="select_scene_title">#ff6EA31D </color>
+    <color name="holo_gray_light">#ffE0E2E7</color>
+    <color name="holo_gray_dark">#ff83878a</color>
+    <color name="holo_gray_middle">#ffb5babd</color>
+    <color name="holo_brown_dark">#ff27292a</color>
+    <color name="holo_brown_light">#ff7d7f7f</color>
+    <color name="v5_green_light_area">#709e19</color>
+    <color name="v5_green_light_areas_scan">#709E18</color>
+
+    <!-- V5颜色集 -->
+    <color name="v5_green_light">#90C24C</color>
+    <color name="v5_green_dark">#6ea31d</color>
+    <color name="v5_gray_light">#E5E5E5</color>
+    <color name="v5_gray_mid">#c9c9c8</color>
+    <color name="v5_gray_dark">#534F5F</color>
+    <color name="v5_red_light">#EB6976</color>
+    <color name="action_bar_bg">#719e19</color>
+    <color name="v5_gray_font">#898989</color>
+
+    <color name="v5_side_bar">#c6c6c6</color>
+    <color name="v5_short_cut_bg">#e7e8ea</color>
+
+    <color name="v5_next_step">#719e19</color>s
+    
+
+</resources>

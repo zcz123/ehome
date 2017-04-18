@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:id="@+id/camera_type_choose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minHeight="@dimen/view_min_height"
+            android:visibility="gone" >
+
+            <LinearLayout
+                android:id="@+id/camera_type_dvr_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/content_margin_big"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/monitor_hard_disk_video_camera_4"
+                    android:textColor="@color/black" />
+
+                <ImageView
+                    android:id="@+id/dvr_4_imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#6ea31d"
+                    android:minHeight="4dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/camera_type_dvr_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/content_margin_big"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/monitor_hard_disk_video_camera_8"
+                    android:textColor="@color/black" />
+
+                <ImageView
+                    android:id="@+id/dvr_8_imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#6ea31d"
+                    android:minHeight="4dp"
+                    android:visibility="invisible" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:orientation="vertical"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:minHeight="@dimen/view_min_height"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/monitorLinkageDeviceTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/monitor_cloud_1_area"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <Spinner
+                android:id="@+id/monitor_Areaname_Choose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/monitor_edittext_background"
+                android:minHeight="@dimen/view_min_height_small"
+                android:singleLine="true"
+                android:textSize="14dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:minHeight="@dimen/view_min_height"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/monitorNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:text="@string/monitor_name"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <cc.wulian.smarthomev5.view.WLEditText
+                android:id="@+id/monitorNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/monitor_edittext_background"
+                android:gravity="center_vertical|left"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null"
+                android:minHeight="@dimen/view_min_height_small"
+                android:singleLine="true"
+                android:textSize="14dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:minHeight="@dimen/view_min_height"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/monitorUserTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:text="@string/monitor_user"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <cc.wulian.smarthomev5.view.WLEditText
+                android:id="@+id/monitorUserEditText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/monitor_edittext_background"
+                android:gravity="center_vertical|left"
+                android:text="@string/home_monitor_default_user"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null"
+                android:minHeight="@dimen/view_min_height_small"
+                android:textColorHint="#8B8B8B"
+                android:textSize="14dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/monitorPwdTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:text="@string/login_gateway_password_hint"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <cc.wulian.smarthomev5.view.WLEditText
+                android:id="@+id/monitorPwdEditText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:background="@drawable/monitor_edittext_background"
+                android:gravity="center_vertical|left"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null"
+                android:inputType="textPassword"
+                android:minHeight="@dimen/view_min_height_small"
+                android:singleLine="true"
+                android:textSize="14dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:minHeight="@dimen/view_min_height"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/monitorHostTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:text="@string/monitor_host"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <cc.wulian.smarthomev5.view.WLEditText
+                android:id="@+id/monitorHostEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/monitor_edittext_background"
+                android:gravity="center_vertical|left"
+                android:minHeight="@dimen/view_min_height_small"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null"
+                android:digits="0123456789."
+                android:textSize="14dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:minHeight="@dimen/view_min_height"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/monitorPortTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:text="@string/monitor_port"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <cc.wulian.smarthomev5.view.WLEditText
+                android:id="@+id/monitorPortEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/monitor_edittext_background"
+                android:gravity="center_vertical|left"
+                android:inputType="number"
+                android:minHeight="@dimen/view_min_height_small"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null"
+                android:digits="0123456789"
+                android:text="@string/home_monitor_default_port"
+                android:textSize="14dp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/monitor_edit_ip_button"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/monitor_camera_ensure"
+            android:gravity="center"
+            android:text="@string/common_ok"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+    </LinearLayout>
+
+>>>>>>> b32cf4f3fd064e989e7688b8fcf792565dbae2b9
+</LinearLayout>

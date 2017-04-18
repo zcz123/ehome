@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/custom.css" rel="stylesheet" />
+
+		<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/plus.js"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/custom.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/hashmap.js"></script>
+		<script type="text/javascript" src="./js/md5-min.js"></script>
+		<script type="text/javascript" src="js/crypto-js.js"></script>
+		<script type="text/javascript" src="js/digest-auth.js"></script>
+
+		<style>
+			.dialog-ul {
+				padding: 0px;
+				list-style-type: none;
+			}
+			
+			.dialog-ul .dialog-li {
+				height: 40px;
+				line-height: 40px;
+				vertical-align: middle;
+				border-bottom: 1px solid gainsboro;
+			}
+			
+			.dialog-ul .dialog-li img {
+				float: left;
+				margin: 5px 0px 5px 8px;
+			}
+			
+			.dialog-ul .dialog-li span {
+				margin-left: 10px;
+				height: inherit;
+				float: left;
+				vertical-align: middle;
+			}
+			
+			.dialog-ul .dialog-li input[type=checkbox] {
+				float: right;
+				height: 20px;
+				width: 20px;
+				margin: 10px 8px 10px 8px;
+			}
+			
+			.check-permission-img {
+				width: 30px;
+				height: 22px;
+			}
+			
+			.no-permission-img {
+				width: 28px;
+				height: 28px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav custom-nav">
+			<button style="color: white;" class="custom-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left nav-type">
+				<span class="mui-icon mui-icon-left-nav"></span><span id="about_back" class="autoSwitchLanguager"></span>
+			</button>
+			<h1 class="mui-title" style="color: white; padding-left: 60px; padding-right: 50px;">
+				<span id="html_accunt_permission_bar_title" class="autoSwitchLanguager"></span>
+			</h1>
+		</header>
+		<div class="mui-content" style="padding-top: 80px;">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell" onclick="deviceHtml()">
+					<div style="margin-right: 40px;">
+						<a id="html_device_control_bar_title" class="mui-navigate-right autoSwitchLanguager" style="color: black;">
+							
+						</a>
+						<span id="device-status-id"  style="float: right;"></span>
+					</div>
+				</li>
+
+				<li class="mui-table-view-cell" onclick="sceneHtml()">
+					<div style="margin-right: 40px;">
+						<a id="html_sence_control_bar_title" class="mui-navigate-right autoSwitchLanguager" style="color: black;">
+							
+						</a>
+						<span id="scene-status-id"   style="float: right;"></span>
+					</div>
+				</li>
+				<li class="mui-table-view-cell" onclick="monitor()">
+					<div style="margin-right: 40px;">
+						<a id="html_see_control_bar_title" class="mui-navigate-right autoSwitchLanguager" style="color: black;">
+							
+						</a>
+						<span id="monitor-status"   style="float: right;"></span>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+	</body>
+
+	<script>
+		var dialogkey = "permissionkey";
+		var accountUrl = "/AMS/user/rights";
+		var deviceStatus = document.getElementById("device-status-id");
+		var sceneStatus = document.getElementById("scene-status-id");
+		var monitorStatus = document.getElementById("monitor-status");
+		var monitorStatusCode = "2";
+		var isDevice = false;
+		var isScene = false;
+		var deviceJson = {};
+		var sceneJson = {};
+		var deviceRight = "0";
+		var sceneRight = "1";
+		var monitorRight = "2";
+		var ngUserId = null;
+		var customDialog = new inputDialog();
+		var assigned;
+		var notAssigned;
+		var forbitsee;
+		var cansee;
+		plus.plusReady(function() {
+			assigned=plus.ehomev5.getLang("htm_assigned_hint"); //已分配
+			notAssigned=plus.ehomev5.getLang("html_not_assigned_hint");//未分配
+			forbitsee=plus.ehomev5.getLang("html_forbid_see_hint");//禁止查看
+			cansee=plus.ehomev5.getLang("html_can_see_hint");//仅查看
+			ngUserId = getUrlParam("ngUserId");
+			plus.ehomev5.showWaiting(dialogkey);
+			initDeviceAndSceneState(function(result) {
+				try {
+	//				alert('result1'+result);
+					var deviceJsonArray = [];
+					data = JSON.parse(result);
+					var bodyJsonArray = data.userRights;
+					if (bodyJsonArray && bodyJsonArray.length > 0) {
+						var deviceJsonArray = new Array();
+						for (var i = 0; i < bodyJsonArray.length; i++) {
+							var deviceobject = {};
+							deviceobject.deviceId = bodyJsonArray[i].device_childId;
+							deviceobject.rights = bodyJsonArray[i].rights + "";
+							deviceJsonArray.push(deviceobject);
+						}
+						deviceJson.device = deviceJsonArray;
+						deviceStatus.innerHTML = assigned;      //"已分配";
+					} else {
+						deviceStatus.innerHTML = notAssigned;   //"未分配"
+					}
+				} catch (e) {
+					console.log(e);
+				}
+			}, function(error) {}, deviceRight, ngUserId);
+			//判断是否场景已经分配
+			initDeviceAndSceneState(function(result) {
+				try {
+//					alert('result2'+result);
+					var sceneJsonArray = [];
+					data = JSON.parse(result);
+					var bodyJsonArray = data.userRights;
+					if (bodyJsonArray && bodyJsonArray.length > 0) {
+						var sceneJsonArray = new Array();
+						for (var i = 0; i < bodyJsonArray.length; i++) {
+							//判断是场景还是设备
+							var sceneObject = {};
+							sceneObject.deviceId = bodyJsonArray[i].device_childId;
+							sceneObject.rights = bodyJsonArray[i].rights + "";
+							sceneJsonArray.push(sceneObject);
+						}
+						sceneJson.scene = sceneJsonArray;
+						sceneStatus.innerHTML = assigned;      //"已分配";
+					} else {
+						sceneStatus.innerHTML =  notAssigned;   //"未分配"
+					}
+				} catch (e) {
+					console.log(e);
+				}
+			}, function(error) {}, sceneRight, ngUserId);
+			//获取监控权限
+			initDeviceAndSceneState(function(result) {
+				plus.ehomev5.closeWaiting(dialogkey);
+				try {
+					monitorStatus.innerHTML = forbitsee;   //"禁止查看";
+					data = JSON.parse(result);
+					var bodyJsonArray = data.userRights;
+					if (bodyJsonArray && bodyJsonArray.length > 0) {
+						monitorStatusCode = bodyJsonArray[0].rights + "";
+						if (monitorStatusCode == "1"|| monitorStatusCode=="0") {
+							monitorStatus.innerHTML =  cansee;   //"仅查看";
+						} else {
+							monitorStatus.innerHTML = forbitsee;   //"禁止查看";
+						}
+					} else {}
+				} catch (e) {
+					console.log(e);
+				}
+			}, function(error) {
+				plus.ehomev5.closeWaiting(dialogkey);
+				alert(plus.ehomev5.getLang("html_device_save_error")); //"获取失败"
+			}, monitorRight, ngUserId);
+		});
+		//http请求获取已授权列表
+		function initDeviceAndSceneState(onSuccess, onFailed, rightsType, ngUserId) {
+			var data = {
+				deviceId: plus.ehomev5.getData($CONSTANTS.GATEWAYID),
+				//应该是wulianID
+				ngUserId: ngUserId,
+				rightsType: rightsType
+			};
+			sendJsonPostRequest(data, plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + accountUrl, onSuccess, onFailed);
+		}
+
+		function sendJsonPostRequest(data, url, onSuccess, onFailed) {
+			var digestAuth = DigestAuthentication.init({
+				onSuccess: function(response, status) {
+					onSuccess(response);
+				},
+				onFailure: function(httpStatus) {
+					onFailed(httpStatus);
+				},
+				sync: false
+			});
+			digestAuth.setHeader('cmd', 'getRights');
+			digestAuth.setHeader('Content-Type', 'application/json');
+			digestAuth.setHeader('token', plus.ehomev5.getData($CONSTANTS.TOKEN));
+			digestAuth.setData(JSON.stringify(data));
+			digestAuth.call(url);
+		}
+
+		function deviceHtml() {
+			window.location = "device-permission.html?device=" + JSON.stringify(deviceJson.device) + "&ngUserId=" + ngUserId;
+		}
+
+		function sceneHtml() {
+			window.location = "scene-permission.html?scene=" + JSON.stringify(sceneJson.scene) + "&ngUserId=" + ngUserId;
+		}
+
+		function monitor() {
+			var dialogUl = document.createElement("ul");
+			dialogUl.className = "dialog-ul";
+			var checkli = null;
+			var noDistrili = null;
+			if (monitorStatusCode == "1"||monitorStatusCode == "0") {
+				checkli = createMonitorDialogItem("1", true, cansee, "img/check-permission.png", "check-permission-img");
+				noDistrili = createMonitorDialogItem("2", false, forbitsee, "img/no-permission_dark.png", "no-permission-img");
+			} else if (monitorStatusCode == "2") {
+				checkli = createMonitorDialogItem("1", false, cansee, "img/no_check-permission.png", "check-permission-img");
+				noDistrili = createMonitorDialogItem("2", true, forbitsee, "img/no-permission.png", "no-permission-img");
+			}
+			noDistrili.addEventListener('tap', function() {});
+			noDistrili.style.borderBottom = "none";
+			dialogUl.appendChild(checkli);
+			dialogUl.appendChild(noDistrili);
+			//显示输入提示对话框
+			var btnArray = [plus.ehomev5.getLang("common_ok"), plus.ehomev5.getLang("cancel")];
+			customDialog.showPermissionDialog(plus.ehomev5.getLang("html_device_setpermission_hint"), dialogUl, btnArray);  //"权限分配"
+		}
+
+		function createMonitorDialogItem(right, isCheck, itemContent, itemImgUri, aClass) {
+			var itemli = document.createElement("li");
+			itemli.className = "dialog-li";
+			var itemImg = document.createElement("img");
+			itemImg.src = itemImgUri;
+			if (aClass) {
+				itemImg.classList.add(aClass);
+			}
+			var itemSpan = document.createElement("span");
+			itemSpan.textContent = itemContent;
+			var itemCheckBox = document.createElement("input");
+			itemCheckBox.type = "checkbox";
+			if (isCheck) {
+				itemCheckBox.checked = "checked"
+			}
+			itemli.appendChild(itemImg);
+			itemli.appendChild(itemSpan);
+			itemli.appendChild(itemCheckBox);
+			itemli.addEventListener('tap', function(e) {
+				itemCheckBox.checked = "checked";
+				customDialog.cancelPermissionDialogEvent(function(value) {
+					setMointorRight(right, function(result, status) {
+						var hint = statusHelper.mapping(status);
+						if (hint) {
+							alert(hint);
+						} else if (status == "0") {
+							if (right == "1"||right=='0') {
+								monitorStatusCode = "1";
+								monitorStatus.innerHTML = cansee;           //"仅查看";
+							} else {
+								monitorStatusCode = "2";
+								monitorStatus.innerHTML = forbitsee;   //"禁止查看";
+							}
+						}
+					}, function() {});
+				});
+			});
+			return itemli;
+		}
+
+		function setMointorRight(right, onSuccess, onFailed) {
+			var digestAuth = DigestAuthentication.init({
+				onSuccess: function(response, status) {
+					onSuccess(response, status);
+				},
+				onFailure: function(httpStatus) {
+					onFailed(httpStatus);
+				},
+				sync: false
+			});
+			digestAuth.setHeader('cmd', 'setRights');
+			digestAuth.setHeader('Content-Type', 'application/json');
+			digestAuth.setHeader('token', plus.ehomev5.getData($CONSTANTS.TOKEN));
+			var data = {
+				ngUserId: ngUserId,
+				deviceId: plus.ehomev5.getData($CONSTANTS.GATEWAYID),
+				userRights: [{
+					device_childId: "all",
+					rights: right,
+					type: "2"
+				}]
+			};
+			digestAuth.setData(JSON.stringify(data));
+			digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + "/AMS/user/device");
+		}
+
+		function createDialogItem(itemData, status, isCheck, itemContent, itemImgUri) {
+			var itemli = document.createElement("li");
+			itemli.className = "dialog-li";
+			var itemImg = document.createElement("img");
+			itemImg.src = itemImgUri;
+			var itemSpan = document.createElement("span");
+			itemSpan.textContent = itemContent;
+			var itemCheckBox = document.createElement("input");
+			itemCheckBox.type = "checkbox";
+			if (isCheck) {
+				itemCheckBox.checked = "checked"
+			}
+			itemli.appendChild(itemImg);
+			itemli.appendChild(itemSpan);
+			itemli.appendChild(itemCheckBox);
+			itemli.addEventListener('tap', function(e) {
+				itemCheckBox.checked = "checked";
+				customDialog.cancelPermissionDialogEvent(function(value) {
+					itemData.deviceRight = status;
+					for (var i = 0; i < localArray.length; i++) {
+						if (localArray[i].deviceId == itemData.deviceId) {
+							localArray[i] = itemData;
+							break;
+						}
+					}
+					refreshDeviceState(localArray);
+				});
+			});
+			return itemli;
+		}
+		//		function deviceHtml(){
+		//			window.location = "device-permission.html";
+		//		}
+		//		
+		//		function sceneHtml(){
+		//			window.location = "scene-permission.html";
+		//		}
+	</script>
+
+</html>

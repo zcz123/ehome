@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>modifyaccount</title>
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/custom.css">
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			
+			h5 {
+				margin: 5px 7px;
+			}
+			
+			.m-footer {
+				height: 70px;
+				margin-top: -70px;
+				width: 100%;
+				text-align: center;
+			}
+			
+			.icon_checked {
+				position: absolute;
+				top: 10px;
+				right: 28px;
+				z-index: 2;
+				width: 38px;
+				height: 38px;
+				font-size: 30px;
+				color: green;
+				text-align: center;
+			}
+		</style>
+
+		<script type="text/javascript" src="js/plus.js"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/hashmap.js"></script>
+		<script type="text/javascript" src="./js/md5-min.js"></script>
+		<script type="text/javascript" src="./js/digest-auth.js"></script>
+		<script type="text/javascript" src="js/custom.js" charset="utf-8"></script>
+		<script type="text/javascript" src="js/crypto-js.js"></script>
+
+	</head>
+
+	<body>
+		<div id="wrap">
+			<div id="main" class="clearfix">
+				<header class="mui-bar mui-bar-nav custom-nav">
+					<a class="custom-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+					<h1 class="mui-title"><span class="autoSwitchLanguager" id="html_bind_account_hint"></span></h1>
+				</header>
+				<div class="mui-content">
+					<div class="mui-content-padded">
+						<!--<img src="img/icon120x120.png" alt="" />-->
+						<br />
+						<form class="mui-input-group" onsubmit="return false;">
+							<div class="mui-input-row">
+								<label class="autoSwitchLanguager" id="html_wulian_account_hint"></label>
+								<input type="text" id="userName" class="mui-input-clear" onblur="checkUserName();" placeholder="">
+								<span id="checkNameOK" class="mui-icon mui-icon-checkmarkempty mui-hidden icon_checked"></span>
+							</div>
+							<div class="mui-input-row" style="height: 40%;">
+								<label style="width: 100%;height:50% ;"><p id="html_kindly_reminder_hint" class="autoSwitchLanguager"></p><p id="html_kindly_reminder_content_hint" class="autoSwitchLanguager"></p></label>
+							</div>
+						</form>
+						<p id="hintPanelOne" class='mui-hidden mui-pull-right warning'></p>
+					</div>
+					<button type="button" style="margin-top: 30%;" id="btnLogin" class="register_btn" onclick="bindUserName();return false;">
+						<span class="autoSwitchLanguager" id="common_ok"></span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</body>
+	<!--<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>-->
+	<script>
+		plus.plusReady(function() {
+			document.getElementById("userName").placeholder = plus.ehomev5.getLang("html_placeholder_nophone_wulianID");
+		});
+
+		function bindUserName() {
+			var obj = {};
+			obj.userName = document.getElementById("userName").value;
+			var digestAuth = DigestAuthentication.init({
+				onSuccess: function(response, status) {
+					var hint = statusHelper.mapping(status);
+					if (hint) {
+						alert(hint);
+					} else if (status == "0") {
+						plus.ehomev5.setData($CONSTANTS.USERNAME, obj.userName);
+						plus.ehomev5.setData($CONSTANTS.ACCOUNT, obj.userName);
+						window.history.back(-1);
+					} else {
+						alert(plus.ehomev5.getLang("html_user_regist_user_name_bind_fail"));
+					}
+				},
+				onFailure: function(httpStatus) {
+					alert(plus.ehomev5.getLang("html_user_regist_user_name_bind_fail"));
+				}
+			});
+			digestAuth.setHeader('cmd', 'userNameAuth');
+			digestAuth.setHeader('token', plus.ehomev5.getData('token'));
+			digestAuth.setData(JSON.stringify(obj));
+			digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + '/AMS/user/access');
+		}
+
+		function checkUserName() {
+			if (verifyUserName()) {
+				return;
+			}
+			var digestAuth = DigestAuthentication.init({
+				onSuccess: function(response, status) {
+					var hint = statusHelper.mapping(status);
+					if (hint) {
+						nameError(hint);
+					} else if (status == "0") {
+						var ret = JSON.parse(response);
+						if (ret.isExist) {
+							nameError(plus.ehomev5.getLang("html_user_regist_user_exist"));
+						} else {
+							document.getElementById("userName").style.border = 'none';
+							document.getElementById("checkNameOK").classList.remove("mui-hidden");
+							document.getElementById("hintPanelOne").classList.add("mui-hidden");
+						}
+					}
+				},
+				onFailure: function(httpStatus) {},
+				sync: false
+			});
+			digestAuth.setHeader('cmd', 'isNameExist');
+			var obj = {};
+			obj.userName = document.getElementById("userName").value;
+			digestAuth.setData(JSON.stringify(obj));
+			digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + '/AMS/user/access');
+		}
+
+		function nameError(errHint) {
+			var nameErrorEle = document.getElementById("hintPanelOne");
+			nameErrorEle.textContent = errHint;
+			nameErrorEle.classList.remove("mui-hidden");
+			document.getElementById("userName").style.border = 'thin red dashed';
+			document.getElementById("checkNameOK").classList.add("mui-hidden");
+		}
+
+		function verifyUserName() {
+			document.getElementById("userName").style.border = 'none';
+			document.getElementById("hintPanelOne").classList.add("mui-hidden");
+			document.getElementById("checkNameOK").classList.add("mui-hidden");
+			var userName = document.getElementById("userName").value.trim();
+			if (verify.isphone(userName)) {
+				nameError(plus.ehomev5.getLang("html_user_account_Illegal"));
+				return true;
+			}
+			if (verify.ismail(userName)) {
+				nameError(plus.ehomev5.getLang("html_user_account_Illegal"));
+				return true;
+			}
+			if (verify.isgateway(userName)) {
+				nameError(plus.ehomev5.getLang("html_user_regist_user_exist"));
+				return true;
+			}
+			if (verify.iswuliannum(userName)) {
+				return false;
+			}
+			nameError(plus.ehomev5.getLang("html_user_account_Illegal"));
+			return true;
+		}
+	</script>
+
+</html>

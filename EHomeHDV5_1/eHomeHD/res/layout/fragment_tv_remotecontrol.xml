@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lin_rc"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center" >
+
+        <ImageView 
+            android:id="@+id/iv_TV_light"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/remote_control_light_1"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/virtualKeyLayout" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" 
+            android:clickable="true"
+	        android:focusable="true">
+
+            <LinearLayout 
+                android:id="@+id/lin_TV_power"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:clickable="true"
+                android:background="@drawable/remote_control_selector01"
+                android:orientation="vertical"                
+                android:tag="01">
+            </LinearLayout>
+            
+            
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal">
+
+                <LinearLayout 
+                    android:id="@+id/lin_TV_home"
+	                android:layout_width="60dp"
+	                android:layout_height="60dp"
+	                android:gravity="center"
+	                android:clickable="true"
+	                android:focusable="true"
+	                android:background="@drawable/remote_control_selector121"
+	                android:tag="121"
+	                android:orientation="vertical"
+	               >
+            	</LinearLayout>
+                
+            </LinearLayout>
+
+            <LinearLayout 
+                android:id="@+id/lin_TV_video"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:background="@drawable/remote_control_selector22"
+                android:tag="22"
+                android:orientation="vertical"
+                android:clickable="true"
+	            android:focusable="true">
+            </LinearLayout>
+        </LinearLayout>
+
+        <View 
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:id="@+id/lin_TV_VOL"
+                android:background="@drawable/remote_control_vertical_selector"
+                android:layout_width="50dp"
+                android:layout_height="150dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <ImageView 
+                    android:id="@+id/tv_TV_VOL_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:background="@drawable/remote_control_selector06"
+                    android:tag="06"
+                    android:layout_weight="1"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:background="@drawable/remote_control_selector07"
+                    android:tag="07"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:background="@drawable/remotecontrol_bg"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:id="@+id/lin_rc_above"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:tag="38">
+
+                        <ImageView 
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/uei_currency_up"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical" >
+
+                        <LinearLayout
+                            android:id="@+id/lin_rc_left"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:tag="40" >
+
+                            <ImageView 
+	                            android:layout_width="25dp"
+	                            android:layout_height="25dp"
+	                            android:src="@drawable/control_to_left"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lin_rc_middle"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:tag="42"
+                            android:background="@drawable/remote_control_selector42" >
+                            
+                            
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lin_rc_right"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:tag="41" >
+
+                            <ImageView 
+	                            android:layout_width="25dp"
+	                            android:layout_height="25dp"
+	                            android:src="@drawable/uei_currency_right"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lin_rc_blew"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:tag="39">
+
+                        <ImageView 
+	                        android:layout_width="25dp"
+	                        android:layout_height="25dp"
+	                        android:src="@drawable/uei_currency_down"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+			
+            <LinearLayout
+                android:id="@+id/lin_TV_CH"
+                android:background="@drawable/remote_control_vertical_selector"
+                android:layout_width="50dp"
+                android:layout_height="150dp"
+                android:gravity="center"
+                android:orientation="vertical" >
+				<ImageView 
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:background="@drawable/remote_control_selector04"
+                    android:tag="04"
+                    android:layout_weight="1"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:background="@drawable/remote_control_selector05"
+                    android:tag="05"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+        </LinearLayout>
+		<View 
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <LinearLayout 
+                android:id="@+id/lin_TV_back"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:background="@drawable/remote_control_selector37"
+                android:tag="37">
+                
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal" >
+
+                <LinearLayout 
+                    android:id="@+id/lin_TV_message"
+	                android:layout_width="50dp"
+	                android:layout_height="50dp"
+	                android:gravity="center"
+	                android:background="@drawable/remote_control_selector46"
+	                android:orientation="vertical"
+	                android:tag="46">
+            	</LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout 
+                android:id="@+id/lin_TV_silent"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:background="@drawable/remote_control_selector08"
+                android:tag="8">
+            </LinearLayout>
+            
+        </LinearLayout>
+        <View 
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginBottom="40dp"
+	        android:orientation="horizontal" >
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent" 
+            android:layout_weight="1"
+            android:gravity="center">
+            
+            <LinearLayout
+                android:id="@+id/lin_TV_number"
+	            android:layout_width="50dp"
+	            android:layout_height="30dp"
+	            android:background="@drawable/remote_control_selector_number"
+	            android:orientation="vertical">
+            	
+        	</LinearLayout>
+            
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent" 
+            android:layout_weight="1"
+            android:gravity="center">
+            
+            <LinearLayout
+                android:id="@+id/lin_TV_menu"
+	            android:layout_width="50dp"
+	            android:layout_height="30dp" 
+	            android:gravity="center"
+	            android:background="@drawable/remote_control_selector33"
+	            android:orientation="vertical"
+	            android:tag="33">
+            	
+        	</LinearLayout>
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent" 
+            android:layout_weight="1"
+            android:gravity="center">
+            
+            <LinearLayout
+                android:id="@+id/lin_TV_exit"
+	            android:layout_width="50dp"
+	            android:layout_height="30dp" 
+	            android:gravity="center"
+	            android:orientation="vertical"
+	            android:background="@drawable/remote_control_selector36"
+	            android:tag="36">
+            	
+                
+        	</LinearLayout>
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent" 
+            android:layout_weight="1"
+            android:gravity="center">
+            <LinearLayout
+                android:id="@+id/lin_TV_expand"
+	            android:layout_width="50dp"
+	            android:layout_height="30dp" 
+	            android:gravity="center"
+	            android:background="@drawable/remote_control_custom_selector">
+            	<ImageView
+	                android:layout_width="20dp"
+	                android:layout_height="20dp"
+	                android:src="@drawable/icon_control_expand"/>
+        	</LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+    </LinearLayout>
+
+    
+
+</LinearLayout>

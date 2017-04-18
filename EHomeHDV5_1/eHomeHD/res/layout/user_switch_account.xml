@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/v5_gray_light"
+    android:orientation="vertical"
+    android:paddingBottom="20dp"
+    android:paddingTop="20dp" >
+    <ListView
+        android:id="@+id/user_account_switch_lv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/v5_gray_mid"
+        android:layout_marginBottom="60dp"
+        >
+    </ListView>
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="60dp"
+	    android:gravity="top"
+	    android:layout_marginTop="-60dp"
+	    android:visibility="gone"
+	    android:layout_weight="1"
+	    >
+	    <TextView
+        android:id="@+id/user_exit_current_gateway_bt"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/account_manager_switch_account_item_selector"
+        android:gravity="center"
+        android:text="@string/login_new_gateway"
+        android:textColor="@color/v5_green_dark"
+        android:textSize="18sp" />
+	    
+	</LinearLayout>
+    
+</LinearLayout>

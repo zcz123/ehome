@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/selector_shape_round_rect_all_stroke_album"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="@dimen/item_album_height"
+        android:layout_marginTop="@dimen/margin_little"
+        android:layout_weight="2"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_time_weeken"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_little"
+            android:gravity="center"
+            android:text="03月05号"
+            android:textSize="@dimen/textsize_small" />
+
+        <TextView
+            android:id="@+id/tv_time_hour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="19:50"
+            android:textSize="@dimen/textsize_small" />
+    </LinearLayout>
+
+    <View
+        style="@style/img_divider_vertical"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp" />
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="@dimen/item_album_height"
+        android:layout_marginBottom="@dimen/margin_little"
+        android:layout_marginLeft="@dimen/margin_little"
+        android:layout_marginRight="@dimen/margin_little"
+        android:layout_marginTop="@dimen/margin_little"
+        android:layout_weight="7" >
+
+        <ImageView
+            android:id="@+id/iv_album_pic"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/tv_album_device_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/pic_title_color"
+            android:gravity="center"
+            android:paddingLeft="@dimen/margin_little"
+            android:paddingRight="@dimen/margin_little"
+            android:text="厨房"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textsize_middle" />
+
+        <ProgressBar
+            android:id="@+id/pb_album"
+            style="@android:style/Widget.ProgressBar.Inverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+    </FrameLayout>
+
+</LinearLayout>

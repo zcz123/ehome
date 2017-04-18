@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/content_margin_mid" >
+
+    <TextView
+        android:id="@+id/textView_GroupInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|left"
+        android:singleLine="true"
+        android:maxLength="10"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|right"
+        android:gravity="center_vertical" >
+
+        <com.yuantuo.customview.ui.Switch
+            android:id="@id/task_details_action_available"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@id/task_details_save_auto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/content_margin_big"
+            android:paddingRight="@dimen/content_margin_big"
+            android:src="@drawable/wl_menu_save_selector" />
+    </LinearLayout>
+
+</FrameLayout>

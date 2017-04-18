@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <cc.wulian.smarthomev5.view.CheckedGridView
+        android:id="@+id/gridView_infrared_device_keys"
+        style="@style/CMWidget.GridView.Normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/content_margin_big"
+        android:columnWidth="120dp"
+        android:gravity="right"
+        android:horizontalSpacing="@dimen/content_margin_big"
+        android:listSelector="@color/trant"
+        android:numColumns="@integer/gridview_column_frames"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="@dimen/content_margin_big"
+        tools:listitem="@layout/item_infrared_device_key" >
+    </cc.wulian.smarthomev5.view.CheckedGridView>
+
+    <TextView
+        android:id="@android:id/empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:visibility="gone" />
+
+</RelativeLayout>

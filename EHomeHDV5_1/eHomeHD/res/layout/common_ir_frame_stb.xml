@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:gravity="center">
+        <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/ir_key_tv_power"
+           	android:layout_width="wrap_content"
+           	android:layout_height="wrap_content"
+            android:src="@drawable/ir_tv_key_power_selector"
+            android:tag="611" 
+            android:layout_marginRight="25dp"/>
+
+        <Button
+            android:id="@+id/ir_key_tv_av"
+            android:background="@drawable/device_infrared_transmission_key"
+            android:layout_width="wrap_content"
+           	android:layout_height="wrap_content"
+            android:tag="612"
+            android:text="TV/AV"
+            android:textColor="@drawable/radiobutton_tab_text_color" />
+
+        <ImageView
+            android:id="@+id/ir_key_stb_power"
+            android:layout_width="wrap_content"
+           	android:layout_height="wrap_content"
+            android:src="@drawable/ir_stb_key_power_selector"
+            android:tag="013"
+            android:layout_marginLeft="25dp" />
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <Button
+            android:id="@+id/ir_key_stb_num_1"
+            android:background="@drawable/device_infrared_transmission_key"
+            android:tag="001"
+            android:text="1"
+            android:layout_width="wrap_content"
+           	android:layout_height="wrap_content"
+           	android:layout_marginRight="15dp"
+            android:textColor="@drawable/radiobutton_tab_text_color" />
+
+        <Button
+            android:id="@+id/ir_key_stb_num_2"
+            android:background="@drawable/device_infrared_transmission_key"
+            android:tag="002"
+            android:text="2"
+            android:layout_width="wrap_content"
+           	android:layout_height="wrap_content"
+            android:textColor="@drawable/radiobutton_tab_text_color" />
+
+        <Button
+            android:id="@+id/ir_key_stb_num_3"
+            android:layout_width="wrap_content"
+           	android:layout_height="wrap_content"
+            android:background="@drawable/device_infrared_transmission_key"
+            android:tag="003"
+            android:text="3"
+            android:layout_marginLeft="15dp"
+            android:textColor="@drawable/radiobutton_tab_text_color" />
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <Button
+            android:id="@+id/ir_key_stb_num_4"
+            android:background="@drawable/device_infrared_transmission_key"
+            android:tag="004"
+            android:text="4"
+            android:layout_marginRight="15dp"
+            android:layout_width="wrap_content"
+           	android:layout_height="wrap_content"
+            android:textColor="@drawable/radiobutton_tab_text_color" />
+
+        <Button
+            android:id="@+id/ir_key_stb_num_5"
+            android:background="@drawable/device_infrared_transmission_key"
+            android:tag="005"
+            android:text="5"
+            android:layout_width="wrap_content"
+           	android:layout_height="wrap_content"
+            android:textColor="@drawable/radiobutton_tab_text_color" />
+
+        <Button
+            android:id="@+id/ir_key_stb_num_6"
+            android:background="@drawable/device_infrared_transmission_key"
+            android:tag="006"
+            android:text="6"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+           	android:layout_height="wrap_content"
+            android:textColor="@drawable/radiobutton_tab_text_color" />
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <Button
+            android:id="@+id/ir_key_stb_num_7"
+            android:background="@drawable/device_infrared_transmission_key"
+            android:tag="007"
+            android:text="7"
+            android:layout_marginRight="15dp"
+            android:layout_width="wrap_content"
+           	android:layout_height="wrap_content"
+            android:textColor="@drawable/radiobutton_tab_text_color" />
+
+        <Button
+            android:id="@+id/ir_key_stb_num_8"
+            android:background="@drawable/device_infrared_transmission_key"
+            android:tag="008"
+            android:text="8"
+            android:layout_width="wrap_content"
+           	android:layout_height="wrap_content"
+            android:textColor="@drawable/radiobutton_tab_text_color" />
+
+        <Button
+            android:id="@+id/ir_key_stb_num_9"
+            android:background="@drawable/device_infrared_transmission_key"
+            android:tag="009"
+            android:text="9"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+           	android:layout_height="wrap_content"
+            android:textColor="@drawable/radiobutton_tab_text_color" />
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center">
+         <ImageButton
+            android:id="@+id/ir_key_tv_info"
+            android:background="@drawable/device_infrared_transmission_key"
+            android:gravity="center"
+            android:src="@drawable/wl_menu_info_selector"
+            android:tag="033"
+            android:layout_marginRight="25dp"
+            android:layout_width="wrap_content"
+           	android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/ir_key_stb_num_0"
+            android:background="@drawable/device_infrared_transmission_key"
+            android:tag="010"
+            android:text="0"
+            android:layout_width="wrap_content"
+           	android:layout_height="wrap_content"
+            android:textColor="@drawable/radiobutton_tab_text_color" />
+
+        <ImageButton
+            android:id="@+id/ir_key_stb_back"
+            android:background="@drawable/device_infrared_transmission_key"
+            android:gravity="center"
+            android:src="@drawable/wl_menu_up_selector"
+            android:tag="029"
+            android:layout_marginLeft="25dp"
+            android:layout_width="wrap_content"
+           	android:layout_height="wrap_content" />
+    </LinearLayout>
+    </LinearLayout>
+    
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:layout_weight="1" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            >
+			<ImageView 
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_centerInParent="true"
+			    android:src="@drawable/ic_ir_stb_key_navi_background"
+			    />
+            
+            
+            <TextView
+                android:id="@+id/ir_key_stb_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/ir_key_round_background_selector"
+                android:gravity="center"
+                android:tag="022"
+                android:text="OK"
+                android:textColor="@drawable/radiobutton_tab_text_color" >
+            </TextView>
+
+            <ImageButton
+                android:id="@+id/ir_key_stb_navi_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/ir_key_stb_submit"
+                android:background="@null"
+                android:minHeight="32dp"
+                android:src="@drawable/ir_stb_key_navi_right_selector"
+                android:tag="016" />
+
+            <ImageButton
+                android:id="@+id/ir_key_stb_navi_down"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ir_key_stb_submit"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_centerHorizontal="true"
+                android:background="@null"
+                android:minHeight="100dp"
+                android:src="@drawable/ir_stb_key_navi_down_selector"
+                android:tag="015" />
+
+            <ImageButton
+                android:id="@+id/ir_key_stb_navi_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/ir_key_stb_submit"
+                android:background="@null"
+                android:minHeight="32dp"
+                android:src="@drawable/ir_stb_key_navi_left_selector"
+                android:tag="017" />
+
+            <ImageView
+                android:id="@+id/ir_key_stb_navi_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/ir_key_stb_submit"
+                android:layout_centerHorizontal="true"
+                android:minHeight="100dp"
+                android:src="@drawable/ir_stb_key_navi_up_selector"
+                android:tag="014" />
+
+            <Button
+                android:id="@+id/ir_key_stb_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_alignBottom="@+id/ir_key_stb_navi_down"
+                android:layout_toLeftOf="@+id/ir_key_stb_navi_down"
+                android:background="@drawable/device_infrared_transmission_key"
+                android:tag="024"
+                android:text="@string/device_ir_title_menu"
+                android:textColor="@drawable/radiobutton_tab_text_color" />
+
+            <ImageButton
+                android:id="@+id/ir_key_stb_mute"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_alignBottom="@+id/ir_key_stb_navi_down"
+                android:layout_toRightOf="@+id/ir_key_stb_navi_down"
+                android:background="@drawable/device_infrared_transmission_key"
+                android:src="@drawable/ir_stb_key_mute_selector"
+                android:tag="034" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

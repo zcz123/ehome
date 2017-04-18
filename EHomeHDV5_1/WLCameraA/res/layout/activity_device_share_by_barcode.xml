@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background"
+    android:orientation="vertical" >
+
+    <include layout="@layout/titlebar_add_device" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/btn_height_min"
+        android:layout_marginRight="@dimen/btn_height_min"
+        >
+
+        <TextView
+            android:id="@+id/tv_described"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/btn_height_min"
+            android:text="@string/share_described"
+            android:textSize="@dimen/textsize_middle" />
+		<Button
+            android:id="@+id/tv_re_barcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/selector_btn_re_barcode"
+            android:padding="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/barcode_magin_large"
+            android:layout_marginBottom="@dimen/barcode_magin_small"
+            android:text="@string/config_barcode_invalid"
+            android:textSize="@dimen/textsize_large" />
+        <LinearLayout
+            android:layout_below="@id/tv_described"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/btn_height_min"
+            android:background="@drawable/shape_round_all_white"
+            android:layout_above="@id/tv_re_barcode"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/margin_big">
+            <ImageView
+                android:id="@+id/iv_barcode_generated"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5"
+                android:layout_gravity="center_horizontal"
+                 />
+			<TextView
+                android:layout_width="match_parent"
+                android:layout_weight="0.5"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/config_barcode_mine"	
+                android:textSize="@dimen/textsize_large" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

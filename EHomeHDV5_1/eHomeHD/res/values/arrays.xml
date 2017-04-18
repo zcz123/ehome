@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="radiotaskMode">
+        <item>@+id/device_radio_task_select_pre</item>
+        <item>@+id/device_radio_task_select_next</item>
+        <item>@+id/device_radio_task_select_pause</item>
+        <item>@+id/device_radio_task_select_play</item>
+    </string-array>
+    <string-array name="radioMode">
+        <item>@drawable/device_radio_list_loop_play</item>
+        <item>@drawable/device_radio_random_play</item>
+        <item>@drawable/device_radio_single_play</item>
+        <item>@drawable/device_radio_list_loop_stop</item>
+    </string-array>
+    <string-array name="repeatWeekDayIds">
+        <item>@+id/radio_sun</item>
+        <item>@+id/radio_mon</item>
+        <item>@+id/radio_tur</item>
+        <item>@+id/radio_thre</item>
+        <item>@+id/radio_thu</item>
+        <item>@+id/radio_fir</item>
+        <item>@+id/radio_sat</item>
+    </string-array>
+    <string-array name="houseKeeperRepeatWeekDayIds">
+        <item>@+id/radio_all</item>
+        <item>@+id/radio_sun</item>
+        <item>@+id/radio_mon</item>
+        <item>@+id/radio_tur</item>
+        <item>@+id/radio_thre</item>
+        <item>@+id/radio_thu</item>
+        <item>@+id/radio_fir</item>
+        <item>@+id/radio_sat</item>
+    </string-array>
+    <string-array name="ir_stb_id_array">
+        <item>@+id/ir_key_tv_power</item>
+        <item>@+id/ir_key_tv_info</item>
+        <item>@+id/ir_key_stb_power</item>
+        <item>@+id/ir_key_stb_num_1</item>
+        <item>@+id/ir_key_stb_num_2</item>
+        <item>@+id/ir_key_stb_num_3</item>
+        <item>@+id/ir_key_stb_num_4</item>
+        <item>@+id/ir_key_stb_num_5</item>
+        <item>@+id/ir_key_stb_num_6</item>
+        <item>@+id/ir_key_stb_num_7</item>
+        <item>@+id/ir_key_stb_num_8</item>
+        <item>@+id/ir_key_stb_num_9</item>
+        <item>@+id/ir_key_tv_av</item>
+        <item>@+id/ir_key_stb_num_0</item>
+        <item>@+id/ir_key_stb_back</item>
+        <item>@+id/ir_key_stb_submit</item>
+        <item>@+id/ir_key_stb_navi_right</item>
+        <item>@+id/ir_key_stb_navi_down</item>
+        <item>@+id/ir_key_stb_navi_left</item>
+        <item>@+id/ir_key_stb_navi_up</item>
+        <item>@+id/ir_key_stb_menu</item>
+        <item>@+id/ir_key_stb_mute</item>
+    </string-array>
+
+        <!-- config area names -->
+
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/router_setting_wifi_rename_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/account_sigin_records_background"
+        android:ellipsize="end"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:maxLength="18"
+        android:digits="0123456789abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        android:textColor="@color/black"
+        android:textCursorDrawable="@null" />
+
+    <TextView
+        android:id="@+id/router_setting_wifi_remind_word_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:text="@string/gateway_router_setting_name_hint"
+        android:textColor="@color/black"
+        android:visibility="visible" />
+
+</LinearLayout>

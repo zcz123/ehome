@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="dividerHeight">1.0sp</dimen>
+    <dimen name="adapterview_default_margin">5dp</dimen>
+    <dimen name="tabView_default">48dp</dimen>
+    <dimen name="action_popmenu_min_height">48dip</dimen>
+    <dimen name="action_popmenu_min_width">48dip</dimen>
+    <dimen name="action_popmenu_text_padding_left">8dip</dimen>
+    <dimen name="action_popmenu_text_padding_right">8dip</dimen>
+    <dimen name="action_popmenu_icon_width">32dip</dimen>
+    <dimen name="action_popmenu_icon_bg_width">40dip</dimen>
+    <dimen name="action_popmenu_icon_height">32dip</dimen>
+    <dimen name="action_popmenu_icon_width_fixed">32dip</dimen>
+    <dimen name="action_popmenu_icon_height_fixed">32dip</dimen>
+
+    <!-- V5 新增 -->
+    <dimen name="corners_radius_normal">10dp</dimen>
+    <dimen name="corners_radius_small">5dp</dimen>
+    <dimen name="frame_lr_padding">25dp</dimen>
+    <dimen name="dialog_btn_height">48dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="historyscore_tb">10dp</dimen>
+</resources>

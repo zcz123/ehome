@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background" >
+
+    <include
+        android:id="@+id/include_title"
+        layout="@layout/titlebar_one_action" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/include_title"
+        android:layout_marginTop="@dimen/default_margin_top"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/ll_network_protect"
+            style="@style/setting_top_shape" >
+
+            <ImageView
+                style="@style/setting_icon"
+                android:src="@drawable/icon_network_protect" />
+
+            <TextView
+                style="@style/setting_item"
+                android:text="@string/common_network_protect" />
+
+            <CheckBox
+                android:id="@+id/ck_network_protect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="1dp"
+                android:layout_marginRight="1dp"
+                android:enabled="false"
+                android:clickable="false"
+                android:button="@drawable/selector_checkbox_toggle" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/ll_divider" >
+
+            <ImageView style="@style/img_divider" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_alarm_push"
+            style="@style/setting_middle_shape" >
+
+            <ImageView
+                style="@style/setting_icon"
+                android:src="@drawable/icon_setting_alarm" />
+
+            <TextView
+                style="@style/setting_item"
+                android:text="@string/setting_prompt_msg" />
+
+            <CheckBox
+                android:id="@+id/ck_alarm_push"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="1dp"
+                android:layout_marginRight="1dp"
+                android:enabled="false"
+                android:clickable="false"
+                android:button="@drawable/selector_checkbox_toggle" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/ll_divider" >
+
+            <ImageView style="@style/img_divider" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_gesture_pwd"
+            style="@style/setting_bottom_shape" >
+
+            <ImageView
+                style="@style/setting_icon"
+                android:src="@drawable/icon_gesture" />
+
+            <TextView
+                style="@style/setting_item"
+                android:text="@string/gesture_pwd" />
+
+            <CheckBox
+                android:id="@+id/ck_gesture_pwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="1dp"
+                android:layout_marginRight="1dp"
+                android:enabled="false"
+                android:clickable="false"
+                android:button="@drawable/selector_checkbox_toggle" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

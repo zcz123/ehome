@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+		<meta http-equiv="expires" content="0">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<title>modifyprofile</title>
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/custom.css" />
+		<style>
+			html,
+			body {
+				background-color: white;
+			}
+			
+			span.margin-right-20 {
+				margin-right: 25px;
+			}
+			
+			.mui-popover {
+				height: 150px;
+			}
+			
+			.m-footer {
+				height: 60px;
+				margin-top: 20px;
+				width: 100%;
+				text-align: center;
+			}
+			
+			li a {
+				text-decoration: none;
+			}
+			
+			li a:active {
+				text-decoration: none;
+			}
+			
+			li a:hover {
+				text-decoration: none;
+			}
+			
+			li a:visited {
+				text-decoration: none;
+			}
+		</style>
+
+		<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/plus.js"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/hashmap.js"></script>
+		<script type="text/javascript" src="./js/md5-min.js"></script>
+		<script type="text/javascript" src="./js/digest-auth.js"></script>
+		<script type="text/javascript" src="js/custom.js" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="wrap">
+			<div id="main" class="clearfix">
+				<header class="mui-bar mui-bar-nav custom-nav">
+					<a class="custom-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+					<h1 class="mui-title autoSwitchLanguager" id="html_user_preson_center">个人中心</h1>
+				</header>
+				<div class="mui-content">
+					<!--<div id="head-div" class="middle-content" style="border: 1px solid;margin: 10px 0px 30px;height: 80px;">
+						<img src="img/icon120x120.png" style="height: 80px; width: 80px;" id="head-icon" class="circular-mask" onclick="selectHeadImg()" />
+					</div>
+                    <label style="margin-left: 100px;border: 1px solid;" class="middle-content" id="nickName">123</label>
+					<img id="editNickName" onclick="modifyNickName()" style="margin-top: -30px;height: 20px; width: 20px; margin-left: 68px; vertical-align: middle;" src="img/modify.png">-->
+					<div class="middle-content" style="margin-bottom: 5px; margin-top: 5px;">
+						<div id="head-div" class="middle-content" style=" margin: 5px 0px 5px;height: 90px;">
+							<img src="img/icon120x120.png" style="height: 80px; width: 80px;" id="head-icon" class="circular-mask" onclick="selectHeadImg()" />
+						</div>
+						<label style="margin-left: 100px;" class="middle-content" id="nickName"></label>
+						<img id="editNickName" onclick="modifyNickName()" style="height: 20px; width: 20px; margin-left: 68px; vertical-align: middle;" src="img/modify.png">
+					</div>
+					<ul class="mui-table-view">
+						<li id="bind" class="mui-table-view-cell" style="display: none;">
+							<a href="modifyaccount.html" class="mui-navigate-right" id="apersonalData">
+								<span class="autoSwitchLanguager" id="html_user_account">账号</span><span id="html_click_bind_hint" class="mui-pull-right margin-right-20 autoSwitchLanguager" style="color: forestgreen;">点击绑定账号!</span>
+							</a>
+						</li>
+						<li id="binded" class="mui-table-view-cell" style="display: block;">
+							<span class="autoSwitchLanguager" id="html_user_account">账号</span><span class="mui-pull-right margin-right-20" id="suserName" style="color: forestgreen;"></span>
+						</li>
+						<li class="mui-table-view-cell">
+							<span class="autoSwitchLanguager" id="html_user_wulian_id">物联ID</span><span class="mui-pull-right margin-right-20" id="swulianId" style="color: forestgreen;"></span>
+						</li>
+					</ul>
+					<br />
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							<a href="modifyprofile.html" class="mui-navigate-right" id="apersonalData">
+								<span class="autoSwitchLanguager" id="html_user_preson_data">个人资料</span><span class="mui-pull-right margin-right-20" id="sersonalData"></span>
+							</a>
+						</li>
+					</ul>
+					<br />
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell" id="aemail_line">
+							<a href="verifyEmail.html" class="mui-navigate-right" id="aemail">
+								<span class="autoSwitchLanguager" id="html_user_email">邮箱</span><span class="mui-pull-right margin-right-20" id="semail" style="color: forestgreen;"></span>
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a href="verifyphonenum.html" class="mui-navigate-right" id="aphoneNum">
+								<span class="autoSwitchLanguager" id="html_user_phone">手机号</span><span class="mui-pull-right margin-right-20" id="sphoneNum" style="color: forestgreen;"></span>
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a href="javascript:gotoAddDevice()" class="mui-navigate-right">
+								<span class="autoSwitchLanguager" id="html_user_bind_gateway">绑定网关</span>
+							</a>
+						</li>
+						<!--<li class="mui-table-view-cell">
+							<a href="authorizationManagement.html" class="mui-navigate-right">
+								<span class="autoSwitchLanguager">授权管理</span>
+							</a>
+						</li>-->
+					</ul>
+					<br />
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							<a href="modifypassword.html" class="mui-navigate-right" id="amodifyPwd">
+								<span class="autoSwitchLanguager" id="html_modify_password_hint">修改密码</span><span class="mui-pull-right margin-right-20" id="smodifyPwd"></span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="m-footer">
+					<button onclick="logout()" class="logout-btn"><span class="autoSwitchLanguager" id="html_user_logout">退出登录</span></button>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+	<script>
+		plus.plusReady(function() {
+			plus.event.addEventListener(plus.event.KEYCODE_BACK, function() {
+				plus.webView.currentWebview().close();
+			});
+			document.getElementById("nickName").textContent=plus.ehomev5.getLang("html_nickname_hint");
+			downLoadHeadImg();
+			getProfile();
+			//			getLanguagerForClassName();
+		});
+		//去绑定新网关
+		function gotoAddDevice() {
+			var data = {};
+			data.action = "bindGateway";
+			data.params = [];
+			plus.ehomev5.startActivity(JSON.stringify(data));
+		}
+
+		function viewProfile(jsonTxt) {
+			var ret = null;
+			try {
+				var ret = JSON.parse(jsonTxt);
+				var email = ret.email;
+				var phoneNum = ret.phone;
+				var emailReg1 = /^\[(.*)\]$/;
+				var emailstatus = '';
+				var phonestatus = '';
+				if(ret.nick&&ret.nick.length>0){
+					document.getElementById("nickName").textContent =  decodeURIComponent(ret.nick);
+				}
+				if(emailReg1.test(email)) {
+					email = RegExp.$1;
+					emailstatus = plus.ehomev5.getLang("html_user_hint_verification");
+				} else if(email.trim() != '') {
+					emailstatus = plus.ehomev5.getLang("html_user_hint_binding");
+				} else {
+					emailstatus = plus.ehomev5.getLang("html_user_hint_not_set");
+				}
+				if(emailReg1.test(phoneNum)) {
+					phoneNum = RegExp.$1;
+					phonestatus = plus.ehomev5.getLang("html_user_hint_verification");
+				} else if(phoneNum.trim() != '') {
+					phonestatus = plus.ehomev5.getLang("html_user_hint_binding");
+				} else {
+					phonestatus = plus.ehomev5.getLang("html_user_hint_not_set");
+				}
+				if(phoneNum.trim() != '') {
+					var mphone = phoneNum.substr(3, 4);
+					var lphone = phoneNum.replace(mphone, "****");
+				} else {
+					lphone = '';
+				}
+				if(email.trim() != '') {
+					var memail = email.split("@");
+					var lmail = memail[0].substr(0, 1) + "****@" + memail[1];
+				} else {
+					lmail = '';
+				}
+				document.getElementById("semail").textContent = lmail + emailstatus //email + emailstatus;
+				document.getElementById("sphoneNum").textContent = lphone + phonestatus //phoneNum + phonestatus;
+				document.getElementById("swulianId").textContent = ret.userId;
+				if(ret.userName == '') {
+					document.getElementById("binded").style.display = "none";
+					document.getElementById("bind").style.display = "block";
+				} else {
+					document.getElementById("bind").style.display = "none";
+					document.getElementById("binded").style.display = "block";
+					document.getElementById("suserName").textContent = ret.userName;
+				}
+				plus.ehomev5.setData($CONSTANTS.USERID, ret.userId + "");
+				plus.ehomev5.setData($CONSTANTS.EMAIL, email);
+				plus.ehomev5.setData($CONSTANTS.PHONENUMBER, phoneNum);
+				return true;
+			} catch(e) {
+				return false;
+			}
+		}
+
+		function getProfile() {
+			var hintContent = plus.ehomev5.getLang("html_user_hint_getinfo_fail");
+			var digestAuth = DigestAuthentication.init({
+				onSuccess: function(response, status) {
+					var ret = JSON.parse(response);
+					var hint = statusHelper.mapping(status); //错误码显示
+					if(hint) {
+						alert(hint);
+					} else if(status == "0") {
+						viewProfile(response);
+						plus.ehomev5.setData($CONSTANTS.PROFILE, response);
+					} else {
+						alert(hintContent);
+					}
+				},
+				onFailure: function(httpStatus) {
+					alert(hintContent);
+				},
+				sync: false
+			});
+			digestAuth.setHeader('cmd', 'getUserInfo');
+			digestAuth.setHeader('token', plus.ehomev5.getData($CONSTANTS.TOKEN));
+			digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + '/AMS/user/access');
+		}
+
+		function loadDevices() {
+			var digestAuth = DigestAuthentication.init({
+				onSuccess: function(response, status) {
+					var res = JSON.parse(response);
+					var hint = statusHelper.mapping(status); //错误码显示
+					if(hint) {
+						alert(plus.ehomev5.getLang("html_user_hint_logout_fail"));
+					} else if(status == "0") {
+						if(response != null && typeof(response) != "undefined") {
+							var devices = JSON.parse(response).devices;
+							if(devices.length == 0) {
+								return;
+							}
+							for(var index = 0; index < devices.length; index++) {
+								if(devices[index].deviceType != "GW") {
+									if(devices[index].deviceType == "CAMERA" && plus.device.getOsName() == "iOS") {
+										plus.ehomev5.unMappingWithDevice(devices[index].deviceId);
+									}
+									continue;
+								}
+							}
+						}
+					} else {
+						alert(plus.ehomev5.getLang("html_user_hint_logout_fail"));
+					}
+				},
+				onFailure: function(httpStatus) {
+					alert(plus.ehomev5.getLang("html_user_hint_logout_fail"));
+				},
+				sync: false
+			});
+			digestAuth.setHeader('cmd', 'getSimpleDeviceByUser');
+			digestAuth.setHeader('token', plus.ehomev5.getData($CONSTANTS.TOKEN));
+			digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + '/AMS/user/device');
+		}
+
+		function logout() {
+			loadDevices();
+			var hintContent = plus.ehomev5.getLang("html_user_hint_logout_fail");
+			var digestAuth = DigestAuthentication.init({
+				onSuccess: function(response, status) {
+					var ret = JSON.parse(response);
+					var hint = statusHelper.mapping(status); //错误码显示
+					if(hint) {
+						alert(hint);
+					} else if(status == "0") {
+						plus.ehomev5.setData($CONSTANTS.TOKEN, "");
+						plus.ehomev5.setData($CONSTANTS.MD5PWD, "");
+						plus.ehomev5.setData($CONSTANTS.IS_LOGIN, "false");
+						plus.ehomev5.userLogout();
+					} else {
+						alert(hintContent);
+					}
+				},
+				onFailure: function(httpStatus) {
+					alert(hintContent);
+				}
+			});
+			digestAuth.setHeader('cmd', 'userLogout');
+			digestAuth.setHeader('token', plus.ehomev5.getData($CONSTANTS.TOKEN));
+			var obj = {};
+			obj.imei = plus.device.getImei();
+			digestAuth.setData(JSON.stringify(obj));
+			digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + '/AMS/user/access');
+		}
+
+		function selectHeadImg() {
+			plus.ehomev5.selectPhoto(function(path) {
+				plus.ehomev5.uploadFile(path, function(ret) {
+					setHeadImg(path);
+				}, function(err1) {
+					if(err1 == "cancel") {
+
+					} else {
+						alert(err1);
+					}
+				});
+			}, function(err2) {
+				//	alert(err2);
+			});
+		}
+
+		function setHeadImg(path) {
+			var headDiv = document.getElementById("head-div");
+			headDiv.innerHTML = "";
+			var headImg = document.createElement("img");
+			headImg.style.height = "80px";
+			headImg.style.width = "80px";
+			headImg.className = "circular-mask";
+			headImg.onclick = selectHeadImg;
+			if(path != null && path.length > 0) {
+				headImg.src = "file://" + path + "?_=" + Math.random() * 10000;
+			} else {
+				headImg.src = "img/icon120x120.png";
+			}
+			headDiv.appendChild(headImg);
+			return;
+		}
+
+		function downLoadHeadImg() {
+			plus.ehomev5.downloadFile("head.png", function(path) {
+				setHeadImg(path);
+			});
+		}
+		function modifyNickName() {
+			var btnSubmitText = plus.ehomev5.getLang("common_ok");
+			var btnCancleText = plus.ehomev5.getLang("cancel");
+			var dialogTitle = plus.ehomev5.getLang("html_user_hint_input_nickname");
+			var btnArray = [btnSubmitText, btnCancleText];
+			var btnArray = [btnSubmitText, btnCancleText];
+			var item = new inputDialog();
+			item.showInput(dialogTitle, dialogTitle, btnArray, function(result) {
+				updateProfile("nick",result,function(){
+					document.getElementById("nickName").textContent = result;
+					plus.ehomev5.setData($CONSTANTS.NICKNAME,result);
+				});
+			},function() {}, "text" ,20 );
+		}
+		
+		function updateProfile(key, info,successCallback) {
+			var hintContent = plus.ehomev5.getLang("html_user_hint_updata_info_fail");
+			var digestAuth = DigestAuthentication.init({
+				onSuccess: function(response, status) {
+					var ret = JSON.parse(response);
+					var hint = statusHelper.mapping(status); //错误码显示
+					if (hint) {
+						alert(hint);
+					} else if (status == "0") {
+						if(typeof successCallback =="function"){
+							successCallback();
+						}
+					}
+				},
+				onFailure: function(httpStatus) {
+					alert(hintContent);
+				}
+			});
+			digestAuth.setHeader('cmd', 'userUpdate');
+			digestAuth.setHeader('token', plus.ehomev5.getData($CONSTANTS.TOKEN));
+			var obj = {};
+			obj[key] = info;
+			digestAuth.setData(JSON.stringify(obj));
+			digestAuth.call(plus.ehomev5.getData($CONSTANTS.PARAM_URLBASE) + '/AMS/user/access');
+		}
+	</script>
+
+</html>

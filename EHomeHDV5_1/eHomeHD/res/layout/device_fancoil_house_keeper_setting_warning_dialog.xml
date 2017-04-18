@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#55000000"
+              android:gravity="center"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="280dp"
+        android:layout_height="200dp"
+        android:background="@drawable/scene_task_control_led_light_prompt_dialog_bg"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_horizontal|bottom"
+                android:text="@string/set_desk_format_dialog_title"
+                android:textColor="#6EA31D"
+                android:textSize="18sp"
+                />
+
+            <TextView
+                android:id="@+id/fancoil_house_keeper_message"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:gravity="center"
+                android:text="@string/floor_heating_set_housekeeper"
+                android:textColor="#3E3E3E"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/v5_gray_font"/>
+
+        <TextView
+            android:id="@+id/fancoil_house_keeper_prompt"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="@string/more_i_see"
+            android:textColor="#6EA31D"
+            android:textSize="18sp"/>
+    </LinearLayout>
+</LinearLayout>

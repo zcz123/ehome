@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="2dp"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="65dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/fancoil_program_monday"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#7FA82F"
+                android:gravity="center"
+                android:text="@string/AP_monday"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/DarkGreen" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/fancoil_program_tuesday"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#7FA82F"
+                android:gravity="center"
+                android:text="@string/AP_tuesday"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/DarkGreen" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/fancoil_program_wednesday"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#7FA82F"
+                android:gravity="center"
+                android:text="@string/AP_wedneday"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/DarkGreen" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/fancoil_program_thursday"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#7FA82F"
+                android:gravity="center"
+                android:text="@string/AP_thursday"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/DarkGreen" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/fancoil_program_friday"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#7FA82F"
+                android:gravity="center"
+                android:text="@string/AP_friday"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/DarkGreen" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/fancoil_program_saturday"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#7FA82F"
+                android:gravity="center"
+                android:text="@string/AP_saturday"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/DarkGreen" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/fancoil_program_sunday"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#7FA82F"
+                android:gravity="center"
+                android:text="@string/AP_sunday"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/fancoil_program_data_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/thermost_program_data"/>
+
+            <cc.wulian.app.model.device.impls.controlable.fancoil.program.ProgramView
+                android:id="@+id/fancoil_programView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="10dp" />
+
+
+        </FrameLayout>
+
+
+        <TextView
+            android:id="@+id/fancoil_program_temp_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="@string/AP_get_hot"
+            android:textColor="#FF7000"
+            android:textSize="30sp" />
+
+        <ImageButton
+            android:id="@+id/fancoil_program_cancel"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/thermost_program_cancel_selector" />
+
+        <Button
+            android:id="@+id/fancoil_program_copy"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_gravity="left|bottom"
+            android:layout_marginBottom="40dp"
+            android:layout_marginLeft="20dp"
+            android:text="@string/AP_copyto_nextDay"
+            android:textSize="15sp"
+            android:background="@drawable/floorheating_program_btn_selector" />
+
+        <Button
+            android:id="@+id/fancoil_program_sync"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_gravity="right|bottom"
+            android:layout_marginBottom="40dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/AP_synasize"
+            android:textSize="15sp"
+            android:background="@drawable/floorheating_program_btn_selector" />
+
+
+    </FrameLayout>
+
+</LinearLayout>

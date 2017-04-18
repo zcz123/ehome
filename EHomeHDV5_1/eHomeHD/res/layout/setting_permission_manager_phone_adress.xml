@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center" >
+    
+	<EditText
+	    android:id="@+id/setting_permission_manager_edit_adress"
+	    android:layout_width="match_parent"
+	    android:layout_height="40dp"
+	    android:layout_marginLeft="10dp"
+	    android:layout_marginRight="10dp"
+	    android:layout_marginTop="5dp"
+	    android:background="@drawable/house_keeper_rule_task_edit_name_img"
+	    android:cursorVisible="true"
+	    android:hint="@string/gateway_timeZone_setting_permission_manager_adress"
+	    android:textColor="@color/black"
+	    android:textCursorDrawable="@null"
+	    android:textSize="13sp" />
+	
+	<EditText
+	    android:id="@+id/setting_permission_manager_edit_phoneNumber"
+	    android:layout_width="match_parent"
+	    android:layout_height="40dp"
+	    android:layout_marginLeft="10dp"
+	    android:phoneNumber="true"
+	    android:layout_marginRight="10dp"
+	    android:layout_marginTop="5dp"
+	    android:background="@drawable/house_keeper_rule_task_edit_name_img"
+	    android:cursorVisible="true"
+	    android:hint="@string/gateway_timeZone_setting_permission_manager_phone"
+	    android:textColor="@color/black"
+	    android:textCursorDrawable="@null"
+	    android:textSize="13sp" />
+
+</LinearLayout>

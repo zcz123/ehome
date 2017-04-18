@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/device_delete_item_content_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="@string/device_config_edit_dev_delete_remind_1"
+        android:textColor="@color/abs__background_holo_dark"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/device_delete_item_help_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:text="@string/device_config_edit_dev_help"
+        android:textColor="@color/abs__background_holo_dark"
+        android:textSize="18sp" />
+
+</LinearLayout>

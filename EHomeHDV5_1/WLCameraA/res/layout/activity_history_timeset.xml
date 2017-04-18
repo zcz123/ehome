@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical" >
+
+    <include layout="@layout/titlebar_sure" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin_top"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="@string/common_start_time"
+            android:textSize="@dimen/textsize_middle" >
+        </TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="@string/common_end_time"
+            android:textSize="@dimen/textsize_middle" >
+        </TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <com.wheel.WheelView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2" />
+
+        <com.wheel.WheelView
+            android:id="@+id/start_time_hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <!--
+             <com.wheel.WheelView
+            android:id="@+id/colon1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        -->
+
+        <TextView
+            android:id="@+id/colon1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-5dp"
+            android:layout_marginStart="-5dp"
+            android:gravity="center"
+            android:text="@string/common_colon"
+            android:textColor="@color/control_color"
+            android:textSize="@dimen/textsize_middle"
+            android:textStyle="bold" >
+        </TextView>
+
+        <com.wheel.WheelView
+            android:id="@+id/start_time_min"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.wheel.WheelView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.wheel.WheelView
+            android:id="@+id/end_time_hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/colon2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-5dp"
+            android:layout_marginStart="-5dp"
+            android:gravity="center"
+            android:text="@string/common_colon"
+            android:textColor="@color/control_color"
+            android:textSize="@dimen/textsize_middle"
+            android:textStyle="bold" >
+        </TextView>
+
+        <com.wheel.WheelView
+            android:id="@+id/end_time_min"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.wheel.WheelView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin_top"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:paddingBottom="5dp"
+            android:paddingEnd="5dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="5dp"
+            android:paddingStart="0dp"
+            android:paddingTop="5dp"
+            android:text="@string/common_repeat"
+            android:textSize="@dimen/textsize_middle" >
+        </TextView>
+
+        <ImageView
+            style="@style/img_divider_full"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:paddingBottom="5dp"
+            android:paddingEnd="0dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:paddingStart="0dp"
+            android:paddingTop="5dp" >
+
+            <CheckBox
+                android:id="@+id/cb_sun"
+                style="@style/cb_weekday"
+                android:button="@null"
+                android:text="@string/common_sun" />
+
+            <ImageView style="@style/img_divider_vertical_checkbox" />
+
+            <CheckBox
+                android:id="@+id/cb_mon"
+                style="@style/cb_weekday"
+                android:text="@string/common_mon" />
+
+            <ImageView style="@style/img_divider_vertical_checkbox" />
+
+            <CheckBox
+                android:id="@+id/cb_tue"
+                style="@style/cb_weekday"
+                android:text="@string/common_tue" />
+
+            <ImageView style="@style/img_divider_vertical_checkbox" />
+
+            <CheckBox
+                android:id="@+id/cb_wed"
+                style="@style/cb_weekday"
+                android:text="@string/common_wed" />
+
+            <ImageView style="@style/img_divider_vertical_checkbox" />
+
+            <CheckBox
+                android:id="@+id/cb_thurs"
+                style="@style/cb_weekday"
+                android:text="@string/common_thurs" />
+
+            <ImageView style="@style/img_divider_vertical_checkbox" />
+
+            <CheckBox
+                android:id="@+id/cb_fri"
+                style="@style/cb_weekday"
+                android:text="@string/common_fri" />
+
+            <ImageView style="@style/img_divider_vertical_checkbox" />
+
+            <CheckBox
+                android:id="@+id/cb_sat"
+                style="@style/cb_weekday"
+                android:text="@string/common_sat" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

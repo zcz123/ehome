@@ -1,0 +1,19 @@
+#main {height:390px; padding-top: 0px;}
+#main1 {height:390px; padding-top: 0px;}
+#content{width: 100%;height: 10%;text-align: center;margin-bottom: 8px; margin-top: 8px;}
+#datein{width: 100px;height: 30px; border-radius: 10px;}
+#dateout{width: 100px;height: 30px; border-radius: 10px;margin-left: 30px;}
+#show1{width: 100%;height: 10%;text-align: center;  }
+#show2{width: 100%;height: 10%;text-align: center;  }
+#btnlf{width: 30px;height: 30px;border: 0px;background-image: url(../img/2.png); margin-top: 5px;}
+#appDate{width: 130px;height: 40px;border: 0px; border-radius: 10px;margin-left: 20px;}
+#weekDate{width: 130px;height: 40px;border: 0px; border-radius: 10px;margin-left: 20px;}
+#btnri{width: 30px;height: 30px;border: 0px;background-image: url(../img/3.png); margin-top: 5px;margin-left: 20px; }
+#week{width: 100%;height: 10%;text-align: center; margin-top: 20px;}
+#btnteday{width: 50px;height: 50px; border-radius: 30px; background-color: #2AC845;}
+#btnweek{width: 50px;height: 50px; border-radius: 30px; margin-left: 80px;}
+
+#btnlf1{width: 30px;height: 30px;border: 0px;background-image: url(../img/2.png); margin-top: 5px;}
+#btnri1{width: 30px;height: 30px;border: 0px;background-image: url(../img/3.png); margin-top: 5px;margin-left: 20px; }
+#weekin{width: 100px;height: 30px; border-radius: 10px;}
+#weekout{width: 100px;height: 30px; border-radius: 10px;margin-left: 30px;}

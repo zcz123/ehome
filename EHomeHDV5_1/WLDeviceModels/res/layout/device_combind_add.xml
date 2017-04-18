@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:orientation="vertical" >
+	    <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:paddingTop="10dp"
+	        android:paddingBottom="10dp"
+	        android:text="左暗盒"
+	        />
+		<LinearLayout 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:paddingTop="10dp"
+		    android:paddingBottom="10dp"
+		    android:gravity="center"
+		    >
+		    <TextView 
+		        android:layout_width="wrap_content"
+		        android:layout_height="20dp"
+		        android:id="@+id/device_combind_left_tv"
+		        android:text="设备A"
+		        
+		        />
+		    <ImageView 
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:id="@+id/device_combind_left_iv"
+		        android:src="@drawable/common_remove_or_disable_pressed"
+		        />
+		</LinearLayout>
+		  <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="右暗盒"
+	        android:paddingTop="10dp"
+	        android:paddingBottom="10dp"
+	        />
+		<LinearLayout 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:paddingTop="10dp"
+		    android:paddingBottom="10dp"
+		    android:gravity="center"
+		    >
+		    <TextView 
+		        android:layout_width="wrap_content"
+		        android:layout_height="match_parent"
+		        android:id="@+id/device_combind_right_tv"
+		        android:text="设备A"
+		        
+		        />
+		    <ImageView 
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:id="@+id/device_combind_right_iv"
+		        android:src="@drawable/common_remove_or_disable_pressed"
+		        />
+		</LinearLayout>
+		
+		<LinearLayout 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		     android:paddingTop="20dp"
+		    android:paddingBottom="20dp"
+		    >
+	
+			<EditText
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_marginLeft="30dp"
+			    android:layout_marginRight="30dp"
+			    android:id="@+id/device_combind_name_et"
+			    android:text="自定义名称" />
+	
+		</LinearLayout>
+		<LinearLayout 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:paddingTop="20dp"
+		    android:paddingBottom="20dp"
+		    android:orientation="horizontal"
+		    android:gravity="center"
+		    >
+		    <TextView 
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="区域"
+		        android:id="@+id/device_combind_area_tv"
+		        
+		        />
+		    <ImageView 
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:id="@+id/device_combind_area_iv"
+		        android:src="@drawable/common_remove_or_disable_pressed"
+		        />
+		</LinearLayout>
+		
+	</LinearLayout>
+</ScrollView>

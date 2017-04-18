@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:id="@+id/dev_metalswitch_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <LinearLayout
+            android:id="@+id/dev_metalswitch_iamge_layout"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:gravity="center"
+             >
+
+        <ImageView
+            android:id="@+id/dev_metalswitch_image"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/device_measure_switch_close" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/dev_metalswitch_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="1.key1"
+            android:textSize="15sp"
+            android:textColor="#3E3E3E"/>
+
+    </LinearLayout>
+
+</LinearLayout>
