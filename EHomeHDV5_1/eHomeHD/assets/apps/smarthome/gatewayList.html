@@ -320,6 +320,7 @@
 			} else {
 				houseName = plus.ehomev5.getLang("html_user_gateway_bind_not_named");
 			}
+			var deviceModel =device.deviceModel;
 			var parentDiv = document.createElement("div");
 			var divDel = document.createElement("div");
 			var childLi = document.createElement("li");
@@ -335,21 +336,39 @@
 			setImg.src = "img/accountSet.png";
 			setImg.className = "setIMG";
 			aDel.appendChild(setImg);
-			aDel.onclick = function() { //点击按钮解除设备绑定
-				plus.ehomev5.goToSetEyeCamera(device.deviceId, device.isAdmin, function(result) {
-					if(result == '0') {
-						window.location = "gatewayList.html";
-					} else if(result == '-1') {
-						alert("html_XMLY_loading_error");
-					} else if(result == '-2') {
+			if("CMMY02"==deviceModel){
+				aDel.onclick = function() { //点击按钮解除设备绑定
+					plus.ehomev5.goToSetEyeCamera(device.deviceId, device.isAdmin, function(result) {
+						if(result == '0') {
+							window.location = "gatewayList.html";
+						} else if(result == '-1') {
+							alert("html_XMLY_loading_error");
+						} else if(result == '-2') {
 
-					} else {
+						} else {
+							alert("html_XMLY_loading_error");
+						}
+					}, function(result) {
 						alert("html_XMLY_loading_error");
-					}
-				}, function(result) {
-					alert("html_XMLY_loading_error");
-				})
-			};
+					})
+				};
+			}else if("CMMY01"==deviceModel){
+				aDel.onclick = function() { //点击按钮解除设备绑定
+					plus.ehomev5.goToSetEyeCamera(device.deviceId, device.isAdmin, function(result) {
+						if(result == '0') {
+							window.location = "gatewayList.html";
+						} else if(result == '-1') {
+							alert("html_XMLY_loading_error");
+						} else if(result == '-2') {
+
+						} else {
+							alert("html_XMLY_loading_error");
+						}
+					}, function(result) {
+						alert("html_XMLY_loading_error");
+					})
+				};
+			}
 			divDel.appendChild(aDel);
 			childLi.className = "mui-table-view-cell mui-media";
 			childImg.className = "mui-media-object mui-pull-left circular-mask";
@@ -374,21 +393,40 @@
 			parentDiv.appendChild(childDiv);
 			childLi.appendChild(parentDiv);
 			childLi.appendChild(divDel);
-			parentDiv.addEventListener("click", function() {
-				plus.ehomev5.goToEyeCamera(device.deviceId, function(result) {
-					if(result == '0') {
+			if("CMMY02"==deviceModel){
+				parentDiv.addEventListener("click", function() {
+					plus.ehomev5.goToEyeCatYiKang(device.deviceId, function(result) {
+						if(result == '0') {
 
-					} else if(result == '-1') {
-						alert(plus.ehomev5.getLang("html_XMLY_loading_error"));
-					} else if(result == '-2') {
+						} else if(result == '-1') {
+							alert(plus.ehomev5.getLang("html_XMLY_loading_error"));
+						} else if(result == '-2') {
 
-					} else {
+						} else {
+							alert(plus.ehomev5.getLang("html_XMLY_loading_error"));
+						}
+					}, function(result) {
 						alert(plus.ehomev5.getLang("html_XMLY_loading_error"));
-					}
-				}, function(result) {
-					alert(plus.ehomev5.getLang("html_XMLY_loading_error"));
-				})
-			});
+					})
+				});
+			}else if("CMMY01"==deviceModel){
+				parentDiv.addEventListener("click", function() {
+					plus.ehomev5.goToEyeCamera(device.deviceId, function(result) {
+						if(result == '0') {
+
+						} else if(result == '-1') {
+							alert(plus.ehomev5.getLang("html_XMLY_loading_error"));
+						} else if(result == '-2') {
+
+						} else {
+							alert(plus.ehomev5.getLang("html_XMLY_loading_error"));
+						}
+					}, function(result) {
+						alert(plus.ehomev5.getLang("html_XMLY_loading_error"));
+					})
+				});
+			}
+
 			devices_list.appendChild(childLi);
 		}
 

@@ -9,7 +9,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import cc.wulian.h5plus.common.JsUtil;
 import cc.wulian.smarthomev5.R;
+import cc.wulian.smarthomev5.service.html5plus.plugins.SmarthomeFeatureImpl;
 
 
 /**
@@ -67,8 +69,7 @@ public class EyecatBindActivity extends Activity implements View.OnClickListener
             case R.id.eyecat_next:
                 Intent intent = null;
                 if(flag){
-                   intent = new Intent(EyecatBindActivity.this,EyecatMonitoringActivity.class);
-                    startActivity(intent);
+                    JsUtil.getInstance().execCallback(SmarthomeFeatureImpl.mWebview, SmarthomeFeatureImpl.mCallBackId,"1", JsUtil.OK, true);
                     finish();
                 }else{
                     intent = new Intent(EyecatBindActivity.this,EyecatQRcodeActivity.class);

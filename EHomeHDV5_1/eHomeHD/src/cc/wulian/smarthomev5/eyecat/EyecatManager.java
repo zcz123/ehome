@@ -6,6 +6,7 @@ import com.eques.icvss.api.ICVSSListener;
 import com.eques.icvss.api.ICVSSUserInstance;
 import com.eques.icvss.utils.Method;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -30,7 +31,7 @@ public class EyecatManager {
     private static EyecatManager instance = new EyecatManager();
     private Map<String,List<PacketListener>> listeners = new HashMap<String,List<PacketListener>>();
     private Map<String,EyecatDevice> devicesMap = new HashMap<String,EyecatDevice>();
-    private PacketListener loginPacket = new PacketListener() {
+    private PacketListener loginPacketListener = new PacketListener() {
         @Override
         public String getMenthod() {
             return Method.METHOD_EQUES_SDK_LOGIN;
@@ -84,15 +85,10 @@ public class EyecatManager {
     }
     public void login(){
         if(!isLogined){
+            EyecatManager.getInstance().addPacketListener(loginPacketListener);
             EyecatManager.getInstance().getICVSSUserInstance().equesLogin(MainApplication.getApplication(), DISTRIBUTE_URL,username,APPKEY);
-            List<PacketListener> loginL = listeners.get(loginPacket.getMenthod());
-            if(loginL == null){
-                loginL = new ArrayList<PacketListener>();
-                listeners.put(loginPacket.getMenthod(),loginL);
-            }
-            if(!loginL.contains(loginPacket)){
-                loginL.add(loginPacket);
-            }
+            EyecatManager.getInstance().addPacketListener(deviceListResultListener);
+            EyecatManager.getInstance().getICVSSUserInstance().equesGetDeviceList();
         }
     }
     public ICVSSUserInstance getICVSSUserInstance(){
@@ -104,7 +100,8 @@ public class EyecatManager {
             ls = new ArrayList<PacketListener>();
             listeners.put(listener.getMenthod(),ls);
         }
-        ls.add(listener);
+        if(!ls.contains(listener))
+            ls.add(listener);
     }
     public void removePacketListener(PacketListener listener){
         List<PacketListener> ls = listeners.get(listener.getMenthod());
@@ -165,4 +162,32 @@ public class EyecatManager {
             this.status = status;
         }
     }
+    private EyecatManager.PacketListener deviceListResultListener = new EyecatManager.PacketListener() {
+        @Override
+        public String getMenthod() {
+            return Method.METHOD_BDYLIST;
+        }
+
+        @Override
+        public void processPacket(JSONObject object) {
+            JSONArray bdylist = object.optJSONArray(Method.METHOD_BDYLIST);
+            for(int i=0 ;i < bdylist.length() ;i++){
+                JSONObject obj = bdylist.optJSONObject(i);
+                EyecatManager.EyecatDevice device = new EyecatManager.EyecatDevice();
+                device.setBid(obj.optString(Method.ATTR_BUDDY_BID));
+                device.setStatus(0);
+                EyecatManager.getInstance().putDevice(device);
+            }
+            JSONArray onlineList = object.optJSONArray(Method.ATTR_ONLINES);
+            for(int i=0 ;i < onlineList.length() ;i++){
+                JSONObject obj = onlineList.optJSONObject(i);
+                EyecatManager.EyecatDevice device = new EyecatManager.EyecatDevice();
+                device.setBid(obj.optString(Method.ATTR_BUDDY_BID));
+                device.setUid(obj.optString(Method.ATTR_BUDDY_UID));
+                device.setStatus(obj.optInt(Method.ATTR_BUDDY_STATUS));
+                EyecatManager.getInstance().putDevice(device);
+            }
+           Log.i("eyecat:","get list devices success");
+        }
+    };
 }

@@ -153,6 +153,18 @@
 			var callbackID = plus.callbackUtil.getCallbackId(successCallback, errorCallback);
 			return B.exec(_BARCODE, "goToEyeCamera", JSON.stringify([callbackID, param]));
 		},
+		addEyeCatYiKang: function(param, successCallback, errorCallback) {
+                			var callbackID = plus.callbackUtil.getCallbackId(successCallback, errorCallback);
+                			return B.exec(_BARCODE, "addEyeCatYiKang", JSON.stringify([callbackID, param]));
+        },
+		goToSetEyeCatYiKang: function(param, isAdmin, successCallback, errorCallback) {
+        			var callbackID = plus.callbackUtil.getCallbackId(successCallback, errorCallback);
+        			return B.exec(_BARCODE, "goToSetEyeCatYiKang", JSON.stringify([callbackID, param, isAdmin]));
+        },
+        goToEyeCatYiKang: function(param, successCallback, errorCallback) {
+        			var callbackID = plus.callbackUtil.getCallbackId(successCallback, errorCallback);
+        			return B.exec(_BARCODE, "goToEyeCatYiKang", JSON.stringify([callbackID, param]));
+        },
 		sendUeiCommand: function(param, successCallback, errorCallback) {
 			var callbackID = plus.callbackUtil.getCallbackId(successCallback, errorCallback);
 			return B.exec(_BARCODE, "sendUeiCommand", JSON.stringify([callbackID, param]));

@@ -11,7 +11,10 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import cc.wulian.ihome.wan.core.http.Result;
+import cc.wulian.ihome.wan.util.TaskExecutor;
 import cc.wulian.smarthomev5.R;
+import cc.wulian.smarthomev5.account.WLUserManager;
 
 
 /**
@@ -21,11 +24,41 @@ import cc.wulian.smarthomev5.R;
 public class EyecatWIFISettingOneActivity extends Activity implements View.OnClickListener{
     private Button btn_next;
     private LinearLayout btn_return;
+    String bid = "934f4227e83a4d618f27e2dca860625e";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.eyecat_activity_wifisetting_one);
         initView();
+        TaskExecutor.getInstance().execute(new Runnable() {
+            @Override
+            public void run() {
+                final Result result = WLUserManager.getInstance().getStub().bindDevice(bid,bid,"CAMERA","CMMY02");
+                if(0==result.status){
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(EyecatWIFISettingOneActivity.this, "初次绑定成功", Toast.LENGTH_SHORT).show();
+                            Intent i = new Intent(EyecatWIFISettingOneActivity.this, EyecatBindActivity.class);
+                            i.putExtra("flag", true);
+                            startActivity(i);
+                            finish();
+                        }
+                    });
+                }else{
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(EyecatWIFISettingOneActivity.this, "初次绑定失败:"+result.status, Toast.LENGTH_LONG).show();
+                            Intent i = new Intent(EyecatWIFISettingOneActivity.this, EyecatBindActivity.class);
+                            i.putExtra("flag", false);
+                            startActivity(i);
+                            finish();
+                        }
+                    });
+                }
+            }
+        });
     }
     private void initView(){
         btn_return = (LinearLayout) findViewById(R.id.eyecat_return);
@@ -46,6 +79,9 @@ public class EyecatWIFISettingOneActivity extends Activity implements View.OnCli
                     finish();
                 }else{
                     Toast.makeText(this, "添加设备只支持在WiFi网络下进行", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(EyecatWIFISettingOneActivity.this,EyecatWIFISettingTwoActivity.class);
+                    startActivity(intent);
+                    finish();
                 }
                 break;
         }

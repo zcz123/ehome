@@ -21,17 +21,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
-import com.hisense.hitv.hicloud.bean.global.BaseInfo;
-import com.hisense.hitv.hicloud.bean.global.HiSDKInfo;
-import com.hisense.hitv.hicloud.bean.wgapi.BindedHomeDeviceListReply;
-import com.hisense.hitv.hicloud.bean.wgapi.Device;
-import com.hisense.hitv.hicloud.bean.wgapi.DeviceStatus;
-import com.hisense.hitv.hicloud.bean.wgapi.DeviceStatusReply;
-import com.hisense.hitv.hicloud.bean.wgapi.HomeListReply;
-import com.hisense.hitv.hicloud.bean.wgapi.MsgAndChannelsReplay;
-import com.hisense.hitv.hicloud.bean.wgapi.TaskTimeReplay;
-import com.hisense.hitv.hicloud.factory.HiCloudServiceFactory;
-import com.hisense.hitv.hicloud.service.WgApiService;
 import com.hismart.easylink.localjni.WiFiInfo;
 import com.wulian.icam.wifidirect.utils.WiFiLinker;
 import com.wulian.iot.Config;
@@ -76,8 +65,8 @@ import cc.wulian.smarthomev5.activity.IActivityCallerWithResult;
 import cc.wulian.smarthomev5.activity.MainApplication;
 import cc.wulian.smarthomev5.activity.MainHomeActivity;
 import cc.wulian.smarthomev5.activity.NFCActivity;
-import cc.wulian.smarthomev5.activity.QuickEditActivity;
 import cc.wulian.smarthomev5.activity.QRScanActivity;
+import cc.wulian.smarthomev5.activity.QuickEditActivity;
 import cc.wulian.smarthomev5.activity.RouteRemindActivity;
 import cc.wulian.smarthomev5.activity.SigninActivityV5;
 import cc.wulian.smarthomev5.activity.iotc.config.IOTCDevConfigActivity;
@@ -92,6 +81,7 @@ import cc.wulian.smarthomev5.entity.haixin.CloudRequest;
 import cc.wulian.smarthomev5.entity.haixin.DeviceWifiSet;
 import cc.wulian.smarthomev5.entity.uei.UEIEntity;
 import cc.wulian.smarthomev5.entity.uei.UEIEntityManager;
+import cc.wulian.smarthomev5.eyecat.EyecatVideoCallActivity;
 import cc.wulian.smarthomev5.eyecat.EyecatWIFISettingOneActivity;
 import cc.wulian.smarthomev5.fragment.device.AreaGroupManager;
 import cc.wulian.smarthomev5.fragment.setting.gateway.AccountInformationSettingManagerFragment;
@@ -116,8 +106,6 @@ import cc.wulian.smarthomev5.utils.HttpUtil;
 import cc.wulian.smarthomev5.utils.LanguageUtil;
 import cc.wulian.smarthomev5.utils.URLConstants;
 import cc.wulian.smarthomev5.utils.WifiUtil;
-
-import static cc.wulian.app.model.device.impls.configureable.ir.WL_23_IR_Control.pluginName;
 
 public class SmarthomeFeatureImpl {
     public static final class Constants {
@@ -200,7 +188,6 @@ public class SmarthomeFeatureImpl {
         registerActivity("home", MainHomeActivity.class, true);
         registerActivity("controlCenter", AccountInformationSettingManagerActivity.class, false);
         registerActivity("bindGateway", BindGateWayActivity.class, false);
-        registerActivity("yikangWifiSetting", EyecatWIFISettingOneActivity.class, false);
         registerActivity("matchControl", MatchControlActivity.class, false);
         registerActivity("customRemoteControlActivity", CustomRemooteControlActivity.class, false);
 //		registerActivity("TVRemoteControlActivity", TVRemooteControlActivity.class, false);
@@ -2081,5 +2068,45 @@ public class SmarthomeFeatureImpl {
         } catch (Exception e) {
             JsUtil.getInstance().execCallback(pWebview, callBackID, "", JsUtil.ERROR, true);
         }
+    }
+    @JavascriptInterface
+    public void addEyeCatYiKang(final H5PlusWebView pWebview, final String webparam) {
+        String callBackId = "";
+        try {
+            com.alibaba.fastjson.JSONArray array = JSON.parseArray(webparam);
+            callBackId = array.getString(0);
+            SmarthomeFeatureImpl.callbackid = callBackId;
+            SmarthomeFeatureImpl.pWebview = pWebview;
+            Intent intent = new Intent(pWebview.getContext(), EyecatWIFISettingOneActivity.class);
+            Activity thisActivity = (Activity) pWebview.getContainer();
+            thisActivity.startActivity(intent);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    @JavascriptInterface
+    public void goToEyeCatYiKang(final H5PlusWebView pWebview, final String webparam) {
+        com.alibaba.fastjson.JSONArray array = JSON.parseArray(webparam);
+        String devIDString = array.getString(1);
+        Intent intent = new Intent(pWebview.getContext(), EyecatVideoCallActivity.class);
+        intent.putExtra("bid", devIDString);
+        Activity thisActivity = (Activity) pWebview.getContainer();
+        thisActivity.startActivity(intent);
+    }
+    @JavascriptInterface
+    public void goToSetEyeCatYiKang(final H5PlusWebView pWebview, final String webparam) {
+        com.alibaba.fastjson.JSONArray array = JSON.parseArray(webparam);
+        String callBackId = array.getString(0);
+        String devIDString = array.getString(1);
+        this.callbackid = callBackId;
+        this.pWebview = pWebview;
+        Intent intent = new Intent(pWebview.getContext(), SetEagleCameraActivity.class);
+        SetEagleCameraActivity.setUpdateCameraName(new UpdateCameraInfo());//为了修改猫眼设备名
+        intent.putExtra(Config.eagleSettingEnter, SetEagleCameraActivity.WITHOUT_CAMERA_SETTING);
+        intent.putExtra(Config.tutkUid, devIDString);
+        intent.putExtra(Config.tutkPwd,"admin");
+        intent.putExtra(Config.isAdmin,Preference.getPreferences().getGatewayIsAdmin());
+        Activity thisActivity = (Activity) pWebview.getContainer();
+        thisActivity.startActivity(intent);
     }
 }

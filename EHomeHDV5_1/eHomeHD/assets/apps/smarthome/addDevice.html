@@ -58,10 +58,19 @@
 		</div>
 		<script>
 		function yikangCamera(){
-			var data = {};
-			data.action = "yikangWifiSetting";
-			data.params = [];
-			plus.ehomev5.startActivity(JSON.stringify(data));
+			plus.ehomev5.addEyeCatYiKang("", function(result) {
+			   alert(1);
+			   if(result == '1') {
+					alert(plus.ehomev5.getLang("html_user_gateway_bind_success"));
+					window.location = "gatewayList.html"
+				} else if(result == '2') {
+					alert("设备已绑定");
+				} else {
+					alert(plus.ehomev5.getLang("html_XMLY_loading_error"));
+				}
+			}, function(result) {
+				alert(plus.ehomev5.getLang("html_XMLY_loading_error"));
+			})
 		}
 
 			function eyeCamera() {

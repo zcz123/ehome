@@ -118,6 +118,10 @@ public class EyecatWIFISettingTwoActivity extends Activity implements View.OnCli
                     finish();
                 }else{
                     Toast.makeText(this, "wifi连接失败，请重新检查wifi密码", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(EyecatWIFISettingTwoActivity.this,EyecatScanQRcodeActivity.class);
+                    intent.putExtra("pwd",eyecat_password.getText().toString());
+                    startActivity(intent);
+                    finish();
                 }
                 break;
             case R.id.eyecat_return:
